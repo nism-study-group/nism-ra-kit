@@ -1,0 +1,582 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Chapter 4: Fundamentals of research | NISM RA study kit</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&display=swap" rel="stylesheet"><style>
+:root{
+ --paper:#F5F6F8;--card:#FFFFFF;--ink:#1B2340;--muted:#586178;--line:#D8DDE7;
+ --indigo:#2E3F8F;--indigo-soft:#E6E9F6;--marker:#FFE27A;--teal:#12705F;--teal-soft:#DDF1EC;
+ --brick:#A83C29;--brick-soft:#F8E3DE;--sun:#F2B233;
+ --head:"Bricolage Grotesque","Segoe UI",system-ui,-apple-system,sans-serif;
+ --body:"Atkinson Hyperlegible","Segoe UI",system-ui,-apple-system,sans-serif;
+ box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+ --paper:#11141C;--card:#1A1E2A;--ink:#E7EAF3;--muted:#9EA7BC;--line:#2C3244;
+ --indigo:#9AABFF;--indigo-soft:#232A45;--marker:rgba(255,214,90,.30);--teal:#52C7AE;--teal-soft:#16332D;
+ --brick:#F2826C;--brick-soft:#3A201B;--sun:#F2B233;}}
+:root[data-theme="dark"]{
+ --paper:#11141C;--card:#1A1E2A;--ink:#E7EAF3;--muted:#9EA7BC;--line:#2C3244;
+ --indigo:#9AABFF;--indigo-soft:#232A45;--marker:rgba(255,214,90,.30);--teal:#52C7AE;--teal-soft:#16332D;
+ --brick:#F2826C;--brick-soft:#3A201B;}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 70px);-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6}
+img,svg{max-width:100%}
+a{color:var(--indigo)}
+:focus-visible{outline:3px solid var(--sun);outline-offset:2px;border-radius:4px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+.col{max-width:720px}
+h1,h2,h3,h4{font-family:var(--head);line-height:1.15;margin:0}
+h2{font-size:clamp(1.5rem,3.4vw,2rem);font-weight:800;margin:0 0 .6rem}
+h3{font-size:1.2rem;font-weight:700;margin:1.8rem 0 .5rem}
+p{margin:.55rem 0}
+ul,ol{margin:.4rem 0 .8rem;padding-left:1.3rem}
+li{margin:.25rem 0}
+/* top bar */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--paper) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.bar .wrap{display:flex;align-items:center;gap:12px;min-height:58px}
+.brand{font-family:var(--head);font-weight:700;font-size:.95rem;color:var(--muted);text-decoration:none;white-space:nowrap}
+.tabs{display:flex;gap:4px;margin-left:auto;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:4px}
+.tab{border:0;background:transparent;color:var(--ink);font:600 .95rem var(--body);padding:.45rem .95rem;border-radius:999px;cursor:pointer}
+.tab[aria-selected="true"]{background:var(--indigo);color:var(--card)}
+.themebtn{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;width:38px;height:38px;cursor:pointer;font-size:1rem}
+@media (max-width:620px){.brand{display:none}.tabs{margin-left:0;flex:1;justify-content:space-between}.tab{padding:.45rem .6rem;flex:1}}
+/* hero */
+.hero{padding:44px 0 18px}
+.kicker{font-family:var(--head);font-weight:700;color:var(--indigo);font-size:1rem;margin-bottom:.4rem}
+.hero h1{font-size:clamp(2.1rem,6vw,3.6rem);font-weight:800;letter-spacing:-.02em;max-width:18ch}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 0}
+.pill{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:.2rem .75rem;font-size:.9rem;color:var(--muted)}
+.pill b{color:var(--ink)}
+.oneline{margin:28px 0 8px;font-family:var(--head);font-size:clamp(1.25rem,3vw,1.7rem);font-weight:500;line-height:1.35;max-width:32ch}
+.oneline .k{font-weight:700}
+/* key term highlighter */
+.k{background:linear-gradient(104deg,transparent 0 .2em,var(--marker) .2em calc(100% - .15em),transparent calc(100% - .15em));padding:0 .2em;margin:0 -.05em;font-weight:700;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+/* sections */
+section.sec{padding:34px 0 10px;border-top:1px solid var(--line);margin-top:26px}
+.secno{font-family:var(--head);font-weight:800;color:var(--indigo);font-size:1rem;display:block;margin-bottom:.2rem}
+.why{border-left:4px solid var(--indigo);background:var(--indigo-soft);padding:.7rem 1rem;border-radius:0 10px 10px 0;margin:1rem 0}
+.why b:first-child{display:block;font-family:var(--head);margin-bottom:.1rem}
+.analogy{background:var(--card);border:1px dashed var(--indigo);border-radius:14px;padding:.8rem 1rem;margin:1rem 0}
+.analogy::before{content:"Think of it like this";display:block;font-family:var(--head);font-weight:700;color:var(--indigo);font-size:.95rem;margin-bottom:.2rem}
+.trap{border:2px solid var(--brick);background:var(--brick-soft);border-radius:12px;padding:.65rem .95rem;margin:1rem 0;position:relative}
+.trap::before{content:"Exam trap";display:inline-block;font-family:var(--head);font-weight:800;color:var(--card);background:var(--brick);border-radius:6px;padding:0 .45rem;font-size:.85rem;margin-right:.45rem;transform:rotate(-2deg)}
+.num{font-family:var(--head);font-weight:800;color:var(--brick)}
+dl.terms{display:grid;grid-template-columns:minmax(120px,max-content) 1fr;gap:.35rem 1rem;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1rem 1.1rem;margin:1rem 0}
+dl.terms dt{font-weight:700}
+dl.terms dd{margin:0;color:var(--muted)}
+@media (max-width:560px){dl.terms{grid-template-columns:1fr}dl.terms dd{margin-bottom:.4rem}}
+.terms-title{font-family:var(--head);font-weight:700;margin:1.4rem 0 -.4rem}
+/* figures */
+figure.fig{margin:1.4rem 0;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px}
+figure.fig figcaption{font-family:var(--head);font-weight:700;font-size:1.02rem;margin-bottom:12px}
+figure.fig figcaption span{display:block;font-family:var(--body);font-weight:400;color:var(--muted);font-size:.9rem;margin-top:2px}
+.scroll{overflow-x:auto}
+/* flow */
+.flow{display:flex;align-items:stretch;gap:0;flex-wrap:nowrap}
+.flow .step{flex:1;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:.7rem .8rem;min-width:0}
+.flow .step h4{font-size:1rem;margin-bottom:.2rem}
+.flow .step p{font-size:.92rem;margin:0;color:var(--muted)}
+.flow .arrow{flex:0 0 28px;display:flex;align-items:center;justify-content:center;color:var(--indigo);font-weight:800;font-size:1.3rem}
+.flow .arrow::before{content:"\2192"}
+@media (max-width:700px){.flow{flex-direction:column}.flow .arrow{flex-basis:26px}.flow .arrow::before{content:"\2193"}}
+.step.hl{border-color:var(--indigo);background:var(--indigo-soft)}
+.step.gd{border-color:var(--teal);background:var(--teal-soft)}
+.step.bd{border-color:var(--brick);background:var(--brick-soft)}
+/* grids */
+.grid{display:grid;gap:12px}
+.g2{grid-template-columns:repeat(2,1fr)}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}
+@media (max-width:760px){.g3,.g4{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:480px){.g2,.g3,.g4{grid-template-columns:1fr}}
+.box{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:.75rem .9rem}
+.box h4{font-size:1.02rem;margin-bottom:.25rem}
+.box p,.box li{font-size:.93rem}
+.box ul{margin:.2rem 0 0}
+.box .tag{display:inline-block;font-size:.78rem;font-weight:700;border-radius:6px;padding:0 .4rem;background:var(--indigo-soft);color:var(--indigo);margin-bottom:.3rem}
+.box.gd{border-color:var(--teal)}.box.bd{border-color:var(--brick)}.box.hl{border-color:var(--indigo)}
+/* table */
+table.cmp{border-collapse:collapse;width:100%;min-width:560px;font-size:.93rem}
+table.cmp th,table.cmp td{border-bottom:1px solid var(--line);padding:.55rem .6rem;text-align:left;vertical-align:top}
+table.cmp thead th{font-family:var(--head);background:var(--indigo-soft);color:var(--ink)}
+table.cmp tbody th{font-weight:700;color:var(--muted);width:24%}
+/* id card */
+.idcard{display:grid;grid-template-columns:auto 1fr;gap:.15rem .7rem;font-size:.88rem;margin-top:.4rem}
+.idcard span:nth-child(odd){color:var(--muted)}
+/* bars */
+.stack{display:flex;height:46px;border-radius:10px;overflow:hidden;border:1px solid var(--line);font-weight:700;font-size:.9rem}
+.stack div{display:flex;align-items:center;justify-content:center;color:var(--card);text-align:center;padding:0 4px}
+/* traps list and talk */
+.traplist{counter-reset:t;list-style:none;padding:0}
+.traplist li{counter-increment:t;background:var(--card);border:1px solid var(--line);border-left:5px solid var(--brick);border-radius:10px;padding:.6rem .9rem .6rem 3rem;position:relative;margin:.5rem 0}
+.traplist li::before{content:counter(t);position:absolute;left:.9rem;top:.55rem;font-family:var(--head);font-weight:800;color:var(--brick);font-size:1.1rem}
+.talk li{margin:.45rem 0}
+.ptr{font-size:.85rem;color:var(--muted)}
+/* chapter map */
+.map{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(170px,1fr))}
+.map a{display:block;text-decoration:none;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:.7rem .85rem;transition:border-color .15s}
+.map a:hover{border-color:var(--indigo)}
+.map a b{display:block;font-family:var(--head);color:var(--indigo);font-size:.9rem}
+.map a span{font-weight:700;display:block;line-height:1.25}
+.map a small{color:var(--muted);display:block;margin-top:.25rem;line-height:1.3}
+.tl{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;position:relative;padding-top:6px}
+.tl::before{content:"";position:absolute;left:8%;right:8%;top:21px;height:4px;background:var(--line);border-radius:4px}
+.tl-i{text-align:center;position:relative}
+.tl-t{display:block;font-family:var(--head);font-size:1.15rem}
+.tl-d{display:block;width:22px;height:22px;border-radius:50%;margin:6px auto 8px;position:relative;border:3px solid var(--card)}
+.tl-i h4{font-size:1.05rem}.tl-i p{font-size:.9rem;color:var(--muted);margin:.2rem 0 0}
+@media (max-width:560px){.tl{grid-template-columns:1fr}.tl::before{display:none}.tl-i{text-align:left;padding-left:34px}.tl-d{position:absolute;left:0;top:0;margin:0}}
+input[type=range]{accent-color:var(--indigo)}
+/* views */
+.view[hidden]{display:none}
+footer{color:var(--muted);font-size:.85rem;padding:40px 0 60px;border-top:1px solid var(--line);margin-top:40px}
+/* flashcards */
+.fc-wrap{max-width:640px;margin:30px auto 0}
+.fc-top{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+.fc-prog{height:8px;background:var(--line);border-radius:99px;overflow:hidden;margin-bottom:16px}
+.fc-prog div{height:100%;background:var(--teal);width:0;transition:width .3s}
+.card3d{perspective:1200px;cursor:pointer;user-select:none}
+.card3d .inner{position:relative;min-height:300px;transition:transform .5s;transform-style:preserve-3d}
+.card3d.flip .inner{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:20px;padding:28px;display:flex;flex-direction:column;justify-content:center;border:1px solid var(--line);background:var(--card)}
+.face.back{transform:rotateY(180deg);background:var(--indigo-soft);border-color:var(--indigo)}
+.face .lbl{position:absolute;top:14px;left:18px;font-size:.8rem;color:var(--muted);font-weight:700}
+.face .front-txt{font-family:var(--head);font-size:clamp(1.3rem,4vw,1.8rem);font-weight:700;line-height:1.25}
+.face .back-txt{font-size:1.08rem}
+.hint{color:var(--muted);font-size:.85rem;text-align:center;margin-top:10px}
+@media (prefers-reduced-motion:reduce){.card3d .inner{transition:none}}
+.btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:16px}
+.btn{font:700 1rem var(--body);border-radius:12px;padding:.65rem 1.1rem;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
+.btn.pri{background:var(--indigo);border-color:var(--indigo);color:var(--card)}
+.btn.good{background:var(--teal);border-color:var(--teal);color:var(--card)}
+.btn.bad{background:var(--brick);border-color:var(--brick);color:var(--card)}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.btn.sm{font-size:.88rem;padding:.4rem .75rem;border-radius:10px}
+/* quiz */
+.qz{max-width:720px;margin:30px auto 0}
+.qz-setup .box{margin:.6rem 0}
+.qz-setup label{display:flex;gap:.6rem;align-items:flex-start;cursor:pointer}
+.qz-head{display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:.9rem;margin-bottom:10px;gap:8px;flex-wrap:wrap}
+.qcase{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--sun);border-radius:12px;padding:.8rem 1rem;margin-bottom:12px;font-size:.95rem}
+.qcase b{font-family:var(--head)}
+.qtext{font-family:var(--head);font-size:1.25rem;font-weight:700;line-height:1.3;margin:4px 0 14px}
+.opt{display:flex;gap:.7rem;align-items:flex-start;width:100%;text-align:left;font:1rem var(--body);color:var(--ink);background:var(--card);border:2px solid var(--line);border-radius:12px;padding:.7rem .9rem;margin:.45rem 0;cursor:pointer}
+.opt .lt{font-family:var(--head);font-weight:800;color:var(--indigo);min-width:1.2rem}
+.opt[aria-pressed="true"]{border-color:var(--indigo);background:var(--indigo-soft)}
+.opt.right{border-color:var(--teal);background:var(--teal-soft)}
+.opt.wrong{border-color:var(--brick);background:var(--brick-soft)}
+.opt:disabled{cursor:default}
+.explain{border-radius:12px;padding:.7rem 1rem;margin-top:12px;background:var(--paper);border:1px solid var(--line)}
+.explain.ok{border-color:var(--teal)}.explain.no{border-color:var(--brick)}
+.explain b{font-family:var(--head)}
+.score{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:16px 0}
+@media (max-width:520px){.score{grid-template-columns:repeat(2,1fr)}}
+.score div{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:.7rem;text-align:center}
+.score b{display:block;font-family:var(--head);font-size:1.8rem}
+.score small{color:var(--muted)}
+.verdict{font-family:var(--head);font-size:1.4rem;font-weight:800;margin:10px 0}
+.review .item{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:.7rem 1rem;margin:.6rem 0}
+.review .item p{margin:.25rem 0}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--paper);padding:.5rem 1rem;border-radius:10px;font-weight:700;opacity:0;transition:opacity .2s;pointer-events:none;z-index:50}
+.toast.show{opacity:1}
+@media print{.bar,.btns,.themebtn{display:none}.view[hidden]{display:block}#v-cards,#v-quiz{display:none}figure.fig,.trap,.analogy{break-inside:avoid}}
+</style></head><body>
+<div class="bar"><div class="wrap"><a class="brand" href="../index.html">NISM RA study kit</a>
+<div class="tabs" role="tablist"><button class="tab" role="tab" data-v="learn" aria-selected="true">Learn</button><button class="tab" role="tab" data-v="cards" aria-selected="false">Flashcards</button><button class="tab" role="tab" data-v="quiz" aria-selected="false">Quiz</button></div>
+<button class="themebtn" id="themebtn" aria-label="Switch light or dark">&#9790;</button></div></div><div class="view" id="v-learn">
+<style>
+.updown td.up{color:var(--teal);font-weight:700}
+.updown td.dn{color:var(--brick);font-weight:700}
+.pct{display:grid;grid-template-columns:7rem 1fr 2.6rem;gap:10px;align-items:center;margin:.35rem 0}
+.pct .wbar{height:14px;background:var(--line);border-radius:99px;overflow:hidden}
+.pct .wbar i{display:block;height:100%;background:var(--sun);border-radius:99px}
+.pct b{font-family:var(--head);text-align:right}
+</style>
+<div class="wrap">
+<header class="hero">
+<div class="kicker">Chapter 4 of 15</div>
+<h1>Fundamentals of research</h1>
+<div class="meta"><span class="pill">Worth <b>5 marks</b> of 100</span><span class="pill">Book pages 78 to 89</span><span class="pill">About 30 minutes</span></div>
+<p class="oneline">Four ways to study a share: read the <span class="k">charts</span>, study the <span class="k">business</span>, crunch the <span class="k">data</span>, or watch the <span class="k">people</span>. Plus how commodities are studied.</p>
+</header>
+
+<figure class="fig" id="fig-map"><figcaption>Chapter map<span>Six parts. Tap to jump.</span></figcaption>
+<div class="map">
+<a href="#s1"><b>4.1</b><span>What is investing?</span><small>Investor versus trader. Active and passive</small></a>
+<a href="#s2"><b>4.2</b><span>Why research?</span><small>Insider information versus mosaic analysis</small></a>
+<a href="#s3"><b>4.3 to 4.6</b><span>Four approaches</span><small>Technical, fundamental, quantitative, behavioural</small></a>
+<a href="#s7"><b>4.7</b><span>Commodity research</span><small>Supply, demand, macro indicators</small></a>
+<a href="#s8"><b>4.8</b><span>Gold and crude oil</span><small>Uses, big players, price drivers</small></a>
+<a href="#s9"><b>4.9 and 4.10</b><span>History, and the link to shares</span><small>Negative oil, 1973 crisis, input costs</small></a>
+</div></figure>
+
+<div class="col">
+<section class="sec" id="s1"><span class="secno">4.1</span><h2>What is investing?</h2>
+<p><span class="k">Investing</span> means putting money in upfront to earn returns over a period. It needs careful study of the security's safety, income and growth potential.</p>
+</div>
+
+<figure class="fig" id="fig-trader"><figcaption>Trader versus investor<span>Two different questions about the same share</span></figcaption>
+<div class="grid g2">
+<div class="box"><span class="tag">Trader</span><h4>"Where will the price go next?"</h4><ul><li>Profits from the gap between buying and selling price</li><li>No change in the asset's underlying value needed</li><li>Follows past price patterns</li><li>Short horizon: price anomalies corrected within about <b>3 to 6 months</b></li></ul></div>
+<div class="box hl"><span class="tag">Investor</span><h4>"Will this asset's value grow?"</h4><ul><li>Value rises if cash flow rises without the same rise in risk</li><li>Or if risk falls without the same fall in cash flow</li><li>Needs deeper analysis</li><li>Longer horizon</li></ul></div>
+</div></figure>
+
+<div class="col">
+<dl class="terms">
+<dt>Speculator</dt><dd>A trader betting on short-term price moves, based on a calculated guess.</dd>
+<dt>Chartist</dt><dd>A trader who relies on price patterns and charts.</dd>
+<dt>Day trader</dt><dd>A trader whose whole buy and sell cycle is one day.</dd>
+</dl>
+<div class="analogy">A trader is like someone who buys mangoes in the morning market and sells them in the evening market for a little more. An investor is like someone who buys the mango orchard, because they expect it to produce more fruit every year.</div>
+
+<h3>Active and passive investing</h3>
+<div class="grid g2">
+<div class="box"><span class="tag">4.1.1</span><h4>Active</h4><p>Picks specific securities. Buys those priced <b>below</b> intrinsic value, sells those <b>above</b>. Constant review, more trades, more effort.</p><p><b>Goal:</b> beat the return of the broad asset class.</p></div>
+<div class="box"><span class="tag">4.1.2</span><h4>Passive</h4><p>Buys a broad set that represents the asset class, usually <b>all the stocks in an index</b>. No picking of individual securities.</p><p><b>Goal:</b> earn the return of the asset class.</p></div>
+</div>
+</section>
+
+<section class="sec" id="s2"><span class="secno">4.2</span><h2>Why research?</h2>
+<p>A fundamental analyst's job has two parts. <b>Research</b> is getting all the information needed to answer a question. <b>Analysis</b> is working through that information to reach a conclusion.</p>
+<p>The annual report is a treasure trove, but it is not enough. It comes out once a year, so it goes out of date, and it says little about the industry and economy. So analysts also:</p>
+<ul><li><b>Secondary research:</b> talk to industry experts, buy market research reports, track the economy and competitors.</li><li><b>Primary research:</b> visit company facilities, speak to customers, suppliers and employees.</li></ul>
+</div>
+
+<figure class="fig" id="fig-mosaic"><figcaption>Insider information versus mosaic analysis<span>4.2.1. One is forbidden, the other is good research.</span></figcaption>
+<div class="grid g2">
+<div class="box bd"><span class="tag">Not allowed</span><h4>Insider information</h4><p>Material, non-public, price-sensitive information. Known only to a few people close to the company (or their relatives). Once published, it would immediately affect decisions to buy or sell.</p><p><b>Book example:</b> the CEO talks about an <b>unpublished acquisition proposal</b>.</p></div>
+<div class="box gd"><span class="tag">Allowed</span><h4>Mosaic analysis</h4><p>Joining many small pieces, each not significant alone, with other public or non-public information, to reach a useful insight.</p><p><b>Book example:</b> an employee mentions a <b>heavier workload in the purchase department</b>, which may hint at more business.</p></div>
+</div></figure>
+
+<div class="col">
+<div class="why"><b>How to tell them apart</b>Not every non-public fact is insider information. The book says it depends on three things: the <b>source</b> (how reliable), the <b>impact</b>, and the <b>certainty</b> of the information. Analysts must check whether an insight came from their own mosaic or from being told a specific price-sensitive secret.</div>
+<div class="analogy">Mosaic analysis is like a detective noticing muddy shoes, a train ticket and a sunburn, and working out where someone went. Insider information is someone reading you their diary.</div>
+</section>
+
+<section class="sec" id="s3"><span class="secno">4.3 to 4.6</span><h2>Four approaches to research</h2>
+</div>
+
+<figure class="fig" id="fig-four"><figcaption>Four approaches at a glance</figcaption>
+<div class="scroll"><table class="cmp">
+<thead><tr><th></th><th>Technical</th><th>Fundamental</th><th>Quantitative</th><th>Behavioural</th></tr></thead>
+<tbody>
+<tr><th>Studies</th><td>Past price and volume</td><td>The economy, industry and company</td><td>Data and statistics</td><td>Investors' biases</td></tr>
+<tr><th>Core belief</th><td>All information is already in the price. Patterns repeat.</td><td>In the long run, price follows the profits and cash flows of the business</td><td>Some metrics may be leading indicators of performance</td><td>Fear and greed push prices away from fair value</td></tr>
+<tr><th>Horizon</th><td>Short term</td><td>Long term</td><td>Either</td><td>Either</td></tr>
+<tr><th>Weakness</th><td>Less suited to long-term investing</td><td>Hard to estimate fair value</td><td>Past data loses meaning when accounting or business models change</td><td>Biases are hard to measure</td></tr>
+</tbody></table></div></figure>
+
+<div class="col">
+<h3 id="s3a">4.3 Technical analysis</h3>
+<p>Technical analysts (also called <b>chartists</b> or technicians) assume that everything, from company results to the economy to market mood, is already reflected in the price. They forecast price direction from patterns in past <b>price and volume</b>.</p>
+<p>Three essential elements:</p>
+<ol><li><b>Past prices</b> show the underlying trend and its direction.</li><li><b>Volume</b> shows the strength of the trend.</li><li><b>Time span</b> over which price and volume carry the impact of long-term factors.</li></ol>
+<ul>
+<li>Trends can be <b>upward, downward or sideways</b>. Traders trade in line with the trend.</li>
+<li><b>Support</b>: a level with a lot of buying interest. <b>Resistance</b>: a level with a lot of selling interest. Near resistance, a holder may book profits, since prices tend to pull back.</li>
+<li>A break of support or resistance on <b>strong volume</b> may mean the trend has sped up. A trend without volume support may be weak.</li>
+<li>Charts used: <b>line, bar and candlestick</b>.</li>
+<li><span class="k">Moving averages</span> smooth out day-to-day price swings so the trend is easier to see.</li>
+</ul>
+<div class="trap">Technical analysis suits <b>short-term</b> traders, because business fundamentals rarely change quickly. It is <b>less</b> suited to long-term investing, where fundamentals can change and past price trends become unreliable. Chapter 15 covers technical analysis in depth.</div>
+
+<h3 id="s4">4.4 Fundamental analysis</h3>
+<p>A share is part ownership of a business. So in the long run its value should follow the profits and cash flows the business earns. If short-term moves push the price far from fair value, there is a chance to profit.</p>
+<div class="flow">
+<div class="step"><h4>Estimate fair value</h4><p>From expected business performance</p></div><div class="arrow"></div>
+<div class="step gd"><h4>Price below value</h4><p>Attractive: buy</p></div><div class="arrow"></div>
+<div class="step bd"><h4>Price above value</h4><p>Sell, or avoid</p></div>
+</div>
+<p>So profit comes from finding a good business <b>and</b> buying it at the right price.</p>
+<div class="trap">Fundamental analysis <b>contradicts</b> the <span class="k">Efficient Market Hypothesis (EMH)</span>, which says prices already reflect all relevant information. If EMH were fully true, there would be no mispriced shares to find.</div>
+<p>Questions fundamental analysts ask: Is the economic trend helping the industry? How intense is competition? How is the company placed against rivals? What is its cost structure? Is its finance strong enough to grow or survive a crisis? Is management capable? Is governance protecting shareholders?</p>
+<p>These fall into three baskets, each with its own chapter later:</p>
+<div class="flow">
+<div class="step hl"><h4>1. Economy</h4><p>Chapter 5</p></div><div class="arrow"></div>
+<div class="step hl"><h4>2. Industry</h4><p>Chapter 6</p></div><div class="arrow"></div>
+<div class="step hl"><h4>3. Company</h4><p>Chapters 7 and 8</p></div>
+</div>
+<p class="ptr">Going economy first, then industry, then company is the top-down path (E-I-C) seen in Chapter 1.</p>
+
+<h3 id="s5">4.5 Quantitative research</h3>
+<p>Some analysts approach shares purely through numbers. This works for both technical and fundamental analysis:</p>
+<ul>
+<li><b>Technical:</b> study the data behind the charts, such as up moves versus down moves and volume.</li>
+<li><b>Fundamental:</b> look for financial and operating metrics that may lead company performance.</li>
+<li><b>Tools:</b> time series analysis and regression to extrapolate earnings; econometrics; financial statement projections; sensitivity analysis and simulations to test assumptions.</li>
+</ul>
+<div class="trap">The main limit of a pure quantitative approach in fundamental analysis: <b>comparable data is hard to get</b>. Frequent changes in accounting standards and business models make past data less useful. So pure quantitative research is <b>not often used</b> in fundamental analysis.</div>
+
+<h3 id="s6">4.6 Behavioural approach</h3>
+<p>Decisions should follow the evidence, but they are often bent by the decision maker's biases, leading to poor choices. This approach assumes that prices move away from fair value, up or down, because of the <span class="k">fear and greed</span> of market participants.</p>
+<p class="ptr">The book says the biases are covered "in Chapter 11". In this edition they appear in Chapter 12 (Fundamentals of Risk and Return).</p>
+</section>
+
+<section class="sec" id="s7"><span class="secno">4.7</span><h2>Commodity research</h2>
+<p>Commodity fundamental analysis studies the economic, political and natural factors that move <b>supply and demand</b>, and so the price. It covers seasonality, macro conditions, news, currency moves, interest rates, weather, inventory levels and government action.</p>
+</div>
+
+<figure class="fig" id="fig-supdem"><figcaption>What moves commodity prices<span>4.7.1 to 4.7.3</span></figcaption>
+<div class="grid g3">
+<div class="box"><span class="tag">Supply</span><ul><li><b>Production</b> from farms, oil wells, mines</li><li><b>Weather</b>: floods, drought, cyclones</li><li><b>Government policy</b>: tariffs, levies, trade limits, subsidies</li><li><b>Geopolitics</b>: sanctions, wars, trade disputes</li><li><b>Input costs</b>: energy, wages, technology</li></ul></div>
+<div class="box"><span class="tag">Demand</span><ul><li><b>Global growth</b>: higher GDP, more demand for metals, energy, farm goods</li><li><b>Population and cities</b>: more food and energy used</li><li><b>Substitution</b>: switching between commodities</li><li><b>Seasons</b>: fuel in winter or summer, festive food</li><li><b>Tastes</b>: organic food, renewables, electric vehicles</li></ul></div>
+<div class="box"><span class="tag">Macro indicators</span><ul><li><b>Inflation</b>: gold and silver act as an inflation hedge</li><li><b>Interest rates</b>: higher rates strengthen the USD, lowering commodity prices</li><li><b>Trade and industrial data</b>: PMI and industrial output move metal and energy demand</li></ul></div>
+</div></figure>
+
+<div class="col">
+<section class="sec" id="s8"><span class="secno">4.8</span><h2>Case studies: gold and crude oil</h2>
+<h3>Gold</h3>
+<p>Uses: jewellery, industry, investment, central bank reserves. Gold is one of the most traded commodities in the world. It is an <span class="k">inflation hedge</span> and a <span class="k">safe haven</span>: when shares, bonds and currencies do badly, investors turn to gold. The book says gold has an <b>inverse relationship</b> with stocks, bonds and currencies.</p>
+</div>
+
+<figure class="fig" id="fig-gold"><figcaption>Gold: who wants it, who makes it<span>Demand by sector, and the top five producers and consumers, as per the book</span></figcaption>
+<div class="pct"><span>Jewellery</span><span class="wbar"><i style="width:100%"></i></span><b>47%</b></div>
+<div class="pct"><span>Investment</span><span class="wbar"><i style="width:51%"></i></span><b>24%</b></div>
+<div class="pct"><span>Central banks</span><span class="wbar"><i style="width:49%"></i></span><b>23%</b></div>
+<div class="pct"><span>Technology</span><span class="wbar"><i style="width:12.8%"></i></span><b>6%</b></div>
+<div class="grid g2" style="margin-top:14px">
+<div class="box"><h4>Top producers</h4><p>China, Australia, Russia, USA, Canada</p></div>
+<div class="box"><h4>Top consumers</h4><p>China, <b>India</b>, USA, Germany, Saudi Arabia</p></div>
+</div></figure>
+
+<div class="col">
+<h3>Crude oil</h3>
+<p>Called the "mother of the global financial market" and "black gold". Uses: fuel, plastics (polymers), lubricating oil, naphtha, bitumen. Distilled at different temperatures, it gives bitumen, lubricating oils, fuel oil, diesel, paraffin, naphtha and gasoline. Any supply and demand imbalance raises inflation worries around the world.</p>
+<p>Crude quality depends on <b>density</b> and <b>sulphur content</b>.</p>
+</div>
+
+<figure class="fig" id="fig-crude"><figcaption>Two oil benchmarks, and the big players</figcaption>
+<div class="grid g2">
+<div class="box"><span class="tag">WTI</span><h4>West Texas Intermediate</h4><p>High quality crude, produced and traded in the <b>US</b>. API 39&deg;, sulphur 0.24%. Trades on <b>NYMEX</b>.</p></div>
+<div class="box"><span class="tag">Brent</span><h4>Brent</h4><p>Benchmark for crude from <b>Europe and Africa</b>, from the North Sea (UK). API 38&deg;, sulphur 0.4%. Trades on <b>ICE</b>.</p></div>
+<div class="box"><h4>Top producers</h4><p>USA, Russia, Saudi Arabia, Canada, China</p></div>
+<div class="box"><h4>Top consumers</h4><p>USA, China, <b>India</b>, Germany, Japan</p></div>
+</div>
+<p class="ptr" style="margin-top:8px">Supply is controlled by the US and <b>OPEC+</b> (13 OPEC members plus Russia). The Middle East holds <b>48%</b> of known oil reserves. The book also says OPEC owns almost 40% of the world's crude oil, accounts for 75% of proven reserves and exports 55% of the oil sold worldwide.</p>
+</figure>
+
+<figure class="fig" id="fig-drivers"><figcaption>What pushes the price up or down<span>From the book's two tables. Watch the rows that differ.</span></figcaption>
+<div class="scroll"><table class="cmp updown">
+<thead><tr><th>Factor</th><th>Gold goes up when...</th><th>Crude goes up when...</th></tr></thead>
+<tbody>
+<tr><th>US dollar</th><td class="up">Dollar weaker</td><td class="up">Dollar weaker</td></tr>
+<tr><th>Economic data</th><td class="dn">Data weaker</td><td class="up">Economy expanding</td></tr>
+<tr><th>Stock market</th><td class="dn">Bear (falling) market</td><td class="up">Bull (rising) market</td></tr>
+<tr><th>Politics</th><td>Unstable</td><td>Unstable, especially in the Middle East</td></tr>
+<tr><th>Supply</th><td>Lower supply</td><td>OPEC limits output; US output falls; US rig count falls</td></tr>
+<tr><th>Inventory</th><td>&nbsp;</td><td>US inventory falling</td></tr>
+<tr><th>Demand</th><td>Stronger demand; ETF and central bank buying</td><td>&nbsp;</td></tr>
+<tr><th>Monetary policy</th><td>Expansionary (rate cuts)</td><td>&nbsp;</td></tr>
+<tr><th>Inflation</th><td>Higher inflation</td><td>&nbsp;</td></tr>
+<tr><th>Bond market</th><td>Lower bond yields</td><td>&nbsp;</td></tr>
+<tr><th>Weather</th><td>&nbsp;</td><td>Hurricanes in the Gulf of Mexico</td></tr>
+</tbody></table></div>
+<p class="ptr" style="margin-top:8px">Blank cells: the book lists that factor for only one of the two. Red text: the two commodities move opposite ways.</p>
+</figure>
+
+<div class="col">
+<div class="trap">A <b>weak</b> economy and a <b>falling</b> stock market push gold <b>up</b> (safe haven). The same conditions push crude <b>down</b> (less demand). A weaker dollar helps <b>both</b>.</div>
+<div class="analogy">Gold is an umbrella: people reach for it when the weather turns bad. Crude oil is fuel for the car: people buy more of it when business is busy and everyone is on the move.</div>
+</section>
+
+<section class="sec" id="s9"><span class="secno">4.9</span><h2>Historical events</h2>
+</div>
+
+<figure class="fig" id="fig-history"><figcaption>Two oil shocks<span>The book's two examples</span></figcaption>
+<div class="grid g2">
+<div class="box bd"><span class="tag">1973</span><h4>First oil crisis</h4><p>OPEC quadrupled the price to almost <b>$12 a barrel</b> and stopped oil exports to the US, Japan and western Europe, which used over half the world's oil.</p></div>
+<div class="box bd"><span class="tag">20 April 2020</span><h4>WTI goes negative</h4><p>The May contract expired the next day. About 90% of the world was in lockdown. No buyer wanted to take delivery at <b>Cushing, Oklahoma</b>, so holders sold at any price, even below zero.</p></div>
+</div></figure>
+
+<div class="col">
+<div class="why"><b>Why could a price go below zero?</b>WTI futures are settled by <b>physical delivery</b> (see "Delivery" in Chapter 3). A buyer holding the contract at expiry must actually take the oil. With nowhere to move or store it, holders paid others to take the contracts off their hands.</div>
+
+<section class="sec" id="s10"><span class="secno">4.10</span><h2>How commodities move shares</h2>
+<p>Many listed companies use commodities as raw material. When commodity prices change, their profit margins change, and so do their share prices.</p>
+</div>
+
+<figure class="fig" id="fig-oilstocks"><figcaption>Crude oil rises: winners and losers<span>The book's example</span></figcaption>
+<div class="flow">
+<div class="step hl"><h4>Crude price rises</h4><p>Input cost changes</p></div><div class="arrow"></div>
+<div class="step gd"><h4>Oil producers</h4><p>Profits improve</p></div><div class="arrow"></div>
+<div class="step bd"><h4>Airlines and logistics</h4><p>Costs rise, profits fall</p></div>
+</div></figure>
+
+<div class="col">
+<p>Commodities are traded globally, so their prices signal changes in world demand and supply. Equity markets, which care about growth, react to those signals. Example: a <b>fall in copper prices</b> may signal slowing industrial demand, dragging down metal and infrastructure stocks.</p>
+</section>
+
+<section class="sec" id="traps"><h2>All exam traps in this chapter</h2>
+<ol class="traplist">
+<li>Traders profit from price patterns without a change in value; investors look for growth in value. Speculation is short term.</li>
+<li>Trader anomalies are corrected within about 3 to 6 months. A day trader's cycle is one day.</li>
+<li>Active: beat the asset class. Passive: earn the asset class return, usually by buying the index.</li>
+<li>Research = gathering information. Analysis = processing it into a conclusion.</li>
+<li>Mosaic analysis is allowed. Insider information (material, non-public, price-sensitive) is not.</li>
+<li>Whether information is "insider" depends on its source, impact and certainty.</li>
+<li>Technical analysis: price and volume, short term. Moving averages smooth day-to-day swings.</li>
+<li>A trend without volume support may be weak. A break on strong volume signals a stronger trend.</li>
+<li>Fundamental analysis is long term and contradicts the Efficient Market Hypothesis.</li>
+<li>Fundamental analysis has three baskets: economy, industry, company.</li>
+<li>Pure quantitative analysis is limited by changing accounting standards and business models.</li>
+<li>Behavioural finance: fear and greed push prices from fair value.</li>
+<li>Higher interest rates strengthen the USD and lower commodity prices.</li>
+<li>Gold demand: jewellery 47%, investment 24%, central banks 23%, technology 6%.</li>
+<li>Gold rises in a bear stock market; crude rises in a bull stock market.</li>
+<li>WTI: US, NYMEX, sulphur 0.24%. Brent: North Sea, ICE, sulphur 0.4%.</li>
+<li>OPEC+ = 13 OPEC members plus Russia. Middle East: 48% of known reserves.</li>
+<li>WTI went negative on 20 April 2020; delivery point Cushing, Oklahoma.</li>
+<li>1973: OPEC quadrupled oil to almost $12 a barrel.</li>
+<li>Rising crude helps oil producers, hurts airlines and logistics firms.</li>
+</ol>
+</section>
+
+<section class="sec" id="talk"><h2>For the group discussion</h2>
+<ol class="talk">
+<li>Are you more of a trader or an investor by temperament? What would change your mind?</li>
+<li>A friend who works at a listed company says "we are very busy this quarter". Is using that insider trading or mosaic analysis? What if they said "we are about to announce a merger"?</li>
+<li>If markets were fully efficient, would research analysts have a job?</li>
+<li>Name three Indian listed companies that would be hurt by a rise in crude oil, and three that would gain.</li>
+<li>Why do you think India is among the top consumers of both gold and crude oil?</li>
+</ol>
+</section>
+</div>
+
+<footer>Notes built from the NISM Series XV workbook (February 2026 version). Study aid only.</footer>
+</div>
+</div><div class="view" id="v-cards" hidden><div class="wrap"><div class="fc-wrap">
+<div class="fc-top"><span id="fc-count" class="ptr"></span><label class="ptr"><input type="checkbox" id="fc-missed"> Only cards I missed</label></div>
+<div class="fc-prog"><div id="fc-bar"></div></div>
+<div class="card3d" id="fc-card" tabindex="0" role="button" aria-label="Flip card"><div class="inner">
+<div class="face"><span class="lbl" id="fc-pos"></span><div class="front-txt" id="fc-front"></div></div>
+<div class="face back"><span class="lbl">Answer</span><div class="back-txt" id="fc-back"></div></div></div></div>
+<p class="hint">Tap the card to flip. On a keyboard: space flips, right arrow = got it, left arrow = again.</p>
+<div class="btns"><button class="btn bad" id="fc-bad">Again</button><button class="btn good" id="fc-good">Got it</button></div>
+<div class="btns"><button class="btn sm" id="fc-shuffle">Shuffle</button><button class="btn sm" id="fc-reset">Clear progress</button></div>
+</div></div></div><div class="view" id="v-quiz" hidden><div class="wrap"><div class="qz">
+<div id="qz-setup" class="qz-setup"><h2>Test yourself</h2><p class="ptr" id="qz-counts"></p>
+<p>Scoring works like the real exam: +1 for a right answer, minus 0.25 for a wrong one, 0 for a skip. Skipping is allowed.</p>
+<div class="box"><h4>Which questions?</h4>
+<label><input type="radio" name="qset" value="quick" checked> Quick 10 (random MCQs)</label>
+<label><input type="radio" name="qset" value="mcq"> All MCQs</label>
+<label><input type="radio" name="qset" value="case"> Case sets only (the exam has 5 of these, 4 questions each)</label>
+<label><input type="radio" name="qset" value="all"> Everything</label>
+<label><input type="radio" name="qset" value="missed"> Only questions I got wrong before <span id="qz-missedn" class="ptr"></span></label></div>
+<div class="box"><h4>How?</h4>
+<label><input type="radio" name="qmode" value="practice" checked> Practice: see the answer after each question</label>
+<label><input type="radio" name="qmode" value="exam"> Exam: see everything at the end</label></div>
+<div class="btns" style="justify-content:flex-start"><button class="btn pri" id="qz-start">Start</button></div></div>
+<div id="qz-run" hidden><div class="qz-head"><span id="qz-pos"></span><span id="qz-modelbl"></span></div>
+<div id="qz-q"></div>
+<div class="btns" style="justify-content:space-between"><button class="btn sm" id="qz-prev">Back</button><span><button class="btn sm" id="qz-skip">Skip</button> <button class="btn pri sm" id="qz-check">Check</button> <button class="btn sm" id="qz-next">Next</button></span></div>
+<div class="btns" style="justify-content:flex-start"><button class="btn sm" id="qz-quit">Stop and go back</button></div></div>
+<div id="qz-end" hidden><h2>Your result</h2><div class="score" id="qz-score"></div><p class="verdict" id="qz-verdict"></p><p class="ptr" id="qz-penalty"></p>
+<div class="btns" style="justify-content:flex-start"><button class="btn pri" id="qz-copy">Copy result for the group</button><button class="btn" id="qz-again">Try another set</button></div>
+<h3>Review what you missed</h3><div class="review" id="qz-review"></div></div>
+</div></div></div><div class="toast" id="toast" role="status"></div>
+<script>window.__DATA__={"id": "ch04", "short": "Ch4", "title": "Chapter 4: Fundamentals of research", "cards": [{"f": "Investing (securities market sense)", "b": "Committing money upfront to earn returns over the investment horizon, after studying safety, income and growth potential."}, {"f": "How does a trader profit?", "b": "From the <b>spread</b> between buying and selling price, without any change in the asset's underlying value."}, {"f": "Speculator, chartist, day trader", "b": "Speculator: bets on short-term moves. Chartist: uses price patterns and charts. Day trader: whole cycle is one day."}, {"f": "Within how long are traders' price anomalies corrected?", "b": "About <b>3 to 6 months</b>, with no change in fundamental value."}, {"f": "How can an asset's value increase, for an investor?", "b": "Cash flow rises without a proportionate rise in risk, or risk falls without a proportionate fall in cash flow."}, {"f": "Active investing", "b": "Picks individual securities; buys below intrinsic value, sells above. Goal: <b>beat</b> the asset class return."}, {"f": "Passive investing", "b": "Buys a broad set representing the asset class, usually an index. Goal: <b>earn</b> the asset class return."}, {"f": "Research versus analysis", "b": "Research: obtaining the information needed. Analysis: processing it to reach a conclusion."}, {"f": "Why is the annual report not enough?", "b": "Published once a year so it dates; covers industry and economy only lightly."}, {"f": "Primary research examples", "b": "Visiting company facilities; speaking to customers, suppliers, employees."}, {"f": "Insider information", "b": "Material, non-public, price-sensitive information that would immediately affect buy or sell decisions once published."}, {"f": "Three tests of whether information is insider information", "b": "Its <b>source</b> (reliability), its <b>impact</b>, its <b>certainty</b>."}, {"f": "Mosaic analysis", "b": "Combining pieces of information, each not significant alone, to reach an insight. <b>Acceptable.</b>"}, {"f": "Book example: insider or mosaic? CEO mentions an unpublished acquisition.", "b": "<b>Insider information.</b> (An employee mentioning a busier purchase department is not.)"}, {"f": "Core assumption of technical analysis", "b": "All information (fundamentals, economy, sentiment) is already reflected in the price."}, {"f": "Three essential elements of price behaviour in technical analysis", "b": "Past <b>prices</b> (trend), <b>volume</b> (strength), <b>time span</b>."}, {"f": "Support and resistance", "b": "Support: level with heavy buying interest. Resistance: level with heavy selling interest."}, {"f": "What smooths day-to-day price fluctuations in technical analysis?", "b": "<b>Moving averages.</b>"}, {"f": "Three chart types named in Chapter 4", "b": "Line, bar, candlestick."}, {"f": "Why is technical analysis less suited to long-term investing?", "b": "Fundamentals can change over the long term, making past price trends unreliable."}, {"f": "Premise of fundamental analysis", "b": "A share is part ownership, so in the long run its value follows the company's profits and cash flows."}, {"f": "Which hypothesis does fundamental analysis contradict?", "b": "The <b>Efficient Market Hypothesis</b>: prices already reflect all relevant information."}, {"f": "Three baskets of fundamental analysis", "b": "Economic analysis, industry analysis, company analysis."}, {"f": "Main limitation of pure quantitative (econometric) fundamental analysis", "b": "Lack of comparable data: changing <b>accounting standards and business models</b> make past data less useful."}, {"f": "Behavioural approach: why do prices leave fair value?", "b": "<b>Fear and greed</b> of market participants."}, {"f": "Five supply factors for commodities", "b": "Production, weather, government policies, geopolitical events, input costs."}, {"f": "Five demand factors for commodities", "b": "Global growth, population and urbanisation, substitution, seasonal demand, consumer preferences."}, {"f": "Higher interest rates: effect on commodities?", "b": "Strengthen the USD, <b>lowering</b> commodity prices."}, {"f": "Gold demand by sector", "b": "Jewellery <b>47%</b>, investment 24%, central banks 23%, technology 6%."}, {"f": "Gold: top producers and consumers", "b": "Producers: China, Australia, Russia, USA, Canada. Consumers: China, India, USA, Germany, Saudi Arabia."}, {"f": "Gold in a bear stock market?", "b": "<b>Positive</b> for gold (safe haven). Bull market is negative for gold."}, {"f": "Crude oil in a bull stock market?", "b": "<b>Positive</b> for crude. Bear market is negative."}, {"f": "WTI versus Brent", "b": "WTI: US, API 39&deg;, sulphur 0.24%, NYMEX. Brent: North Sea (UK), Europe and Africa benchmark, API 38&deg;, sulphur 0.4%, ICE."}, {"f": "Two measures of crude oil quality", "b": "<b>Density</b> and <b>sulphur content</b>."}, {"f": "OPEC+", "b": "13 OPEC members plus Russia."}, {"f": "Crude: top producers and consumers", "b": "Producers: USA, Russia, Saudi Arabia, Canada, China. Consumers: USA, China, India, Germany, Japan."}, {"f": "Share of known oil reserves in the Middle East", "b": "<b>48%</b>."}, {"f": "WTI crude went negative on...", "b": "<b>20 April 2020</b>. May contract expiring; lockdowns; nobody would take delivery at Cushing, Oklahoma."}, {"f": "The 1973 oil crisis", "b": "OPEC quadrupled the price to almost <b>$12 a barrel</b> and embargoed the US, Japan and western Europe."}, {"f": "Rising crude: who gains, who loses?", "b": "Gains: oil producers. Loses: airlines and logistics (higher input costs)."}, {"f": "What might falling copper prices signal?", "b": "Slowing industrial demand, hurting metal and infrastructure stocks."}], "mcqs": [{"id": "4.1", "q": "Speculation is a ______ call made with leveraged funds, unlike investment which is a ______ disciplined activity for creating wealth.", "o": ["Medium term; Long term", "Short term; Long term", "Long term; Medium term", "Long term; Short term"], "a": 1, "w": "Book sample question. Speculation is short term; investing is long term."}, {"id": "4.2", "q": "In technical analysis, the impact of day-to-day fluctuations in prices is smoothened by:", "o": ["Increasing the time period of price charts", "Using moving averages", "Using a liquidity parameter along with prices", "None of the above"], "a": 1, "w": "Book sample question. Chartists use moving averages to reduce the effect of daily swings."}, {"id": "4.3", "q": "Which statement about the limitation of the quantitative approach to fundamental analysis is correct?", "o": ["Investing is an intuitive art with very limited scope for quantitative analysis", "Changes in accounting standards, business structures and regulations limit its effectiveness in forecasting", "Quantitative approach cannot be used to analyse the economy", "None of the above"], "a": 1, "w": "Book sample question. Changing standards and business models make past data less comparable."}, {"id": "4.4", "q": "A trader primarily attempts to earn profit by:", "o": ["Buying all stocks in an index", "Earning a spread between selling and buying price without a necessary change in the asset's value", "Collecting dividends over many years", "Holding assets until their cash flows grow"], "a": 1, "w": "That is the book's definition of a trader. The others describe investing."}, {"id": "4.5", "q": "A trader whose entire buying and selling cycle is completed within one day is called a:", "o": ["Chartist", "Passive investor", "Arbitrageur", "Day trader"], "a": 3, "w": "The book defines day traders by their one-day cycle. Chartists are defined by their use of charts."}, {"id": "4.6", "q": "According to the book, the value of an asset can increase if:", "o": ["Its price pattern repeats", "It generates higher cash flow without a proportionate increase in risk", "Its face value is raised", "More traders buy it on the same day"], "a": 1, "w": "Or if risk falls without a proportionate fall in cash flow."}, {"id": "4.7", "q": "The objective of a passive investor is to:", "o": ["Pick undervalued individual stocks", "Time the market using charts", "Beat the return of the broader asset class", "Earn the rate of return provided by the chosen asset class"], "a": 3, "w": "Beating the asset class is the active investor's goal."}, {"id": "4.8", "q": "Which of the following is true of active investing compared with passive investing?", "o": ["It usually means buying all the stocks in an index", "It needs more effort and more transactions", "It involves no analysis of individual securities", "Its goal is to match the index return"], "a": 1, "w": "Active strategies evaluate every security constantly, so they need more effort and trades."}, {"id": "4.9", "q": "In the work of a fundamental research analyst, 'research' refers to:", "o": ["Obtaining all the information needed to answer a research question", "Reaching a buy or sell conclusion", "Calculating the target price", "Writing the final report"], "a": 0, "w": "Research gathers information. Analysis processes it into a conclusion."}, {"id": "4.10", "q": "Visiting a company's factory and speaking to its customers and suppliers is an example of:", "o": ["Secondary research", "Technical analysis", "Insider trading", "Primary research"], "a": 3, "w": "The book lists facility visits and speaking to customers, suppliers and employees as primary research."}, {"id": "4.11", "q": "Which of the following would the book treat as insider information?", "o": ["The company's annual report", "The CEO talking about an unpublished acquisition proposal", "An employee mentioning a heavier workload in the purchase department", "Data from a published market research report"], "a": 1, "w": "The CEO's statement is material, non-public and price-sensitive. The employee's remark is not insider information, per the book."}, {"id": "4.12", "q": "Combining pieces of information that individually are not significant to reach a critical insight is called:", "o": ["Front running", "Technical analysis", "Mosaic analysis", "Insider trading"], "a": 2, "w": "The book says mosaic analysis is acceptable."}, {"id": "4.13", "q": "Whether information is considered insider information depends on:", "o": ["Only the seniority of the person sharing it", "Whether the analyst paid for it", "Only whether it is written down", "Its source, its impact and its certainty"], "a": 3, "w": "The book names source (reliability), impact and certainty."}, {"id": "4.14", "q": "Technical analysis assumes that:", "o": ["All information affecting a share is already reflected in its price", "Prices move randomly and cannot be forecast", "Price always equals intrinsic value", "Company fundamentals must be studied first"], "a": 0, "w": "Technicians focus on price and volume because they believe the price already includes all information."}, {"id": "4.15", "q": "Which is NOT one of the three essential elements of price behaviour in technical analysis?", "o": ["Trading volume", "History of past prices", "Dividend history", "Time span"], "a": 2, "w": "The three elements are past prices, volume and time span."}, {"id": "4.16", "q": "A price level at which there is a lot of buying interest is called:", "o": ["Support", "Moving average", "Breakout", "Resistance"], "a": 0, "w": "Support = buying interest. Resistance = selling interest."}, {"id": "4.17", "q": "A stock is rising, but trading volumes are low. According to technical analysis this may indicate:", "o": ["That the stock is undervalued", "A confirmed breakout", "A very strong trend", "Weakness in the trend"], "a": 3, "w": "The book says a trend not supported by volumes may be weak."}, {"id": "4.18", "q": "Technical analysis is considered less suitable for:", "o": ["Long-term investing", "Identifying support levels", "Short-term trading", "Studying volumes"], "a": 0, "w": "Fundamentals change over the long term, so past price trends become unreliable."}, {"id": "4.19", "q": "Fundamental analysis is in contradiction with which idea?", "o": ["Dow Theory", "Mosaic analysis", "Efficient Market Hypothesis", "Top-down approach"], "a": 2, "w": "EMH says prices already reflect all information. Fundamental analysis looks for prices that differ from fair value."}, {"id": "4.20", "q": "According to fundamental analysis, if the market price is above the intrinsic value, the investor should:", "o": ["Switch to technical analysis", "Hold until the next dividend", "Buy more", "Sell the share or avoid investing"], "a": 3, "w": "Price above value is unattractive; price below value is a buying opportunity."}, {"id": "4.21", "q": "The questions studied in fundamental analysis are grouped into three baskets. Which is NOT one of them?", "o": ["Economic analysis", "Company analysis", "Industry analysis", "Chart analysis"], "a": 3, "w": "Charts belong to technical analysis."}, {"id": "4.22", "q": "Proponents of the behavioural approach believe prices move away from fair value because of:", "o": ["Fear and greed of market participants", "Changes in accounting standards", "Central bank policy only", "Moving averages"], "a": 0, "w": "Behavioural biases, driven by fear and greed, push prices away from fair value."}, {"id": "4.23", "q": "Which of the following is a demand-side factor for commodities?", "o": ["Production from mines", "Weather conditions", "Population growth and urbanisation", "Input costs"], "a": 2, "w": "Weather, input costs and production are supply factors."}, {"id": "4.24", "q": "As per the book, higher interest rates tend to:", "o": ["Weaken the USD and raise commodity prices", "Strengthen the USD and lower commodity prices", "Have no effect on commodities", "Raise gold demand from jewellers"], "a": 1, "w": "The book says higher rates strengthen the USD, lowering commodity prices."}, {"id": "4.25", "q": "Which sector accounts for the largest share of gold demand, as per the book?", "o": ["Jewellery", "Technology", "Investment", "Central banks"], "a": 0, "w": "Jewellery 47%, investment 24%, central banks 23%, technology 6%."}, {"id": "4.26", "q": "Which of the following is positive for gold prices as per the book?", "o": ["Stronger economic data", "Higher bond yields", "A bear stock market", "A stronger US dollar"], "a": 2, "w": "Gold is a safe haven. The other three are listed as negative for gold."}, {"id": "4.27", "q": "Which of the following is positive for crude oil prices as per the book?", "o": ["Falling US inventory", "A bearish stock market", "Rising US rig count", "Production rise by OPEC"], "a": 0, "w": "Falling inventory means tighter supply. The others push crude down."}, {"id": "4.28", "q": "West Texas Intermediate (WTI) crude oil is traded on:", "o": ["MCX", "ICE", "NYMEX", "LME"], "a": 2, "w": "WTI trades on NYMEX. Brent trades on ICE."}, {"id": "4.29", "q": "Brent crude comes from the ______ and is a pricing benchmark for crude from Europe and Africa.", "o": ["Caspian Sea", "Persian Gulf", "Gulf of Mexico", "North Sea"], "a": 3, "w": "Brent comes from the North Sea in the United Kingdom."}, {"id": "4.30", "q": "OPEC+ consists of:", "o": ["13 OPEC members plus the USA", "13 OPEC members plus Russia", "Only Middle East producers", "OPEC members plus China and India"], "a": 1, "w": "The book defines OPEC+ as 13 OPEC members plus Russia."}, {"id": "4.31", "q": "Which country appears in the book's list of top consumers of both gold and crude oil?", "o": ["India", "Saudi Arabia", "Australia", "Canada"], "a": 0, "w": "India is a top consumer of both. (China and USA are too, but are not among these options.)"}, {"id": "4.32", "q": "On 20 April 2020, WTI crude prices fell below zero mainly because:", "o": ["The contract was expiring and buyers could not take physical delivery during lockdowns", "The US banned oil exports", "Brent crude replaced WTI as the benchmark", "OPEC quadrupled production overnight"], "a": 0, "w": "WTI is deliverable at Cushing, Oklahoma. With lockdowns, holders sold rather than take delivery."}, {"id": "4.33", "q": "In the 1973 oil crisis, OPEC:", "o": ["Merged with Russia to form OPEC+", "Cut prices to $12 a barrel", "Quadrupled prices to almost $12 a barrel and stopped exports to the US, Japan and western Europe", "Allowed negative prices"], "a": 2, "w": "That is the book's account of the first oil crisis."}, {"id": "4.34", "q": "A sharp rise in crude oil prices is most likely to hurt the profitability of:", "o": ["Oil exploration firms", "Oil producing companies", "Airline companies", "All of the above"], "a": 2, "w": "Higher fuel costs hurt airlines and logistics firms; oil producers gain."}], "cases": [{"id": "C6", "title": "Priya's first week as an analyst", "text": "Priya joins an independent research firm. Her manager asks her to study a listed cement company. She reads its annual report, buys an industry report, and visits two dealers. At a family wedding, a cousin who is the company's finance head tells her the board will approve a merger next week. Separately, a truck driver at the plant tells her trucks have been queuing longer than usual.", "qs": [{"q": "Visiting the dealers is an example of:", "o": ["Primary research", "Passive investing", "Technical analysis", "Secondary research"], "a": 0, "w": "Speaking directly to people in the business is primary research. Buying the industry report is secondary research."}, {"q": "The cousin's news about the merger is best described as:", "o": ["Public information", "Technical signal", "Mosaic analysis", "Insider information that Priya must not use"], "a": 3, "w": "It is material, non-public, price-sensitive and from a reliable insider."}, {"q": "Priya combines the truck queues with dealer feedback and public data to conclude demand is strong. This is:", "o": ["Insider trading", "Mosaic analysis, which is acceptable", "Behavioural bias", "Not allowed because the truck driver is not an official"], "a": 1, "w": "Small pieces, none significant alone, combined into an insight: mosaic analysis."}, {"q": "Her manager wants a view on whether the share is worth buying for the next three years. Which approach is most suited?", "o": ["Day trading", "Technical analysis", "Fundamental analysis", "Pure chart reading"], "a": 2, "w": "Fundamental analysis is focused on the long term. Technical analysis is less suited to long-term investing."}]}, {"id": "C7", "title": "Oil shock at the morning meeting", "text": "At a morning meeting, analysts discuss the news: OPEC has announced production cuts, the US dollar has weakened, and US crude inventories have fallen. The stock market is falling on growth worries. The team covers an oil producer, an airline and a jewellery retailer.", "qs": [{"q": "Based on the book's price drivers, the OPEC cut, weaker dollar and falling US inventory are all:", "o": ["Positive only for Brent, not WTI", "Negative for crude oil prices", "Positive for crude oil prices", "Neutral for crude oil"], "a": 2, "w": "All three are listed as positive factors for crude."}, {"q": "If crude prices rise, which company's profitability is most likely to fall?", "o": ["The airline", "Both equally", "Neither", "The oil producer"], "a": 0, "w": "Fuel is a major input cost for airlines."}, {"q": "A falling stock market on growth worries is, as per the book:", "o": ["Negative for gold but positive for crude", "Positive for both", "Negative for both", "Positive for gold but negative for crude"], "a": 3, "w": "Gold is a safe haven in bear markets. Crude does better in bull markets."}, {"q": "Which statement about the weaker US dollar is correct?", "o": ["It is positive for crude only", "It is positive for both gold and crude", "It is positive for gold only", "It is negative for both"], "a": 1, "w": "Both of the book's tables list a weaker dollar as positive."}]}]};</script>
+<script></script><script>
+(function(){
+const DATA = window.__DATA__;
+const KEY = 'nismra:'+DATA.id+':';
+const store = {
+  get(k,d){try{const v=localStorage.getItem(KEY+k);return v?JSON.parse(v):d}catch(e){return d}},
+  set(k,v){try{localStorage.setItem(KEY+k,JSON.stringify(v))}catch(e){}}
+};
+const $=(s,r=document)=>r.querySelector(s);
+const el=(t,a={},h='')=>{const e=document.createElement(t);for(const k in a){if(k==='class')e.className=a[k];else e.setAttribute(k,a[k])}if(h)e.innerHTML=h;return e};
+function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),1600)}
+/* theme */
+const tb=$('#themebtn');
+function applyTheme(t){if(t)document.documentElement.setAttribute('data-theme',t);else document.documentElement.removeAttribute('data-theme');tb.textContent=(t==='dark'||(!t&&matchMedia('(prefers-color-scheme: dark)').matches))?'\u2600':'\u263E'}
+let th=null;try{th=localStorage.getItem('nismra:theme')}catch(e){}
+applyTheme(th);
+tb.addEventListener('click',()=>{const dark=document.documentElement.getAttribute('data-theme')==='dark'||(!document.documentElement.getAttribute('data-theme')&&matchMedia('(prefers-color-scheme: dark)').matches);const n=dark?'light':'dark';applyTheme(n);try{localStorage.setItem('nismra:theme',n)}catch(e){}});
+/* tabs */
+const tabs=[...document.querySelectorAll('.tab')];
+function show(v){tabs.forEach(t=>t.setAttribute('aria-selected',t.dataset.v===v));document.querySelectorAll('.view').forEach(x=>x.hidden=x.id!=='v-'+v);if(v==='cards')renderCard();window.scrollTo(0,0);try{history.replaceState(null,'','#'+v)}catch(e){}}
+tabs.forEach(t=>t.addEventListener('click',()=>show(t.dataset.v)));
+/* ---------- flashcards ---------- */
+const cards=DATA.cards;
+let known=new Set(store.get('known',[]));
+let missed=new Set(store.get('missed',[]));
+let deck=[],pos=0,onlyMissed=false;
+function buildDeck(shuffle){deck=cards.map((c,i)=>i).filter(i=>!onlyMissed||missed.has(i));if(shuffle){for(let i=deck.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[deck[i],deck[j]]=[deck[j],deck[i]]}}pos=0}
+buildDeck(false);
+function renderCard(){
+  const c3=$('#fc-card');c3.classList.remove('flip');
+  const done=known.size;$('#fc-bar').style.width=(100*done/cards.length)+'%';
+  $('#fc-count').textContent=done+' of '+cards.length+' marked known';
+  if(!deck.length){$('#fc-front').innerHTML='No cards here.';$('#fc-back').innerHTML='Switch off "Only cards I missed" to see the full deck.';$('#fc-pos').textContent='';return}
+  if(pos>=deck.length){$('#fc-front').innerHTML='Deck done.';$('#fc-back').innerHTML='Press Shuffle to go again, or study only the cards you missed.';$('#fc-pos').textContent='';return}
+  const c=cards[deck[pos]];$('#fc-front').innerHTML=c.f;$('#fc-back').innerHTML=c.b;$('#fc-pos').textContent='Card '+(pos+1)+' of '+deck.length;
+}
+function flip(){$('#fc-card').classList.toggle('flip')}
+$('#fc-card').addEventListener('click',flip);
+$('#fc-card').addEventListener('keydown',e=>{if(e.key===' '||e.key==='Enter'){e.preventDefault();flip()}});
+function mark(ok){if(pos>=deck.length)return;const i=deck[pos];if(ok){known.add(i);missed.delete(i)}else{missed.add(i);known.delete(i)}store.set('known',[...known]);store.set('missed',[...missed]);pos++;renderCard()}
+$('#fc-good').addEventListener('click',()=>mark(true));
+$('#fc-bad').addEventListener('click',()=>mark(false));
+$('#fc-shuffle').addEventListener('click',()=>{buildDeck(true);renderCard()});
+$('#fc-missed').addEventListener('change',e=>{onlyMissed=e.target.checked;buildDeck(false);renderCard()});
+$('#fc-reset').addEventListener('click',()=>{known.clear();missed.clear();store.set('known',[]);store.set('missed',[]);buildDeck(false);renderCard();toast('Progress cleared')});
+document.addEventListener('keydown',e=>{if($('#v-cards').hidden)return;if(e.key==='ArrowRight')mark(true);if(e.key==='ArrowLeft')mark(false)});
+/* ---------- quiz ---------- */
+const Q=[];DATA.mcqs.forEach(q=>Q.push(Object.assign({kind:'mcq'},q)));
+(DATA.cases||[]).forEach(cs=>cs.qs.forEach((q,k)=>Q.push(Object.assign({kind:'case',caseTitle:cs.title,caseText:cs.text,id:cs.id+'-'+(k+1)},q))));
+let run=null;
+function pick(set){let arr;
+  if(set==='quick'){arr=Q.filter(q=>q.kind==='mcq').slice();for(let i=arr.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[arr[i],arr[j]]=[arr[j],arr[i]]}arr=arr.slice(0,10)}
+  else if(set==='mcq')arr=Q.filter(q=>q.kind==='mcq');
+  else if(set==='case')arr=Q.filter(q=>q.kind==='case');
+  else if(set==='missed'){const m=new Set(store.get('qmissed',[]));arr=Q.filter(q=>m.has(q.id))}
+  else arr=Q.slice();
+  return arr}
+function start(){const set=document.querySelector('input[name=qset]:checked').value;const mode=document.querySelector('input[name=qmode]:checked').value;const qs=pick(set);
+  if(!qs.length){toast('No questions in this set yet');return}
+  run={qs,mode,i:0,ans:qs.map(()=>null),checked:qs.map(()=>false)};$('#qz-setup').hidden=true;$('#qz-end').hidden=true;$('#qz-run').hidden=false;renderQ()}
+function renderQ(){const q=run.qs[run.i];const box=$('#qz-q');box.innerHTML='';
+  $('#qz-pos').textContent='Question '+(run.i+1)+' of '+run.qs.length;
+  $('#qz-modelbl').textContent=run.mode==='exam'?'Exam mode: answers shown at the end':'Practice mode';
+  if(q.kind==='case'){box.appendChild(el('div',{class:'qcase'},'<b>Case: '+q.caseTitle+'</b><br>'+q.caseText))}
+  box.appendChild(el('div',{class:'qtext'},q.q));
+  const L='abcd';
+  q.o.forEach((o,k)=>{const b=el('button',{class:'opt','aria-pressed':String(run.ans[run.i]===k)},'<span class="lt">'+L[k]+'</span><span>'+o+'</span>');
+    b.addEventListener('click',()=>{if(run.checked[run.i])return;run.ans[run.i]=k;renderQ()});box.appendChild(b)});
+  if(run.checked[run.i])paintCheck();
+  $('#qz-check').hidden=run.mode==='exam'||run.checked[run.i];
+  $('#qz-check').disabled=run.ans[run.i]===null;
+  $('#qz-prev').disabled=run.i===0;
+  $('#qz-next').textContent=run.i===run.qs.length-1?'Finish':'Next';
+  $('#qz-skip').hidden=run.checked[run.i];
+}
+function paintCheck(){const q=run.qs[run.i];const opts=[...document.querySelectorAll('#qz-q .opt')];opts.forEach((b,k)=>{b.disabled=true;if(k===q.a)b.classList.add('right');else if(k===run.ans[run.i])b.classList.add('wrong')});
+  const a=run.ans[run.i];const ok=a===q.a;const ex=el('div',{class:'explain '+(a===null?'':(ok?'ok':'no'))},'<b>'+(a===null?'Skipped. ':ok?'Correct. ':'Not quite. ')+'</b>'+q.w);$('#qz-q').appendChild(ex)}
+$('#qz-check').addEventListener('click',()=>{run.checked[run.i]=true;renderQ()});
+$('#qz-skip').addEventListener('click',()=>{run.ans[run.i]=null;if(run.mode==='practice'){run.checked[run.i]=true;renderQ()}else next()});
+$('#qz-prev').addEventListener('click',()=>{if(run.i>0){run.i--;renderQ()}});
+function next(){if(run.i<run.qs.length-1){run.i++;renderQ();window.scrollTo({top:0})}else finish()}
+$('#qz-next').addEventListener('click',next);
+$('#qz-start').addEventListener('click',start);
+$('#qz-quit').addEventListener('click',()=>{$('#qz-run').hidden=true;$('#qz-setup').hidden=false});
+function finish(){let c=0,w=0,s=0;const miss=new Set(store.get('qmissed',[]));const wrongIdx=[];
+  run.qs.forEach((q,i)=>{const a=run.ans[i];if(a===null){s++;miss.add(q.id);wrongIdx.push(i)}else if(a===q.a){c++;miss.delete(q.id)}else{w++;miss.add(q.id);wrongIdx.push(i)}});
+  store.set('qmissed',[...miss]);
+  const net=c-0.25*w;const pct=100*net/run.qs.length;
+  $('#qz-run').hidden=true;$('#qz-end').hidden=false;
+  $('#qz-score').innerHTML='<div><b>'+c+'</b><small>correct</small></div><div><b>'+w+'</b><small>wrong</small></div><div><b>'+s+'</b><small>skipped</small></div><div><b>'+net.toFixed(2)+'</b><small>net score</small></div>';
+  $('#qz-verdict').textContent=pct>=60?('Pass level. Net '+pct.toFixed(0)+'%.'):('Below the 60% pass line. Net '+pct.toFixed(0)+'%.');
+  $('#qz-penalty').textContent=w?('Wrong answers cost you '+(0.25*w).toFixed(2)+' marks.'):'No marks lost to negative marking.';
+  const rv=$('#qz-review');rv.innerHTML='';const L='abcd';
+  if(!wrongIdx.length)rv.innerHTML='<p>Nothing to review. Every answer was right.</p>';
+  wrongIdx.forEach(i=>{const q=run.qs[i];const a=run.ans[i];rv.appendChild(el('div',{class:'item'},'<p><b>'+q.q+'</b></p><p>Your answer: '+(a===null?'skipped':L[a]+') '+q.o[a])+'</p><p>Right answer: <b>'+L[q.a]+') '+q.o[q.a]+'</b></p><p class="ptr">'+q.w+'</p>'))});
+  run.summary=DATA.short+' quiz: '+c+'/'+run.qs.length+' correct, '+w+' wrong, '+s+' skipped. Net '+net.toFixed(2)+' ('+pct.toFixed(0)+'%).'+(wrongIdx.length?' Missed: '+wrongIdx.map(i=>run.qs[i].id).join(', '):'');
+}
+$('#qz-copy').addEventListener('click',()=>{const t=run&&run.summary||'';(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(()=>toast('Copied. Paste it in the group chat.')).catch(()=>{prompt('Copy this:',t)})});
+$('#qz-again').addEventListener('click',()=>{$('#qz-end').hidden=true;$('#qz-setup').hidden=false;updateMissedCount()});
+function updateMissedCount(){const n=store.get('qmissed',[]).length;$('#qz-missedn').textContent=n?('('+n+' saved)'):'(none yet)'}
+updateMissedCount();
+$('#qz-counts').textContent=DATA.mcqs.length+' MCQs and '+(DATA.cases||[]).reduce((s,c)=>s+c.qs.length,0)+' case questions';
+/* interactive widgets hook */
+if(window.__WIDGETS__)window.__WIDGETS__();
+const h=(location.hash||'').replace('#','');if(['learn','cards','quiz'].includes(h))show(h);
+})();
+</script></body></html>

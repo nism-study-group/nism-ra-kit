@@ -1,7 +1,7 @@
 import os, random, json, re, sys
 sys.path.insert(0, os.path.dirname(__file__))
 from template import page, CSS, FONTS
-import ch00, ch01, ch02_learn, ch02_qs
+import ch00, ch01, ch02_learn, ch02_qs, ch03_learn, ch03_qs, ch04
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
@@ -9,9 +9,11 @@ CH = {
  "ch01": {"dir":"Ch01-Research-Analyst-Profession","file":"Ch01-study-page.html","data":ch01.DATA,"learn":ch01.LEARN,"widgets":"","title":"The research analyst profession","n":1},
  "ch02": {"dir":"Ch02-Securities-Market","file":"Ch02-study-page.html",
           "data":{"id":"ch02","short":"Ch2","title":"Chapter 2: The securities market","cards":ch02_qs.CARDS,"mcqs":ch02_qs.MCQS,"cases":ch02_qs.CASES},
-          "learn":ch02_learn.LEARN,"widgets":ch02_learn.WIDGETS,"title":"The securities market","n":2},
+          "learn":ch02_learn.LEARN,"widgets":ch02_learn.WIDGETS,"title":"The securities market","n":2,"extra":"Two interactive tools."},
  # Orientation class. Listed last so the shuffle seeds of the chapters above stay unchanged.
  "ch00": {"dir":"Ch00-Orientation","file":"Ch00-study-page.html","data":ch00.DATA,"learn":ch00.LEARN,"widgets":ch00.WIDGETS,"title":"Orientation: the exam, the book and the plan","n":0},
+ "ch03": {"dir":"Ch03-Equity-Debt-Terms","file":"Ch03-study-page.html","data":ch03_qs.DATA,"learn":ch03_learn.LEARN,"widgets":ch03_learn.WIDGETS,"title":"Terms in equity and debt markets","n":3,"extra":"Two calculators: bond price and duration, commodity futures."},
+ "ch04": {"dir":"Ch04-Fundamentals-of-Research","file":"Ch04-study-page.html","data":ch04.DATA,"learn":ch04.LEARN,"widgets":"","title":"Fundamentals of research","n":4},
 }
 
 def shuffle_q(q, rng, target):
@@ -28,9 +30,10 @@ def shuffle_q(q, rng, target):
 
 def prep(data, seed):
     rng=random.Random(seed)
-    allq=list(data["mcqs"])+[q for c in data.get("cases",[]) for q in c["qs"]]
-    targets=[i%4 for i in range(len(allq))]; rng.shuffle(targets)
-    for q,t in zip(allq,targets): shuffle_q(q,rng,t)
+    # Balance MCQs and case questions separately, so each group is even on its own.
+    for group in (list(data["mcqs"]), [q for c in data.get("cases",[]) for q in c["qs"]]):
+        targets=[i%4 for i in range(len(group))]; rng.shuffle(targets)
+        for q,t in zip(group,targets): shuffle_q(q,rng,t)
 
 def strip(h): return re.sub(r"<[^>]+>", "", h).replace("&amp;","&")
 
@@ -58,7 +61,11 @@ def bank_md(key, c):
 WEIGHTS = [(1,"Introduction to Research Analyst Profession",1),(2,"Introduction to Securities Market",2),(3,"Terminology in Equity and Debt Markets",2),(4,"Fundamentals of Research",5),(5,"Economic Analysis",5),(6,"Industry Analysis",8),(7,"Company Analysis: Business and Governance",6),(8,"Company Analysis: Financial Analysis",12),(9,"Corporate Actions",5),(10,"Valuation Principles",12),(11,"Fundamental Analysis of Commodities",5),(12,"Fundamentals of Risk and Return",7),(13,"Qualities of a Good Research Report",5),(14,"Legal and Regulatory Environment",10),(15,"Technical Analysis",15)]
 
 def home():
-    links = {1:f"{CH['ch01']['dir']}/{CH['ch01']['file']}",2:f"{CH['ch02']['dir']}/{CH['ch02']['file']}"}
+    links = {c['n']:f"{c['dir']}/{c['file']}" for c in CH.values() if c['n']}
+    cards = ""
+    for n in sorted(links):
+        c = next(c for c in CH.values() if c['n']==n); d = c['data']; w = WEIGHTS[n-1][2]
+        cards += f'<a class="chcard" href="{links[n]}"><b>Chapter {n}</b><h3>{c["title"]}</h3><p class="ptr">{w} mark{"" if w==1 else "s"}. {len(d["cards"])} flashcards, {len(d["mcqs"])} MCQs, {sum(len(x["qs"]) for x in d["cases"])} case questions. {c.get("extra","")}</p></a>\n'
     intro = f"{CH['ch00']['dir']}/{CH['ch00']['file']}"
     rows = ""
     for n,name,w in WEIGHTS:
@@ -94,9 +101,7 @@ def home():
 <h2 style="margin-top:10px">Chapters ready</h2>
 <div class="chcards">
 <a class="chcard" href="{intro}"><b>Start here</b><h3>Orientation: the exam, the book and the plan</h3><p class="ptr">Exam format, marking, syllabus, booking, and how the group works. A score calculator and a short quiz on the exam rules.</p></a>
-<a class="chcard" href="{links[1]}"><b>Chapter 1</b><h3>The research analyst profession</h3><p class="ptr">1 mark. {len(CH['ch01']['data']['cards'])} flashcards, {len(CH['ch01']['data']['mcqs'])} MCQs, {sum(len(c['qs']) for c in CH['ch01']['data']['cases'])} case questions.</p></a>
-<a class="chcard" href="{links[2]}"><b>Chapter 2</b><h3>The securities market</h3><p class="ptr">2 marks. {len(CH['ch02']['data']['cards'])} flashcards, {len(CH['ch02']['data']['mcqs'])} MCQs, {sum(len(c['qs']) for c in CH['ch02']['data']['cases'])} case questions. Two interactive tools.</p></a>
-</div>
+{cards}</div>
 
 <section class="sec"><h2>The exam</h2>
 <div class="grid g4">

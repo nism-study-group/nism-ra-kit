@@ -6,7 +6,7 @@ Read this whole file before doing anything. It covers the goal, the user's rules
 
 ## 1. The project in one paragraph
 
-The organiser runs a study group preparing for the **NISM Series XV: Research Analyst** certification exam (SEBI). The group reads the official NISM workbook **one chapter at a time, in order**, and meets to discuss. For each chapter we produce: tighter, simpler, more visual notes than the book, plus assessment material (exam-style MCQs, case-based question sets, flashcards, quizzes). Chapters 1 and 2 are done. **Chapter 3 is next.**
+The organiser runs a study group preparing for the **NISM Series XV: Research Analyst** certification exam (SEBI). The group reads the official NISM workbook **one chapter at a time, in order**, and meets to discuss. For each chapter we produce: tighter, simpler, more visual notes than the book, plus assessment material (exam-style MCQs, case-based question sets, flashcards, quizzes). An orientation page (Session 0) and Chapters 1 to 4 are done and live. **Chapter 5 is next.**
 
 ---
 
@@ -24,10 +24,9 @@ The organiser runs a study group preparing for the **NISM Series XV: Research An
 ## 3. Source material
 
 - **The workbook:** "NISM-Series-XV: Research Analyst Certification Examination Workbook", **February 2026 version**. It applies to exams on or after 30 March 2026.
-- Original file name: `17_NISM-Series-XV-Research_Analyst_Examination_Workbook_February_2026.pdf`.
-- **Gotcha:** despite the `.pdf` name, the file is **plain text**, not a real PDF. `pdftotext` fails on it. Just read it as text: `tr -d '\r' < file.pdf > book.txt`. Page numbers appear as bare numbers on their own lines.
-- Ask the organiser to place the workbook in the repo (suggested: `source/workbook.txt`). It is copyrighted; do not publish it or quote long passages from it in outputs.
-- To locate a chapter: `grep -n "^CHAPTER" book.txt`. In the extracted text, Chapter 1 started around line 349, Chapter 2 around 541, Chapter 3 around 1602, Chapter 4 around 2332.
+- It lives at `source/17 NISM-Series-XV-Research Analyst Examination Workbook February 2026.pdf`, next to the kit folder. It is a real 342-page PDF. Extract with `pdftotext "<file>" book.txt` (no `-layout`). `source/` is gitignored: the workbook is copyrighted and must never be committed. Do not quote long passages from it in outputs.
+- `source/` also holds `curriculum.txt`, `test-objectives.txt`, `revised-guidelines.txt` and `Annexure-I-Syllabus-Weightage.pdf` (official syllabus and weights). A monthly NISM test centre list (for example `October-2026-2.pdf`) may sit in the top folder; it is also gitignored.
+- To locate a chapter: `grep -n "^CHAPTER" book.txt`. Each chapter heading appears twice: once in the contents, once at the chapter start.
 
 ### Chapter list and official weights (marks out of 100, from the workbook)
 
@@ -35,9 +34,9 @@ The organiser runs a study group preparing for the **NISM Series XV: Research An
 |---|---|---|---|---|
 | 1 | Introduction to Research Analyst Profession | 1 | 15 | Done |
 | 2 | Introduction to Securities Market | 2 | 22 | Done |
-| 3 | Terminology in Equity and Debt Markets | 2 | 55 | **Next** |
-| 4 | Fundamentals of Research | 5 | 78 | |
-| 5 | Economic Analysis | 5 | 90 | |
+| 3 | Terminology in Equity and Debt Markets | 2 | 55 | Done |
+| 4 | Fundamentals of Research | 5 | 78 | Done |
+| 5 | Economic Analysis | 5 | 90 | **Next** |
 | 6 | Industry Analysis | 8 | 105 | |
 | 7 | Company Analysis: Business and Governance | 6 | 130 | |
 | 8 | Company Analysis: Financial Analysis | 12 | 145 | |
@@ -82,11 +81,17 @@ NISM-RA-Study-Kit/
     Ch02-study-page.html
     Ch02-question-bank.md
     visuals/*.png                   30 diagrams
+  Ch00-Orientation/                 Session 0 intro class: exam format, marking, syllabus, booking, group plan
+  Ch03-Equity-Debt-Terms/
+  Ch04-Fundamentals-of-Research/    (each with study page, question bank, visuals/)
   _build/
     template.py                     Shared CSS, JS and HTML shell for every chapter page
     ch01.py                         Chapter 1 content: LEARN html, CARDS, MCQS, CASES, DATA
     ch02_learn.py                   Chapter 2 LEARN html and WIDGETS js (interactive tools)
     ch02_qs.py                      Chapter 2 CARDS, MCQS, CASES
+    ch00.py                         Orientation page (Session 0), with a score calculator widget
+    ch03_learn.py, ch03_qs.py       Chapter 3 (widgets: bond calculator, futures fair value calculator)
+    ch04.py                         Chapter 4
     build.py                        Builds every page, the home page, question banks, README
     export.py                       Screenshots each <figure class="fig"> to visuals/*.png
     publish/                        Copies of chapter pages with the home link removed (for hosting)
@@ -95,25 +100,47 @@ NISM-RA-Study-Kit/
 Content counts:
 - Chapter 1: 18 flashcards, 14 MCQs, 1 case set (4 questions).
 - Chapter 2: 52 flashcards, 42 MCQs, 2 case sets (8 questions). Two interactive tools: a bond name finder (domestic, foreign, euro, masala) and an options payoff slider (the book's Arvind and Salim example).
+- Orientation (Session 0): 16 flashcards, 14 MCQs, 1 case set (C0). Score calculator.
+- Chapter 3: 52 flashcards, 48 MCQs, 2 case sets (C4, C5). Bond calculator and futures fair value calculator.
+- Chapter 4: 41 flashcards, 34 MCQs, 2 case sets (C6, C7).
 
 **The question bank .md files are not extra questions.** They are the same questions as each page's quiz, in a printable text form, for anyone who prefers paper or wants to discuss specific question numbers.
 
-Hosted copies (claude.ai artifacts, owned by the organiser, private until shared):
+### Live site (GitHub Pages)
+
+- Home: https://nism-study-group.github.io/nism-ra-kit/
+- Orientation: https://nism-study-group.github.io/nism-ra-kit/Ch00-Orientation/Ch00-study-page.html
+- Chapter 1: https://nism-study-group.github.io/nism-ra-kit/Ch01-Research-Analyst-Profession/Ch01-study-page.html
+- Chapter 2: https://nism-study-group.github.io/nism-ra-kit/Ch02-Securities-Market/Ch02-study-page.html
+- Chapter 3: https://nism-study-group.github.io/nism-ra-kit/Ch03-Equity-Debt-Terms/Ch03-study-page.html
+- Chapter 4: https://nism-study-group.github.io/nism-ra-kit/Ch04-Fundamentals-of-Research/Ch04-study-page.html
+- Add `#cards` or `#quiz` to any chapter link to open that tab directly.
+
+Repo: https://github.com/nism-study-group/nism-ra-kit (public, owned by the free organization `nism-study-group`). The repo root is the folder that contains `NISM-RA-Study-Kit/`. A GitHub Actions workflow (`.github/workflows/pages.yml`) publishes `NISM-RA-Study-Kit/` on every push to `main`, leaving out `_build/` and `HANDOVER.md`. Commits use the author `nism-study-group <nism-study-group@users.noreply.github.com>` (set in the repo's local git config) so no personal email appears. The `.gitignore` excludes `source/`, `*.pdf`, `workbook*`, `_build/publish/`, `__pycache__/`, `*.zip`, `archive/`, `.venv/` and `.DS_Store`.
+
+### How to publish a new chapter
+
+1. Build: `cd NISM-RA-Study-Kit/_build && ../../.venv/bin/python build.py` (Playwright lives in a local `.venv` in the repo root, because Homebrew Python blocks global installs).
+2. Export: `../../.venv/bin/python export.py`.
+3. Run the checks in section 6 and the dash check in section 9.
+4. From the repo root: `git status` (confirm no PDF or `source/` file is listed), then `git add -A && git commit -m "Add Chapter N" && git push`.
+5. Wait about a minute for the workflow (`gh run watch -R nism-study-group/nism-ra-kit`), then open the new chapter link on the live site. Chapter links follow the pattern `.../ChNN-Folder/ChNN-study-page.html` and never change.
+
+### Legacy links (claude.ai artifacts, private until shared, no longer updated)
+
 - Chapter 1: https://claude.ai/artifact/FNDndyPJmsvp7vAA5yk5hb
 - Chapter 2: https://claude.ai/artifact/AU4XTLZLJr6VFd7TrqqkwM
-
-Claude Code cannot update these. If the group needs links for future chapters, options are GitHub Pages, Netlify, or the organiser publishing from claude.ai. Ask which.
 
 ---
 
 ## 6. How the build works
 
-Requirements: Python 3. For PNG export: `pip install playwright && playwright install chromium`.
+Requirements: Python 3. For PNG export, Playwright in a local venv (one time, from the repo root): `python3 -m venv .venv && .venv/bin/pip install playwright && .venv/bin/python -m playwright install chromium`.
 
 ```
 cd NISM-RA-Study-Kit/_build
-python3 build.py     # writes all pages, index.html, question banks, README, publish/ copies
-python3 export.py    # writes visuals/*.png for each chapter (needs playwright)
+../../.venv/bin/python build.py     # writes all pages, index.html, question banks, README, publish/ copies
+../../.venv/bin/python export.py    # writes visuals/*.png for each chapter (needs playwright)
 ```
 
 Paths are relative: `build.py` writes into the parent folder of `_build`.
@@ -127,9 +154,10 @@ CASES = [{"id": "C4", "title": "...", "text": "scenario", "qs": [ {q, o, a, w}, 
 DATA  = {"id": "ch03", "short": "Ch3", "title": "Chapter 3: ...", "cards": CARDS, "mcqs": MCQS, "cases": CASES}
 ```
 
-- `a` is the index of the correct option **as written**. `build.py` then shuffles options with **balanced answer placement** (each letter correct about equally often across the chapter). Any option containing "above" ("All of the above", "None of the above") stays last. Write questions in any order; do not hand-balance.
+- `a` is the index of the correct option **as written**. `build.py` then shuffles options with **balanced answer placement** (each letter correct about equally often; MCQs and case questions are balanced separately). Any option containing "above" ("All of the above", "None of the above") stays last. Write questions in any order; do not hand-balance.
 - `w` should say why the right answer is right and, where useful, why a tempting wrong option is wrong.
-- Case set IDs run across the whole kit: C1 (Ch1), C2 and C3 (Ch2). Chapter 3 should start at C4.
+- Case set IDs run across the whole kit: C0 (orientation), C1 (Ch1), C2 and C3 (Ch2), C4 and C5 (Ch3), C6 and C7 (Ch4). Chapter 5 should start at C8.
+- New chapters go at the **end** of the `CH` dict: each chapter's shuffle seed comes from its position.
 
 ### The page engine (template.py)
 
@@ -142,14 +170,14 @@ DATA  = {"id": "ch03", "short": "Ch3", "title": "Chapter 3: ...", "cards": CARDS
 - Light and dark themes (follows the system, with a toggle). Responsive down to phone width.
 - Interactive widgets: put JS in a string that defines `window.__WIDGETS__ = function(){...}`; the engine calls it after load.
 
-### Adding Chapter 3 (the recipe)
+### Adding a chapter (the recipe)
 
 1. Read the chapter fully from the workbook, including its sample questions at the end.
-2. Create `_build/ch03.py` (or split into `ch03_learn.py` and `ch03_qs.py` if long) with `LEARN`, `CARDS`, `MCQS`, `CASES`, and optionally `WIDGETS`.
-3. In `build.py`: import it, add a `"ch03"` entry to the `CH` dict (`dir`, `file`, `data`, `learn`, `widgets`, `title`, `n`), and add its link in `home()` (the `links` dict and a new `chcard`).
+2. Create `_build/chNN.py` (or split into `chNN_learn.py` and `chNN_qs.py` if long) with `LEARN`, `CARDS`, `MCQS`, `CASES`, and optionally `WIDGETS`.
+3. In `build.py`: import it and add a `"chNN"` entry at the end of the `CH` dict (`dir`, `file`, `data`, `learn`, `widgets`, `title`, `n`, optional `extra` text for the home card). The home page card and weight-chart link are generated from `CH`. In `export.py`, add the folder to `chs`, and add any widget figure ids to the skip list.
 4. Run `build.py`, then `export.py`.
 5. Check: no JS errors, no horizontal scroll at 390 px width, dark mode readable, quiz runs end to end, answer spread is balanced (printed by build.py), and the dash check passes.
-6. Re-zip the kit if the organiser wants a zip.
+6. Publish (section 5).
 
 ---
 
@@ -224,7 +252,7 @@ No file names should print.
 
 ## 11. Suggested next steps
 
-1. Chapter 3 (Terminology in Equity and Debt Markets, 2 marks). It overlaps with Chapter 2's product section; link back rather than repeat, and focus on the new terms (equity terms like EPS, book value, market cap; bond terms like coupon, YTM, duration; bond types; commodity market terms).
+1. Chapter 5 (Economic Analysis, 5 marks).
 2. Keep the linear pace, one chapter per meeting.
 3. Later, once several chapters exist: a mixed mock test page drawing from all built chapters, weighted by the official marks, 80 MCQs plus 5 case sets, timed at 120 minutes.
 4. Consider a small "formula sheet" page when reaching Chapters 8, 10 and 12.
