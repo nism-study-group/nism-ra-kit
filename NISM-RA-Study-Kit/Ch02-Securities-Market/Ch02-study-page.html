@@ -1,0 +1,869 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Chapter 2: The securities market | NISM RA study kit</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&display=swap" rel="stylesheet"><style>
+:root{
+ --paper:#F5F6F8;--card:#FFFFFF;--ink:#1B2340;--muted:#586178;--line:#D8DDE7;
+ --indigo:#2E3F8F;--indigo-soft:#E6E9F6;--marker:#FFE27A;--teal:#12705F;--teal-soft:#DDF1EC;
+ --brick:#A83C29;--brick-soft:#F8E3DE;--sun:#F2B233;
+ --head:"Bricolage Grotesque","Segoe UI",system-ui,-apple-system,sans-serif;
+ --body:"Atkinson Hyperlegible","Segoe UI",system-ui,-apple-system,sans-serif;
+ box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+ --paper:#11141C;--card:#1A1E2A;--ink:#E7EAF3;--muted:#9EA7BC;--line:#2C3244;
+ --indigo:#9AABFF;--indigo-soft:#232A45;--marker:rgba(255,214,90,.30);--teal:#52C7AE;--teal-soft:#16332D;
+ --brick:#F2826C;--brick-soft:#3A201B;--sun:#F2B233;}}
+:root[data-theme="dark"]{
+ --paper:#11141C;--card:#1A1E2A;--ink:#E7EAF3;--muted:#9EA7BC;--line:#2C3244;
+ --indigo:#9AABFF;--indigo-soft:#232A45;--marker:rgba(255,214,90,.30);--teal:#52C7AE;--teal-soft:#16332D;
+ --brick:#F2826C;--brick-soft:#3A201B;}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 70px);-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6}
+img,svg{max-width:100%}
+a{color:var(--indigo)}
+:focus-visible{outline:3px solid var(--sun);outline-offset:2px;border-radius:4px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+.col{max-width:720px}
+h1,h2,h3,h4{font-family:var(--head);line-height:1.15;margin:0}
+h2{font-size:clamp(1.5rem,3.4vw,2rem);font-weight:800;margin:0 0 .6rem}
+h3{font-size:1.2rem;font-weight:700;margin:1.8rem 0 .5rem}
+p{margin:.55rem 0}
+ul,ol{margin:.4rem 0 .8rem;padding-left:1.3rem}
+li{margin:.25rem 0}
+/* top bar */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--paper) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.bar .wrap{display:flex;align-items:center;gap:12px;min-height:58px}
+.brand{font-family:var(--head);font-weight:700;font-size:.95rem;color:var(--muted);text-decoration:none;white-space:nowrap}
+.tabs{display:flex;gap:4px;margin-left:auto;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:4px}
+.tab{border:0;background:transparent;color:var(--ink);font:600 .95rem var(--body);padding:.45rem .95rem;border-radius:999px;cursor:pointer}
+.tab[aria-selected="true"]{background:var(--indigo);color:var(--card)}
+.themebtn{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;width:38px;height:38px;cursor:pointer;font-size:1rem}
+@media (max-width:620px){.brand{display:none}.tabs{margin-left:0;flex:1;justify-content:space-between}.tab{padding:.45rem .6rem;flex:1}}
+/* hero */
+.hero{padding:44px 0 18px}
+.kicker{font-family:var(--head);font-weight:700;color:var(--indigo);font-size:1rem;margin-bottom:.4rem}
+.hero h1{font-size:clamp(2.1rem,6vw,3.6rem);font-weight:800;letter-spacing:-.02em;max-width:18ch}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 0}
+.pill{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:.2rem .75rem;font-size:.9rem;color:var(--muted)}
+.pill b{color:var(--ink)}
+.oneline{margin:28px 0 8px;font-family:var(--head);font-size:clamp(1.25rem,3vw,1.7rem);font-weight:500;line-height:1.35;max-width:32ch}
+.oneline .k{font-weight:700}
+/* key term highlighter */
+.k{background:linear-gradient(104deg,transparent 0 .2em,var(--marker) .2em calc(100% - .15em),transparent calc(100% - .15em));padding:0 .2em;margin:0 -.05em;font-weight:700;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+/* sections */
+section.sec{padding:34px 0 10px;border-top:1px solid var(--line);margin-top:26px}
+.secno{font-family:var(--head);font-weight:800;color:var(--indigo);font-size:1rem;display:block;margin-bottom:.2rem}
+.why{border-left:4px solid var(--indigo);background:var(--indigo-soft);padding:.7rem 1rem;border-radius:0 10px 10px 0;margin:1rem 0}
+.why b:first-child{display:block;font-family:var(--head);margin-bottom:.1rem}
+.analogy{background:var(--card);border:1px dashed var(--indigo);border-radius:14px;padding:.8rem 1rem;margin:1rem 0}
+.analogy::before{content:"Think of it like this";display:block;font-family:var(--head);font-weight:700;color:var(--indigo);font-size:.95rem;margin-bottom:.2rem}
+.trap{border:2px solid var(--brick);background:var(--brick-soft);border-radius:12px;padding:.65rem .95rem;margin:1rem 0;position:relative}
+.trap::before{content:"Exam trap";display:inline-block;font-family:var(--head);font-weight:800;color:var(--card);background:var(--brick);border-radius:6px;padding:0 .45rem;font-size:.85rem;margin-right:.45rem;transform:rotate(-2deg)}
+.num{font-family:var(--head);font-weight:800;color:var(--brick)}
+dl.terms{display:grid;grid-template-columns:minmax(120px,max-content) 1fr;gap:.35rem 1rem;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1rem 1.1rem;margin:1rem 0}
+dl.terms dt{font-weight:700}
+dl.terms dd{margin:0;color:var(--muted)}
+@media (max-width:560px){dl.terms{grid-template-columns:1fr}dl.terms dd{margin-bottom:.4rem}}
+.terms-title{font-family:var(--head);font-weight:700;margin:1.4rem 0 -.4rem}
+/* figures */
+figure.fig{margin:1.4rem 0;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px}
+figure.fig figcaption{font-family:var(--head);font-weight:700;font-size:1.02rem;margin-bottom:12px}
+figure.fig figcaption span{display:block;font-family:var(--body);font-weight:400;color:var(--muted);font-size:.9rem;margin-top:2px}
+.scroll{overflow-x:auto}
+/* flow */
+.flow{display:flex;align-items:stretch;gap:0;flex-wrap:nowrap}
+.flow .step{flex:1;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:.7rem .8rem;min-width:0}
+.flow .step h4{font-size:1rem;margin-bottom:.2rem}
+.flow .step p{font-size:.92rem;margin:0;color:var(--muted)}
+.flow .arrow{flex:0 0 28px;display:flex;align-items:center;justify-content:center;color:var(--indigo);font-weight:800;font-size:1.3rem}
+.flow .arrow::before{content:"\2192"}
+@media (max-width:700px){.flow{flex-direction:column}.flow .arrow{flex-basis:26px}.flow .arrow::before{content:"\2193"}}
+.step.hl{border-color:var(--indigo);background:var(--indigo-soft)}
+.step.gd{border-color:var(--teal);background:var(--teal-soft)}
+.step.bd{border-color:var(--brick);background:var(--brick-soft)}
+/* grids */
+.grid{display:grid;gap:12px}
+.g2{grid-template-columns:repeat(2,1fr)}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}
+@media (max-width:760px){.g3,.g4{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:480px){.g2,.g3,.g4{grid-template-columns:1fr}}
+.box{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:.75rem .9rem}
+.box h4{font-size:1.02rem;margin-bottom:.25rem}
+.box p,.box li{font-size:.93rem}
+.box ul{margin:.2rem 0 0}
+.box .tag{display:inline-block;font-size:.78rem;font-weight:700;border-radius:6px;padding:0 .4rem;background:var(--indigo-soft);color:var(--indigo);margin-bottom:.3rem}
+.box.gd{border-color:var(--teal)}.box.bd{border-color:var(--brick)}.box.hl{border-color:var(--indigo)}
+/* table */
+table.cmp{border-collapse:collapse;width:100%;min-width:560px;font-size:.93rem}
+table.cmp th,table.cmp td{border-bottom:1px solid var(--line);padding:.55rem .6rem;text-align:left;vertical-align:top}
+table.cmp thead th{font-family:var(--head);background:var(--indigo-soft);color:var(--ink)}
+table.cmp tbody th{font-weight:700;color:var(--muted);width:24%}
+/* id card */
+.idcard{display:grid;grid-template-columns:auto 1fr;gap:.15rem .7rem;font-size:.88rem;margin-top:.4rem}
+.idcard span:nth-child(odd){color:var(--muted)}
+/* bars */
+.stack{display:flex;height:46px;border-radius:10px;overflow:hidden;border:1px solid var(--line);font-weight:700;font-size:.9rem}
+.stack div{display:flex;align-items:center;justify-content:center;color:var(--card);text-align:center;padding:0 4px}
+/* traps list and talk */
+.traplist{counter-reset:t;list-style:none;padding:0}
+.traplist li{counter-increment:t;background:var(--card);border:1px solid var(--line);border-left:5px solid var(--brick);border-radius:10px;padding:.6rem .9rem .6rem 3rem;position:relative;margin:.5rem 0}
+.traplist li::before{content:counter(t);position:absolute;left:.9rem;top:.55rem;font-family:var(--head);font-weight:800;color:var(--brick);font-size:1.1rem}
+.talk li{margin:.45rem 0}
+.ptr{font-size:.85rem;color:var(--muted)}
+/* chapter map */
+.map{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(170px,1fr))}
+.map a{display:block;text-decoration:none;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:.7rem .85rem;transition:border-color .15s}
+.map a:hover{border-color:var(--indigo)}
+.map a b{display:block;font-family:var(--head);color:var(--indigo);font-size:.9rem}
+.map a span{font-weight:700;display:block;line-height:1.25}
+.map a small{color:var(--muted);display:block;margin-top:.25rem;line-height:1.3}
+.tl{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;position:relative;padding-top:6px}
+.tl::before{content:"";position:absolute;left:8%;right:8%;top:21px;height:4px;background:var(--line);border-radius:4px}
+.tl-i{text-align:center;position:relative}
+.tl-t{display:block;font-family:var(--head);font-size:1.15rem}
+.tl-d{display:block;width:22px;height:22px;border-radius:50%;margin:6px auto 8px;position:relative;border:3px solid var(--card)}
+.tl-i h4{font-size:1.05rem}.tl-i p{font-size:.9rem;color:var(--muted);margin:.2rem 0 0}
+@media (max-width:560px){.tl{grid-template-columns:1fr}.tl::before{display:none}.tl-i{text-align:left;padding-left:34px}.tl-d{position:absolute;left:0;top:0;margin:0}}
+input[type=range]{accent-color:var(--indigo)}
+/* views */
+.view[hidden]{display:none}
+footer{color:var(--muted);font-size:.85rem;padding:40px 0 60px;border-top:1px solid var(--line);margin-top:40px}
+/* flashcards */
+.fc-wrap{max-width:640px;margin:30px auto 0}
+.fc-top{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+.fc-prog{height:8px;background:var(--line);border-radius:99px;overflow:hidden;margin-bottom:16px}
+.fc-prog div{height:100%;background:var(--teal);width:0;transition:width .3s}
+.card3d{perspective:1200px;cursor:pointer;user-select:none}
+.card3d .inner{position:relative;min-height:300px;transition:transform .5s;transform-style:preserve-3d}
+.card3d.flip .inner{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:20px;padding:28px;display:flex;flex-direction:column;justify-content:center;border:1px solid var(--line);background:var(--card)}
+.face.back{transform:rotateY(180deg);background:var(--indigo-soft);border-color:var(--indigo)}
+.face .lbl{position:absolute;top:14px;left:18px;font-size:.8rem;color:var(--muted);font-weight:700}
+.face .front-txt{font-family:var(--head);font-size:clamp(1.3rem,4vw,1.8rem);font-weight:700;line-height:1.25}
+.face .back-txt{font-size:1.08rem}
+.hint{color:var(--muted);font-size:.85rem;text-align:center;margin-top:10px}
+@media (prefers-reduced-motion:reduce){.card3d .inner{transition:none}}
+.btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:16px}
+.btn{font:700 1rem var(--body);border-radius:12px;padding:.65rem 1.1rem;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
+.btn.pri{background:var(--indigo);border-color:var(--indigo);color:var(--card)}
+.btn.good{background:var(--teal);border-color:var(--teal);color:var(--card)}
+.btn.bad{background:var(--brick);border-color:var(--brick);color:var(--card)}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.btn.sm{font-size:.88rem;padding:.4rem .75rem;border-radius:10px}
+/* quiz */
+.qz{max-width:720px;margin:30px auto 0}
+.qz-setup .box{margin:.6rem 0}
+.qz-setup label{display:flex;gap:.6rem;align-items:flex-start;cursor:pointer}
+.qz-head{display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:.9rem;margin-bottom:10px;gap:8px;flex-wrap:wrap}
+.qcase{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--sun);border-radius:12px;padding:.8rem 1rem;margin-bottom:12px;font-size:.95rem}
+.qcase b{font-family:var(--head)}
+.qtext{font-family:var(--head);font-size:1.25rem;font-weight:700;line-height:1.3;margin:4px 0 14px}
+.opt{display:flex;gap:.7rem;align-items:flex-start;width:100%;text-align:left;font:1rem var(--body);color:var(--ink);background:var(--card);border:2px solid var(--line);border-radius:12px;padding:.7rem .9rem;margin:.45rem 0;cursor:pointer}
+.opt .lt{font-family:var(--head);font-weight:800;color:var(--indigo);min-width:1.2rem}
+.opt[aria-pressed="true"]{border-color:var(--indigo);background:var(--indigo-soft)}
+.opt.right{border-color:var(--teal);background:var(--teal-soft)}
+.opt.wrong{border-color:var(--brick);background:var(--brick-soft)}
+.opt:disabled{cursor:default}
+.explain{border-radius:12px;padding:.7rem 1rem;margin-top:12px;background:var(--paper);border:1px solid var(--line)}
+.explain.ok{border-color:var(--teal)}.explain.no{border-color:var(--brick)}
+.explain b{font-family:var(--head)}
+.score{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:16px 0}
+@media (max-width:520px){.score{grid-template-columns:repeat(2,1fr)}}
+.score div{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:.7rem;text-align:center}
+.score b{display:block;font-family:var(--head);font-size:1.8rem}
+.score small{color:var(--muted)}
+.verdict{font-family:var(--head);font-size:1.4rem;font-weight:800;margin:10px 0}
+.review .item{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:.7rem 1rem;margin:.6rem 0}
+.review .item p{margin:.25rem 0}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--paper);padding:.5rem 1rem;border-radius:10px;font-weight:700;opacity:0;transition:opacity .2s;pointer-events:none;z-index:50}
+.toast.show{opacity:1}
+@media print{.bar,.btns,.themebtn{display:none}.view[hidden]{display:block}#v-cards,#v-quiz{display:none}figure.fig,.trap,.analogy{break-inside:avoid}}
+</style></head><body>
+<div class="bar"><div class="wrap"><a class="brand" href="../index.html">NISM RA study kit</a>
+<div class="tabs" role="tablist"><button class="tab" role="tab" data-v="learn" aria-selected="true">Learn</button><button class="tab" role="tab" data-v="cards" aria-selected="false">Flashcards</button><button class="tab" role="tab" data-v="quiz" aria-selected="false">Quiz</button></div>
+<button class="themebtn" id="themebtn" aria-label="Switch light or dark">&#9790;</button></div></div><div class="view" id="v-learn">
+<div class="wrap">
+<header class="hero">
+<div class="kicker">Chapter 2 of 15</div>
+<h1>The securities market</h1>
+<div class="meta"><span class="pill">Worth <b>2 marks</b> of 100</span><span class="pill">Book pages 22 to 54</span><span class="pill">About 50 minutes</span></div>
+<p class="oneline">A securities market moves <span class="k">savers' money</span> to <span class="k">businesses that need it</span>, and lets savers <span class="k">get out whenever they want</span>.</p>
+</header>
+
+<figure class="fig" id="fig-map"><figcaption>Chapter map<span>Six parts. Parts 2.2 and 2.4 are the longest. Tap to jump.</span></figcaption>
+<div class="map">
+<a href="#s1"><b>2.1</b><span>What is a security?</span><small>Meaning, the four players, legal definition</small></a>
+<a href="#s2"><b>2.2</b><span>The products</span><small>Equity, bonds, funds, hybrids, commodities</small></a>
+<a href="#s3"><b>2.3</b><span>How the market is built</span><small>Primary and secondary market, clearing</small></a>
+<a href="#s4"><b>2.4</b><span>Who is in the market?</span><small>Intermediaries and investors</small></a>
+<a href="#s5"><b>2.5</b><span>Kinds of deals</span><small>Settlement days, derivatives, motives</small></a>
+<a href="#s6"><b>2.6</b><span>Paper to electronic</span><small>Demat and remat</small></a>
+</div></figure>
+
+<div class="col">
+<section class="sec" id="s1"><span class="secno">2.1</span><h2>What is a security?</h2>
+<p>A <span class="k">security</span> is a financial claim you can <b>transfer</b> to someone else. It is one of two things:</p>
+<ul><li>a <b>promise to pay</b> you back (debt, like a bond), or</li><li>a <b>share of ownership</b> in a company (equity).</li></ul>
+<p>Companies, financial institutions and the government issue them. Investors buy them. The investor gets a return. The issuer gets money, at a cost. The words <b>security</b>, <b>instrument</b> and <b>product</b> mean the same thing in this book.</p>
+</div>
+
+<figure class="fig" id="fig-flow"><figcaption>What a securities market does</figcaption>
+<div class="flow">
+<div class="step"><h4>Savers</h4><p>Have spare money. Want a return.</p></div><div class="arrow"></div>
+<div class="step hl"><h4>Securities market</h4><p>Turns savings into investment</p></div><div class="arrow"></div>
+<div class="step"><h4>Issuers</h4><p>Need money for productive use. Pay a cost for it.</p></div>
+</div>
+<p class="ptr" style="margin-top:10px">Money flows right. Securities flow left.</p></figure>
+
+<div class="col">
+<h3>The big idea: long term becomes short term</h3>
+<div class="analogy">A 10-year bond is like a 10-hour train journey. The company needs the train to run the full 10 hours. You may want to get off after 2. The <b>secondary market</b> is the station where you step off and a new passenger takes your seat. The train never stops, and the company is not affected.</div>
+<p>This ability to buy and sell easily, close to the market price, is called <span class="k">liquidity</span>.</p>
+</div>
+
+<figure class="fig" id="fig-four"><figcaption>The four parts of a financial market</figcaption>
+<div class="grid g4">
+<div class="box"><span class="tag">Providers of funds</span><h4>Investors</h4><p>They <b>buy</b> securities.</p></div>
+<div class="box"><span class="tag">Seekers of funds</span><h4>Borrowers</h4><p>They <b>sell</b> (issue) securities.</p></div>
+<div class="box"><span class="tag">Plumbing</span><h4>Intermediaries</h4><p>Provide the pipes that move money and securities.</p></div>
+<div class="box"><span class="tag">Referee</span><h4>Regulators</h4><p>Keep the market orderly and growing.</p></div>
+</div></figure>
+
+<div class="col">
+<div class="trap">Borrowers are the <b>sellers</b> of securities. Investors are the <b>buyers</b>. It feels backwards, so it gets tested.</div>
+<h3>The legal definition</h3>
+<p>"Securities" is defined in <span class="k">Section 2(h) of the Securities Contracts (Regulation) Act, 1956</span> (SCRA).</p>
+</div>
+
+<figure class="fig" id="fig-scra"><figcaption>What SCRA counts as a security</figcaption>
+<div class="grid g2">
+<div class="box gd"><span class="tag">Included</span><ul>
+<li>Shares, scrips, stocks, bonds, debentures and similar marketable securities of a company, pooled investment vehicle or body corporate</li>
+<li>Derivatives</li>
+<li>Units of collective investment schemes</li>
+<li>Security receipts (under the SARFAESI Act, 2002)</li>
+<li>Mutual fund units</li>
+<li>Units of pooled investment vehicles</li>
+<li>Certificates from a special purpose entity holding debt or receivables, including mortgage debt</li>
+<li>Government securities</li>
+<li>Anything else the Central Government declares</li>
+<li>Rights or interest in securities</li></ul></div>
+<div class="box bd"><span class="tag">Excluded</span><h4>ULIPs</h4><p>A unit linked insurance policy mixes life cover with investment and is issued by an insurer. It is <b>not</b> a security under SCRA.</p>
+<span class="tag" style="margin-top:12px">Recent addition</span><h4>Electronic Gold Receipts</h4><p>Declared securities by gazette notification on <span class="num">24 December 2021</span>. An electronic receipt issued against physical gold deposited under SEBI rules.</p></div>
+</div></figure>
+
+<div class="col">
+<section class="sec" id="s2"><span class="secno">2.2</span><h2>The products</h2>
+<p>Every product has a different mix of risk and return. The book gives each one an "ID card": who issues it, who invests, how it is sold, and who regulates it. The regulator is the part most likely to be asked.</p>
+</div>
+
+<figure class="fig" id="fig-family"><figcaption>The product family<span>Grouped by what you actually own</span></figcaption>
+<div class="grid g3">
+<div class="box hl"><span class="tag">Ownership</span><h4>Equity shares</h4><p>A slice of the company. You share its risks and rewards.</p><div class="idcard"><span>Regulator</span><span>SEBI, MCA, NCLT</span></div></div>
+<div class="box hl"><span class="tag">Loan</span><h4>Debentures, bonds, notes</h4><p>You lent money. You get interest and your money back.</p><div class="idcard"><span>Regulator</span><span>RBI, SEBI, MCA, NCLT</span></div></div>
+<div class="box hl"><span class="tag">Right to buy</span><h4>Warrants</h4><p>Right, not duty, to buy the company's shares later at a fixed price.</p><div class="idcard"><span>Regulator</span><span>SEBI</span></div></div>
+<div class="box hl"><span class="tag">Pooled</span><h4>Mutual fund units, ETFs</h4><p>You own a slice of a basket someone else manages.</p><div class="idcard"><span>Regulator</span><span>SEBI</span></div></div>
+<div class="box hl"><span class="tag">Mix</span><h4>Hybrids</h4><p>Part loan, part ownership. Preference shares, convertibles, DRs, FCCBs, ELDs, MBS, REITs.</p></div>
+<div class="box hl"><span class="tag">Things</span><h4>Commodities</h4><p>Gold, oil, wheat. Same quality units that can be swapped for each other.</p></div>
+</div></figure>
+
+<div class="col">
+<h3>Debentures, bonds and notes</h3>
+<p>All three are loans. The names overlap, and the book says you cannot draw hard lines. Rough usage:</p>
+<ul><li><b>Bonds</b>: umbrella term in the US. Often government, often longer than 10 years. In the UK, government bonds are called <b>gilts</b>.</li>
+<li><b>Debentures</b>: more common in the UK usage and for companies.</li>
+<li><b>Notes</b>: shorter and medium term.</li></ul>
+<p>Debentures can be <span class="k">secured</span> (backed by collateral) or <span class="k">unsecured</span>.</p>
+<p><b>Short-term debt</b> (up to one year) has three instruments:</p>
+</div>
+
+<figure class="fig" id="fig-short"><figcaption>Short-term debt: who issues what</figcaption>
+<div class="grid g3">
+<div class="box"><h4>Treasury Bills</h4><p>Issued by the <b>government</b></p></div>
+<div class="box"><h4>Commercial Paper</h4><p>Issued by <b>companies with high credit ratings</b></p></div>
+<div class="box"><h4>Certificate of Deposit</h4><p>Issued by <b>banks</b></p></div>
+</div></figure>
+
+<div class="col">
+<h3>Domestic, foreign, euro and masala bonds</h3>
+<p>Four questions decide the name: Who issues? In which country? In what currency? What is that country's own currency?</p>
+</div>
+
+<figure class="fig" id="fig-bondtree"><figcaption>Name the bond<span>Follow the questions from left to right</span></figcaption>
+<div class="flow">
+<div class="step"><h4>Sold in the issuer's home country, in home currency?</h4><p>Yes: <b>Domestic bond</b>.<br>No: it is an <b>external bond</b>. Go on.</p></div><div class="arrow"></div>
+<div class="step"><h4>Currency = the local currency of the country where it is sold?</h4><p>Yes: <b>Foreign bond</b>. Indian firm sells USD bonds in the US.</p><p>No: <b>Euro bond</b>. Indian firm sells yen bonds in Germany (a Euro-yen bond).</p></div><div class="arrow"></div>
+<div class="step hl"><h4>Euro bond in Indian rupees?</h4><p>That is a <b>Masala bond</b>. Sold outside India, priced in INR.</p></div>
+</div></figure>
+
+<figure class="fig" id="fig-bondtool"><figcaption>Try it: bond name finder<span>The issuer is an Indian company. Change where and in what currency it borrows.</span></figcaption>
+<div class="grid g2">
+<label>Sold in<br><select id="bt-country" style="font:inherit;padding:.4rem;border-radius:8px;width:100%"><option value="IN">India</option><option value="US" selected>United States</option><option value="DE">Germany</option><option value="KW">Kuwait</option><option value="UK">United Kingdom</option></select></label>
+<label>Currency<br><select id="bt-cur" style="font:inherit;padding:.4rem;border-radius:8px;width:100%"><option value="INR">Indian rupee</option><option value="USD" selected>US dollar</option><option value="EUR">Euro</option><option value="JPY">Japanese yen</option><option value="GBP">British pound</option><option value="KWD">Kuwaiti dinar</option></select></label>
+</div>
+<div class="box hl" style="margin-top:12px" aria-live="polite"><h4 id="bt-name"></h4><p id="bt-why"></p><p id="bt-risk"></p></div>
+</figure>
+
+<div class="col">
+<div class="why"><b>Who carries the currency risk?</b>Borrowing in dollars is cheaper, because rates are lower. But if the dollar rises against the rupee, the Indian issuer must find more rupees to repay. So with <b>foreign currency bonds, the issuer carries the risk</b>. With <b>masala bonds, the foreign investor carries it</b>, because repayment is in rupees.</div>
+<div class="trap">"Euro bond" has nothing to do with Europe or the euro currency. It only means the currency is different from the local currency where it is sold.</div>
+<p>Two dates to remember: the first <span class="k">masala bond</span> was issued in <span class="num">November 2014</span> by the <b>International Finance Corporation</b> and listed on the <b>London Stock Exchange</b>. The book's foreign bond example: Delhi International Airport (a GMR company) issued USD bonds in the US in February 2020.</p>
+
+<h3>Convertible debentures</h3>
+<p>A loan that may turn into shares. Terms are fixed <b>at the time of issue</b>.</p>
+</div>
+
+<figure class="fig" id="fig-conv"><figcaption>How much turns into shares?<span>Blue = becomes equity. Grey = stays a loan and is repaid.</span></figcaption>
+<div style="display:grid;gap:10px">
+<div><b>FCD</b> Fully convertible<div class="stack"><div style="flex:1;background:var(--indigo)">100% becomes shares</div></div></div>
+<div><b>PCD</b> Partly convertible<div class="stack"><div style="flex:.5;background:var(--indigo)">Part becomes shares</div><div style="flex:.5;background:#8A93A8">Rest earns interest, repaid</div></div></div>
+<div><b>OCD</b> Optionally convertible<div class="stack"><div style="flex:1;background:repeating-linear-gradient(45deg,var(--indigo) 0 14px,#8A93A8 14px 28px)">Holder chooses</div></div></div>
+<div><b>NCD</b> Non-convertible<div class="stack"><div style="flex:1;background:#8A93A8">Pure loan, repaid at maturity</div></div></div>
+</div>
+<p class="ptr" style="margin-top:10px">Terms fixed at issue: conversion date, ratio (shares per debenture), price (usually below market price), and the portion that converts (for PCDs).</p></figure>
+
+<figure class="fig" id="fig-convwho"><figcaption>Convertibles: who gains what</figcaption>
+<div class="grid g2">
+<div class="box"><span class="tag">Issuer</span><ul><li>Pays a <b>lower coupon</b>, because investors also hope for share gains</li><li>No repayment needed, because shares replace it</li><li>Downside: existing shareholders get <b>diluted</b></li></ul></div>
+<div class="box"><span class="tag">Investor</span><ul><li>Gets interest in the early years, when the project is young</li><li>Gets share price gains later if the company does well</li></ul></div>
+</div></figure>
+
+<div class="col">
+<h3>Preference shares</h3>
+<p>Called "shares", but they behave half like a loan.</p>
+</div>
+
+<figure class="fig" id="fig-pref"><figcaption>Preference shares: half equity, half debt</figcaption>
+<div class="grid g2">
+<div class="box hl"><span class="tag">Like equity</span><ul><li>Holders are <b>shareholders</b>, not creditors</li><li>Payment is called <b>dividend</b>, paid from profit after tax</li><li>Dividend is <b>not an obligation</b>, unlike interest</li></ul></div>
+<div class="box hl"><span class="tag">Like debt</span><ul><li>Fixed rate of dividend</li><li>Paid <b>before</b> ordinary shareholders</li><li>Repaid <b>before</b> ordinary shareholders if the company winds up</li></ul></div>
+</div>
+<p style="margin-top:10px"><b>Missing</b>: no voting rights, no claim on leftover assets. <b>Cumulative</b>: unpaid dividend carries forward. <b>Non-cumulative</b>: unpaid dividend lapses.</p></figure>
+
+<div class="col">
+<h3>Depository receipts (DRs)</h3>
+<p>A DR lets people in one country trade shares of a company from another country, in their own currency, on their own exchange.</p>
+<div class="analogy">A cloakroom token. You hand your coat to the cloakroom and get a token. The token stands for the coat. You can hand the token to someone else, who can later claim the coat.</div>
+</div>
+
+<figure class="fig" id="fig-dr"><figcaption>How a DR is created</figcaption>
+<div class="flow">
+<div class="step"><h4>Deliver shares</h4><p>A company or an investor gives shares to a depository (usually a foreign bank)</p></div><div class="arrow"></div>
+<div class="step"><h4>Park them</h4><p>The depository keeps the shares with a custodian in the company's home country</p></div><div class="arrow"></div>
+<div class="step hl"><h4>Issue the receipt</h4><p>The depository issues DRs to investors in the overseas market</p></div>
+</div>
+<div class="grid g2" style="margin-top:12px">
+<div class="box gd"><h4>Sponsored</h4><p>The <b>company</b> starts it. Can be <b>listed</b> on an exchange, if listing rules are met.</p></div>
+<div class="box bd"><h4>Unsponsored</h4><p>An <b>investor</b> starts it. Usually <b>not allowed on exchanges</b>. Trades OTC only. Lighter regulation.</p></div>
+</div></figure>
+
+<figure class="fig" id="fig-drtypes"><figcaption>DRs by country</figcaption>
+<div class="scroll"><table class="cmp">
+<thead><tr><th>Type</th><th>Traded in</th><th>Issued by</th><th>Book's example</th></tr></thead>
+<tbody>
+<tr><th>ADR</th><td>USA</td><td>A non-US company</td><td>Infosys, Wipro, ICICI Bank, HDFC Bank</td></tr>
+<tr><th>IDR</th><td>India</td><td>A non-Indian company</td><td>Standard Chartered Bank</td></tr>
+<tr><th>HKDR</th><td>Hong Kong</td><td>A non-Hong Kong company</td><td></td></tr>
+<tr><th>GDR</th><td><b>More than one country</b></td><td>Any foreign company</td><td>Often issued in EU countries, since common rules make compliance easy</td></tr>
+</tbody></table></div>
+<p class="ptr" style="margin-top:10px">DR holders get dividends and price gains, but <b>no voting rights</b> (SEBI is considering this). <b>Two-way fungibility</b>: shares can be turned into DRs and DRs back into shares, subject to rules.</p></figure>
+
+<div class="col">
+<div class="trap">SEBI's IDR rules: a limit on money raised in India, a <b>one-year lock-in</b> on converting IDRs into shares, and IDRs are available <b>only to resident Indians</b>.</div>
+
+<h3>More hybrids, one line each</h3>
+</div>
+
+<figure class="fig" id="fig-hybrids"><figcaption>Other hybrids and structured products</figcaption>
+<div class="grid g2">
+<div class="box"><h4>FCCB</h4><p>Foreign Currency Convertible Bond. Usually <b>optionally</b> convertible, issued offshore. Interest and principal in foreign currency. After conversion, dividends are in rupees and the currency risk sits with the investor. Regulated by <b>RBI under FEMA</b>.</p></div>
+<div class="box"><h4>Equity Linked Debenture (ELD)</h4><p>Interest depends on an equity index or shares. Most money goes into bonds to protect capital, the rest buys options for equity upside. <b>Capital protection does not remove credit risk</b>, so ELDs are rated.</p></div>
+<div class="box"><h4>Commodity Linked Debenture (CLD)</h4><p>Same idea as an ELD, linked to a commodity. Mostly <b>gold and silver</b>.</p></div>
+<div class="box"><h4>MBS and ABS</h4><p>Bonds paid from loan repayments. <b>MBS</b>: home loans. <b>ABS</b>: auto loans, rent, credit card dues. Turns illiquid loans into tradable bonds (securitisation).</p></div>
+</div></figure>
+
+<div class="col">
+<h3>Pooled products</h3>
+</div>
+
+<figure class="fig" id="fig-pooled"><figcaption>Mutual funds, ETFs, REITs and InvITs</figcaption>
+<div class="grid g2">
+<div class="box"><h4>Mutual fund units</h4><p>Pool of money in a portfolio. Unit value is the <span class="k">NAV</span>.</p><p><b>Open-ended</b>: buy from and sell to the fund anytime. No maturity.<br><b>Close-ended</b>: fixed number of units. <b>Must be listed</b>, traded on the exchange.</p></div>
+<div class="box"><h4>ETF</h4><p>Tracks an index, a commodity like gold, or a basket. <b>Listed and traded</b> in real time, even one unit. Passive, so <b>lower expense ratio</b>. Like open-ended funds (new units can be created) and like close-ended funds (trades on an exchange).</p></div>
+<div class="box"><h4>REIT</h4><p>Trust investing in income-producing real estate. At least <span class="num">80%</span> of assets in real estate.</p></div>
+<div class="box"><h4>InvIT</h4><p>Trust investing in income-producing infrastructure. At least <span class="num">90%</span> of unit capital in such projects.</p></div>
+</div>
+<p class="ptr" style="margin-top:10px">Both REITs and InvITs must pay out at least <b>90% of distributable cash flow</b> to unit holders. Both are trusts that issue units and get tax benefits if they meet the rules.</p></figure>
+
+<figure class="fig" id="fig-etf"><figcaption>How ETF units are made</figcaption>
+<div class="flow">
+<div class="step"><h4>Sponsor</h4><p>A mutual fund or global asset manager sets up the ETF</p></div><div class="arrow"></div>
+<div class="step hl"><h4>Authorised participant</h4><p>A big broker or bank assembles the basket of assets and hands it to the sponsor</p></div><div class="arrow"></div>
+<div class="step"><h4>ETF units</h4><p>The participant gets units in return and sells them in the market</p></div><div class="arrow"></div>
+<div class="step"><h4>Retail investors</h4><p>Trade units like ordinary shares</p></div>
+</div></figure>
+
+<div class="col">
+<h3>Indices</h3>
+<p>An index tracks the market using a <b>sample</b> of shares. Most big indices are <span class="k">market-cap weighted</span>: bigger companies count for more. Shares are picked for liquidity, free float and market cap, and the list is reviewed from time to time.</p>
+</div>
+
+<figure class="fig" id="fig-index"><figcaption>India's three headline indices</figcaption>
+<div class="grid g3">
+<div class="box hl"><h4>Nifty 50</h4><p><span class="num">50</span> stocks on <b>NSE</b></p></div>
+<div class="box hl"><h4>S&amp;P BSE Sensex</h4><p><span class="num">30</span> stocks on <b>BSE</b></p></div>
+<div class="box hl"><h4>SX40</h4><p><span class="num">40</span> stocks on <b>MSEI</b></p></div>
+</div>
+<p style="margin-top:12px"><b>Five uses of an index</b>: compare returns with gold or debt; benchmark for a fund; barometer of the economy or a sector; real-time mood of investors; base for index funds, futures and options.</p></figure>
+
+<div class="col">
+<h3>Commodities</h3>
+<p>A commodity is a basic good where every unit is the same, so units can be swapped.</p>
+<div class="analogy">A 10-gram gold bar is a commodity. You do not care which bar you get. A gold necklace is not, because you might like one design over another even at the same weight.</div>
+</div>
+
+<figure class="fig" id="fig-comm"><figcaption>Hard, soft, and four ways to invest</figcaption>
+<div class="grid g2">
+<div class="box"><span class="tag">Hard</span><h4>Mined or extracted</h4><p>Metals, crude oil</p></div>
+<div class="box"><span class="tag">Soft</span><h4>Grown</h4><p>Grains, pulses</p></div>
+</div>
+<p style="margin-top:12px">Commodities protect against inflation, but storage is costly. So people invest through:</p>
+<div class="grid g4">
+<div class="box"><h4>Precious metals</h4><p>Long life, low storage cost</p></div>
+<div class="box"><h4>Commodity ETFs</h4><p>The fund stores it. Gold ETFs are most common.</p></div>
+<div class="box"><h4>Managed futures</h4><p>Professionals trade futures, not the goods</p></div>
+<div class="box"><h4>Warehouse receipts</h4><p>Proof you own stored goods. Usually negotiable: pass the receipt, pass the ownership.</p></div>
+</div></figure>
+
+<div class="col">
+<section class="sec" id="s3"><span class="secno">2.3</span><h2>How the market is built</h2>
+<p>Two parts that need each other:</p>
+</div>
+
+<figure class="fig" id="fig-primsec"><figcaption>Primary and secondary market</figcaption>
+<div class="grid g2">
+<div class="box hl"><span class="tag">Primary (new issue market)</span><h4>Company sells new securities</h4><p>Money goes <b>to the issuer</b>. Issuer deals directly with investors. <b>Creates</b> financial assets.</p></div>
+<div class="box hl"><span class="tag">Secondary</span><h4>Investors trade existing securities</h4><p>Money goes <b>between investors</b>. The issuer is not involved. Gives <b>liquidity</b>, which encourages people to buy in the primary market.</p></div>
+</div>
+<div class="analogy" style="margin-top:12px">Primary is the car showroom: the maker sells a new car. Secondary is the used-car market: owners sell to each other, and the maker gets nothing. But people buy new cars more happily because they know they can resell.</div>
+</figure>
+
+<div class="col">
+<h3>Ways to issue securities</h3>
+</div>
+
+<figure class="fig" id="fig-issue"><figcaption>Every way a company can issue shares<span>Grouped by who gets them</span></figcaption>
+<div class="grid g2">
+<div class="box hl"><span class="tag">To the public</span>
+<p><b>IPO</b>: first ever sale of shares to the public. Mainly to raise equity for growth.</p>
+<p><b>FPO</b>: an already listed company offers shares to the public again. For growth, to repay debt, or to meet public shareholding rules.</p>
+<p><b>OFS</b>: existing holders sell their shares. <b>No new shares</b>, share capital unchanged, money goes to the sellers. Example: government disinvestment in PSUs.</p></div>
+<div class="box hl"><span class="tag">To a select few (private placement)</span>
+<p>Up to <span class="num">50</span> investors, as per the book (Companies Act, 2013).</p>
+<p><b>QIP</b>: a <b>listed</b> company places shares with Qualified Institutional Buyers (FIs, mutual funds, banks and others).</p>
+<p><b>Preferential issue</b>: a listed company issues to a select person or group. SEBI rules on pricing, disclosure and lock-in apply.</p></div>
+<div class="box hl"><span class="tag">To existing shareholders</span>
+<p><b>Rights</b>: buy more shares at a set price, in a ratio, as on the record date. Three choices: <b>exercise, transfer to someone, or let lapse</b>.</p>
+<p><b>Bonus</b>: <b>free</b> shares, instead of dividends. Needs enough retained earnings, which move to share capital.</p></div>
+<div class="box hl"><span class="tag">To employees and insiders</span>
+<p><b>Sweat equity</b>: shares as a reward for contribution. <b>Section 54</b>, Companies Act, 2013. New shares, but raising money is not the goal. It keeps managers working in the owners' interest (the book calls this reducing agency risk).</p>
+<p><b>ESOP</b>: option to buy shares at a set price after a <b>vesting period</b>, usually more than a year. Employee gains only if the price rises above the exercise price.</p></div>
+</div>
+<p class="ptr" style="margin-top:10px"><b>Onshore</b> = raised from investors in India. <b>Offshore</b> = raised from investors abroad.</p></figure>
+
+<figure class="fig" id="fig-ipo"><figcaption>How an IPO is split between investors</figcaption>
+<div class="stack" style="height:56px"><div style="flex:35;background:var(--teal)">Retail: at least 35%</div><div style="flex:50;background:var(--indigo)">QIBs: at most 50%</div><div style="flex:15;background:#B07A12">Others</div></div>
+<div class="grid g2" style="margin-top:12px">
+<div class="box"><h4>Retail investor</h4><p>Invests up to <span class="num">Rs 2,00,000</span> in the issue.</p></div>
+<div class="box"><h4>Anchor investor</h4><p>A QIB applying for <span class="num">Rs 10 crore</span> or more in a book-built issue. Can get up to <span class="num">60%</span> of the QIB portion. Bids open <b>one day before</b> the IPO. Introduced in <b>2009</b>. Strong anchor demand signals a good issue.</p></div>
+</div>
+<p class="ptr" style="margin-top:10px">SEBI also sets IPO eligibility (net tangible assets, profitability, net worth), requires listing on a nationwide exchange, and requires shares in demat form.</p></figure>
+
+<div class="col">
+<div class="trap">OFS is "a secondary market transaction done through the primary market route". Money goes to the sellers, not the company. And "FPO" can mean Follow-on Public Offer or Farmer Producer Organisation. Read the context.</div>
+
+<h3>The secondary market</h3>
+<p>Two ways to trade:</p>
+</div>
+
+<figure class="fig" id="fig-otc"><figcaption>OTC market and exchange market</figcaption>
+<div class="scroll"><table class="cmp">
+<thead><tr><th></th><th>Over-the-counter (OTC)</th><th>Exchange traded</th></tr></thead>
+<tbody>
+<tr><th>How the deal is made</th><td>Negotiated directly between the parties</td><td>Electronic order matching on the exchange</td></tr>
+<tr><th>Who settles</th><td>The parties themselves</td><td>The clearing corporation</td></tr>
+<tr><th>Default risk</th><td>Each party manages it alone</td><td>Clearing corporation <b>guarantees</b> settlement</td></tr>
+</tbody></table></div></figure>
+
+<figure class="fig" id="fig-life"><figcaption>Life of an exchange trade</figcaption>
+<div class="flow">
+<div class="step"><h4>Trading</h4><p>You place an order through a broker. The exchange matches buyers and sellers.</p></div><div class="arrow"></div>
+<div class="step hl"><h4>Clearing</h4><p>Work out each party's <b>net</b> dues for the period. The exchange sends trade details to the clearing house, which sends obligation reports to brokers and custodians.</p></div><div class="arrow"></div>
+<div class="step gd"><h4>Settlement</h4><p>Seller delivers shares. Buyer pays money. Miss the deadline and pay a penalty.</p></div>
+</div></figure>
+
+<div class="col">
+<div class="why"><b>Novation: the key idea</b>The clearing corporation becomes the <b>buyer to every seller</b> and the <b>seller to every buyer</b>. You never depend on the stranger on the other side.</div>
+<div class="analogy">Like an online marketplace that holds the money. You do not need to trust the seller. You trust the platform, and it deals with the seller.</div>
+<p>Guaranteeing every trade is risky for the clearing corporation, so it collects <span class="k">margins</span>:</p>
+<ul><li><b>Initial (upfront) margin</b>: a percentage of trade value, based on <b>Value at Risk</b>.</li>
+<li><b>Peak margin</b>.</li>
+<li><b>Mark-to-market (MTM) margin</b>: the paper loss on an open trade due to price moves.</li></ul>
+</div>
+
+<div class="col">
+<section class="sec" id="s4"><span class="secno">2.4</span><h2>Who is in the market?</h2>
+<p>A long list. Sort it by <b>what job each player does</b>, and it is easy to hold.</p>
+</div>
+
+<figure class="fig" id="fig-city"><figcaption>The market as a town<span>Each group does one job</span></figcaption>
+<div class="grid g2">
+<div class="box hl"><span class="tag">Help companies issue (primary)</span>
+<p><b>Merchant bankers</b>: SEBI-registered issue managers or lead managers. Single point of contact for the issuer. Plan the issue, price it, run it until listing, and coordinate other intermediaries.</p>
+<p><b>Underwriters</b>: promise to buy what the public does not. <b>Hard</b> underwriting = committed at the start. <b>Soft</b> = committed after pricing, with an exit clause.</p></div>
+<div class="box hl"><span class="tag">Run the marketplace</span>
+<p><b>Stock exchanges</b>: NSE, BSE, MSEI (nationwide). Anonymous electronic order matching. Appoint clearing agencies and clearing banks.</p>
+<p><b>Trading members (brokers)</b>: every exchange trade must go through one. Can be individuals, firms or companies.</p>
+<p><b>Authorised persons</b>: agents of a broker. Need prior exchange approval, per person and per segment.</p></div>
+<div class="box hl"><span class="tag">After the trade</span>
+<p><b>Clearing corporation</b>: legal counterparty to all exchange trades. Guarantees settlement. Can be part of the exchange or separate.</p>
+<p><b>Clearing banks</b>: every clearing member keeps an account here for money pay-in and pay-out.</p>
+<p><b>Depositories</b>: hold securities electronically. Two in India: <b>NSDL</b> and <b>CDSL</b>. Keep company-level accounts.</p>
+<p><b>Depository participants (DPs)</b>: the depository's agents. Keep investor-level accounts. Appointed by the depository with SEBI approval.</p>
+<p><b>Custodians</b>: hold securities and funds for big institutions, settle their trades, track corporate actions.</p></div>
+<div class="box hl"><span class="tag">Commodity side</span>
+<p><b>Farmer Producer Organisations</b>: farmer collectives (cooperatives, producer companies, societies) for better prices and market access.</p>
+<p><b>Warehouse service providers</b>: storage. Many registered with <b>WDRA</b>. Issue Negotiable Warehouse Receipts (NWRs).</p>
+<p><b>Quality assayers</b>: test and certify quality. Often accredited by WDRA. Their certificates are needed for NWRs.</p></div>
+</div></figure>
+
+<div class="col">
+<div class="analogy">Depository and DP are like a bank and its branch. The depository is head office (NSDL or CDSL). The DP is the branch where you open your account.</div>
+<div class="trap"><b>Sub-brokers</b> were abolished. SEBI decided on <span class="num">21 June 2018</span>, effective <span class="num">1 April 2019</span>. They had to become authorised persons or trading members.</div>
+<p>Who can be a DP: public financial institutions, scheduled commercial banks, RBI-approved foreign banks, state financial corporations, custodians, stockbrokers, clearing corporations, NBFCs, and registrars and share transfer agents.</p>
+<h3>The investors</h3>
+</div>
+
+<figure class="fig" id="fig-investors"><figcaption>Institutional investors</figcaption>
+<div class="grid g3">
+<div class="box"><h4>FPI</h4><p>Set up outside India, invests in India. <b>Must register with SEBI</b>.</p></div>
+<div class="box"><h4>P-Note holders</h4><p>Overseas investors who do <b>not</b> register with SEBI. P-Notes are issued to them <b>by SEBI-registered FPIs</b>.</p></div>
+<div class="box"><h4>Mutual funds</h4><p>Pool money, fund manager decides. Diversification lowers risk.</p></div>
+<div class="box"><h4>Insurance companies</h4><p>Large corpus. Invest in equity, government securities and bonds.</p></div>
+<div class="box"><h4>Pension funds</h4><p>Retirement money from employers and employees. Among the largest investors.</p></div>
+<div class="box"><h4>Venture capital</h4><p>Early-stage firms with long-term potential. Bring expertise as well as money.</p></div>
+<div class="box"><h4>Private equity</h4><p>Growth, expansion, buy-outs. Includes VC. Investors are <b>limited partners</b>; managers are <b>general partners</b>.</p></div>
+<div class="box"><h4>Hedge funds</h4><p>Very wide mandate. The name is a <b>misnomer</b>: they are not necessarily hedged.</p></div>
+<div class="box"><h4>EPF</h4><p>Employer pays <span class="num">12%</span> of basic salary, employee the same. Run by <b>EPFO</b>. Rate set yearly. Employees have no say in investments.</p></div>
+<div class="box"><h4>NPS</h4><p>Government-sponsored retirement scheme. Buy an annuity at maturity, partial withdrawal allowed. Choice of funds.</p></div>
+<div class="box"><h4>Family offices</h4><p>Manage a wealthy family's money, tax, estate, even household payments. Single or multi-family.</p></div>
+<div class="box"><h4>Corporate treasuries</h4><p>Invest a company's spare cash. Small firms mostly use mutual funds.</p></div>
+</div></figure>
+
+<figure class="fig" id="fig-aif"><figcaption>Alternative Investment Funds: three categories<span>Defined in Regulation 2(1)(b), SEBI (AIF) Regulations, 2012</span></figcaption>
+<div class="grid g3">
+<div class="box gd"><span class="tag">Category I</span><h4>Good for the economy</h4><p>Start-ups, early-stage, social ventures, SMEs, infrastructure. Includes VC funds and <b>angel funds</b>.</p></div>
+<div class="box"><span class="tag">Category II</span><h4>The rest, no leverage</h4><p>Not I or III. No borrowing except for day-to-day needs. Real estate funds, <b>PE funds</b>, distressed asset funds.</p></div>
+<div class="box bd"><span class="tag">Category III</span><h4>Complex, uses leverage</h4><p>Leverage and derivatives. <b>Hedge funds</b>, PIPE funds.</p></div>
+</div>
+<p class="ptr" style="margin-top:10px">An AIF is a privately pooled fund not already covered by other SEBI fund rules or by IRDAI, PFRDA or RBI.</p></figure>
+
+<figure class="fig" id="fig-others"><figcaption>Everyone else</figcaption>
+<div class="grid g2">
+<div class="box"><h4>Retail investors</h4><p>Individuals trading for themselves. <b>HNIs</b> and <b>UHNIs</b> invest large sums. RBI lets <b>NRIs, PIOs and QFIs</b> invest directly under the automatic route.</p></div>
+<div class="box"><h4>Corporates</h4><p>Processors, manufacturers, importers and exporters whose margins depend on commodity prices.</p></div>
+<div class="box"><h4>Investment advisers</h4><p>Help investors with asset allocation and financial plans based on needs, horizon and risk.</p></div>
+<div class="box"><h4>Proxy advisers</h4><p>Tell investors, mostly <b>institutions</b>, how to vote on company proposals.</p></div>
+</div></figure>
+
+<div class="col">
+<section class="sec" id="s5"><span class="secno">2.5</span><h2>Kinds of deals</h2>
+<h3>When does settlement happen?</h3>
+<p><b>T</b> is the trade date. The number after it is how many days later money and goods change hands.</p>
+</div>
+
+<figure class="fig" id="fig-tplus"><figcaption>Cash, tom and spot</figcaption>
+<div class="tl"><div class="tl-i"><span class="tl-d" style="background:var(--teal)"></span><b class="tl-t">T+0</b><h4>Cash</h4><p>Same day. Like buying vegetables at the market.</p></div>
+<div class="tl-i"><span class="tl-d" style="background:var(--indigo)"></span><b class="tl-t">T+1</b><h4>Tom</h4><p>Next day ("tomorrow"). Some FX deals settle this way.</p></div>
+<div class="tl-i"><span class="tl-d" style="background:#B07A12"></span><b class="tl-t">T+2</b><h4>Spot</h4><p>Normally two business days after the trade. The global default for FX.</p></div></div>
+<p class="ptr">The book notes Indian exchanges have moved stocks to a T+1 cycle. For the exam, learn the three definitions above.</p></figure>
+
+<div class="col">
+<h3>The four derivatives</h3>
+<p>A derivative is a contract whose value comes from something else: a share, an index, wheat, an interest rate.</p>
+</div>
+
+<figure class="fig" id="fig-deriv"><figcaption>Forwards, futures, options, swaps</figcaption>
+<div class="scroll"><table class="cmp">
+<thead><tr><th></th><th>Forward</th><th>Futures</th><th>Options</th><th>Swaps</th></tr></thead>
+<tbody>
+<tr><th>What it is</th><td>Agree today to buy or sell later at a fixed price</td><td>A forward with <b>standard terms</b></td><td><b>Right, not obligation</b>, to buy (call) or sell (put)</td><td>Swap cash flows by a set formula</td></tr>
+<tr><th>Where</th><td>OTC</td><td>Exchange</td><td>OTC or exchange</td><td>OTC</td></tr>
+<tr><th>Terms</th><td>Customised</td><td>Standard lot, quality, delivery date</td><td>Strike price, expiry</td><td>Notional amount, fixed and floating legs</td></tr>
+<tr><th>Default risk</th><td>High. Relies on trust.</td><td>Clearing corp guarantees. Strict margins.</td><td>Buyer pays premium upfront</td><td>Counterparty</td></tr>
+<tr><th>Book's example</th><td>Farmer sells wheat to a miller 6 months ahead</td><td>MCX wheat: 10 MT trading unit, physical delivery</td><td>Arvind buys a Nifty call from Salim</td><td>Borrower turns floating-rate loan into fixed</td></tr>
+</tbody></table></div></figure>
+
+<figure class="fig" id="fig-option"><figcaption>Try it: Arvind's call option<span>Arvind buys a Nifty call from Salim. Strike 11,000. Premium Rs 100. Move the slider to set Nifty on expiry day.</span></figcaption>
+<input type="range" id="op-s" min="10600" max="11400" step="50" value="11200" style="width:100%" aria-label="Nifty on expiry day">
+<p style="margin:.3rem 0"><b>Nifty on expiry: <span id="op-sv"></span></b> <span id="op-state" class="pill"></span></p>
+<svg id="op-svg" viewBox="0 0 640 260" style="width:100%;height:auto;font-family:var(--body)" role="img" aria-label="Profit and loss chart for Arvind and Salim"></svg>
+<div class="grid g2"><div class="box gd"><h4>Arvind (buyer)</h4><p id="op-a"></p></div><div class="box bd"><h4>Salim (writer)</h4><p id="op-b"></p></div></div>
+<p class="ptr" style="margin-top:8px">Arvind breaks even at 11,100 (strike plus premium). His loss is capped at the Rs 100 premium. Salim's gain is capped at Rs 100.</p></figure>
+
+<div class="col">
+<div class="why"><b>Swap in one line</b>The borrower pays a <b>fixed</b> rate to a swap dealer and receives a <b>floating</b> rate (T-bill plus spread). The floating money received pays the floating loan. What is left is a fixed payment. Only interest is exchanged; the principal (the <b>notional</b>) is not.</div>
+<h3>Four motives</h3>
+</div>
+
+<figure class="fig" id="fig-motives"><figcaption>Why people trade</figcaption>
+<div class="grid g2">
+<div class="box"><span class="tag">Trading</span><p>Short term: hours, days, weeks. Based on <b>price patterns</b> (technical analysis), assuming history repeats. Book says traders have a <b>higher probability of gains</b> than speculators.</p></div>
+<div class="box"><span class="tag">Speculating</span><p>Buy or sell expecting a price change, usually short term. Based on private or insider information, or a view on fundamentals.</p></div>
+<div class="box gd"><span class="tag">Hedging</span><p>Take a position to <b>offset losses</b> on something you already hold. Aim is <b>no gain, no loss</b>. Motive is avoiding loss, not profit.</p></div>
+<div class="box hl"><span class="tag">Arbitrage</span><p><b>Buy and sell at the same time</b> in two markets to profit from a price gap. Example: buy in spot, sell in futures. In an efficient market the gap closes fast.</p></div>
+</div>
+<p class="ptr" style="margin-top:10px">Traders and speculators add liquidity. Both often use borrowed money, which magnifies gains and losses.</p></figure>
+
+<div class="col">
+<h3>Pledging shares</h3>
+<p>Taking a loan against your shares.</p>
+<ul><li><span class="k">Pledgor</span> = the investor who borrows. <span class="k">Pledgee</span> = the lender.</li>
+<li>Pledged shares <b>stay in the pledgor's demat account</b>, but are <b>blocked</b>.</li>
+<li>Once the loan is repaid, they are unpledged.</li>
+<li>On default, the pledgee can sell them, after giving notice and a fair chance to repay.</li></ul>
+<div class="analogy">Like leaving your gold at a jeweller for a loan, except here the gold stays in your own locker with a lock the lender controls.</div>
+</div>
+
+<div class="col">
+<section class="sec" id="s6"><span class="secno">2.6</span><h2>Paper to electronic</h2>
+</div>
+
+<figure class="fig" id="fig-demat"><figcaption>Demat and remat</figcaption>
+<div class="grid g2">
+<div class="box hl"><span class="tag">Dematerialisation</span><h4>Paper to electronic</h4><p>Holdings become book entries. Shares lose their distinctive numbers, folio and certificate numbers. One investor's shares cannot be told apart from another's.</p></div>
+<div class="box"><span class="tag">Rematerialisation</span><h4>Electronic to paper</h4><p>On the investor's request, shares come back as certificates <b>with distinctive numbers</b>.</p></div>
+</div>
+<p style="margin-top:10px">A company making a public issue must sign an agreement with <b>all</b> depositories, so investors can hold shares in demat form.</p></figure>
+
+<div class="col">
+<section class="sec" id="traps"><h2>All exam traps in this chapter</h2>
+<ol class="traplist">
+<li>Borrowers <b>sell</b> securities; investors <b>buy</b> them.</li>
+<li>Securities are defined in <b>Section 2(h) of SCRA, 1956</b>. ULIPs are excluded. Electronic Gold Receipts were added on 24 December 2021.</li>
+<li>Debt regulators include <b>RBI</b>; equity regulators do not. Warrants, mutual funds and ETFs: <b>SEBI</b>.</li>
+<li>T-bills: government. Commercial paper: highly rated companies. CDs: banks.</li>
+<li>Foreign bond: local currency of the country where sold. Euro bond: a different currency. Masala bond: rupees, sold abroad.</li>
+<li>Foreign currency bond: issuer carries currency risk. Masala bond: investor carries it.</li>
+<li>First masala bond: IFC, November 2014, London Stock Exchange.</li>
+<li>OCD: holder chooses to convert. FCCBs are usually optionally convertible and regulated by RBI under FEMA.</li>
+<li>Preference shares: no voting rights. Cumulative carries unpaid dividend forward.</li>
+<li>Sponsored DRs can list; unsponsored trade OTC. GDRs trade in more than one country. IDR: one-year lock-in, resident Indians only.</li>
+<li>Sensex 30 (BSE), Nifty 50 (NSE), SX40 40 (MSEI). Most indices are market-cap weighted.</li>
+<li>Close-ended fund units must be listed. ETFs have lower expense ratios.</li>
+<li>REIT: 80% in real estate. InvIT: 90% in infra. Both distribute at least 90%.</li>
+<li>IPO: retail at least 35% (up to Rs 2 lakh), QIB at most 50%. Anchor: Rs 10 crore plus, up to 60% of QIB portion, one day early.</li>
+<li>OFS: no new shares; money to the sellers. Rights: exercise, transfer or lapse. Bonus: free, from retained earnings.</li>
+<li>Private placement: up to 50 investors as per the book. QIP is for listed companies only.</li>
+<li>Sweat equity: Section 54, Companies Act, 2013.</li>
+<li>Novation: clearing corporation is buyer to every seller and seller to every buyer. Initial margin is based on Value at Risk.</li>
+<li>Two depositories: NSDL and CDSL. Sub-brokers ended 1 April 2019.</li>
+<li>P-Notes are issued by FPIs to overseas investors who are not registered with SEBI.</li>
+<li>AIF Cat I: VC and angel funds. Cat II: PE and real estate funds. Cat III: hedge funds and PIPE funds.</li>
+<li>Cash T+0, Tom T+1, Spot T+2.</li>
+<li>Option buyer pays premium and has a right. Writer receives premium and has an obligation.</li>
+<li>Hedging aims for no gain, no loss. Arbitrage is simultaneous buy and sell.</li>
+<li>Pledged shares stay in the pledgor's account, blocked.</li>
+<li>Remat gives back distinctive numbers.</li>
+</ol></section>
+
+<section class="sec" id="talk"><h2>For the group discussion</h2>
+<ol class="talk">
+<li>Walk through the life of one share you bought last month. Name every intermediary it touched.</li>
+<li>Why would an Indian company issue a masala bond instead of a dollar bond? Who wins, who takes the risk?</li>
+<li>A company does an OFS and an FPO in the same year. What changes in its share capital in each case?</li>
+<li>Is a gold ETF a security, a commodity, or both? Argue it using the SCRA list.</li>
+<li>Use the option slider. At what Nifty level are Arvind and Salim both at zero? Why is that not 11,000?</li>
+</ol></section>
+</div>
+<footer>Notes built from the NISM Series XV workbook (February 2026 version). Study aid only. Always check the official workbook.</footer>
+</div>
+</div><div class="view" id="v-cards" hidden><div class="wrap"><div class="fc-wrap">
+<div class="fc-top"><span id="fc-count" class="ptr"></span><label class="ptr"><input type="checkbox" id="fc-missed"> Only cards I missed</label></div>
+<div class="fc-prog"><div id="fc-bar"></div></div>
+<div class="card3d" id="fc-card" tabindex="0" role="button" aria-label="Flip card"><div class="inner">
+<div class="face"><span class="lbl" id="fc-pos"></span><div class="front-txt" id="fc-front"></div></div>
+<div class="face back"><span class="lbl">Answer</span><div class="back-txt" id="fc-back"></div></div></div></div>
+<p class="hint">Tap the card to flip. On a keyboard: space flips, right arrow = got it, left arrow = again.</p>
+<div class="btns"><button class="btn bad" id="fc-bad">Again</button><button class="btn good" id="fc-good">Got it</button></div>
+<div class="btns"><button class="btn sm" id="fc-shuffle">Shuffle</button><button class="btn sm" id="fc-reset">Clear progress</button></div>
+</div></div></div><div class="view" id="v-quiz" hidden><div class="wrap"><div class="qz">
+<div id="qz-setup" class="qz-setup"><h2>Test yourself</h2><p class="ptr" id="qz-counts"></p>
+<p>Scoring works like the real exam: +1 for a right answer, minus 0.25 for a wrong one, 0 for a skip. Skipping is allowed.</p>
+<div class="box"><h4>Which questions?</h4>
+<label><input type="radio" name="qset" value="quick" checked> Quick 10 (random MCQs)</label>
+<label><input type="radio" name="qset" value="mcq"> All MCQs</label>
+<label><input type="radio" name="qset" value="case"> Case sets only (the exam has 5 of these, 4 questions each)</label>
+<label><input type="radio" name="qset" value="all"> Everything</label>
+<label><input type="radio" name="qset" value="missed"> Only questions I got wrong before <span id="qz-missedn" class="ptr"></span></label></div>
+<div class="box"><h4>How?</h4>
+<label><input type="radio" name="qmode" value="practice" checked> Practice: see the answer after each question</label>
+<label><input type="radio" name="qmode" value="exam"> Exam: see everything at the end</label></div>
+<div class="btns" style="justify-content:flex-start"><button class="btn pri" id="qz-start">Start</button></div></div>
+<div id="qz-run" hidden><div class="qz-head"><span id="qz-pos"></span><span id="qz-modelbl"></span></div>
+<div id="qz-q"></div>
+<div class="btns" style="justify-content:space-between"><button class="btn sm" id="qz-prev">Back</button><span><button class="btn sm" id="qz-skip">Skip</button> <button class="btn pri sm" id="qz-check">Check</button> <button class="btn sm" id="qz-next">Next</button></span></div>
+<div class="btns" style="justify-content:flex-start"><button class="btn sm" id="qz-quit">Stop and go back</button></div></div>
+<div id="qz-end" hidden><h2>Your result</h2><div class="score" id="qz-score"></div><p class="verdict" id="qz-verdict"></p><p class="ptr" id="qz-penalty"></p>
+<div class="btns" style="justify-content:flex-start"><button class="btn pri" id="qz-copy">Copy result for the group</button><button class="btn" id="qz-again">Try another set</button></div>
+<h3>Review what you missed</h3><div class="review" id="qz-review"></div></div>
+</div></div></div><div class="toast" id="toast" role="status"></div>
+<script>window.__DATA__={"id": "ch02", "short": "Ch2", "title": "Chapter 2: The securities market", "cards": [{"f": "What is a security?", "b": "A <b>transferable</b> financial claim: either a promise to pay (debt) or ownership in a company (equity)."}, {"f": "How does a secondary market turn long-term securities into short-term ones?", "b": "The issuer keeps the money for the full term, but an investor can <b>exit anytime</b> by selling to another investor."}, {"f": "Four parts of a financial market", "b": "Investors (buyers of securities), borrowers (sellers of securities), intermediaries, regulators."}, {"f": "Where is 'securities' defined in Indian law?", "b": "<b>Section 2(h)</b> of the Securities Contracts (Regulation) Act, <b>1956</b>."}, {"f": "Which insurance product is excluded from the SCRA definition of securities?", "b": "<b>ULIPs</b> (unit linked insurance policies)."}, {"f": "When were Electronic Gold Receipts declared securities?", "b": "Gazette notification of <b>24 December 2021</b>."}, {"f": "Regulators for equity shares", "b": "SEBI, MCA (Ministry of Corporate Affairs), NCLT."}, {"f": "Regulators for debentures and bonds", "b": "<b>RBI</b>, SEBI, MCA, NCLT."}, {"f": "Treasury Bills, Commercial Paper, Certificate of Deposit: who issues each?", "b": "T-bills: government. CP: highly rated companies. CD: banks. All up to one year."}, {"f": "Foreign bond", "b": "Issued abroad, in the <b>local currency of that foreign country</b>. Example: Indian firm sells USD bonds in the US."}, {"f": "Euro bond", "b": "Issued abroad, in a currency <b>different from</b> that country's local currency. Example: Indian firm sells yen bonds in Germany. Not about Europe."}, {"f": "Masala bond", "b": "A euro bond <b>denominated in Indian rupees</b>, issued outside India. First: IFC, <b>November 2014</b>, London Stock Exchange."}, {"f": "Who carries currency risk: foreign currency bond vs masala bond?", "b": "Foreign currency bond: the <b>issuer</b>. Masala bond: the <b>foreign investor</b>."}, {"f": "Warrant", "b": "The <b>right, not obligation</b>, to buy the issuer's shares after a set period at a pre-set price. Regulator: SEBI."}, {"f": "Sensex, Nifty 50, SX40: how many stocks and which exchange?", "b": "Sensex: 30, BSE. Nifty 50: 50, NSE. SX40: 40, MSEI."}, {"f": "Five uses of an index", "b": "Compare with other assets. Benchmark for funds. Barometer of economy or sector. Real-time sentiment. Base for index funds and derivatives."}, {"f": "Open-ended vs close-ended mutual fund", "b": "Open: buy from and sell to the fund anytime, no maturity. Close: fixed units, <b>must be listed</b>, traded on the exchange."}, {"f": "ETF in one line", "b": "A fund that tracks an index or commodity, <b>listed and traded in real time</b>, with a lower expense ratio. Units created via <b>authorised participants</b>."}, {"f": "Preference shares: equity-like features", "b": "Holders are shareholders, payment is a dividend from profit after tax, dividend is not an obligation."}, {"f": "Preference shares: debt-like features", "b": "Fixed dividend rate, paid before ordinary shareholders, repaid first on winding up. No voting rights."}, {"f": "Cumulative vs non-cumulative preference shares", "b": "Cumulative: unpaid dividend carries forward. Non-cumulative: it lapses."}, {"f": "FCD, PCD, OCD", "b": "FCD: all converts to shares. PCD: part converts, rest repaid. OCD: <b>holder chooses</b>."}, {"f": "Why do convertibles carry a lower coupon?", "b": "Investors also expect gains when the debt becomes shares."}, {"f": "Sponsored vs unsponsored DR", "b": "Sponsored: company starts it, can list on an exchange. Unsponsored: investor starts it, OTC only."}, {"f": "ADR, IDR, GDR", "b": "ADR: traded in the US by a non-US firm (Infosys). IDR: traded in India by a non-Indian firm (Standard Chartered). GDR: traded in <b>more than one country</b>."}, {"f": "SEBI's IDR conditions", "b": "Limit on money raised, <b>one-year lock-in</b> on conversion, only <b>resident Indians</b> can invest."}, {"f": "FCCB", "b": "Foreign currency convertible bond, usually optionally convertible, issued offshore. Regulated by <b>RBI under FEMA</b>."}, {"f": "Equity Linked Debenture", "b": "Interest tied to equity returns. Bonds for capital protection plus options for upside. Still has <b>credit risk</b>."}, {"f": "MBS vs ABS", "b": "MBS: backed by home loans. ABS: backed by auto loans, rent, credit card dues."}, {"f": "REIT and InvIT asset rules", "b": "REIT: at least <b>80%</b> in real estate. InvIT: at least <b>90%</b> in income-producing infra. Both distribute at least <b>90%</b>."}, {"f": "Hard vs soft commodities", "b": "Hard: mined or extracted (metals, crude). Soft: grown (grains, pulses)."}, {"f": "Primary vs secondary market", "b": "Primary: issuer sells new securities, money goes to issuer. Secondary: investors trade existing ones, issuer not involved."}, {"f": "IPO allocation limits", "b": "Retail at least <b>35%</b> (up to Rs 2 lakh each). QIBs at most <b>50%</b>. Others get the balance."}, {"f": "Anchor investor", "b": "QIB applying <b>Rs 10 crore+</b> in a book-built issue. Up to <b>60% of the QIB portion</b>. Bids <b>one day before</b>. Introduced 2009."}, {"f": "Offer for Sale (OFS)", "b": "Existing holders sell. <b>No new shares</b>, no change in share capital, money goes to sellers."}, {"f": "Three choices with a rights entitlement", "b": "Exercise it, transfer it, or let it lapse."}, {"f": "Bonus shares", "b": "Free shares, instead of dividends. Need enough retained earnings, which are moved to share capital."}, {"f": "Sweat equity", "b": "Shares given as a reward for contribution. <b>Section 54</b>, Companies Act, 2013."}, {"f": "Clearing vs settlement", "b": "Clearing: work out net dues. Settlement: seller delivers shares, buyer pays money."}, {"f": "Novation", "b": "Clearing corporation becomes <b>buyer to every seller and seller to every buyer</b>."}, {"f": "Initial margin vs MTM margin", "b": "Initial: a % of trade value based on <b>Value at Risk</b>. MTM: the paper loss on an open trade from price moves."}, {"f": "Depository vs depository participant", "b": "Depository (NSDL, CDSL): company-level accounts. DP: its agent, keeps investor-level accounts."}, {"f": "When did sub-brokers cease to exist?", "b": "<b>1 April 2019</b> (SEBI decision of 21 June 2018)."}, {"f": "Hard vs soft underwriting", "b": "Hard: committed at the start. Soft: committed after pricing, with an exit clause."}, {"f": "P-Notes", "b": "Issued by <b>SEBI-registered FPIs</b> to overseas investors who are <b>not registered</b> with SEBI."}, {"f": "AIF categories", "b": "Cat I: start-ups, SMEs, social, infra, VC, angel. Cat II: the rest, no leverage (PE, real estate). Cat III: leverage and derivatives (hedge funds, PIPE)."}, {"f": "Cash, tom, spot", "b": "Cash T+0. Tom T+1. Spot T+2 (normally)."}, {"f": "Forward vs futures", "b": "Forward: OTC, customised, counterparty risk. Futures: exchange, standardised, clearing guarantee, margins."}, {"f": "Call option vs put option", "b": "Call: right to <b>buy</b>. Put: right to <b>sell</b>. Buyer pays premium; writer takes the obligation."}, {"f": "Hedging vs arbitrage", "b": "Hedging: offset losses, aim no gain no loss. Arbitrage: simultaneous buy and sell in two markets to profit from a price gap."}, {"f": "Pledgor vs pledgee", "b": "Pledgor: investor who borrows. Pledgee: lender. Shares stay in pledgor's demat account, blocked."}, {"f": "Demat vs remat", "b": "Demat: paper to electronic, no distinctive numbers. Remat: electronic to paper, distinctive numbers come back."}], "mcqs": [{"id": "2.1", "q": "As per the Securities Contracts (Regulation) Act, 1956, the term 'securities' includes which of the following?", "o": ["Government securities", "Derivatives", "Shares, scrips or bonds", "All of the above"], "a": 3, "w": "All three appear in the SCRA Section 2(h) list."}, {"id": "2.2", "q": "Where the entire face value of a debenture is converted into equity shares, it is called a:", "o": ["Optionally convertible debenture", "Partly convertible debenture", "Fully convertible debenture", "None of the above"], "a": 2, "w": "FCD: the full face value converts."}, {"id": "2.3", "q": "Which of these is NOT a security under Section 2(h) of SCRA?", "o": ["Security receipts", "Mutual fund units", "Government securities", "Unit linked insurance policy"], "a": 3, "w": "ULIPs are expressly excluded because they combine life cover with investment and are issued by insurers."}, {"id": "2.4", "q": "In a financial market, borrowers or seekers of funds are:", "o": ["Custodians of securities", "Regulators of securities", "Sellers of securities", "Buyers of securities"], "a": 2, "w": "Borrowers issue, that is sell, securities to investors."}, {"id": "2.5", "q": "Commercial Paper is issued by:", "o": ["The RBI", "The Government of India", "Companies with high credit ratings", "Banks only"], "a": 2, "w": "T-bills: government. CP: highly rated companies. CD: banks."}, {"id": "2.6", "q": "An Indian company issues a bond in Germany denominated in Japanese yen. This is a:", "o": ["Domestic bond", "Masala bond", "Foreign bond", "Euro bond"], "a": 3, "w": "The currency (yen) differs from the local currency of the country of issue (Germany), so it is a Euro bond, specifically a Euro-yen bond."}, {"id": "2.7", "q": "An Indian company issues US dollar bonds in the United States. This is a:", "o": ["Masala bond", "Euro bond", "Domestic bond", "Foreign bond"], "a": 3, "w": "Issued abroad in that country's own currency: a foreign bond."}, {"id": "2.8", "q": "In a masala bond, the currency risk is borne by:", "o": ["The Reserve Bank of India", "The stock exchange", "The foreign investor", "The Indian issuer"], "a": 2, "w": "Masala bonds are in rupees, so a falling rupee hurts the foreign investor."}, {"id": "2.9", "q": "The first masala bond was issued in November 2014 by:", "o": ["World Bank", "International Finance Corporation", "HDFC Ltd", "State Bank of India"], "a": 1, "w": "IFC issued it and listed it on the London Stock Exchange."}, {"id": "2.10", "q": "A warrant gives the holder:", "o": ["The right, but not the obligation, to buy the issuer's shares after a set period at a pre-determined price", "Voting rights immediately", "The obligation to buy shares at market price", "A fixed interest payment"], "a": 0, "w": "That is the book's definition. Regulator: SEBI."}, {"id": "2.11", "q": "The S&P BSE Sensex is computed from how many stocks?", "o": ["40", "50", "30", "100"], "a": 2, "w": "Sensex 30 (BSE), SX40 40 (MSEI), Nifty 50 50 (NSE)."}, {"id": "2.12", "q": "Most leading market indices are weighted by:", "o": ["Dividend yield", "Trading volume", "Market capitalisation", "Share price"], "a": 2, "w": "Most leading indices are market-cap weighted."}, {"id": "2.13", "q": "Units of a close-ended mutual fund scheme:", "o": ["Have no fixed number", "Cannot be traded at all", "Can be sold back to the fund anytime", "Are mandatorily listed and traded on a stock exchange"], "a": 3, "w": "Close-ended funds have fixed unit capital and must be listed."}, {"id": "2.14", "q": "Which statement about ETFs is correct?", "o": ["They are actively managed with high expense ratios", "They can only be bought from the fund at day-end NAV", "They trade on an exchange at real-time prices and usually have lower expense ratios", "They cannot track commodities"], "a": 2, "w": "ETFs are passive, listed, traded in real time, and cheaper than typical mutual funds."}, {"id": "2.15", "q": "Which is a feature of preference shares?", "o": ["Voting rights equal to equity shares", "Dividend paid before dividend on ordinary equity shares", "Right over residual assets on winding up", "Dividend payment is a legal obligation like interest"], "a": 1, "w": "Preference shareholders are paid before ordinary shareholders. They have no voting rights or residual claim, and dividend is not an obligation."}, {"id": "2.16", "q": "In cumulative preference shares, unpaid dividend:", "o": ["Is paid as interest", "Lapses", "Is converted into equity", "Is carried forward"], "a": 3, "w": "Cumulative: carried forward. Non-cumulative: lapses."}, {"id": "2.17", "q": "Debentures that holders may choose to convert into equity or keep as debt are called:", "o": ["PCDs", "OCDs", "NCDs", "FCDs"], "a": 1, "w": "Optionally convertible debentures convert at the holder's discretion."}, {"id": "2.18", "q": "A disadvantage of convertible debentures for the issuing company is:", "o": ["No investor interest", "Dilution of existing shareholders on conversion", "Mandatory repayment in cash", "Higher coupon than pure debt"], "a": 1, "w": "Converting into new shares dilutes existing holders. Coupons are actually lower than pure debt."}, {"id": "2.19", "q": "Depository receipts created when an investor, not the company, delivers the shares are:", "o": ["Always GDRs", "IDRs", "Unsponsored DRs, usually traded only OTC", "Sponsored DRs, which can be listed"], "a": 2, "w": "Unsponsored DRs are investor-initiated and typically not allowed on exchanges."}, {"id": "2.20", "q": "Depository receipts that can be traded in more than one country are called:", "o": ["IDRs", "GDRs", "HKDRs", "ADRs"], "a": 1, "w": "GDRs trade across multiple countries, often in the EU."}, {"id": "2.21", "q": "Which of the following is NOT a SEBI condition for IDRs mentioned in the book?", "o": ["Limit on money raised in India", "One-year lock-in on conversion into shares", "Available only to resident Indian investors", "Mandatory voting rights for IDR holders"], "a": 3, "w": "DR holders generally have no voting rights. The other three are listed conditions."}, {"id": "2.22", "q": "FCCBs are regulated by:", "o": ["RBI under FEMA", "SEBI under the SEBI Act", "IRDAI", "MCA under the Companies Act only"], "a": 0, "w": "FCCBs are governed by RBI notifications under FEMA."}, {"id": "2.23", "q": "Which statement about Equity Linked Debentures is correct?", "o": ["They invest only in equity shares", "Capital protection means no credit risk", "Interest is always fixed", "They carry credit risk and are rated by credit rating agencies"], "a": 3, "w": "Capital protection does not remove the risk of the issuer defaulting."}, {"id": "2.24", "q": "A REIT must hold at least what share of its assets in real estate?", "o": ["80%", "51%", "90%", "75%"], "a": 0, "w": "REIT: 80% real estate. InvIT: 90% of unit capital in revenue-generating infra. Both distribute at least 90%."}, {"id": "2.25", "q": "Crude oil is an example of a:", "o": ["Soft commodity", "Hard commodity", "Warehouse receipt", "Financial derivative"], "a": 1, "w": "Hard commodities are mined or extracted. Soft ones are grown."}, {"id": "2.26", "q": "In an eligible IPO, the minimum allocation to retail investors is:", "o": ["25%", "35%", "60%", "50%"], "a": 1, "w": "At least 35% to retail (up to Rs 2 lakh each). QIBs at most 50%."}, {"id": "2.27", "q": "An anchor investor is a QIB applying for at least ______ in a book-built public issue.", "o": ["Rs 10 crore", "Rs 2 lakh", "Rs 1 crore", "Rs 100 crore"], "a": 0, "w": "Anchors apply for Rs 10 crore or more and can take up to 60% of the QIB portion."}, {"id": "2.28", "q": "Which statement about an Offer for Sale is correct?", "o": ["Proceeds go to the company", "It increases the company's share capital", "Existing shareholders sell already allotted shares and proceeds go to them", "It can only be made to QIBs"], "a": 2, "w": "No new shares are issued, so share capital does not change and money goes to the selling holders."}, {"id": "2.29", "q": "An investor who receives rights entitlements can do all of the following EXCEPT:", "o": ["Convert the right into bonus shares", "Let the right lapse", "Transfer the right to another investor", "Exercise the right"], "a": 0, "w": "The three options are exercise, transfer, or lapse."}, {"id": "2.30", "q": "Sweat equity shares are issued under which section of the Companies Act, 2013?", "o": ["Section 62", "Section 2(h)", "Section 54", "Section 42"], "a": 2, "w": "Section 54 covers sweat equity. Section 2(h) is from SCRA, a distractor."}, {"id": "2.31", "q": "The clearing corporation acting as buyer to every seller and seller to every buyer is called:", "o": ["Novation", "Arbitrage", "Dematerialisation", "Netting"], "a": 0, "w": "Novation substantially reduces counterparty risk for investors."}, {"id": "2.32", "q": "Initial margin charged by a clearing corporation is based on the concept of:", "o": ["Mark to market", "Value at Risk", "Face value", "Book value"], "a": 1, "w": "Initial margin is a percentage of trade value based on Value at Risk."}, {"id": "2.33", "q": "Which two depositories are registered with SEBI in India?", "o": ["NSDL and CDSL", "NSCCL and ICCL", "RBI and SEBI", "NSE and BSE"], "a": 0, "w": "NSDL and CDSL. NSE and BSE are exchanges."}, {"id": "2.34", "q": "Sub-brokers as a category of intermediary ceased to exist with effect from:", "o": ["1 January 2020", "1 April 2019", "24 December 2021", "21 June 2018"], "a": 1, "w": "SEBI decided on 21 June 2018; it took effect on 1 April 2019. The other dates are distractors from this chapter."}, {"id": "2.35", "q": "Participatory Notes are issued by:", "o": ["Indian companies to NRIs", "Stock exchanges to brokers", "SEBI to foreign investors", "SEBI-registered FPIs to overseas investors who are not registered with SEBI"], "a": 3, "w": "P-Notes let unregistered overseas investors access Indian securities through registered FPIs."}, {"id": "2.36", "q": "Hedge funds are registered in India as:", "o": ["Category II AIFs", "Category III AIFs", "Category I AIFs", "Mutual funds"], "a": 1, "w": "Category III covers complex strategies with leverage and derivatives, such as hedge funds and PIPE funds."}, {"id": "2.37", "q": "A trade where settlement happens on the next day after trade date is a:", "o": ["Forward trade", "Tom trade", "Spot trade", "Cash trade"], "a": 1, "w": "Cash T+0, Tom T+1, Spot T+2."}, {"id": "2.38", "q": "Which statement correctly distinguishes futures from forwards?", "o": ["Forwards require exchange margins", "Futures are OTC and customised", "Forwards have no counterparty risk", "Futures are standardised and exchange traded with clearing guarantee"], "a": 3, "w": "Futures are standardised forwards traded on exchanges, guaranteed by the clearing corporation, with margins."}, {"id": "2.39", "q": "The buyer of a put option has:", "o": ["The right to sell", "The obligation to buy", "The obligation to sell", "The right to buy"], "a": 0, "w": "Put buyer: right to sell. Call buyer: right to buy. The writer carries the obligation."}, {"id": "2.40", "q": "Simultaneous purchase and sale of an asset in two markets to profit from a price difference is called:", "o": ["Pledging", "Arbitrage", "Speculation", "Hedging"], "a": 1, "w": "That is arbitrage. Hedging offsets losses on an existing position."}, {"id": "2.41", "q": "When dematerialised shares are pledged, they:", "o": ["Stay in the pledgor's demat account but are blocked", "Are converted to physical form", "Move to the pledgee's demat account", "Are sold immediately"], "a": 0, "w": "They remain with the pledgor, blocked, until the loan is repaid."}, {"id": "2.42", "q": "Converting securities held electronically back into physical form is called:", "o": ["Securitisation", "Dematerialisation", "Novation", "Rematerialisation"], "a": 3, "w": "Remat gives back certificates with distinctive numbers."}], "cases": [{"id": "C2", "title": "Riverline Infra raises money", "text": "Riverline Infra Ltd is an Indian company listed on NSE. This year it (i) issues rupee-denominated bonds to investors in London, (ii) lets its promoter sell 5% of his stake to the public, and (iii) gives existing holders one free share for every ten held, out of retained earnings.", "qs": [{"q": "The rupee bonds sold in London are best called:", "o": ["FCCBs", "Domestic bonds", "Masala bonds", "Foreign bonds"], "a": 2, "w": "Rupee-denominated bonds issued outside India are masala bonds."}, {"q": "Who bears the currency risk on the London bonds?", "o": ["The promoter", "NSE", "The foreign investors", "Riverline Infra"], "a": 2, "w": "Repayment is in rupees, so a falling rupee hurts the foreign investors."}, {"q": "The promoter's sale of 5% to the public is an Offer for Sale. Its effect on Riverline's share capital is:", "o": ["No change in share capital", "Share capital rises by 5%", "Share capital falls by 5%", "Share capital doubles"], "a": 0, "w": "OFS uses existing shares. No new shares, so no change in share capital."}, {"q": "The one-for-ten free share is a:", "o": ["Preferential issue", "QIP", "Rights issue", "Bonus issue"], "a": 3, "w": "Free shares from retained earnings to existing holders are bonus shares."}]}, {"id": "C3", "title": "Meera's first trade", "text": "Meera buys 100 shares of a listed bank through her broker on NSE. The seller is someone she will never know. Her broker is a trading member. Her shares are credited to her account with her depository participant, which is linked to NSDL. Later she pledges these shares to take a loan from an NBFC.", "qs": [{"q": "Why does Meera not need to worry about the unknown seller defaulting?", "o": ["SEBI pays for defaults", "The clearing corporation acts as counterparty through novation", "The broker personally guarantees it", "The bank whose shares she bought guarantees it"], "a": 1, "w": "The clearing corporation is buyer to every seller and seller to every buyer."}, {"q": "Which entity maintains Meera's investor-level securities account?", "o": ["Her depository participant", "NSDL", "The clearing bank", "NSE"], "a": 0, "w": "The DP keeps investor-level accounts. The depository keeps company-level accounts."}, {"q": "In the pledge, Meera is the:", "o": ["Pledgor", "Pledgee", "Custodian", "Underwriter"], "a": 0, "w": "The borrower who pledges is the pledgor. The NBFC lender is the pledgee."}, {"q": "After the pledge, Meera's shares:", "o": ["Are sold at once", "Move to the NBFC's account", "Are rematerialised", "Stay in her account, blocked"], "a": 3, "w": "Pledged demat shares stay in the pledgor's account but cannot be used for other transactions."}]}]};</script>
+<script>
+window.__WIDGETS__=function(){
+/* bond name finder */
+const local={IN:'INR',US:'USD',DE:'EUR',KW:'KWD',UK:'GBP'};
+const cname={IN:'India',US:'the United States',DE:'Germany',KW:'Kuwait',UK:'the United Kingdom'};
+const curname={INR:'rupees',USD:'US dollars',EUR:'euros',JPY:'yen',GBP:'pounds',KWD:'Kuwaiti dinars'};
+const c=document.getElementById('bt-country'),k=document.getElementById('bt-cur');
+function bond(){const C=c.value,K=k.value;let n,w,r;
+ if(C==='IN'&&K==='INR'){n='Domestic bond';w='Sold in the issuer\'s home country, in its home currency.';r='No currency risk for either side.'}
+ else if(C==='IN'){n='Not covered by the book';w='The book\'s external bonds are sold in foreign markets. Pick a country other than India.';r=''}
+ else if(K==='INR'){n='Masala bond (a Euro bond in rupees)';w='Sold in '+cname[C]+', but priced in rupees, not the local currency.';r='The foreign investor carries the currency risk. If the rupee falls, they get less in their own money.'}
+ else if(K===local[C]){n='Foreign bond';w='Sold in '+cname[C]+', in that country\'s own currency ('+curname[K]+').';r='The Indian issuer carries the currency risk. If '+curname[K]+' rise against the rupee, repaying costs more rupees.'}
+ else{n='Euro bond'+(K==='JPY'?' (a Euro-yen bond)':'');w='Sold in '+cname[C]+', but in '+curname[K]+', which is not the local currency. Nothing to do with Europe.';r='The Indian issuer carries the currency risk.'}
+ document.getElementById('bt-name').textContent=n;document.getElementById('bt-why').textContent=w;document.getElementById('bt-risk').textContent=r}
+c.addEventListener('change',bond);k.addEventListener('change',bond);bond();
+/* option payoff */
+const s=document.getElementById('op-s'),svg=document.getElementById('op-svg');
+const K0=11000,P=100,lo=10600,hi=11400;
+const X=v=>50+(v-lo)/(hi-lo)*560, Y=v=>130-v*0.3;
+function pay(v){return Math.max(v-K0,0)-P}
+function draw(){const S=+s.value;const a=pay(S);
+ const pts=[];for(let v=lo;v<=hi;v+=50)pts.push(X(v)+','+Y(pay(v)));
+ const pts2=[];for(let v=lo;v<=hi;v+=50)pts2.push(X(v)+','+Y(-pay(v)));
+ let g='<line x1="50" y1="'+Y(0)+'" x2="610" y2="'+Y(0)+'" stroke="var(--muted)" stroke-dasharray="4 4"/>';
+ g+='<text x="612" y="'+(Y(0)+4)+'" font-size="12" fill="var(--muted)">0</text>';
+ [10600,10800,11000,11200,11400].forEach(v=>{g+='<text x="'+X(v)+'" y="252" font-size="12" text-anchor="middle" fill="var(--muted)">'+v.toLocaleString('en-IN')+'</text>'});
+ g+='<line x1="'+X(K0)+'" y1="10" x2="'+X(K0)+'" y2="235" stroke="var(--line)"/>';
+ g+='<text x="'+(X(K0)+4)+'" y="20" font-size="12" fill="var(--muted)">strike</text>';
+ g+='<polyline fill="none" stroke="var(--teal)" stroke-width="3" points="'+pts.join(' ')+'"/>';
+ g+='<polyline fill="none" stroke="var(--brick)" stroke-width="3" stroke-dasharray="7 5" points="'+pts2.join(' ')+'"/>';
+ g+='<circle cx="'+X(S)+'" cy="'+Y(a)+'" r="7" fill="var(--teal)"/><circle cx="'+X(S)+'" cy="'+Y(-a)+'" r="7" fill="var(--brick)"/>';
+ g+='<text x="60" y="'+(Y(-P)+18)+'" font-size="12" fill="var(--teal)">Arvind</text><text x="60" y="'+(Y(P)-8)+'" font-size="12" fill="var(--brick)">Salim</text>';
+ svg.innerHTML=g;
+ document.getElementById('op-sv').textContent=S.toLocaleString('en-IN');
+ const st=document.getElementById('op-state');st.textContent=S>K0?'In the money: Arvind exercises':'Out of the money: option expires worthless';
+ const f=v=>(v>=0?'+':'-')+'Rs '+Math.abs(v);
+ document.getElementById('op-a').textContent=S>K0?('Buys at 11,000, worth '+S.toLocaleString('en-IN')+'. Gain '+(S-K0)+', minus premium 100. Net '+f(a)+'.'):('Does not exercise. Loses only the premium. Net '+f(a)+'.');
+ document.getElementById('op-b').textContent=S>K0?('Must sell at 11,000. Kept the 100 premium. Net '+f(-a)+'.'):('Keeps the full premium. Net '+f(-a)+'.');
+}
+s.addEventListener('input',draw);draw();
+};
+</script><script>
+(function(){
+const DATA = window.__DATA__;
+const KEY = 'nismra:'+DATA.id+':';
+const store = {
+  get(k,d){try{const v=localStorage.getItem(KEY+k);return v?JSON.parse(v):d}catch(e){return d}},
+  set(k,v){try{localStorage.setItem(KEY+k,JSON.stringify(v))}catch(e){}}
+};
+const $=(s,r=document)=>r.querySelector(s);
+const el=(t,a={},h='')=>{const e=document.createElement(t);for(const k in a){if(k==='class')e.className=a[k];else e.setAttribute(k,a[k])}if(h)e.innerHTML=h;return e};
+function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),1600)}
+/* theme */
+const tb=$('#themebtn');
+function applyTheme(t){if(t)document.documentElement.setAttribute('data-theme',t);else document.documentElement.removeAttribute('data-theme');tb.textContent=(t==='dark'||(!t&&matchMedia('(prefers-color-scheme: dark)').matches))?'\u2600':'\u263E'}
+let th=null;try{th=localStorage.getItem('nismra:theme')}catch(e){}
+applyTheme(th);
+tb.addEventListener('click',()=>{const dark=document.documentElement.getAttribute('data-theme')==='dark'||(!document.documentElement.getAttribute('data-theme')&&matchMedia('(prefers-color-scheme: dark)').matches);const n=dark?'light':'dark';applyTheme(n);try{localStorage.setItem('nismra:theme',n)}catch(e){}});
+/* tabs */
+const tabs=[...document.querySelectorAll('.tab')];
+function show(v){tabs.forEach(t=>t.setAttribute('aria-selected',t.dataset.v===v));document.querySelectorAll('.view').forEach(x=>x.hidden=x.id!=='v-'+v);if(v==='cards')renderCard();window.scrollTo(0,0);try{history.replaceState(null,'','#'+v)}catch(e){}}
+tabs.forEach(t=>t.addEventListener('click',()=>show(t.dataset.v)));
+/* ---------- flashcards ---------- */
+const cards=DATA.cards;
+let known=new Set(store.get('known',[]));
+let missed=new Set(store.get('missed',[]));
+let deck=[],pos=0,onlyMissed=false;
+function buildDeck(shuffle){deck=cards.map((c,i)=>i).filter(i=>!onlyMissed||missed.has(i));if(shuffle){for(let i=deck.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[deck[i],deck[j]]=[deck[j],deck[i]]}}pos=0}
+buildDeck(false);
+function renderCard(){
+  const c3=$('#fc-card');c3.classList.remove('flip');
+  const done=known.size;$('#fc-bar').style.width=(100*done/cards.length)+'%';
+  $('#fc-count').textContent=done+' of '+cards.length+' marked known';
+  if(!deck.length){$('#fc-front').innerHTML='No cards here.';$('#fc-back').innerHTML='Switch off "Only cards I missed" to see the full deck.';$('#fc-pos').textContent='';return}
+  if(pos>=deck.length){$('#fc-front').innerHTML='Deck done.';$('#fc-back').innerHTML='Press Shuffle to go again, or study only the cards you missed.';$('#fc-pos').textContent='';return}
+  const c=cards[deck[pos]];$('#fc-front').innerHTML=c.f;$('#fc-back').innerHTML=c.b;$('#fc-pos').textContent='Card '+(pos+1)+' of '+deck.length;
+}
+function flip(){$('#fc-card').classList.toggle('flip')}
+$('#fc-card').addEventListener('click',flip);
+$('#fc-card').addEventListener('keydown',e=>{if(e.key===' '||e.key==='Enter'){e.preventDefault();flip()}});
+function mark(ok){if(pos>=deck.length)return;const i=deck[pos];if(ok){known.add(i);missed.delete(i)}else{missed.add(i);known.delete(i)}store.set('known',[...known]);store.set('missed',[...missed]);pos++;renderCard()}
+$('#fc-good').addEventListener('click',()=>mark(true));
+$('#fc-bad').addEventListener('click',()=>mark(false));
+$('#fc-shuffle').addEventListener('click',()=>{buildDeck(true);renderCard()});
+$('#fc-missed').addEventListener('change',e=>{onlyMissed=e.target.checked;buildDeck(false);renderCard()});
+$('#fc-reset').addEventListener('click',()=>{known.clear();missed.clear();store.set('known',[]);store.set('missed',[]);buildDeck(false);renderCard();toast('Progress cleared')});
+document.addEventListener('keydown',e=>{if($('#v-cards').hidden)return;if(e.key==='ArrowRight')mark(true);if(e.key==='ArrowLeft')mark(false)});
+/* ---------- quiz ---------- */
+const Q=[];DATA.mcqs.forEach(q=>Q.push(Object.assign({kind:'mcq'},q)));
+(DATA.cases||[]).forEach(cs=>cs.qs.forEach((q,k)=>Q.push(Object.assign({kind:'case',caseTitle:cs.title,caseText:cs.text,id:cs.id+'-'+(k+1)},q))));
+let run=null;
+function pick(set){let arr;
+  if(set==='quick'){arr=Q.filter(q=>q.kind==='mcq').slice();for(let i=arr.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[arr[i],arr[j]]=[arr[j],arr[i]]}arr=arr.slice(0,10)}
+  else if(set==='mcq')arr=Q.filter(q=>q.kind==='mcq');
+  else if(set==='case')arr=Q.filter(q=>q.kind==='case');
+  else if(set==='missed'){const m=new Set(store.get('qmissed',[]));arr=Q.filter(q=>m.has(q.id))}
+  else arr=Q.slice();
+  return arr}
+function start(){const set=document.querySelector('input[name=qset]:checked').value;const mode=document.querySelector('input[name=qmode]:checked').value;const qs=pick(set);
+  if(!qs.length){toast('No questions in this set yet');return}
+  run={qs,mode,i:0,ans:qs.map(()=>null),checked:qs.map(()=>false)};$('#qz-setup').hidden=true;$('#qz-end').hidden=true;$('#qz-run').hidden=false;renderQ()}
+function renderQ(){const q=run.qs[run.i];const box=$('#qz-q');box.innerHTML='';
+  $('#qz-pos').textContent='Question '+(run.i+1)+' of '+run.qs.length;
+  $('#qz-modelbl').textContent=run.mode==='exam'?'Exam mode: answers shown at the end':'Practice mode';
+  if(q.kind==='case'){box.appendChild(el('div',{class:'qcase'},'<b>Case: '+q.caseTitle+'</b><br>'+q.caseText))}
+  box.appendChild(el('div',{class:'qtext'},q.q));
+  const L='abcd';
+  q.o.forEach((o,k)=>{const b=el('button',{class:'opt','aria-pressed':String(run.ans[run.i]===k)},'<span class="lt">'+L[k]+'</span><span>'+o+'</span>');
+    b.addEventListener('click',()=>{if(run.checked[run.i])return;run.ans[run.i]=k;renderQ()});box.appendChild(b)});
+  if(run.checked[run.i])paintCheck();
+  $('#qz-check').hidden=run.mode==='exam'||run.checked[run.i];
+  $('#qz-check').disabled=run.ans[run.i]===null;
+  $('#qz-prev').disabled=run.i===0;
+  $('#qz-next').textContent=run.i===run.qs.length-1?'Finish':'Next';
+  $('#qz-skip').hidden=run.checked[run.i];
+}
+function paintCheck(){const q=run.qs[run.i];const opts=[...document.querySelectorAll('#qz-q .opt')];opts.forEach((b,k)=>{b.disabled=true;if(k===q.a)b.classList.add('right');else if(k===run.ans[run.i])b.classList.add('wrong')});
+  const a=run.ans[run.i];const ok=a===q.a;const ex=el('div',{class:'explain '+(a===null?'':(ok?'ok':'no'))},'<b>'+(a===null?'Skipped. ':ok?'Correct. ':'Not quite. ')+'</b>'+q.w);$('#qz-q').appendChild(ex)}
+$('#qz-check').addEventListener('click',()=>{run.checked[run.i]=true;renderQ()});
+$('#qz-skip').addEventListener('click',()=>{run.ans[run.i]=null;if(run.mode==='practice'){run.checked[run.i]=true;renderQ()}else next()});
+$('#qz-prev').addEventListener('click',()=>{if(run.i>0){run.i--;renderQ()}});
+function next(){if(run.i<run.qs.length-1){run.i++;renderQ();window.scrollTo({top:0})}else finish()}
+$('#qz-next').addEventListener('click',next);
+$('#qz-start').addEventListener('click',start);
+$('#qz-quit').addEventListener('click',()=>{$('#qz-run').hidden=true;$('#qz-setup').hidden=false});
+function finish(){let c=0,w=0,s=0;const miss=new Set(store.get('qmissed',[]));const wrongIdx=[];
+  run.qs.forEach((q,i)=>{const a=run.ans[i];if(a===null){s++;miss.add(q.id);wrongIdx.push(i)}else if(a===q.a){c++;miss.delete(q.id)}else{w++;miss.add(q.id);wrongIdx.push(i)}});
+  store.set('qmissed',[...miss]);
+  const net=c-0.25*w;const pct=100*net/run.qs.length;
+  $('#qz-run').hidden=true;$('#qz-end').hidden=false;
+  $('#qz-score').innerHTML='<div><b>'+c+'</b><small>correct</small></div><div><b>'+w+'</b><small>wrong</small></div><div><b>'+s+'</b><small>skipped</small></div><div><b>'+net.toFixed(2)+'</b><small>net score</small></div>';
+  $('#qz-verdict').textContent=pct>=60?('Pass level. Net '+pct.toFixed(0)+'%.'):('Below the 60% pass line. Net '+pct.toFixed(0)+'%.');
+  $('#qz-penalty').textContent=w?('Wrong answers cost you '+(0.25*w).toFixed(2)+' marks.'):'No marks lost to negative marking.';
+  const rv=$('#qz-review');rv.innerHTML='';const L='abcd';
+  if(!wrongIdx.length)rv.innerHTML='<p>Nothing to review. Every answer was right.</p>';
+  wrongIdx.forEach(i=>{const q=run.qs[i];const a=run.ans[i];rv.appendChild(el('div',{class:'item'},'<p><b>'+q.q+'</b></p><p>Your answer: '+(a===null?'skipped':L[a]+') '+q.o[a])+'</p><p>Right answer: <b>'+L[q.a]+') '+q.o[q.a]+'</b></p><p class="ptr">'+q.w+'</p>'))});
+  run.summary=DATA.short+' quiz: '+c+'/'+run.qs.length+' correct, '+w+' wrong, '+s+' skipped. Net '+net.toFixed(2)+' ('+pct.toFixed(0)+'%).'+(wrongIdx.length?' Missed: '+wrongIdx.map(i=>run.qs[i].id).join(', '):'');
+}
+$('#qz-copy').addEventListener('click',()=>{const t=run&&run.summary||'';(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(()=>toast('Copied. Paste it in the group chat.')).catch(()=>{prompt('Copy this:',t)})});
+$('#qz-again').addEventListener('click',()=>{$('#qz-end').hidden=true;$('#qz-setup').hidden=false;updateMissedCount()});
+function updateMissedCount(){const n=store.get('qmissed',[]).length;$('#qz-missedn').textContent=n?('('+n+' saved)'):'(none yet)'}
+updateMissedCount();
+$('#qz-counts').textContent=DATA.mcqs.length+' MCQs and '+(DATA.cases||[]).reduce((s,c)=>s+c.qs.length,0)+' case questions';
+/* interactive widgets hook */
+if(window.__WIDGETS__)window.__WIDGETS__();
+const h=(location.hash||'').replace('#','');if(['learn','cards','quiz'].includes(h))show(h);
+})();
+</script></body></html>

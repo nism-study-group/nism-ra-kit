@@ -1,0 +1,9 @@
+source/
+*.pdf
+workbook*
+NISM-RA-Study-Kit/_build/publish/
+__pycache__/
+*.zip
+archive/
+.venv/
+.DS_Store

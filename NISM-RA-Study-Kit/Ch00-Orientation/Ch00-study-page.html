@@ -1,0 +1,566 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Session 0: The exam, the book and the plan | NISM RA study kit</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&display=swap" rel="stylesheet"><style>
+:root{
+ --paper:#F5F6F8;--card:#FFFFFF;--ink:#1B2340;--muted:#586178;--line:#D8DDE7;
+ --indigo:#2E3F8F;--indigo-soft:#E6E9F6;--marker:#FFE27A;--teal:#12705F;--teal-soft:#DDF1EC;
+ --brick:#A83C29;--brick-soft:#F8E3DE;--sun:#F2B233;
+ --head:"Bricolage Grotesque","Segoe UI",system-ui,-apple-system,sans-serif;
+ --body:"Atkinson Hyperlegible","Segoe UI",system-ui,-apple-system,sans-serif;
+ box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+ --paper:#11141C;--card:#1A1E2A;--ink:#E7EAF3;--muted:#9EA7BC;--line:#2C3244;
+ --indigo:#9AABFF;--indigo-soft:#232A45;--marker:rgba(255,214,90,.30);--teal:#52C7AE;--teal-soft:#16332D;
+ --brick:#F2826C;--brick-soft:#3A201B;--sun:#F2B233;}}
+:root[data-theme="dark"]{
+ --paper:#11141C;--card:#1A1E2A;--ink:#E7EAF3;--muted:#9EA7BC;--line:#2C3244;
+ --indigo:#9AABFF;--indigo-soft:#232A45;--marker:rgba(255,214,90,.30);--teal:#52C7AE;--teal-soft:#16332D;
+ --brick:#F2826C;--brick-soft:#3A201B;}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 70px);-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6}
+img,svg{max-width:100%}
+a{color:var(--indigo)}
+:focus-visible{outline:3px solid var(--sun);outline-offset:2px;border-radius:4px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+.col{max-width:720px}
+h1,h2,h3,h4{font-family:var(--head);line-height:1.15;margin:0}
+h2{font-size:clamp(1.5rem,3.4vw,2rem);font-weight:800;margin:0 0 .6rem}
+h3{font-size:1.2rem;font-weight:700;margin:1.8rem 0 .5rem}
+p{margin:.55rem 0}
+ul,ol{margin:.4rem 0 .8rem;padding-left:1.3rem}
+li{margin:.25rem 0}
+/* top bar */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--paper) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.bar .wrap{display:flex;align-items:center;gap:12px;min-height:58px}
+.brand{font-family:var(--head);font-weight:700;font-size:.95rem;color:var(--muted);text-decoration:none;white-space:nowrap}
+.tabs{display:flex;gap:4px;margin-left:auto;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:4px}
+.tab{border:0;background:transparent;color:var(--ink);font:600 .95rem var(--body);padding:.45rem .95rem;border-radius:999px;cursor:pointer}
+.tab[aria-selected="true"]{background:var(--indigo);color:var(--card)}
+.themebtn{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;width:38px;height:38px;cursor:pointer;font-size:1rem}
+@media (max-width:620px){.brand{display:none}.tabs{margin-left:0;flex:1;justify-content:space-between}.tab{padding:.45rem .6rem;flex:1}}
+/* hero */
+.hero{padding:44px 0 18px}
+.kicker{font-family:var(--head);font-weight:700;color:var(--indigo);font-size:1rem;margin-bottom:.4rem}
+.hero h1{font-size:clamp(2.1rem,6vw,3.6rem);font-weight:800;letter-spacing:-.02em;max-width:18ch}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 0}
+.pill{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:.2rem .75rem;font-size:.9rem;color:var(--muted)}
+.pill b{color:var(--ink)}
+.oneline{margin:28px 0 8px;font-family:var(--head);font-size:clamp(1.25rem,3vw,1.7rem);font-weight:500;line-height:1.35;max-width:32ch}
+.oneline .k{font-weight:700}
+/* key term highlighter */
+.k{background:linear-gradient(104deg,transparent 0 .2em,var(--marker) .2em calc(100% - .15em),transparent calc(100% - .15em));padding:0 .2em;margin:0 -.05em;font-weight:700;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+/* sections */
+section.sec{padding:34px 0 10px;border-top:1px solid var(--line);margin-top:26px}
+.secno{font-family:var(--head);font-weight:800;color:var(--indigo);font-size:1rem;display:block;margin-bottom:.2rem}
+.why{border-left:4px solid var(--indigo);background:var(--indigo-soft);padding:.7rem 1rem;border-radius:0 10px 10px 0;margin:1rem 0}
+.why b:first-child{display:block;font-family:var(--head);margin-bottom:.1rem}
+.analogy{background:var(--card);border:1px dashed var(--indigo);border-radius:14px;padding:.8rem 1rem;margin:1rem 0}
+.analogy::before{content:"Think of it like this";display:block;font-family:var(--head);font-weight:700;color:var(--indigo);font-size:.95rem;margin-bottom:.2rem}
+.trap{border:2px solid var(--brick);background:var(--brick-soft);border-radius:12px;padding:.65rem .95rem;margin:1rem 0;position:relative}
+.trap::before{content:"Exam trap";display:inline-block;font-family:var(--head);font-weight:800;color:var(--card);background:var(--brick);border-radius:6px;padding:0 .45rem;font-size:.85rem;margin-right:.45rem;transform:rotate(-2deg)}
+.num{font-family:var(--head);font-weight:800;color:var(--brick)}
+dl.terms{display:grid;grid-template-columns:minmax(120px,max-content) 1fr;gap:.35rem 1rem;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1rem 1.1rem;margin:1rem 0}
+dl.terms dt{font-weight:700}
+dl.terms dd{margin:0;color:var(--muted)}
+@media (max-width:560px){dl.terms{grid-template-columns:1fr}dl.terms dd{margin-bottom:.4rem}}
+.terms-title{font-family:var(--head);font-weight:700;margin:1.4rem 0 -.4rem}
+/* figures */
+figure.fig{margin:1.4rem 0;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px}
+figure.fig figcaption{font-family:var(--head);font-weight:700;font-size:1.02rem;margin-bottom:12px}
+figure.fig figcaption span{display:block;font-family:var(--body);font-weight:400;color:var(--muted);font-size:.9rem;margin-top:2px}
+.scroll{overflow-x:auto}
+/* flow */
+.flow{display:flex;align-items:stretch;gap:0;flex-wrap:nowrap}
+.flow .step{flex:1;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:.7rem .8rem;min-width:0}
+.flow .step h4{font-size:1rem;margin-bottom:.2rem}
+.flow .step p{font-size:.92rem;margin:0;color:var(--muted)}
+.flow .arrow{flex:0 0 28px;display:flex;align-items:center;justify-content:center;color:var(--indigo);font-weight:800;font-size:1.3rem}
+.flow .arrow::before{content:"\2192"}
+@media (max-width:700px){.flow{flex-direction:column}.flow .arrow{flex-basis:26px}.flow .arrow::before{content:"\2193"}}
+.step.hl{border-color:var(--indigo);background:var(--indigo-soft)}
+.step.gd{border-color:var(--teal);background:var(--teal-soft)}
+.step.bd{border-color:var(--brick);background:var(--brick-soft)}
+/* grids */
+.grid{display:grid;gap:12px}
+.g2{grid-template-columns:repeat(2,1fr)}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}
+@media (max-width:760px){.g3,.g4{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:480px){.g2,.g3,.g4{grid-template-columns:1fr}}
+.box{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:.75rem .9rem}
+.box h4{font-size:1.02rem;margin-bottom:.25rem}
+.box p,.box li{font-size:.93rem}
+.box ul{margin:.2rem 0 0}
+.box .tag{display:inline-block;font-size:.78rem;font-weight:700;border-radius:6px;padding:0 .4rem;background:var(--indigo-soft);color:var(--indigo);margin-bottom:.3rem}
+.box.gd{border-color:var(--teal)}.box.bd{border-color:var(--brick)}.box.hl{border-color:var(--indigo)}
+/* table */
+table.cmp{border-collapse:collapse;width:100%;min-width:560px;font-size:.93rem}
+table.cmp th,table.cmp td{border-bottom:1px solid var(--line);padding:.55rem .6rem;text-align:left;vertical-align:top}
+table.cmp thead th{font-family:var(--head);background:var(--indigo-soft);color:var(--ink)}
+table.cmp tbody th{font-weight:700;color:var(--muted);width:24%}
+/* id card */
+.idcard{display:grid;grid-template-columns:auto 1fr;gap:.15rem .7rem;font-size:.88rem;margin-top:.4rem}
+.idcard span:nth-child(odd){color:var(--muted)}
+/* bars */
+.stack{display:flex;height:46px;border-radius:10px;overflow:hidden;border:1px solid var(--line);font-weight:700;font-size:.9rem}
+.stack div{display:flex;align-items:center;justify-content:center;color:var(--card);text-align:center;padding:0 4px}
+/* traps list and talk */
+.traplist{counter-reset:t;list-style:none;padding:0}
+.traplist li{counter-increment:t;background:var(--card);border:1px solid var(--line);border-left:5px solid var(--brick);border-radius:10px;padding:.6rem .9rem .6rem 3rem;position:relative;margin:.5rem 0}
+.traplist li::before{content:counter(t);position:absolute;left:.9rem;top:.55rem;font-family:var(--head);font-weight:800;color:var(--brick);font-size:1.1rem}
+.talk li{margin:.45rem 0}
+.ptr{font-size:.85rem;color:var(--muted)}
+/* chapter map */
+.map{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(170px,1fr))}
+.map a{display:block;text-decoration:none;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:.7rem .85rem;transition:border-color .15s}
+.map a:hover{border-color:var(--indigo)}
+.map a b{display:block;font-family:var(--head);color:var(--indigo);font-size:.9rem}
+.map a span{font-weight:700;display:block;line-height:1.25}
+.map a small{color:var(--muted);display:block;margin-top:.25rem;line-height:1.3}
+.tl{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;position:relative;padding-top:6px}
+.tl::before{content:"";position:absolute;left:8%;right:8%;top:21px;height:4px;background:var(--line);border-radius:4px}
+.tl-i{text-align:center;position:relative}
+.tl-t{display:block;font-family:var(--head);font-size:1.15rem}
+.tl-d{display:block;width:22px;height:22px;border-radius:50%;margin:6px auto 8px;position:relative;border:3px solid var(--card)}
+.tl-i h4{font-size:1.05rem}.tl-i p{font-size:.9rem;color:var(--muted);margin:.2rem 0 0}
+@media (max-width:560px){.tl{grid-template-columns:1fr}.tl::before{display:none}.tl-i{text-align:left;padding-left:34px}.tl-d{position:absolute;left:0;top:0;margin:0}}
+input[type=range]{accent-color:var(--indigo)}
+/* views */
+.view[hidden]{display:none}
+footer{color:var(--muted);font-size:.85rem;padding:40px 0 60px;border-top:1px solid var(--line);margin-top:40px}
+/* flashcards */
+.fc-wrap{max-width:640px;margin:30px auto 0}
+.fc-top{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+.fc-prog{height:8px;background:var(--line);border-radius:99px;overflow:hidden;margin-bottom:16px}
+.fc-prog div{height:100%;background:var(--teal);width:0;transition:width .3s}
+.card3d{perspective:1200px;cursor:pointer;user-select:none}
+.card3d .inner{position:relative;min-height:300px;transition:transform .5s;transform-style:preserve-3d}
+.card3d.flip .inner{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:20px;padding:28px;display:flex;flex-direction:column;justify-content:center;border:1px solid var(--line);background:var(--card)}
+.face.back{transform:rotateY(180deg);background:var(--indigo-soft);border-color:var(--indigo)}
+.face .lbl{position:absolute;top:14px;left:18px;font-size:.8rem;color:var(--muted);font-weight:700}
+.face .front-txt{font-family:var(--head);font-size:clamp(1.3rem,4vw,1.8rem);font-weight:700;line-height:1.25}
+.face .back-txt{font-size:1.08rem}
+.hint{color:var(--muted);font-size:.85rem;text-align:center;margin-top:10px}
+@media (prefers-reduced-motion:reduce){.card3d .inner{transition:none}}
+.btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:16px}
+.btn{font:700 1rem var(--body);border-radius:12px;padding:.65rem 1.1rem;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
+.btn.pri{background:var(--indigo);border-color:var(--indigo);color:var(--card)}
+.btn.good{background:var(--teal);border-color:var(--teal);color:var(--card)}
+.btn.bad{background:var(--brick);border-color:var(--brick);color:var(--card)}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.btn.sm{font-size:.88rem;padding:.4rem .75rem;border-radius:10px}
+/* quiz */
+.qz{max-width:720px;margin:30px auto 0}
+.qz-setup .box{margin:.6rem 0}
+.qz-setup label{display:flex;gap:.6rem;align-items:flex-start;cursor:pointer}
+.qz-head{display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:.9rem;margin-bottom:10px;gap:8px;flex-wrap:wrap}
+.qcase{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--sun);border-radius:12px;padding:.8rem 1rem;margin-bottom:12px;font-size:.95rem}
+.qcase b{font-family:var(--head)}
+.qtext{font-family:var(--head);font-size:1.25rem;font-weight:700;line-height:1.3;margin:4px 0 14px}
+.opt{display:flex;gap:.7rem;align-items:flex-start;width:100%;text-align:left;font:1rem var(--body);color:var(--ink);background:var(--card);border:2px solid var(--line);border-radius:12px;padding:.7rem .9rem;margin:.45rem 0;cursor:pointer}
+.opt .lt{font-family:var(--head);font-weight:800;color:var(--indigo);min-width:1.2rem}
+.opt[aria-pressed="true"]{border-color:var(--indigo);background:var(--indigo-soft)}
+.opt.right{border-color:var(--teal);background:var(--teal-soft)}
+.opt.wrong{border-color:var(--brick);background:var(--brick-soft)}
+.opt:disabled{cursor:default}
+.explain{border-radius:12px;padding:.7rem 1rem;margin-top:12px;background:var(--paper);border:1px solid var(--line)}
+.explain.ok{border-color:var(--teal)}.explain.no{border-color:var(--brick)}
+.explain b{font-family:var(--head)}
+.score{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:16px 0}
+@media (max-width:520px){.score{grid-template-columns:repeat(2,1fr)}}
+.score div{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:.7rem;text-align:center}
+.score b{display:block;font-family:var(--head);font-size:1.8rem}
+.score small{color:var(--muted)}
+.verdict{font-family:var(--head);font-size:1.4rem;font-weight:800;margin:10px 0}
+.review .item{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:.7rem 1rem;margin:.6rem 0}
+.review .item p{margin:.25rem 0}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--paper);padding:.5rem 1rem;border-radius:10px;font-weight:700;opacity:0;transition:opacity .2s;pointer-events:none;z-index:50}
+.toast.show{opacity:1}
+@media print{.bar,.btns,.themebtn{display:none}.view[hidden]{display:block}#v-cards,#v-quiz{display:none}figure.fig,.trap,.analogy{break-inside:avoid}}
+</style></head><body>
+<div class="bar"><div class="wrap"><a class="brand" href="../index.html">NISM RA study kit</a>
+<div class="tabs" role="tablist"><button class="tab" role="tab" data-v="learn" aria-selected="true">Learn</button><button class="tab" role="tab" data-v="cards" aria-selected="false">Flashcards</button><button class="tab" role="tab" data-v="quiz" aria-selected="false">Quiz</button></div>
+<button class="themebtn" id="themebtn" aria-label="Switch light or dark">&#9790;</button></div></div><div class="view" id="v-learn">
+<style>
+.wrow,.drow{display:grid;grid-template-columns:2rem minmax(0,1.3fr) minmax(0,1fr) 2.4rem;gap:10px;align-items:center;padding:.4rem 0;border-bottom:1px solid var(--line)}
+.wn{font-family:var(--head);font-weight:800;color:var(--muted)}
+.wname,.dname{font-size:.93rem;line-height:1.3}
+.dname small{display:block;color:var(--muted);font-size:.8rem}
+.wbar{height:14px;background:var(--line);border-radius:99px;overflow:hidden}
+.wbar i{display:block;height:100%;background:var(--indigo);border-radius:99px}
+.drow .wbar i{background:var(--teal)}
+.wm{font-family:var(--head);font-weight:800;text-align:right}
+@media (max-width:560px){.wrow,.drow{grid-template-columns:1.6rem 1fr 2.4rem}.wbar{display:none}}
+.big{font-family:var(--head);font-weight:800;font-size:2.4rem;line-height:1;display:block}
+.bigm{font-family:var(--head);font-weight:800;font-size:1.9rem;line-height:1;margin:.3rem 0}
+.bigm small{font-size:.9rem;color:var(--muted);font-weight:500}
+.acc{background:var(--card);border:1px solid var(--line);border-radius:12px;margin:.45rem 0;padding:.1rem .9rem}
+.acc summary{cursor:pointer;padding:.55rem 0;font-weight:700;list-style-position:outside}
+.acc summary b{font-family:var(--head);color:var(--indigo);margin-right:.3rem}
+.accm{font-weight:400;color:var(--muted);font-size:.88rem;white-space:nowrap}
+.acc ul{margin-top:0}
+.calc{display:grid;gap:14px}
+.calc label{display:block;font-weight:700}
+.calc output{font-family:var(--head);font-weight:800}
+.calc input[type=range]{width:100%}
+.calcres{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+@media (max-width:520px){.calcres{grid-template-columns:repeat(2,1fr)}}
+.calcres div{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:.6rem;text-align:center}
+.calcres b{display:block;font-family:var(--head);font-size:1.6rem}
+.calcres small{color:var(--muted)}
+.calcv{font-family:var(--head);font-weight:800;font-size:1.2rem;margin:.2rem 0 0}
+.calcv.pass{color:var(--teal)}.calcv.fail{color:var(--brick)}
+.stack .s1{background:var(--indigo)}.stack .s2{background:var(--teal)}
+</style>
+
+<div class="wrap">
+<header class="hero">
+<div class="kicker">Session 0: orientation</div>
+<h1>The exam, the book and the plan</h1>
+<div class="meta"><span class="pill">Covers the <b>whole exam</b></span><span class="pill">Workbook pages 1 to 13</span><span class="pill">About 45 minutes in class</span></div>
+<p class="oneline"><span class="k">100 questions</span> in <span class="k">2 hours</span>. Pass at <span class="k">60</span>. Every wrong answer costs a quarter mark.</p>
+</header>
+
+<figure class="fig" id="fig-map"><figcaption>Today's map<span>Seven questions. Tap one to jump there.</span></figcaption>
+<div class="map">
+<a href="#s1"><b>1</b><span>Why take this exam?</span><small>Who needs it, what you get</small></a>
+<a href="#s2"><b>2</b><span>What does the paper look like?</span><small>80 MCQs plus 5 case studies</small></a>
+<a href="#s3"><b>3</b><span>How is it marked?</span><small>Negative marking, when to guess</small></a>
+<a href="#s4"><b>4</b><span>What is on the syllabus?</span><small>15 chapters, very uneven weights</small></a>
+<a href="#s5"><b>5</b><span>What about numericals?</span><small>Excel or LibreOffice at the centre</small></a>
+<a href="#s6"><b>6</b><span>How do I book the exam?</span><small>Registration, centres, time slots</small></a>
+<a href="#s7"><b>7</b><span>How does this group work?</span><small>One chapter per meeting</small></a>
+</div></figure>
+
+<div class="col">
+<section class="sec" id="s1"><span class="secno">1</span><h2>Why take this exam?</h2>
+<p>The exam is run by <span class="k">NISM</span>, the National Institute of Securities Markets. Under a SEBI regulation of 2007 on certifying market professionals, NISM sets a minimum knowledge level for people who work in the securities markets.</p>
+<p>This exam is <b>Series XV: Research Analyst</b>. It is required for people who prepare or publish research reports:</p>
+<ul><li>Research analysts registered with SEBI and their associated persons</li><li>People employed as research analysts</li><li>Partners of a research analyst firm</li></ul>
+<div class="why"><b>The legal hook</b>Regulation <span class="num">7(2)</span> of the <b>SEBI (Research Analysts) Regulations, 2014</b> says associated persons must pass this exam. That is why it exists. You will study these regulations in Chapter 14.</div>
+<div class="analogy">A driving licence test. It does not make you a great driver. It proves you know the rules and the basics, so others can trust you on the road.</div>
+<h3>What passing gives you</h3>
+<ul><li>A certificate, valid for <span class="num">3 years</span>.</li>
+<li>The certificate is issued only if your <b>PAN</b> is in your NISM registration details. Add it when you register.</li>
+<li>Passing does <b>not</b> by itself register you with SEBI as a research analyst. Registration is a separate process.</li></ul>
+</section>
+
+<section class="sec" id="s2"><span class="secno">2</span><h2>What does the paper look like?</h2>
+<p>It is a computer-based test. There are two kinds of questions.</p>
+</div>
+
+<figure class="fig" id="fig-paper"><figcaption>The paper at a glance<span>100 questions, 1 mark each</span></figcaption>
+<div class="grid g4">
+<div class="box"><span class="big">100</span><p>marks, 100 questions</p></div>
+<div class="box"><span class="big">120</span><p>minutes</p></div>
+<div class="box"><span class="big">60</span><p>marks to pass (60%)</p></div>
+<div class="box"><span class="big">&minus;0.25</span><p>for each wrong answer</p></div>
+</div>
+<div class="stack" style="margin-top:16px"><div class="s1" style="width:80%">80 standalone MCQs</div><div class="s2" style="width:20%">5 cases</div></div>
+<p class="ptr" style="margin-top:8px">A case study is a short story about a person or company, followed by 4 questions. 5 cases &times; 4 questions = 20 marks.</p>
+</figure>
+
+<div class="col">
+<p>This pattern started on <span class="num">20 January 2026</span>, when the syllabus was revised. Technical analysis and commodities were added. Our workbook is the <b>February 2026</b> version. It applies to exams taken on or after <span class="num">30 March 2026</span>.</p>
+<h3>Time</h3>
+<p>120 minutes for 100 questions is about <span class="num">72 seconds</span> a question. Case questions take longer, because you must read the story first.</p>
+<div class="why"><b>A suggested time plan</b>This is our suggestion, not an NISM rule. Do the 80 MCQs first, in about 70 minutes. Then the 5 cases, about 7 minutes each. Keep the last 15 minutes to return to questions you marked for review.</div>
+<div class="analogy">A cricket innings of 100 balls. Take the easy singles first. Do not spend five overs on one difficult bowler.</div>
+</section>
+
+<section class="sec" id="s3"><span class="secno">3</span><h2>How is it marked?</h2>
+<div class="grid g3">
+<div class="box gd"><h4>Right</h4><p class="bigm">+1</p></div>
+<div class="box bd"><h4>Wrong</h4><p class="bigm">&minus;0.25</p></div>
+<div class="box"><h4>Skipped</h4><p class="bigm">0</p></div>
+</div>
+<p>So <b>4 wrong answers wipe out 1 right answer</b>. Your net score is: right answers minus a quarter of wrong answers.</p>
+</div>
+
+<figure class="fig" id="fig-calc"><figcaption>Score calculator<span>Move the sliders. Skipped questions fill the rest of the 100.</span></figcaption>
+<div class="calc">
+<div><label for="c-right">Right answers: <output id="o-right">65</output></label><input type="range" id="c-right" min="0" max="100" value="65"></div>
+<div><label for="c-wrong">Wrong answers: <output id="o-wrong">20</output></label><input type="range" id="c-wrong" min="0" max="100" value="20"></div>
+<div class="calcres">
+<div><b id="r-skip">15</b><small>skipped</small></div>
+<div><b id="r-lost">5</b><small>marks lost to penalty</small></div>
+<div><b id="r-net">60</b><small>net score</small></div>
+<div><b id="r-need">0</b><small>short of 60</small></div>
+</div>
+<p class="calcv" id="r-verdict"></p>
+</div></figure>
+
+<div class="col">
+<div class="trap">Getting 60 questions right is not enough if you also got some wrong. 65 right and 20 wrong gives exactly 60. 62 right and 38 wrong gives only 52.5.</div>
+<h3>Should you guess?</h3>
+<p>Each question has 4 options. The table shows what a guess earns you on average.</p>
+</div>
+
+<figure class="fig" id="fig-guess"><figcaption>What a guess is worth<span>Average marks gained per question</span></figcaption>
+<div class="scroll"><table class="cmp">
+<thead><tr><th>You can rule out</th><th>Chance of being right</th><th>Working</th><th>Average gain</th></tr></thead>
+<tbody>
+<tr><th>Nothing</th><td>1 in 4</td><td>0.25 &times; 1 minus 0.75 &times; 0.25</td><td><b>+0.06</b></td></tr>
+<tr><th>1 option</th><td>1 in 3</td><td>0.33 &times; 1 minus 0.67 &times; 0.25</td><td><b>+0.17</b></td></tr>
+<tr><th>2 options</th><td>1 in 2</td><td>0.5 &times; 1 minus 0.5 &times; 0.25</td><td><b>+0.38</b></td></tr>
+</tbody></table></div></figure>
+
+<div class="col">
+<div class="why"><b>The rule we will use</b>A blind guess is barely better than a skip. If you can cross out even one option, answer. Skip only when you have no idea at all.</div>
+</section>
+
+<section class="sec" id="s4"><span class="secno">4</span><h2>What is on the syllabus?</h2>
+<p>The book has <span class="k">15 chapters</span>. They are not worth the same. The marks below are the official weights from the workbook.</p>
+</div>
+
+<figure class="fig" id="fig-weights"><figcaption>Marks per chapter<span>Out of 100. Longest bar is 15 marks.</span></figcaption>
+<div class="wrow"><span class="wn">1</span><span class="wname">Introduction to Research Analyst Profession</span><span class="wbar"><i style="width:6.7%"></i></span><span class="wm">1</span></div><div class="wrow"><span class="wn">2</span><span class="wname">Introduction to Securities Market</span><span class="wbar"><i style="width:13.3%"></i></span><span class="wm">2</span></div><div class="wrow"><span class="wn">3</span><span class="wname">Terminology in Equity and Debt Markets</span><span class="wbar"><i style="width:13.3%"></i></span><span class="wm">2</span></div><div class="wrow"><span class="wn">4</span><span class="wname">Fundamentals of Research</span><span class="wbar"><i style="width:33.3%"></i></span><span class="wm">5</span></div><div class="wrow"><span class="wn">5</span><span class="wname">Economic Analysis</span><span class="wbar"><i style="width:33.3%"></i></span><span class="wm">5</span></div><div class="wrow"><span class="wn">6</span><span class="wname">Industry Analysis</span><span class="wbar"><i style="width:53.3%"></i></span><span class="wm">8</span></div><div class="wrow"><span class="wn">7</span><span class="wname">Company Analysis: Business and Governance</span><span class="wbar"><i style="width:40.0%"></i></span><span class="wm">6</span></div><div class="wrow"><span class="wn">8</span><span class="wname">Company Analysis: Financial Analysis</span><span class="wbar"><i style="width:80.0%"></i></span><span class="wm">12</span></div><div class="wrow"><span class="wn">9</span><span class="wname">Corporate Actions</span><span class="wbar"><i style="width:33.3%"></i></span><span class="wm">5</span></div><div class="wrow"><span class="wn">10</span><span class="wname">Valuation Principles</span><span class="wbar"><i style="width:80.0%"></i></span><span class="wm">12</span></div><div class="wrow"><span class="wn">11</span><span class="wname">Fundamental Analysis of Commodities</span><span class="wbar"><i style="width:33.3%"></i></span><span class="wm">5</span></div><div class="wrow"><span class="wn">12</span><span class="wname">Fundamentals of Risk and Return</span><span class="wbar"><i style="width:46.7%"></i></span><span class="wm">7</span></div><div class="wrow"><span class="wn">13</span><span class="wname">Qualities of a Good Research Report</span><span class="wbar"><i style="width:33.3%"></i></span><span class="wm">5</span></div><div class="wrow"><span class="wn">14</span><span class="wname">Legal and Regulatory Environment</span><span class="wbar"><i style="width:66.7%"></i></span><span class="wm">10</span></div><div class="wrow"><span class="wn">15</span><span class="wname">Technical Analysis</span><span class="wbar"><i style="width:100.0%"></i></span><span class="wm">15</span></div>
+</figure>
+
+<div class="col">
+<p>Four chapters, <b>8, 10, 14 and 15</b>, carry <span class="num">49 marks</span> together. Chapters 1 to 3 carry only <span class="num">5</span>. We still read in order, because the early chapters teach the words the later ones use.</p>
+</div>
+
+<figure class="fig" id="fig-blocks"><figcaption>Five blocks of three<span>The marks grow as the book goes on</span></figcaption>
+<div class="grid g3"><div class="box"><span class="tag">Chapters 1 to 3</span><h4>Foundations</h4><p class="bigm">5 <small>marks</small></p><p>Who an analyst is, how markets work, basic terms</p></div><div class="box"><span class="tag">Chapters 4 to 6</span><h4>How research works</h4><p class="bigm">18 <small>marks</small></p><p>Approaches, the economy, industries</p></div><div class="box"><span class="tag">Chapters 7 to 9</span><h4>The company</h4><p class="bigm">23 <small>marks</small></p><p>Business quality, financial statements, corporate actions</p></div><div class="box"><span class="tag">Chapters 10 to 12</span><h4>Numbers and value</h4><p class="bigm">24 <small>marks</small></p><p>Valuation, commodities, risk and return</p></div><div class="box"><span class="tag">Chapters 13 to 15</span><h4>Report, rules, charts</h4><p class="bigm">30 <small>marks</small></p><p>Writing reports, regulation, technical analysis</p></div></div></figure>
+
+<div class="col">
+<h3>Pages are not marks</h3>
+<p>Some chapters are long but carry few marks. Others are short and carry many. The chart shows <b>marks per 10 pages</b> of the book. A longer bar means each page you read is worth more in the exam.</p>
+</div>
+
+<figure class="fig" id="fig-density"><figcaption>Marks per 10 pages<span>Page counts from the workbook contents page, so they are approximate</span></figcaption>
+<div class="drow"><span class="wn">1</span><span class="dname">Introduction to Research Analyst Profession<small>7 pages, 1 mark</small></span><span class="wbar"><i style="width:22.9%"></i></span><span class="wm">1.4</span></div><div class="drow"><span class="wn">2</span><span class="dname">Introduction to Securities Market<small>33 pages, 2 marks</small></span><span class="wbar"><i style="width:9.7%"></i></span><span class="wm">0.6</span></div><div class="drow"><span class="wn">3</span><span class="dname">Terminology in Equity and Debt Markets<small>23 pages, 2 marks</small></span><span class="wbar"><i style="width:13.9%"></i></span><span class="wm">0.9</span></div><div class="drow"><span class="wn">4</span><span class="dname">Fundamentals of Research<small>12 pages, 5 marks</small></span><span class="wbar"><i style="width:66.7%"></i></span><span class="wm">4.2</span></div><div class="drow"><span class="wn">5</span><span class="dname">Economic Analysis<small>15 pages, 5 marks</small></span><span class="wbar"><i style="width:53.3%"></i></span><span class="wm">3.3</span></div><div class="drow"><span class="wn">6</span><span class="dname">Industry Analysis<small>25 pages, 8 marks</small></span><span class="wbar"><i style="width:51.2%"></i></span><span class="wm">3.2</span></div><div class="drow"><span class="wn">7</span><span class="dname">Company Analysis: Business and Governance<small>15 pages, 6 marks</small></span><span class="wbar"><i style="width:64.0%"></i></span><span class="wm">4.0</span></div><div class="drow"><span class="wn">8</span><span class="dname">Company Analysis: Financial Analysis<small>42 pages, 12 marks</small></span><span class="wbar"><i style="width:45.7%"></i></span><span class="wm">2.9</span></div><div class="drow"><span class="wn">9</span><span class="dname">Corporate Actions<small>11 pages, 5 marks</small></span><span class="wbar"><i style="width:72.7%"></i></span><span class="wm">4.5</span></div><div class="drow"><span class="wn">10</span><span class="dname">Valuation Principles<small>20 pages, 12 marks</small></span><span class="wbar"><i style="width:96.0%"></i></span><span class="wm">6.0</span></div><div class="drow"><span class="wn">11</span><span class="dname">Fundamental Analysis of Commodities<small>10 pages, 5 marks</small></span><span class="wbar"><i style="width:80.0%"></i></span><span class="wm">5.0</span></div><div class="drow"><span class="wn">12</span><span class="dname">Fundamentals of Risk and Return<small>19 pages, 7 marks</small></span><span class="wbar"><i style="width:58.9%"></i></span><span class="wm">3.7</span></div><div class="drow"><span class="wn">13</span><span class="dname">Qualities of a Good Research Report<small>8 pages, 5 marks</small></span><span class="wbar"><i style="width:100.0%"></i></span><span class="wm">6.2</span></div><div class="drow"><span class="wn">14</span><span class="dname">Legal and Regulatory Environment<small>40 pages, 10 marks</small></span><span class="wbar"><i style="width:40.0%"></i></span><span class="wm">2.5</span></div><div class="drow"><span class="wn">15</span><span class="dname">Technical Analysis<small>33 pages, 15 marks</small></span><span class="wbar"><i style="width:72.7%"></i></span><span class="wm">4.5</span></div>
+</figure>
+
+<div class="col">
+<div class="analogy">Chapter 2 is a long road with few toll booths. Chapter 13 is a short road with many. Do not judge a chapter's importance by its thickness.</div>
+<h3>What each chapter covers</h3>
+<p>From the official curriculum. Tap a chapter to open it.</p>
+<details class="acc"><summary><b>1</b> Introduction to Research Analyst Profession <span class="accm">1 mark</span></summary><ul><li>What a research analyst does</li><li>Their main duties</li><li>Rules for dealing with companies and clients</li><li>Qualities of a good analyst</li></ul><p class="ptr">Book pages 15 to 21.</p></details><details class="acc"><summary><b>2</b> Introduction to Securities Market <span class="accm">2 marks</span></summary><ul><li>What securities are</li><li>Market words: shares, bonds, warrants, indices, mutual funds, ETFs, commodities</li><li>Primary market (IPO, FPO, rights, bonus, QIP, OFS and more) and secondary market</li><li>Who takes part: exchanges, depositories, brokers, funds, FPIs and others</li><li>Cash, forward, futures, options and swaps. Hedging and arbitrage</li><li>Demat and remat</li></ul><p class="ptr">Book pages 22 to 54.</p></details><details class="acc"><summary><b>3</b> Terminology in Equity and Debt Markets <span class="accm">2 marks</span></summary><ul><li>Equity words: face value, book value, market cap, EPS, P/E, P/B, DVRs</li><li>Bond words: coupon, maturity, current yield, YTM, duration</li><li>Types of bonds: zero coupon, floating rate, convertible, perpetual and more</li><li>Commodity words: spot price, basis, contango, backwardation, cost of carry</li></ul><p class="ptr">Book pages 55 to 77.</p></details><details class="acc"><summary><b>4</b> Fundamentals of Research <span class="accm">5 marks</span></summary><ul><li>Active and passive investing</li><li>Why research matters. Insider information versus mosaic analysis</li><li>Four approaches: technical, fundamental (top down and bottom up), quantitative, behavioural</li><li>Research on commodities, and how commodities affect shares</li></ul><p class="ptr">Book pages 78 to 89.</p></details><details class="acc"><summary><b>5</b> Economic Analysis <span class="accm">5 marks</span></summary><ul><li>Basics of micro and macro economics</li><li>National income, savings, inflation, interest rates, jobs</li><li>Foreign money flows (FDI and FPI), fiscal and monetary policy, trade and exchange rates</li><li>Long-term, cyclical and seasonal trends. Where to find economic data</li></ul><p class="ptr">Book pages 90 to 104.</p></details><details class="acc"><summary><b>6</b> Industry Analysis <span class="accm">8 marks</span></summary><ul><li>Defining an industry and its cycles</li><li>Market size and trends. Business life cycle</li><li>Porter's five forces, PESTLE, BCG matrix, SCP</li><li>Industry drivers and KPIs. Regulation. Taxes. Sources of data</li></ul><p class="ptr">Book pages 105 to 129.</p></details><details class="acc"><summary><b>7</b> Company Analysis: Business and Governance <span class="accm">6 marks</span></summary><ul><li>Business models and pricing power</li><li>Competitive advantage and SWOT</li><li>Management quality, independent directors, governance, promoter holding</li><li>Business risks, credit rating history, ESG</li></ul><p class="ptr">Book pages 130 to 144.</p></details><details class="acc"><summary><b>8</b> Company Analysis: Financial Analysis <span class="accm">12 marks</span></summary><ul><li>Balance sheet, profit and loss, cash flow, notes to accounts</li><li>Standalone versus consolidated results. Equity dilution</li><li>Reading the audit report</li><li>Ratios: profitability, return, leverage, liquidity, efficiency. DuPont</li><li>Peer comparison and company history</li></ul><p class="ptr">Book pages 145 to 186.</p></details><details class="acc"><summary><b>9</b> Corporate Actions <span class="accm">5 marks</span></summary><ul><li>Why companies take corporate actions</li><li>Dividend, rights, bonus, split, consolidation</li><li>Mergers, demergers, schemes of arrangement, loan restructuring</li><li>Buyback, delisting and relisting, share swap</li></ul><p class="ptr">Book pages 187 to 197.</p></details><details class="acc"><summary><b>10</b> Valuation Principles <span class="accm">12 marks</span></summary><ul><li>Price versus value</li><li>DCF valuation</li><li>Earnings multiples: P/E, PEG, EV/EBITDA, EV/Sales, dividend yield</li><li>Asset multiples: P/B, EV/capital employed, NAV</li><li>Sum of the parts, new-age business metrics, CAPM</li></ul><p class="ptr">Book pages 198 to 217.</p></details><details class="acc"><summary><b>11</b> Fundamental Analysis of Commodities <span class="accm">5 marks</span></summary><ul><li>Supply and demand. Big producers and consumers</li><li>Currency and the dollar index. Global versus Indian prices</li><li>Crop, weather, stock and production data</li><li>Government policy, geopolitics, and hedging (hedge ratio)</li></ul><p class="ptr">Book pages 218 to 227.</p></details><details class="acc"><summary><b>12</b> Fundamentals of Risk and Return <span class="accm">7 marks</span></summary><ul><li>Simple, annualised and compounded returns</li><li>Types of risk. Measuring risk. Beta</li><li>Sensitivity analysis and margin of safety</li><li>Sharpe, Treynor and Jensen's alpha</li><li>Behavioural biases and measuring liquidity</li></ul><p class="ptr">Book pages 228 to 246.</p></details><details class="acc"><summary><b>13</b> Qualities of a Good Research Report <span class="accm">5 marks</span></summary><ul><li>Qualities of a good research report</li><li>Rating conventions (buy, sell and so on)</li><li>Using a checklist, with a sample</li></ul><p class="ptr">Book pages 247 to 254.</p></details><details class="acc"><summary><b>14</b> Legal and Regulatory Environment <span class="accm">10 marks</span></summary><ul><li>Regulators: MoF, MCA, RBI, SEBI, IRDA, PFRDA, IBBI, WDRA</li><li>Key laws: SCRA 1956, SEBI Act 1992, insider trading, unfair trade practices, RA Regulations 2014, IBC</li><li>Code of conduct for analysts</li><li>Conflicts of interest and disclosures</li><li>Exchange surveillance: ASM and GSM</li></ul><p class="ptr">Book pages 255 to 294.</p></details><details class="acc"><summary><b>15</b> Technical Analysis <span class="accm">15 marks</span></summary><ul><li>What technical analysis is. Types of charts</li><li>Dow Theory and market trends</li><li>Reversal and consolidation patterns</li><li>Support, resistance, trendlines and channels</li><li>Technical indicators</li></ul><p class="ptr">Book pages 295 to 327.</p></details>
+<div class="trap">The workbook itself warns: the exam is <b>largely</b> based on the book, but NISM does not promise every question will come from it. The sample questions in the book are for reference only; the real exam may be harder.</div>
+</section>
+
+<section class="sec" id="s5"><span class="secno">5</span><h2>What about numericals?</h2>
+<p>The test centre computers have either <span class="k">Microsoft Excel</span> or <span class="k">LibreOffice Calc</span>. You will not know which one in advance. The workbook advises being comfortable with both.</p>
+<p>Numericals will come mostly from:</p>
+<ul><li><b>Chapter 8</b>: financial ratios and DuPont analysis</li><li><b>Chapter 10</b>: DCF, P/E, EV/EBITDA and other valuation measures</li><li><b>Chapter 12</b>: returns, risk, beta, Sharpe and Treynor ratios</li><li><b>Chapter 3</b>: bond yields, in a small way</li></ul>
+<div class="why"><b>Practise on a spreadsheet</b>When we reach these chapters, do the practice questions in a spreadsheet, not on a calculator. Typing formulas quickly is part of the skill the exam tests.</div>
+</section>
+
+<section class="sec" id="s6"><span class="secno">6</span><h2>How do I book the exam?</h2>
+<ul><li>Register and book on NISM's certification portal: <b>cert.nism.ac.in</b> (linked from <b>www.nism.ac.in</b>).</li>
+<li>Add your <b>PAN</b> to your profile, or the certificate will not be issued.</li>
+<li>NISM publishes a list of test centres and dates <b>every month</b>. The October 2026 list has about <span class="num">230</span> centres across India.</li>
+<li>Most centres offer two afternoon slots: <b>13:30 to 15:30</b> and <b>15:30 to 17:30</b>. A few offer other times. Each centre runs on certain dates only, so check your city in the latest month's list.</li>
+<li>Helpdesk, as printed on the centre list: certification@nism.ac.in, phone +91 8080806476.</li></ul>
+<div class="why"><b>When to book</b>Book once you have finished a first pass of the book and taken a full mock test. Each centre runs only on some dates, so look at the list early.</div>
+</section>
+
+<section class="sec" id="s7"><span class="secno">7</span><h2>How does this group work?</h2>
+<p>We read the workbook <b>one chapter per meeting, in order</b>. That is 15 meetings after today. For each chapter there is one web page with three tabs.</p>
+</div>
+
+<figure class="fig" id="fig-meeting"><figcaption>One chapter, one week<span>What to do before and during each meeting</span></figcaption>
+<div class="flow">
+<div class="step"><h4>Learn</h4><p>Read the notes before the meeting. Yellow marks are key terms. Red boxes are exam traps.</p></div><div class="arrow"></div>
+<div class="step"><h4>Flashcards</h4><p>Mark each card "Got it" or "Again". Come back to the "Again" pile.</p></div><div class="arrow"></div>
+<div class="step"><h4>Quiz</h4><p>Take it in exam mode. Press "Copy result for the group" and paste it in the group chat.</p></div><div class="arrow"></div>
+<div class="step gd"><h4>Meet</h4><p>We spend the meeting on the questions most people missed.</p></div>
+</div></figure>
+
+<div class="col">
+<ul><li>The notes are shorter and simpler than the book, but they follow the <b>book</b>, not the news. Where current rules differ from the book, the exam marks against the book, so we do too.</li>
+<li>Your flashcard and quiz progress is saved <b>only in your own browser</b>, on your own device. Nothing is collected or shared unless you paste your result yourself.</li>
+<li>Every diagram is also saved as a picture, for sharing in the group chat.</li>
+<li>Once more chapters are done, we will add a full mock test: 80 MCQs and 5 case sets, timed at 2 hours.</li></ul>
+<p>Try it now: open the <b>Quiz</b> tab at the top of this page. It has questions on everything we covered today.</p>
+</section>
+
+<section class="sec" id="traps"><h2>Things people get wrong about this exam</h2>
+<ol class="traplist">
+<li>Thinking 60 right answers means a pass. Wrong answers pull the score down: 60 right and 8 wrong is only 58.</li>
+<li>Skipping every doubtful question. If you can rule out one option, guessing pays on average.</li>
+<li>Guessing wildly on questions you know nothing about. It barely helps and adds risk.</li>
+<li>Giving every chapter equal time. Chapters 8, 10, 14 and 15 are nearly half the paper.</li>
+<li>Judging a chapter by its length. Chapter 2 is 33 pages for 2 marks; Chapter 13 is 8 pages for 5 marks.</li>
+<li>Ignoring the 20 case questions. They are one fifth of the paper and take longer to read.</li>
+<li>Practising numericals only on a calculator. The centre gives you Excel or LibreOffice Calc.</li>
+<li>Studying from an older workbook. Use the February 2026 version; the pattern and syllabus changed in 2026.</li>
+<li>Forgetting to add your PAN. No PAN, no certificate.</li>
+</ol>
+</section>
+
+<section class="sec" id="talk"><h2>For the group discussion</h2>
+<ol class="talk">
+<li>When does each of us plan to take the exam? Does 15 meetings fit that date?</li>
+<li>Which chapters look hardest from the topic list? Which do we already know from work or study?</li>
+<li>Who is comfortable with Excel formulas? Should we add a short spreadsheet session before Chapter 8?</li>
+<li>What meeting day, time and length works for everyone?</li>
+<li>How will we keep each other on track between meetings?</li>
+</ol>
+</section>
+</div>
+
+<footer>Built from the NISM Series XV workbook (February 2026 version), the official syllabus and the NISM test centre list for October 2026. Study aid only. Always check nism.ac.in for the latest rules.</footer>
+</div>
+</div><div class="view" id="v-cards" hidden><div class="wrap"><div class="fc-wrap">
+<div class="fc-top"><span id="fc-count" class="ptr"></span><label class="ptr"><input type="checkbox" id="fc-missed"> Only cards I missed</label></div>
+<div class="fc-prog"><div id="fc-bar"></div></div>
+<div class="card3d" id="fc-card" tabindex="0" role="button" aria-label="Flip card"><div class="inner">
+<div class="face"><span class="lbl" id="fc-pos"></span><div class="front-txt" id="fc-front"></div></div>
+<div class="face back"><span class="lbl">Answer</span><div class="back-txt" id="fc-back"></div></div></div></div>
+<p class="hint">Tap the card to flip. On a keyboard: space flips, right arrow = got it, left arrow = again.</p>
+<div class="btns"><button class="btn bad" id="fc-bad">Again</button><button class="btn good" id="fc-good">Got it</button></div>
+<div class="btns"><button class="btn sm" id="fc-shuffle">Shuffle</button><button class="btn sm" id="fc-reset">Clear progress</button></div>
+</div></div></div><div class="view" id="v-quiz" hidden><div class="wrap"><div class="qz">
+<div id="qz-setup" class="qz-setup"><h2>Test yourself</h2><p class="ptr" id="qz-counts"></p>
+<p>Scoring works like the real exam: +1 for a right answer, minus 0.25 for a wrong one, 0 for a skip. Skipping is allowed.</p>
+<div class="box"><h4>Which questions?</h4>
+<label><input type="radio" name="qset" value="quick" checked> Quick 10 (random MCQs)</label>
+<label><input type="radio" name="qset" value="mcq"> All MCQs</label>
+<label><input type="radio" name="qset" value="case"> Case sets only (the exam has 5 of these, 4 questions each)</label>
+<label><input type="radio" name="qset" value="all"> Everything</label>
+<label><input type="radio" name="qset" value="missed"> Only questions I got wrong before <span id="qz-missedn" class="ptr"></span></label></div>
+<div class="box"><h4>How?</h4>
+<label><input type="radio" name="qmode" value="practice" checked> Practice: see the answer after each question</label>
+<label><input type="radio" name="qmode" value="exam"> Exam: see everything at the end</label></div>
+<div class="btns" style="justify-content:flex-start"><button class="btn pri" id="qz-start">Start</button></div></div>
+<div id="qz-run" hidden><div class="qz-head"><span id="qz-pos"></span><span id="qz-modelbl"></span></div>
+<div id="qz-q"></div>
+<div class="btns" style="justify-content:space-between"><button class="btn sm" id="qz-prev">Back</button><span><button class="btn sm" id="qz-skip">Skip</button> <button class="btn pri sm" id="qz-check">Check</button> <button class="btn sm" id="qz-next">Next</button></span></div>
+<div class="btns" style="justify-content:flex-start"><button class="btn sm" id="qz-quit">Stop and go back</button></div></div>
+<div id="qz-end" hidden><h2>Your result</h2><div class="score" id="qz-score"></div><p class="verdict" id="qz-verdict"></p><p class="ptr" id="qz-penalty"></p>
+<div class="btns" style="justify-content:flex-start"><button class="btn pri" id="qz-copy">Copy result for the group</button><button class="btn" id="qz-again">Try another set</button></div>
+<h3>Review what you missed</h3><div class="review" id="qz-review"></div></div>
+</div></div></div><div class="toast" id="toast" role="status"></div>
+<script>window.__DATA__={"id": "ch00", "short": "Orientation", "title": "Session 0: The exam, the book and the plan", "cards": [{"f": "How many questions, and how long?", "b": "<b>100 questions</b> (100 marks) in <b>2 hours</b>."}, {"f": "How is the paper split?", "b": "<b>80 standalone MCQs</b> of 1 mark each, plus <b>5 case studies with 4 questions each</b> (20 marks)."}, {"f": "Pass mark?", "b": "<b>60 marks</b>, that is 60%."}, {"f": "Negative marking?", "b": "<b>Minus 0.25</b> for each wrong answer (25% of the question's mark). 0 for a skipped question."}, {"f": "How many wrong answers cancel one right answer?", "b": "<b>Four.</b> 4 &times; 0.25 = 1."}, {"f": "Average gain from a blind guess on a 4-option question?", "b": "About <b>+0.06</b>. Rule out one option: <b>+0.17</b>. Rule out two: <b>+0.38</b>."}, {"f": "When did the current exam pattern start?", "b": "<b>20 January 2026</b>, with the revised syllabus. Technical analysis and commodities were added."}, {"f": "Which workbook version, and from when?", "b": "<b>February 2026</b> version, for exams on or after <b>30 March 2026</b>."}, {"f": "Which regulation makes this exam compulsory?", "b": "Regulation <b>7(2)</b> of the <b>SEBI (Research Analysts) Regulations, 2014</b>."}, {"f": "Which chapter carries the most marks?", "b": "<b>Chapter 15, Technical Analysis: 15 marks.</b>"}, {"f": "Which four chapters carry 49 marks together?", "b": "<b>8</b> Financial Analysis (12), <b>10</b> Valuation (12), <b>14</b> Legal and Regulatory (10), <b>15</b> Technical Analysis (15)."}, {"f": "How many marks do Chapters 1 to 3 carry together?", "b": "<b>5 marks</b> (1 + 2 + 2)."}, {"f": "What software is on the test centre computers?", "b": "<b>Microsoft Excel or LibreOffice Calc.</b> Practise on both."}, {"f": "What must you add to get the certificate?", "b": "Your <b>PAN</b> (Income Tax Permanent Account Number) in your registration details."}, {"f": "How long is the certificate valid?", "b": "<b>3 years.</b>"}, {"f": "Does passing register you with SEBI?", "b": "<b>No.</b> Registration as a research analyst is a separate process."}], "mcqs": [{"id": "0.1", "q": "The NISM Series XV exam has ______ questions to be answered in ______.", "o": ["80; 2 hours", "120; 2 hours", "100; 2 hours", "100; 3 hours"], "a": 2, "w": "100 questions of 1 mark each, in 2 hours (120 minutes)."}, {"id": "0.2", "q": "Which of the following best describes the structure of the paper?", "o": ["70 MCQs of 1 mark and 10 case studies with 3 questions each", "100 MCQs of 1 mark each", "80 MCQs of 1 mark and 10 case studies with 2 questions each", "80 MCQs of 1 mark and 5 case studies with 4 questions of 1 mark each"], "a": 3, "w": "80 standalone MCQs (80 marks) plus 5 cases &times; 4 questions (20 marks)."}, {"id": "0.3", "q": "What is the passing score?", "o": ["50 marks", "60 marks", "75 marks", "65 marks"], "a": 1, "w": "The pass mark is 60 out of 100, that is 60%."}, {"id": "0.4", "q": "For a 1-mark question answered wrongly, the candidate loses:", "o": ["0.33 marks", "0.5 marks", "Nothing; there is no negative marking", "0.25 marks"], "a": 3, "w": "Negative marking is 25% of the marks for the question, so 0.25 for a 1-mark question."}, {"id": "0.5", "q": "A candidate gets 64 right, 24 wrong and skips 12. What is the net score?", "o": ["58", "52", "60", "64"], "a": 0, "w": "64 minus 24 &times; 0.25 = 64 minus 6 = 58. That is a fail, even though 64 answers were right."}, {"id": "0.6", "q": "Which chapter carries the highest weight in the exam?", "o": ["Technical Analysis", "Company Analysis: Financial Analysis", "Valuation Principles", "Legal and Regulatory Environment"], "a": 0, "w": "Technical Analysis carries 15 marks. Financial Analysis and Valuation carry 12 each; Legal and Regulatory carries 10."}, {"id": "0.7", "q": "Chapters 1, 2 and 3 together carry ______ marks.", "o": ["5", "3", "10", "8"], "a": 0, "w": "1 + 2 + 2 = 5 marks."}, {"id": "0.8", "q": "Which software will be available on the test centre computers for numericals?", "o": ["No software; numericals must be done by hand", "Google Sheets", "Microsoft Excel or LibreOffice Calc", "A basic on-screen calculator only"], "a": 2, "w": "The workbook says the workstations have either Microsoft Excel or LibreOffice Calc, and advises being comfortable with both."}, {"id": "0.9", "q": "The passing certificate is issued only to candidates who have:", "o": ["Scored at least 75 marks", "Furnished or updated their PAN in their registration details", "Registered with SEBI as a research analyst", "Completed a work experience of one year"], "a": 1, "w": "NISM issues the certificate only if the PAN is in the registration details."}, {"id": "0.10", "q": "Passing this exam is a requirement under which provision?", "o": ["The SEBI (Investment Advisers) Regulations, 2013", "Regulation 7(2) of the SEBI (Research Analysts) Regulations, 2014", "Section 12 of the SEBI Act, 1992", "The Securities Contracts (Regulation) Act, 1956"], "a": 1, "w": "The workbook states that associated persons must pass the exam to meet Regulation 7(2) of the SEBI (Research Analysts) Regulations, 2014."}, {"id": "0.11", "q": "The February 2026 workbook applies to exams taken on or after:", "o": ["20 January 2026", "30 March 2026", "1 April 2026", "1 February 2026"], "a": 1, "w": "30 March 2026. The tempting wrong answer is 20 January 2026, which is when the revised exam pattern launched."}, {"id": "0.12", "q": "On a 4-option question, you can rule out two options. On average, answering gains you about:", "o": ["+0.17 marks", "+0.06 marks", "Nothing; it is better to skip", "+0.38 marks"], "a": 3, "w": "A 1 in 2 chance: 0.5 &times; 1 minus 0.5 &times; 0.25 = 0.375. +0.06 is a blind guess; +0.17 is after ruling out one."}, {"id": "0.13", "q": "Which statement about passing the exam is correct?", "o": ["It does not by itself register the person with SEBI as a research analyst", "It registers the person with SEBI automatically", "It is valid for life", "It is needed only by independent analysts, not employees"], "a": 0, "w": "Passing gives a certificate valid for 3 years. SEBI registration is a separate process, and the exam applies to employees and partners too."}, {"id": "0.14", "q": "Chapters 8, 10, 14 and 15 together carry:", "o": ["25 marks", "54 marks", "49 marks", "39 marks"], "a": 2, "w": "12 + 12 + 10 + 15 = 49 marks, nearly half the paper."}], "cases": [{"id": "C0", "title": "Meera's first mock test", "text": "Meera takes a full 100-question mock test under exam rules. She answers 70 questions and skips 30. Of the 70 she answered, 58 are right and 12 are wrong.", "qs": [{"q": "What is Meera's net score?", "o": ["61", "46", "55", "58"], "a": 2, "w": "58 minus 12 &times; 0.25 = 58 minus 3 = 55."}, {"q": "Did Meera pass?", "o": ["Yes, because she answered 70 questions", "No, she is 2 marks short", "Yes, she passed with 58", "No, she is 5 marks short"], "a": 3, "w": "The pass mark is 60 and her net score is 55, so she is 5 marks short. 58 is her count of right answers, not her score."}, {"q": "Keeping her 12 wrong answers the same, how many of the 30 skipped questions must she answer correctly to pass?", "o": ["12", "5", "3", "2"], "a": 1, "w": "Each extra right answer adds 1 mark. 55 + 5 = 60."}, {"q": "In 20 of the skipped questions, Meera could have ruled out two options each. If she had guessed on all 20, how much would she have gained on average?", "o": ["About 7.5 marks", "Nothing", "About 3.4 marks", "About 1.2 marks"], "a": 0, "w": "Each such guess is worth 0.5 &times; 1 minus 0.5 &times; 0.25 = 0.375 on average. 20 &times; 0.375 = 7.5, enough to pass on average."}]}]};</script>
+<script>
+window.__WIDGETS__ = function(){
+  const r=document.getElementById('c-right'), w=document.getElementById('c-wrong');
+  if(!r) return;
+  function upd(e){
+    let a=+r.value, b=+w.value;
+    if(a+b>100){ if(e&&e.target===r){ b=100-a; w.value=b; } else { a=100-b; r.value=a; } }
+    const s=100-a-b, lost=b*0.25, net=a-lost, need=Math.max(0,60-net);
+    const f=x=>Number.isInteger(x)?String(x):x.toFixed(2).replace(/0$/,'');
+    document.getElementById('o-right').textContent=a;
+    document.getElementById('o-wrong').textContent=b;
+    document.getElementById('r-skip').textContent=s;
+    document.getElementById('r-lost').textContent=f(lost);
+    document.getElementById('r-net').textContent=f(net);
+    document.getElementById('r-need').textContent=f(need);
+    const v=document.getElementById('r-verdict');
+    v.textContent = net>=60 ? 'Pass' : 'Fail: '+f(need)+' marks short';
+    v.className='calcv '+(net>=60?'pass':'fail');
+  }
+  r.addEventListener('input',upd); w.addEventListener('input',upd); upd();
+};
+</script><script>
+(function(){
+const DATA = window.__DATA__;
+const KEY = 'nismra:'+DATA.id+':';
+const store = {
+  get(k,d){try{const v=localStorage.getItem(KEY+k);return v?JSON.parse(v):d}catch(e){return d}},
+  set(k,v){try{localStorage.setItem(KEY+k,JSON.stringify(v))}catch(e){}}
+};
+const $=(s,r=document)=>r.querySelector(s);
+const el=(t,a={},h='')=>{const e=document.createElement(t);for(const k in a){if(k==='class')e.className=a[k];else e.setAttribute(k,a[k])}if(h)e.innerHTML=h;return e};
+function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),1600)}
+/* theme */
+const tb=$('#themebtn');
+function applyTheme(t){if(t)document.documentElement.setAttribute('data-theme',t);else document.documentElement.removeAttribute('data-theme');tb.textContent=(t==='dark'||(!t&&matchMedia('(prefers-color-scheme: dark)').matches))?'\u2600':'\u263E'}
+let th=null;try{th=localStorage.getItem('nismra:theme')}catch(e){}
+applyTheme(th);
+tb.addEventListener('click',()=>{const dark=document.documentElement.getAttribute('data-theme')==='dark'||(!document.documentElement.getAttribute('data-theme')&&matchMedia('(prefers-color-scheme: dark)').matches);const n=dark?'light':'dark';applyTheme(n);try{localStorage.setItem('nismra:theme',n)}catch(e){}});
+/* tabs */
+const tabs=[...document.querySelectorAll('.tab')];
+function show(v){tabs.forEach(t=>t.setAttribute('aria-selected',t.dataset.v===v));document.querySelectorAll('.view').forEach(x=>x.hidden=x.id!=='v-'+v);if(v==='cards')renderCard();window.scrollTo(0,0);try{history.replaceState(null,'','#'+v)}catch(e){}}
+tabs.forEach(t=>t.addEventListener('click',()=>show(t.dataset.v)));
+/* ---------- flashcards ---------- */
+const cards=DATA.cards;
+let known=new Set(store.get('known',[]));
+let missed=new Set(store.get('missed',[]));
+let deck=[],pos=0,onlyMissed=false;
+function buildDeck(shuffle){deck=cards.map((c,i)=>i).filter(i=>!onlyMissed||missed.has(i));if(shuffle){for(let i=deck.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[deck[i],deck[j]]=[deck[j],deck[i]]}}pos=0}
+buildDeck(false);
+function renderCard(){
+  const c3=$('#fc-card');c3.classList.remove('flip');
+  const done=known.size;$('#fc-bar').style.width=(100*done/cards.length)+'%';
+  $('#fc-count').textContent=done+' of '+cards.length+' marked known';
+  if(!deck.length){$('#fc-front').innerHTML='No cards here.';$('#fc-back').innerHTML='Switch off "Only cards I missed" to see the full deck.';$('#fc-pos').textContent='';return}
+  if(pos>=deck.length){$('#fc-front').innerHTML='Deck done.';$('#fc-back').innerHTML='Press Shuffle to go again, or study only the cards you missed.';$('#fc-pos').textContent='';return}
+  const c=cards[deck[pos]];$('#fc-front').innerHTML=c.f;$('#fc-back').innerHTML=c.b;$('#fc-pos').textContent='Card '+(pos+1)+' of '+deck.length;
+}
+function flip(){$('#fc-card').classList.toggle('flip')}
+$('#fc-card').addEventListener('click',flip);
+$('#fc-card').addEventListener('keydown',e=>{if(e.key===' '||e.key==='Enter'){e.preventDefault();flip()}});
+function mark(ok){if(pos>=deck.length)return;const i=deck[pos];if(ok){known.add(i);missed.delete(i)}else{missed.add(i);known.delete(i)}store.set('known',[...known]);store.set('missed',[...missed]);pos++;renderCard()}
+$('#fc-good').addEventListener('click',()=>mark(true));
+$('#fc-bad').addEventListener('click',()=>mark(false));
+$('#fc-shuffle').addEventListener('click',()=>{buildDeck(true);renderCard()});
+$('#fc-missed').addEventListener('change',e=>{onlyMissed=e.target.checked;buildDeck(false);renderCard()});
+$('#fc-reset').addEventListener('click',()=>{known.clear();missed.clear();store.set('known',[]);store.set('missed',[]);buildDeck(false);renderCard();toast('Progress cleared')});
+document.addEventListener('keydown',e=>{if($('#v-cards').hidden)return;if(e.key==='ArrowRight')mark(true);if(e.key==='ArrowLeft')mark(false)});
+/* ---------- quiz ---------- */
+const Q=[];DATA.mcqs.forEach(q=>Q.push(Object.assign({kind:'mcq'},q)));
+(DATA.cases||[]).forEach(cs=>cs.qs.forEach((q,k)=>Q.push(Object.assign({kind:'case',caseTitle:cs.title,caseText:cs.text,id:cs.id+'-'+(k+1)},q))));
+let run=null;
+function pick(set){let arr;
+  if(set==='quick'){arr=Q.filter(q=>q.kind==='mcq').slice();for(let i=arr.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[arr[i],arr[j]]=[arr[j],arr[i]]}arr=arr.slice(0,10)}
+  else if(set==='mcq')arr=Q.filter(q=>q.kind==='mcq');
+  else if(set==='case')arr=Q.filter(q=>q.kind==='case');
+  else if(set==='missed'){const m=new Set(store.get('qmissed',[]));arr=Q.filter(q=>m.has(q.id))}
+  else arr=Q.slice();
+  return arr}
+function start(){const set=document.querySelector('input[name=qset]:checked').value;const mode=document.querySelector('input[name=qmode]:checked').value;const qs=pick(set);
+  if(!qs.length){toast('No questions in this set yet');return}
+  run={qs,mode,i:0,ans:qs.map(()=>null),checked:qs.map(()=>false)};$('#qz-setup').hidden=true;$('#qz-end').hidden=true;$('#qz-run').hidden=false;renderQ()}
+function renderQ(){const q=run.qs[run.i];const box=$('#qz-q');box.innerHTML='';
+  $('#qz-pos').textContent='Question '+(run.i+1)+' of '+run.qs.length;
+  $('#qz-modelbl').textContent=run.mode==='exam'?'Exam mode: answers shown at the end':'Practice mode';
+  if(q.kind==='case'){box.appendChild(el('div',{class:'qcase'},'<b>Case: '+q.caseTitle+'</b><br>'+q.caseText))}
+  box.appendChild(el('div',{class:'qtext'},q.q));
+  const L='abcd';
+  q.o.forEach((o,k)=>{const b=el('button',{class:'opt','aria-pressed':String(run.ans[run.i]===k)},'<span class="lt">'+L[k]+'</span><span>'+o+'</span>');
+    b.addEventListener('click',()=>{if(run.checked[run.i])return;run.ans[run.i]=k;renderQ()});box.appendChild(b)});
+  if(run.checked[run.i])paintCheck();
+  $('#qz-check').hidden=run.mode==='exam'||run.checked[run.i];
+  $('#qz-check').disabled=run.ans[run.i]===null;
+  $('#qz-prev').disabled=run.i===0;
+  $('#qz-next').textContent=run.i===run.qs.length-1?'Finish':'Next';
+  $('#qz-skip').hidden=run.checked[run.i];
+}
+function paintCheck(){const q=run.qs[run.i];const opts=[...document.querySelectorAll('#qz-q .opt')];opts.forEach((b,k)=>{b.disabled=true;if(k===q.a)b.classList.add('right');else if(k===run.ans[run.i])b.classList.add('wrong')});
+  const a=run.ans[run.i];const ok=a===q.a;const ex=el('div',{class:'explain '+(a===null?'':(ok?'ok':'no'))},'<b>'+(a===null?'Skipped. ':ok?'Correct. ':'Not quite. ')+'</b>'+q.w);$('#qz-q').appendChild(ex)}
+$('#qz-check').addEventListener('click',()=>{run.checked[run.i]=true;renderQ()});
+$('#qz-skip').addEventListener('click',()=>{run.ans[run.i]=null;if(run.mode==='practice'){run.checked[run.i]=true;renderQ()}else next()});
+$('#qz-prev').addEventListener('click',()=>{if(run.i>0){run.i--;renderQ()}});
+function next(){if(run.i<run.qs.length-1){run.i++;renderQ();window.scrollTo({top:0})}else finish()}
+$('#qz-next').addEventListener('click',next);
+$('#qz-start').addEventListener('click',start);
+$('#qz-quit').addEventListener('click',()=>{$('#qz-run').hidden=true;$('#qz-setup').hidden=false});
+function finish(){let c=0,w=0,s=0;const miss=new Set(store.get('qmissed',[]));const wrongIdx=[];
+  run.qs.forEach((q,i)=>{const a=run.ans[i];if(a===null){s++;miss.add(q.id);wrongIdx.push(i)}else if(a===q.a){c++;miss.delete(q.id)}else{w++;miss.add(q.id);wrongIdx.push(i)}});
+  store.set('qmissed',[...miss]);
+  const net=c-0.25*w;const pct=100*net/run.qs.length;
+  $('#qz-run').hidden=true;$('#qz-end').hidden=false;
+  $('#qz-score').innerHTML='<div><b>'+c+'</b><small>correct</small></div><div><b>'+w+'</b><small>wrong</small></div><div><b>'+s+'</b><small>skipped</small></div><div><b>'+net.toFixed(2)+'</b><small>net score</small></div>';
+  $('#qz-verdict').textContent=pct>=60?('Pass level. Net '+pct.toFixed(0)+'%.'):('Below the 60% pass line. Net '+pct.toFixed(0)+'%.');
+  $('#qz-penalty').textContent=w?('Wrong answers cost you '+(0.25*w).toFixed(2)+' marks.'):'No marks lost to negative marking.';
+  const rv=$('#qz-review');rv.innerHTML='';const L='abcd';
+  if(!wrongIdx.length)rv.innerHTML='<p>Nothing to review. Every answer was right.</p>';
+  wrongIdx.forEach(i=>{const q=run.qs[i];const a=run.ans[i];rv.appendChild(el('div',{class:'item'},'<p><b>'+q.q+'</b></p><p>Your answer: '+(a===null?'skipped':L[a]+') '+q.o[a])+'</p><p>Right answer: <b>'+L[q.a]+') '+q.o[q.a]+'</b></p><p class="ptr">'+q.w+'</p>'))});
+  run.summary=DATA.short+' quiz: '+c+'/'+run.qs.length+' correct, '+w+' wrong, '+s+' skipped. Net '+net.toFixed(2)+' ('+pct.toFixed(0)+'%).'+(wrongIdx.length?' Missed: '+wrongIdx.map(i=>run.qs[i].id).join(', '):'');
+}
+$('#qz-copy').addEventListener('click',()=>{const t=run&&run.summary||'';(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(()=>toast('Copied. Paste it in the group chat.')).catch(()=>{prompt('Copy this:',t)})});
+$('#qz-again').addEventListener('click',()=>{$('#qz-end').hidden=true;$('#qz-setup').hidden=false;updateMissedCount()});
+function updateMissedCount(){const n=store.get('qmissed',[]).length;$('#qz-missedn').textContent=n?('('+n+' saved)'):'(none yet)'}
+updateMissedCount();
+$('#qz-counts').textContent=DATA.mcqs.length+' MCQs and '+(DATA.cases||[]).reduce((s,c)=>s+c.qs.length,0)+' case questions';
+/* interactive widgets hook */
+if(window.__WIDGETS__)window.__WIDGETS__();
+const h=(location.hash||'').replace('#','');if(['learn','cards','quiz'].includes(h))show(h);
+})();
+</script></body></html>
