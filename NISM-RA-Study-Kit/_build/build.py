@@ -1,7 +1,7 @@
 import os, random, json, re, sys
 sys.path.insert(0, os.path.dirname(__file__))
 from template import page, CSS, FONTS
-import ch00, ch01, ch02_learn, ch02_qs, ch03_learn, ch03_qs, ch04
+import ch00, ch01, ch02_learn, ch02_qs, ch03_learn, ch03_qs, ch04, ch05, ch06_learn, ch06_qs
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
@@ -14,6 +14,8 @@ CH = {
  "ch00": {"dir":"Ch00-Orientation","file":"Ch00-study-page.html","data":ch00.DATA,"learn":ch00.LEARN,"widgets":ch00.WIDGETS,"title":"Orientation: the exam, the book and the plan","n":0},
  "ch03": {"dir":"Ch03-Equity-Debt-Terms","file":"Ch03-study-page.html","data":ch03_qs.DATA,"learn":ch03_learn.LEARN,"widgets":ch03_learn.WIDGETS,"title":"Terms in equity and debt markets","n":3,"extra":"Two calculators: bond price and duration, commodity futures."},
  "ch04": {"dir":"Ch04-Fundamentals-of-Research","file":"Ch04-study-page.html","data":ch04.DATA,"learn":ch04.LEARN,"widgets":"","title":"Fundamentals of research","n":4},
+ "ch05": {"dir":"Ch05-Economic-Analysis","file":"Ch05-study-page.html","data":ch05.DATA,"learn":ch05.LEARN,"widgets":"","title":"Economic analysis","n":5},
+ "ch06": {"dir":"Ch06-Industry-Analysis","file":"Ch06-study-page.html","data":ch06_qs.DATA,"learn":ch06_learn.LEARN,"widgets":"","title":"Industry analysis","n":6},
 }
 
 def shuffle_q(q, rng, target):

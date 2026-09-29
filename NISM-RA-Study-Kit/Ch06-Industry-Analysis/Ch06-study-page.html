@@ -1,0 +1,677 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Chapter 6: Industry analysis | NISM RA study kit</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&display=swap" rel="stylesheet"><style>
+:root{
+ --paper:#F5F6F8;--card:#FFFFFF;--ink:#1B2340;--muted:#586178;--line:#D8DDE7;
+ --indigo:#2E3F8F;--indigo-soft:#E6E9F6;--marker:#FFE27A;--teal:#12705F;--teal-soft:#DDF1EC;
+ --brick:#A83C29;--brick-soft:#F8E3DE;--sun:#F2B233;
+ --head:"Bricolage Grotesque","Segoe UI",system-ui,-apple-system,sans-serif;
+ --body:"Atkinson Hyperlegible","Segoe UI",system-ui,-apple-system,sans-serif;
+ box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+ --paper:#11141C;--card:#1A1E2A;--ink:#E7EAF3;--muted:#9EA7BC;--line:#2C3244;
+ --indigo:#9AABFF;--indigo-soft:#232A45;--marker:rgba(255,214,90,.30);--teal:#52C7AE;--teal-soft:#16332D;
+ --brick:#F2826C;--brick-soft:#3A201B;--sun:#F2B233;}}
+:root[data-theme="dark"]{
+ --paper:#11141C;--card:#1A1E2A;--ink:#E7EAF3;--muted:#9EA7BC;--line:#2C3244;
+ --indigo:#9AABFF;--indigo-soft:#232A45;--marker:rgba(255,214,90,.30);--teal:#52C7AE;--teal-soft:#16332D;
+ --brick:#F2826C;--brick-soft:#3A201B;}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 70px);-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6}
+img,svg{max-width:100%}
+a{color:var(--indigo)}
+:focus-visible{outline:3px solid var(--sun);outline-offset:2px;border-radius:4px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+.col{max-width:720px}
+h1,h2,h3,h4{font-family:var(--head);line-height:1.15;margin:0}
+h2{font-size:clamp(1.5rem,3.4vw,2rem);font-weight:800;margin:0 0 .6rem}
+h3{font-size:1.2rem;font-weight:700;margin:1.8rem 0 .5rem}
+p{margin:.55rem 0}
+ul,ol{margin:.4rem 0 .8rem;padding-left:1.3rem}
+li{margin:.25rem 0}
+/* top bar */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--paper) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.bar .wrap{display:flex;align-items:center;gap:12px;min-height:58px}
+.brand{font-family:var(--head);font-weight:700;font-size:.95rem;color:var(--muted);text-decoration:none;white-space:nowrap}
+.tabs{display:flex;gap:4px;margin-left:auto;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:4px}
+.tab{border:0;background:transparent;color:var(--ink);font:600 .95rem var(--body);padding:.45rem .95rem;border-radius:999px;cursor:pointer}
+.tab[aria-selected="true"]{background:var(--indigo);color:var(--card)}
+.themebtn{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;width:38px;height:38px;cursor:pointer;font-size:1rem}
+@media (max-width:620px){.brand{display:none}.tabs{margin-left:0;flex:1;justify-content:space-between}.tab{padding:.45rem .6rem;flex:1}}
+/* hero */
+.hero{padding:44px 0 18px}
+.kicker{font-family:var(--head);font-weight:700;color:var(--indigo);font-size:1rem;margin-bottom:.4rem}
+.hero h1{font-size:clamp(2.1rem,6vw,3.6rem);font-weight:800;letter-spacing:-.02em;max-width:18ch}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 0}
+.pill{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:.2rem .75rem;font-size:.9rem;color:var(--muted)}
+.pill b{color:var(--ink)}
+.oneline{margin:28px 0 8px;font-family:var(--head);font-size:clamp(1.25rem,3vw,1.7rem);font-weight:500;line-height:1.35;max-width:32ch}
+.oneline .k{font-weight:700}
+/* key term highlighter */
+.k{background:linear-gradient(104deg,transparent 0 .2em,var(--marker) .2em calc(100% - .15em),transparent calc(100% - .15em));padding:0 .2em;margin:0 -.05em;font-weight:700;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+/* sections */
+section.sec{padding:34px 0 10px;border-top:1px solid var(--line);margin-top:26px}
+.secno{font-family:var(--head);font-weight:800;color:var(--indigo);font-size:1rem;display:block;margin-bottom:.2rem}
+.why{border-left:4px solid var(--indigo);background:var(--indigo-soft);padding:.7rem 1rem;border-radius:0 10px 10px 0;margin:1rem 0}
+.why b:first-child{display:block;font-family:var(--head);margin-bottom:.1rem}
+.analogy{background:var(--card);border:1px dashed var(--indigo);border-radius:14px;padding:.8rem 1rem;margin:1rem 0}
+.analogy::before{content:"Think of it like this";display:block;font-family:var(--head);font-weight:700;color:var(--indigo);font-size:.95rem;margin-bottom:.2rem}
+.trap{border:2px solid var(--brick);background:var(--brick-soft);border-radius:12px;padding:.65rem .95rem;margin:1rem 0;position:relative}
+.trap::before{content:"Exam trap";display:inline-block;font-family:var(--head);font-weight:800;color:var(--card);background:var(--brick);border-radius:6px;padding:0 .45rem;font-size:.85rem;margin-right:.45rem;transform:rotate(-2deg)}
+.num{font-family:var(--head);font-weight:800;color:var(--brick)}
+dl.terms{display:grid;grid-template-columns:minmax(120px,max-content) 1fr;gap:.35rem 1rem;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1rem 1.1rem;margin:1rem 0}
+dl.terms dt{font-weight:700}
+dl.terms dd{margin:0;color:var(--muted)}
+@media (max-width:560px){dl.terms{grid-template-columns:1fr}dl.terms dd{margin-bottom:.4rem}}
+.terms-title{font-family:var(--head);font-weight:700;margin:1.4rem 0 -.4rem}
+/* figures */
+figure.fig{margin:1.4rem 0;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px}
+figure.fig figcaption{font-family:var(--head);font-weight:700;font-size:1.02rem;margin-bottom:12px}
+figure.fig figcaption span{display:block;font-family:var(--body);font-weight:400;color:var(--muted);font-size:.9rem;margin-top:2px}
+.scroll{overflow-x:auto}
+/* flow */
+.flow{display:flex;align-items:stretch;gap:0;flex-wrap:nowrap}
+.flow .step{flex:1;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:.7rem .8rem;min-width:0}
+.flow .step h4{font-size:1rem;margin-bottom:.2rem}
+.flow .step p{font-size:.92rem;margin:0;color:var(--muted)}
+.flow .arrow{flex:0 0 28px;display:flex;align-items:center;justify-content:center;color:var(--indigo);font-weight:800;font-size:1.3rem}
+.flow .arrow::before{content:"\2192"}
+@media (max-width:700px){.flow{flex-direction:column}.flow .arrow{flex-basis:26px}.flow .arrow::before{content:"\2193"}}
+.step.hl{border-color:var(--indigo);background:var(--indigo-soft)}
+.step.gd{border-color:var(--teal);background:var(--teal-soft)}
+.step.bd{border-color:var(--brick);background:var(--brick-soft)}
+/* grids */
+.grid{display:grid;gap:12px}
+.g2{grid-template-columns:repeat(2,1fr)}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}
+@media (max-width:760px){.g3,.g4{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:480px){.g2,.g3,.g4{grid-template-columns:1fr}}
+.box{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:.75rem .9rem}
+.box h4{font-size:1.02rem;margin-bottom:.25rem}
+.box p,.box li{font-size:.93rem}
+.box ul{margin:.2rem 0 0}
+.box .tag{display:inline-block;font-size:.78rem;font-weight:700;border-radius:6px;padding:0 .4rem;background:var(--indigo-soft);color:var(--indigo);margin-bottom:.3rem}
+.box.gd{border-color:var(--teal)}.box.bd{border-color:var(--brick)}.box.hl{border-color:var(--indigo)}
+/* table */
+table.cmp{border-collapse:collapse;width:100%;min-width:560px;font-size:.93rem}
+table.cmp th,table.cmp td{border-bottom:1px solid var(--line);padding:.55rem .6rem;text-align:left;vertical-align:top}
+table.cmp thead th{font-family:var(--head);background:var(--indigo-soft);color:var(--ink)}
+table.cmp tbody th{font-weight:700;color:var(--muted);width:24%}
+/* id card */
+.idcard{display:grid;grid-template-columns:auto 1fr;gap:.15rem .7rem;font-size:.88rem;margin-top:.4rem}
+.idcard span:nth-child(odd){color:var(--muted)}
+/* bars */
+.stack{display:flex;height:46px;border-radius:10px;overflow:hidden;border:1px solid var(--line);font-weight:700;font-size:.9rem}
+.stack div{display:flex;align-items:center;justify-content:center;color:var(--card);text-align:center;padding:0 4px}
+/* traps list and talk */
+.traplist{counter-reset:t;list-style:none;padding:0}
+.traplist li{counter-increment:t;background:var(--card);border:1px solid var(--line);border-left:5px solid var(--brick);border-radius:10px;padding:.6rem .9rem .6rem 3rem;position:relative;margin:.5rem 0}
+.traplist li::before{content:counter(t);position:absolute;left:.9rem;top:.55rem;font-family:var(--head);font-weight:800;color:var(--brick);font-size:1.1rem}
+.talk li{margin:.45rem 0}
+.ptr{font-size:.85rem;color:var(--muted)}
+/* chapter map */
+.map{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(170px,1fr))}
+.map a{display:block;text-decoration:none;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:.7rem .85rem;transition:border-color .15s}
+.map a:hover{border-color:var(--indigo)}
+.map a b{display:block;font-family:var(--head);color:var(--indigo);font-size:.9rem}
+.map a span{font-weight:700;display:block;line-height:1.25}
+.map a small{color:var(--muted);display:block;margin-top:.25rem;line-height:1.3}
+.tl{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;position:relative;padding-top:6px}
+.tl::before{content:"";position:absolute;left:8%;right:8%;top:21px;height:4px;background:var(--line);border-radius:4px}
+.tl-i{text-align:center;position:relative}
+.tl-t{display:block;font-family:var(--head);font-size:1.15rem}
+.tl-d{display:block;width:22px;height:22px;border-radius:50%;margin:6px auto 8px;position:relative;border:3px solid var(--card)}
+.tl-i h4{font-size:1.05rem}.tl-i p{font-size:.9rem;color:var(--muted);margin:.2rem 0 0}
+@media (max-width:560px){.tl{grid-template-columns:1fr}.tl::before{display:none}.tl-i{text-align:left;padding-left:34px}.tl-d{position:absolute;left:0;top:0;margin:0}}
+input[type=range]{accent-color:var(--indigo)}
+/* views */
+.view[hidden]{display:none}
+footer{color:var(--muted);font-size:.85rem;padding:40px 0 60px;border-top:1px solid var(--line);margin-top:40px}
+/* flashcards */
+.fc-wrap{max-width:640px;margin:30px auto 0}
+.fc-top{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+.fc-prog{height:8px;background:var(--line);border-radius:99px;overflow:hidden;margin-bottom:16px}
+.fc-prog div{height:100%;background:var(--teal);width:0;transition:width .3s}
+.card3d{perspective:1200px;cursor:pointer;user-select:none}
+.card3d .inner{position:relative;min-height:300px;transition:transform .5s;transform-style:preserve-3d}
+.card3d.flip .inner{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:20px;padding:28px;display:flex;flex-direction:column;justify-content:center;border:1px solid var(--line);background:var(--card)}
+.face.back{transform:rotateY(180deg);background:var(--indigo-soft);border-color:var(--indigo)}
+.face .lbl{position:absolute;top:14px;left:18px;font-size:.8rem;color:var(--muted);font-weight:700}
+.face .front-txt{font-family:var(--head);font-size:clamp(1.3rem,4vw,1.8rem);font-weight:700;line-height:1.25}
+.face .back-txt{font-size:1.08rem}
+.hint{color:var(--muted);font-size:.85rem;text-align:center;margin-top:10px}
+@media (prefers-reduced-motion:reduce){.card3d .inner{transition:none}}
+.btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:16px}
+.btn{font:700 1rem var(--body);border-radius:12px;padding:.65rem 1.1rem;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
+.btn.pri{background:var(--indigo);border-color:var(--indigo);color:var(--card)}
+.btn.good{background:var(--teal);border-color:var(--teal);color:var(--card)}
+.btn.bad{background:var(--brick);border-color:var(--brick);color:var(--card)}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.btn.sm{font-size:.88rem;padding:.4rem .75rem;border-radius:10px}
+/* quiz */
+.qz{max-width:720px;margin:30px auto 0}
+.qz-setup .box{margin:.6rem 0}
+.qz-setup label{display:flex;gap:.6rem;align-items:flex-start;cursor:pointer}
+.qz-head{display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:.9rem;margin-bottom:10px;gap:8px;flex-wrap:wrap}
+.qcase{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--sun);border-radius:12px;padding:.8rem 1rem;margin-bottom:12px;font-size:.95rem}
+.qcase b{font-family:var(--head)}
+.qtext{font-family:var(--head);font-size:1.25rem;font-weight:700;line-height:1.3;margin:4px 0 14px}
+.opt{display:flex;gap:.7rem;align-items:flex-start;width:100%;text-align:left;font:1rem var(--body);color:var(--ink);background:var(--card);border:2px solid var(--line);border-radius:12px;padding:.7rem .9rem;margin:.45rem 0;cursor:pointer}
+.opt .lt{font-family:var(--head);font-weight:800;color:var(--indigo);min-width:1.2rem}
+.opt[aria-pressed="true"]{border-color:var(--indigo);background:var(--indigo-soft)}
+.opt.right{border-color:var(--teal);background:var(--teal-soft)}
+.opt.wrong{border-color:var(--brick);background:var(--brick-soft)}
+.opt:disabled{cursor:default}
+.explain{border-radius:12px;padding:.7rem 1rem;margin-top:12px;background:var(--paper);border:1px solid var(--line)}
+.explain.ok{border-color:var(--teal)}.explain.no{border-color:var(--brick)}
+.explain b{font-family:var(--head)}
+.score{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:16px 0}
+@media (max-width:520px){.score{grid-template-columns:repeat(2,1fr)}}
+.score div{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:.7rem;text-align:center}
+.score b{display:block;font-family:var(--head);font-size:1.8rem}
+.score small{color:var(--muted)}
+.verdict{font-family:var(--head);font-size:1.4rem;font-weight:800;margin:10px 0}
+.review .item{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:.7rem 1rem;margin:.6rem 0}
+.review .item p{margin:.25rem 0}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--paper);padding:.5rem 1rem;border-radius:10px;font-weight:700;opacity:0;transition:opacity .2s;pointer-events:none;z-index:50}
+.toast.show{opacity:1}
+@media print{.bar,.btns,.themebtn{display:none}.view[hidden]{display:block}#v-cards,#v-quiz{display:none}figure.fig,.trap,.analogy{break-inside:avoid}}
+</style></head><body>
+<div class="bar"><div class="wrap"><a class="brand" href="../index.html">NISM RA study kit</a>
+<div class="tabs" role="tablist"><button class="tab" role="tab" data-v="learn" aria-selected="true">Learn</button><button class="tab" role="tab" data-v="cards" aria-selected="false">Flashcards</button><button class="tab" role="tab" data-v="quiz" aria-selected="false">Quiz</button></div>
+<button class="themebtn" id="themebtn" aria-label="Switch light or dark">&#9790;</button></div></div><div class="view" id="v-learn">
+<style>
+.porter{display:grid;grid-template-columns:1fr 1.2fr 1fr;grid-template-rows:auto auto auto;gap:10px;align-items:stretch}
+.porter .box{display:flex;flex-direction:column;justify-content:center;text-align:center}
+.porter .c{grid-column:2;grid-row:2;border:2px solid var(--brick);background:var(--brick-soft)}
+.porter .t{grid-column:2;grid-row:1}.porter .b{grid-column:2;grid-row:3}
+.porter .l{grid-column:1;grid-row:2}.porter .r{grid-column:3;grid-row:2}
+.porter .v{border-color:var(--indigo);background:var(--indigo-soft)}
+.porter .h{border-color:var(--teal);background:var(--teal-soft)}
+@media (max-width:560px){.porter{grid-template-columns:1fr}.porter .box{grid-column:1!important;grid-row:auto!important}}
+.bcg{display:grid;grid-template-columns:2rem 1fr 1fr;grid-template-rows:1fr 1fr 2rem;gap:10px}
+.bcg .ax{font-family:var(--head);font-weight:700;color:var(--muted);font-size:.85rem;display:flex;align-items:center;justify-content:center}
+.bcg .ay{writing-mode:vertical-rl;transform:rotate(180deg);grid-row:1/3}
+.bcg .axx{grid-column:2/4}
+.bcg .box h4{font-size:1.1rem}
+</style>
+<div class="wrap">
+<header class="hero">
+<div class="kicker">Chapter 6 of 15</div>
+<h1>Industry analysis</h1>
+<div class="meta"><span class="pill">Worth <b>8 marks</b> of 100</span><span class="pill">Book pages 105 to 129</span><span class="pill">About 60 minutes</span></div>
+<p class="oneline">A great captain cannot save a leaking boat. Study the <span class="k">industry</span> before the company: its <span class="k">cycles</span>, its <span class="k">competition</span> and its <span class="k">rules</span>.</p>
+</header>
+
+<figure class="fig" id="fig-map"><figcaption>Chapter map<span>Ten parts. 6.6 (four frameworks) and 6.7 (KPIs) carry the most detail. Tap to jump.</span></figcaption>
+<div class="map">
+<a href="#s1"><b>6.1 and 6.2</b><span>What is "the industry"?</span><small>Role, definitions, GICS</small></a>
+<a href="#s3"><b>6.3</b><span>How cyclical?</span><small>Defensive, semi, deep</small></a>
+<a href="#s4"><b>6.4</b><span>How big?</span><small>Top-down and bottom-up sizing</small></a>
+<a href="#s5"><b>6.5</b><span>Long-term shifts</span><small>Secular trends, value migration, life cycle</small></a>
+<a href="#s6"><b>6.6</b><span>Four frameworks</span><small>Porter, PESTLE, BCG, SCP</small></a>
+<a href="#s7"><b>6.7</b><span>What to measure</span><small>Unit of pricing, constraints, KPIs</small></a>
+<a href="#s8"><b>6.8 and 6.9</b><span>Rules and taxes</span><small>Regulation, direct and indirect tax</small></a>
+<a href="#s10"><b>6.10</b><span>Where to find data</span><small>Four sources</small></a>
+</div></figure>
+
+<div class="col">
+<section class="sec" id="s1"><span class="secno">6.1</span><h2>Why study the industry?</h2>
+<p>Economic analysis (Chapter 5) asks whether the economy will grow. <span class="k">Industry analysis</span> asks how each industry will be affected by that economy, and how the players in it will react.</p>
+<dl class="terms">
+<dt>Industry</dt><dd>Firms offering the same or similar products for the same customer need. Examples: auto, insurance, steel, telecom.</dd>
+<dt>Business sector</dt><dd>A broader group of related industries. Financial services = insurance, banking, credit rating, investment banking. Industrial metals = steel, copper, aluminium.</dd>
+<dt>Economic sector</dt><dd>Parts of the economy that add to national income: agriculture, manufacturing, public utilities, services.</dd>
+</dl>
+<p>Seven questions every industry analysis must answer:</p>
+<ol>
+<li>Which industry is the company in?</li>
+<li>How much do economic cycles affect it?</li>
+<li>How big can it get?</li>
+<li>How has it done in the past, and why?</li>
+<li>How strong is competition, and how does that affect pricing power?</li>
+<li>Which secular trends affect it, and are they causing value migration?</li>
+<li>Are there regulatory headwinds or tailwinds?</li>
+</ol>
+
+<h3 id="s2">6.2 Defining the industry</h3>
+<p>This is the first step, and it is not always easy. Standard systems exist: <b>NIC</b> (National Industry Classification) in India, <b>GICS</b> (Global Industry Classification Standard), and <b>NAICS</b> (North American Industry Classification System) in the US. But they may miss the real substance.</p>
+</div>
+
+<figure class="fig" id="fig-define"><figcaption>Three examples of the definition problem</figcaption>
+<div class="grid g3">
+<div class="box"><span class="tag">Too broad</span><h4>Cars</h4><p>NIC puts every passenger car maker in one class. But entry-level cars and luxury cars behave very differently. Analysts may treat them as separate industries.</p></div>
+<div class="box"><span class="tag">Too narrow?</span><h4>PVR cinemas</h4><p>Competes with OTT platforms and TV, and also with live theatre and sport. Call it only a "cinema exhibitor" and you miss rivals. Call it "media and entertainment" and the peers are not comparable.</p></div>
+<div class="box"><span class="tag">Moving target</span><h4>Cameras</h4><p>Phone cameras took sales from entry-level, then mid-tier cameras. Treat cameras as a standalone industry and you ignore the biggest competitor.</p></div>
+</div></figure>
+
+<div class="col">
+<div class="why"><b>The book's rule</b>Group a company with others that share the <b>same driving factors</b>. If PVR's business depends on people's wish to spend time out of home, put it in out-of-home entertainment. If it depends on people's wish to watch movie content, put it in entertainment media. This choice matters later, when you pick peers and compare valuations.</div>
+<p><b>GICS</b> is widely used by global investors. It has four tiers: sectors, industry groups, industries and sub-industries. As of March 2023 (source MSCI): <span class="num">11</span> sectors, <span class="num">25</span> industry groups, <span class="num">74</span> industries, <span class="num">163</span> sub-industries.</p>
+</section>
+
+<section class="sec" id="s3"><span class="secno">6.3</span><h2>How cyclical is the industry?</h2>
+<p>Economic cycles affect every business, but some far more than others.</p>
+</div>
+
+<figure class="fig" id="fig-cyclical"><figcaption>Three kinds of industry by cyclicality</figcaption>
+<div class="grid g3">
+<div class="box gd"><span class="tag">Defensive</span><h4>Barely moves</h4><p>Low <b>income elasticity</b>: demand hardly changes when income rises or falls. Affected mainly by secular trends.</p><p><b>Examples:</b> food, agricultural inputs, healthcare.</p></div>
+<div class="box"><span class="tag">Semi-cyclical</span><h4>Moves, with a floor</h4><p>Grows in expansion, falls in recession, but keeps a base level of demand.</p><p><b>Example:</b> consumer durables.</p></div>
+<div class="box bd"><span class="tag">Deep cyclical</span><h4>Swings hard</h4><p>Driven by economic and commodity cycles. Sales collapse in recession as firms freeze expansion, then surge at the first sign of recovery from pent-up orders.</p><p><b>Examples:</b> capital goods, steel.</p></div>
+</div></figure>
+
+<div class="col">
+<div class="analogy">Income elasticity is how much you cut back when money is tight. You still buy rice and medicine (defensive). You delay a new fridge (semi-cyclical). A factory delays a new machine altogether (deep cyclical).</div>
+</section>
+
+<section class="sec" id="s4"><span class="secno">6.4</span><h2>How big is the market?</h2>
+<p>An <b>under-penetrated</b> industry has room to grow. As it matures, growth slows. So analysts estimate both the <b>current</b> and the <b>potential</b> market size. Both are hard: unorganised and private players do not publish data, and potential size rests on assumptions that may be wrong. Past trends help fill the gaps and reveal secular trends.</p>
+</div>
+
+<figure class="fig" id="fig-sizing"><figcaption>Two ways to size a market<span>The book's example: a medical therapy</span></figcaption>
+<div class="grid g2">
+<div class="box hl"><span class="tag">Top-down</span><h4>Start from the big picture</h4><p>Start from macro factors and work down to the industry.</p><p>Number of patients who had the therapy &times; average spend per patient = industry revenue.</p></div>
+<div class="box hl"><span class="tag">Bottom-up</span><h4>Start from the companies</h4><p>Add up data from individual companies.</p><p>For each hospital offering the therapy, take the revenue from it. Add them all.</p></div>
+</div></figure>
+
+<div class="col">
+<div class="why"><b>Book sample question, worked</b>Three organised tyre makers earn Rs 6,000, 8,000 and 10,000 crore = <b>Rs 24,000 crore</b>. Unorganised players make about 20% of sales, so organised = 80%. Market size = 24,000 &divide; 0.8 = <span class="num">Rs 30,000 crore</span>.</div>
+</section>
+
+<section class="sec" id="s5"><span class="secno">6.5</span><h2>Long-term shifts</h2>
+<p><span class="k">Secular trends</span> are long-term changes in what is made or consumed (Chapter 5). The book names five drivers:</p>
+</div>
+
+<figure class="fig" id="fig-secular"><figcaption>Five drivers of secular trends, with the book's examples</figcaption>
+<div class="grid g2">
+<div class="box"><span class="tag">Technology</span><ul><li>Horizontal drilling opened up shale gas, lowering long-term oil and gas prices</li><li>Digital cameras killed film rolls; phone cameras hit entry-level digital cameras</li><li>Better batteries are driving electric vehicles</li></ul></div>
+<div class="box"><span class="tag">Income</span><p>As incomes rise, people shift to premium products.</p></div>
+<div class="box"><span class="tag">Demography</span><p>Japan's ageing population cut per capita beer consumption.</p></div>
+<div class="box"><span class="tag">Culture and tastes</span><p>Western influence raised demand for western clothing in Asia. Change can be sudden, as after a pandemic.</p></div>
+<div class="box"><span class="tag">Regulation</span><p>GST made logistics more efficient, which reduced demand for new commercial vehicles.</p></div>
+</div></figure>
+
+<div class="col">
+<h3>6.5.1 Value migration</h3>
+<p>When a secular trend gives one party a lasting advantage at another's cost, <span class="k">shareholder value migrates</span> from loser to winner. Spotting it early helps analysts get in ahead of time and get out of losing businesses.</p>
+</div>
+
+<figure class="fig" id="fig-migration"><figcaption>Four kinds of value migration</figcaption>
+<div class="grid g2">
+<div class="box"><span class="tag">Across geographies</span><p>Shale gas moved value to <b>US</b> oil exploration. Globalisation helped low-cost <b>China</b> grow.</p></div>
+<div class="box"><span class="tag">Across industries</span><p>Digital cameras crushed the film roll industry; <b>Kodak</b> had to shut down.</p></div>
+<div class="box"><span class="tag">Across the value chain</span><p>Fierce competition cut Indian <b>telecom</b> prices and telecom shareholder value, but cheap data boosted <b>digital content</b> providers.</p></div>
+<div class="box"><span class="tag">Across companies</span><p><b>Blackberry</b> led corporate mobile email. With 2G, rivals like <b>Apple</b> offered the same and took the value. (The least common of the four.)</p></div>
+</div></figure>
+
+<div class="col">
+<h3>6.5.2 Business life cycle</h3>
+</div>
+
+<figure class="fig" id="fig-lifecycle"><figcaption>Five stages of an industry's life</figcaption>
+<div class="flow">
+<div class="step"><h4>Pioneering</h4><p>Just taking shape. Concept being proven.</p></div><div class="arrow"></div>
+<div class="step gd"><h4>Growth</h4><p>Concept works. Customers adopt. Steep growth.</p></div><div class="arrow"></div>
+<div class="step"><h4>Mature</h4><p>Most possible users already use it. Few new customers.</p></div><div class="arrow"></div>
+<div class="step bd"><h4>Declining</h4><p>New technology or tastes replace it.</p></div><div class="arrow"></div>
+<div class="step hl"><h4>Reinvention</h4><p>Rare: finds a new use and starts again.</p></div>
+</div></figure>
+
+<div class="col">
+<p><b>The book's Indian example: call taxis.</b> They took shape around the turn of the century, grew fast for a decade on the back of more phones and rising income, then shrank sharply when app-based aggregators arrived.</p>
+<p>Each shift displaces workers, who must reskill, and capacity, which must find a new use. Not every disruptor causes displacement, though: shale gas lowered crude prices for the long term without changing what people consumed.</p>
+<div class="trap">Secular trends tell you the <b>long-term</b> path. For the medium and short term, study <b>cyclical</b> trends.</div>
+</section>
+
+<section class="sec" id="s6"><span class="secno">6.6</span><h2>Four frameworks for the industry landscape</h2>
+<p><b>Industry landscaping</b> means studying all the players and how they interact: competitors, customers, suppliers, regulators and new technology. Low competition lets firms pass cost increases to customers and keep margins. High competition squeezes prices and profits. Four established frameworks help:</p>
+</div>
+
+<figure class="fig" id="fig-porter"><figcaption>6.6.1 Porter's five forces<span>Michael Porter, 1979. Laid out the way the book classifies them.</span></figcaption>
+<div class="porter">
+<div class="box v t"><span class="tag">Vertical</span><h4>Bargaining power of suppliers</h4></div>
+<div class="box h l"><span class="tag">Horizontal</span><h4>Threat of new entrants</h4></div>
+<div class="box c"><h4>Industry rivalry</h4><p class="ptr">Threat of established rivals (horizontal)</p></div>
+<div class="box h r"><span class="tag">Horizontal</span><h4>Threat of substitutes</h4></div>
+<div class="box v b"><span class="tag">Vertical</span><h4>Bargaining power of buyers</h4></div>
+</div>
+<p class="ptr" style="margin-top:8px">The book: 3 horizontal forces (substitutes, new entrants, established rivals) and 2 vertical forces (suppliers, customers).</p>
+</figure>
+
+<div class="col">
+<div class="grid g2">
+<div class="box bd"><h4>Unattractive for owners (book)</h4><p>Aviation, telecom, retail, textile, sugar, power. The forces keep profits low.</p></div>
+<div class="box gd"><h4>Attractive for owners (book)</h4><p>Education, FMCG, healthcare, IT. Weak forces, high margins for long periods.</p></div>
+</div>
+<div class="analogy">Warren Buffett, quoted in the book: "Should you find yourself in a chronically leaking boat, energy devoted to changing vessels is likely to be more productive than energy devoted to patching leaks." And: when brilliant management takes on a business with bad economics, "it is the reputation of the business that remains intact."</div>
+</div>
+
+<figure class="fig" id="fig-forces"><figcaption>When is each force strong?<span>The book's checklist</span></figcaption>
+<div class="scroll"><table class="cmp">
+<thead><tr><th>Force</th><th>High when...</th><th>Book examples</th></tr></thead>
+<tbody>
+<tr><th>Industry rivalry</th><td>Many companies; little differentiation; everyone competes on price or credit; low switching cost</td><td>Aviation, Indian telecom. Munger: "If only basis of competition in an industry is pricing, it is a self-defeating business." Micromax won 10% share in 3 years with special features at low prices.</td></tr>
+<tr><th>Threat of substitutes</th><td>Substitute is as good or better (quality, price, ease); low switching cost</td><td>Telegram to SMS; cement pipes to steel and plastic; typewriters to computers; Kodak. No substitute threat: power, healthcare, education. Solar and LED are slow because of upfront cost.</td></tr>
+<tr><th>Buyer power</th><td>Strong competition among sellers; standard products; close substitutes with low switching cost</td><td>Large buyers such as the government have more power</td></tr>
+<tr><th>Supplier power</th><td>Few suppliers, many buyers; critical inputs; low competition with differentiation; no substitutes; high switching cost</td><td>Sugarcane price set by government with farmers; OPEC and crude oil; hospitals and schools (you rarely bargain) versus the vegetable seller (you always do)</td></tr>
+<tr><th>Threat of new entrants</th><td>Low barriers. Barriers are high with licensing, patents, huge specialised investment, strong brands, distribution and loyalty</td><td>Skills (IT), capital (oil and gas), distribution (banking), brand loyalty (toothpaste, coffee). Buffett: "economic castles protected by unbreachable moats"</td></tr>
+</tbody></table></div></figure>
+
+<div class="col">
+<div class="why"><b>How to win in a crowded industry</b>Innovate. Internally: efficient operations, less working capital, faster turnaround, lower cost of capital. Externally: differentiated products, strong brands, unique positioning.</div>
+<h3>The attractive industry, in five features</h3>
+<p>Low competition, high barriers to entry, weak supplier power, weak buyer power, few substitutes. Such an industry has strong <b>pricing power</b> and high margins.</p>
+<p><b>The book's example: education in India.</b> Demand is large and growing; students have little bargaining power; it is largely recession-proof; opening an institute needs many permissions (high barriers); quality institutes are few (low competition); teachers' salaries are set by management (weak suppliers); alternative courses lack credibility (few substitutes).</p>
+
+<h3>6.6.2 PESTLE analysis</h3>
+<p><b>P</b>olitical, <b>E</b>conomic, <b>S</b>ocio-cultural, <b>T</b>echnological, <b>L</b>egal and <b>E</b>nvironmental. Adding <b>E</b>thics and <b>D</b>emographics gives <span class="k">STEEPLED</span>. It looks at the <b>external</b> environment, mostly from the view of a business choosing which country to set up a unit in.</p>
+</div>
+
+<figure class="fig" id="fig-pestle"><figcaption>PESTLE: what investors look at in a country</figcaption>
+<div class="grid g3">
+<div class="box"><span class="tag">Political</span><p>Stable laws and policy, little corruption and red tape, press freedom, ease of doing business, healthy public finances.</p></div>
+<div class="box"><span class="tag">Economic</span><p>GDP growth, inflation, rates, trade mix, BoP, currency stability, forex reserves, monetary policy, dependence on imported resources like oil.</p></div>
+<div class="box"><span class="tag">Socio-cultural</span><p>Age, education, health, values, lifestyle. Young India versus ageing Japan. Nuclear families raise demand for day care and packaged food.</p></div>
+<div class="box"><span class="tag">Technological</span><p>R&amp;D push, tech-savvy people and institutions, scientific temper.</p></div>
+<div class="box"><span class="tag">Legal</span><p>Consistent, transparent, enforced laws. Book examples of discomfort: Vodafone retrospective tax, cancelled telecom and mining licences.</p></div>
+<div class="box"><span class="tag">Environmental</span><p>Clear policy on pollution, waste, mining, forests, rehabilitation. Unclear rules deter manufacturers.</p></div>
+</div>
+<p class="ptr" style="margin-top:8px">Not every factor matters equally to every company. Judge each factor's weight for the business.</p>
+</figure>
+
+<div class="col">
+<h3>6.6.3 BCG matrix</h3>
+<p>Developed by the Boston Consulting Group. Unlike Porter and PESTLE, which look at industries and countries, BCG looks at the <b>segments within one business</b>, as a portfolio, through market growth and cash generation.</p>
+</div>
+
+<figure class="fig" id="fig-bcg"><figcaption>BCG matrix<span>With the book's Indian examples</span></figcaption>
+<div class="bcg">
+<div class="ax ay">Market growth: high (top) to low (bottom)</div>
+<div class="box gd"><span class="tag">High growth, high share</span><h4>Star</h4><p>Rising cash generation over time.</p><p><b>Cera Sanitaryware</b></p></div>
+<div class="box"><span class="tag">High growth, low share</span><h4>Question mark</h4><p>Could grow with the right strategy, but may eat cash and fail.</p><p><b>Tata Nano</b> (failed), <b>Bajaj Pulsar</b> (succeeded)</p></div>
+<div class="box hl"><span class="tag">Low growth, high share</span><h4>Cash cow</h4><p>Little investment needed, steady cash.</p><p><b>Navneet Publications</b>, <b>Colgate</b></p></div>
+<div class="box bd"><span class="tag">Low growth, low share</span><h4>Dog</h4><p>Slow growth, tough competition, little cash.</p></div>
+<div></div><div class="ax axx">Market share: high (left) to low (right)</div>
+</div></figure>
+
+<div class="col">
+<h3>6.6.4 Structure, Conduct, Performance (SCP)</h3>
+<p>Can be seen as an extension of Porter's model that also looks at the financial results.</p>
+</div>
+
+<figure class="fig" id="fig-scp"><figcaption>SCP in three steps</figcaption>
+<div class="flow">
+<div class="step"><h4>Structure</h4><p>Number of players (monopoly, oligopoly), concentration, organised versus unorganised, substitutes, supplier and buyer equations, market size, growth, integration. Overlaps Porter and SWOT.</p></div><div class="arrow"></div>
+<div class="step"><h4>Conduct</h4><p>Behaviour that follows: commoditised or branded, seasonal (umbrellas) or year-round (FMCG, pharma), cyclical, skill needs, dependence on policy.</p></div><div class="arrow"></div>
+<div class="step gd"><h4>Performance</h4><p>Financial result: RoE, RoIC, WACC. High return on capital creates wealth.</p></div>
+</div></figure>
+
+<div class="col">
+<p class="ptr">Conduct example from the book: high interest rates may deter buyers of real estate and four-wheelers, but hit two-wheelers less.</p>
+</section>
+
+<section class="sec" id="s7"><span class="secno">6.7</span><h2>What to measure: industry KPIs</h2>
+<p>Key performance indicators (KPIs) differ by industry. Revenue per employee suits a BPO, which bills by headcount, but tells little about a capital-heavy manufacturer. Company annual reports and management discussion show which KPIs an industry uses. Two more guides:</p>
+<div class="grid g2">
+<div class="box"><span class="tag">6.7.1</span><h4>Unit of pricing</h4><p>What the company treats as one unit when it sets a price. Easy for manufacturers (goods sold). Hard for services: a cafe like Starbucks prices on what it expects to earn per <b>patron</b>, not per cup.</p></div>
+<div class="box"><span class="tag">6.7.2</span><h4>Key constraining factors</h4><p><b>Demand</b>, <b>supply</b> or <b>regulatory</b>. Limited market: track <b>penetration rate</b>. Limited capacity: track <b>capacity utilisation</b>. Regulated: track what the regulator tracks.</p></div>
+</div>
+</div>
+
+<figure class="fig" id="fig-kpis"><figcaption>6.7.3 KPIs for select industries</figcaption>
+<div class="scroll"><table class="cmp">
+<thead><tr><th>Industry</th><th>Unit of pricing and constraint</th><th>Key metrics</th></tr></thead>
+<tbody>
+<tr><th>Airlines, transport, logistics</th><td>Passengers or cargo &times; distance. Constraint: capacity</td><td>Passenger or cargo km; price per passenger or cargo km; capacity and occupancy rate</td></tr>
+<tr><th>Autos, capital goods</th><td>Goods sold. Constraint: capacity</td><td>Volume and growth; average realisation and growth; capacity utilisation</td></tr>
+<tr><th>Banks, NBFCs</th><td>Loan value, priced as interest. Constraints: deposits, regulatory capital, liquid assets, market liquidity</td><td>Net interest margin; capital adequacy; NPA ratio; deposit and loan growth; CRR and SLR; CASA ratio; central bank policy rates</td></tr>
+<tr><th>Consumer goods</th><td>Goods sold. Durables: capacity in high growth</td><td>Volume and growth; average price and growth; capacity utilisation (durables)</td></tr>
+<tr><th>IT services, BPO, KPO</th><td>Full-time equivalent (FTE) per month. Constraints: workforce, currency, few big clients</td><td>FTEs billed; revenue per FTE; bench strength and attrition; constant currency growth; customer concentration and "million dollar" clients</td></tr>
+<tr><th>Media</th><td>Print: ad space. TV and radio: airtime. Online: views or clicks. Mostly ad revenue</td><td>Readership, viewership, TRPs, site visitors; ad realisation per unit; content acquisition cost</td></tr>
+<tr><th>Retail</th><td>Unit of pricing less relevant (trading business). Constraint: store network</td><td>Number of stores; same-store sales growth</td></tr>
+<tr><th>Telecom, internet</th><td>A subscriber. Constraint: market size limited by population</td><td>ARPU (average revenue per user); churn; subscriber acquisition cost; market share</td></tr>
+</tbody></table></div></figure>
+
+<div class="col">
+<div class="trap">Match the KPI to the industry. CASA and NPA are bank metrics. ARPU and churn are telecom. Same-store sales growth is retail. Revenue per FTE and bench strength are IT services. Passenger km is airlines.</div>
+</section>
+
+<section class="sec" id="s8"><span class="secno">6.8</span><h2>The rules of the game</h2>
+<p>Small changes in regulation can have big effects. The book's examples: the long debate on FDI in multi-brand retail (back-end investment, local sourcing), mine closures after environmental policy changes, cancelled telecom licences, and amendments to the Companies Act. Analysts must pay close attention to regulation.</p>
+
+<h3 id="s9">6.9 Taxation</h3>
+<p>Taxes raise money for the government, and also encourage or discourage businesses. Kerala's <b>fat tax</b> (2017) added <span class="num">14.5%</span> tax on junk food. GST charges essentials little or nothing and luxuries more.</p>
+</div>
+
+<figure class="fig" id="fig-tax"><figcaption>Direct versus indirect taxes</figcaption>
+<div class="grid g2">
+<div class="box hl"><span class="tag">6.9.1 Direct</span><h4>The payer bears it</h4><p>The person who bears the tax also pays it to the government. Main example: <b>income tax</b>.</p></div>
+<div class="box"><span class="tag">6.9.2 Indirect</span><h4>Someone else collects it</h4><p>The seller collects it and pays the government; the <b>end consumer</b> bears it. Main example: <b>GST</b>.</p></div>
+</div></figure>
+
+<div class="col">
+<h3>Direct tax: how it shapes behaviour</h3>
+<ul>
+<li>To promote research, companies can claim <span class="num">1.5 times</span> the actual spend on certain scientific research as an expense.</li>
+<li>Interest owed to scheduled commercial banks is deductible only when <b>actually paid</b>, to discourage delays.</li>
+<li>Such rules make tax profit differ from reported profit. This shows as a <b>deferred tax asset</b> (paying more tax now, less later) or a <b>deferred tax liability</b> (paying less now, more later).</li>
+</ul>
+<h3>Corporate income tax in India: four parts (as per the book)</h3>
+</div>
+
+<figure class="fig" id="fig-corptax"><figcaption>Income tax, MAT, surcharge, cess<span>Book figures, for assessment year 2025-26 where stated</span></figcaption>
+<div class="grid g2">
+<div class="box"><span class="tag">Income tax</span><p><b>30%</b> of taxable profit; <b>25%</b> if turnover was below Rs 400 crore. Optional schemes: <b>15% to 25%</b> if the company gives up certain deductions.</p></div>
+<div class="box"><span class="tag">MAT</span><p>Minimum Alternate Tax. If normal tax is below <b>15% of book profits</b>, pay 15% of book profits + 4% cess + surcharge. The excess becomes <b>MAT credit</b> for future years.</p></div>
+<div class="box"><span class="tag">Surcharge</span><p>A tax on tax. All goes to the <b>central</b> government, not shared with states. <b>12%</b> if income is above Rs 10 crore; <b>7%</b> from Rs 1 to 10 crore; nil below Rs 1 crore.</p></div>
+<div class="box"><span class="tag">Cess</span><p>Levied on tax plus surcharge, and used only for its stated purpose. <b>4%</b> for health and education.</p></div>
+</div>
+<p class="ptr" style="margin-top:8px">Worked example: taxable profit Rs 100 crore at 30% = 30. Surcharge 12% of 30 = 3.6. Cess 4% of 33.6 = 1.344. Total about Rs 34.94 crore.</p>
+</figure>
+
+<div class="col">
+<h3>Indirect taxes</h3>
+<dl class="terms">
+<dt>GST</dt><dd>Charged on the sale of goods and services as a % of invoice value. Sellers deduct GST paid to their suppliers (tax credit), so there is no double taxation. As per the book: most items at <b>18%</b>, range 0% to 28%. (Rates were revised after the book's figures; the exam follows the book.)</dd>
+<dt>Excise duty</dt><dd>Tax on production. Now only on <b>liquor, petrol and diesel</b>, which are outside GST.</dd>
+<dt>VAT</dt><dd>Charged by <b>state</b> governments on sale. Also now only on liquor, petrol and diesel.</dd>
+<dt>Customs duty</dt><dd>Tax on imports. Rate depends on the product.</dd>
+</dl>
+<h3>6.9.3 Other taxes and who they hit</h3>
+<div class="grid g3">
+<div class="box"><h4>Road tax</h4><p>Lifetime tax paid upfront on new vehicles. Hits auto sales, auto ancillaries, motor insurers.</p></div>
+<div class="box"><h4>Stamp duty</h4><p>Paid when documents are registered, mostly on buying or selling assets. Hits real estate, brokers and AMCs.</p></div>
+<div class="box"><h4>STT</h4><p>Securities Transaction Tax, paid on sale of securities. Discourages short-term trading. Hits traders and brokers.</p></div>
+</div>
+</section>
+
+<section class="sec" id="s10"><span class="secno">6.10</span><h2>Where to find data</h2>
+<div class="grid g2">
+<div class="box"><h4>Industry reports</h4><p>Industry journals and media reports</p></div>
+<div class="box"><h4>Annual reports</h4><p>The <b>Management Discussion and Analysis</b> section</p></div>
+<div class="box"><h4>Associations and trade bodies</h4><p>Their publications</p></div>
+<div class="box"><h4>Relevant ministry</h4><p>Websites and publications</p></div>
+</div>
+</section>
+
+<section class="sec" id="traps"><h2>All exam traps in this chapter</h2>
+<ol class="traplist">
+<li>Industry: same need. Business sector: related industries. Economic sector: agriculture, manufacturing, utilities, services.</li>
+<li>NIC is India's classification. NAICS is North America's. GICS: 11 sectors, 25 industry groups, 74 industries, 163 sub-industries.</li>
+<li>Classify by common driving factors, not by product label.</li>
+<li>Defensive: low income elasticity (food, agri inputs, healthcare). Semi-cyclical: consumer durables. Deep cyclical: capital goods, steel.</li>
+<li>Top-down sizing starts from macro factors; bottom-up adds up companies.</li>
+<li>Tyre sample: 24,000 is 80% of the market, so the market is 30,000.</li>
+<li>Five secular drivers: technology, income, demography, culture, regulation.</li>
+<li>Value migration: geography, industry, value chain, companies (least common).</li>
+<li>Life cycle: pioneering, growth, mature, declining, reinvention. Call taxis went through it.</li>
+<li>Porter (1979): 3 horizontal (substitutes, new entrants, rivals), 2 vertical (suppliers, buyers).</li>
+<li>High rivalry means lower pricing power and lower incomes.</li>
+<li>No substitute threat (book): power, healthcare, education.</li>
+<li>Attractive industry: low competition, high barriers, weak suppliers, weak buyers, few substitutes.</li>
+<li>PESTLE plus Ethics and Demographics = STEEPLED. Mostly used when choosing a country.</li>
+<li>BCG looks at segments within a business. Star: Cera. Cash cow: Navneet, Colgate. Question mark: Nano (failed), Pulsar (succeeded).</li>
+<li>SCP: structure, conduct, performance (RoE, RoIC, WACC). An extension of Porter.</li>
+<li>Limited market: penetration rate. Limited capacity: utilisation rate.</li>
+<li>Bank KPIs include NIM, CASA, NPA; telecom: ARPU, churn; retail: same-store sales; IT: revenue per FTE.</li>
+<li>Direct tax: payer bears it. Indirect: consumer bears it, seller collects.</li>
+<li>R&amp;D deduction: 1.5 times. MAT: 15% of book profits. Surcharge: 12% above Rs 10 crore, 7% from 1 to 10 crore. Cess: 4%.</li>
+<li>Surcharge goes wholly to the centre. Cess is for a specific purpose.</li>
+<li>Excise and VAT now only on liquor, petrol, diesel. STT discourages short-term trading.</li>
+</ol>
+</section>
+
+<section class="sec" id="talk"><h2>For the group discussion</h2>
+<ol class="talk">
+<li>How would you define the industry for a food delivery app? Who are its real competitors?</li>
+<li>Run Porter's five forces on Indian airlines. Why does the book call aviation unattractive?</li>
+<li>Pick a company you know with several businesses. Place each in the BCG matrix.</li>
+<li>Which KPI would you check first for a bank, a telecom company and a retailer? Why?</li>
+<li>Name a value migration you have seen in India in the last ten years. Who won, who lost?</li>
+</ol>
+</section>
+</div>
+
+<footer>Notes built from the NISM Series XV workbook (February 2026 version). Study aid only.</footer>
+</div>
+</div><div class="view" id="v-cards" hidden><div class="wrap"><div class="fc-wrap">
+<div class="fc-top"><span id="fc-count" class="ptr"></span><label class="ptr"><input type="checkbox" id="fc-missed"> Only cards I missed</label></div>
+<div class="fc-prog"><div id="fc-bar"></div></div>
+<div class="card3d" id="fc-card" tabindex="0" role="button" aria-label="Flip card"><div class="inner">
+<div class="face"><span class="lbl" id="fc-pos"></span><div class="front-txt" id="fc-front"></div></div>
+<div class="face back"><span class="lbl">Answer</span><div class="back-txt" id="fc-back"></div></div></div></div>
+<p class="hint">Tap the card to flip. On a keyboard: space flips, right arrow = got it, left arrow = again.</p>
+<div class="btns"><button class="btn bad" id="fc-bad">Again</button><button class="btn good" id="fc-good">Got it</button></div>
+<div class="btns"><button class="btn sm" id="fc-shuffle">Shuffle</button><button class="btn sm" id="fc-reset">Clear progress</button></div>
+</div></div></div><div class="view" id="v-quiz" hidden><div class="wrap"><div class="qz">
+<div id="qz-setup" class="qz-setup"><h2>Test yourself</h2><p class="ptr" id="qz-counts"></p>
+<p>Scoring works like the real exam: +1 for a right answer, minus 0.25 for a wrong one, 0 for a skip. Skipping is allowed.</p>
+<div class="box"><h4>Which questions?</h4>
+<label><input type="radio" name="qset" value="quick" checked> Quick 10 (random MCQs)</label>
+<label><input type="radio" name="qset" value="mcq"> All MCQs</label>
+<label><input type="radio" name="qset" value="case"> Case sets only (the exam has 5 of these, 4 questions each)</label>
+<label><input type="radio" name="qset" value="all"> Everything</label>
+<label><input type="radio" name="qset" value="missed"> Only questions I got wrong before <span id="qz-missedn" class="ptr"></span></label></div>
+<div class="box"><h4>How?</h4>
+<label><input type="radio" name="qmode" value="practice" checked> Practice: see the answer after each question</label>
+<label><input type="radio" name="qmode" value="exam"> Exam: see everything at the end</label></div>
+<div class="btns" style="justify-content:flex-start"><button class="btn pri" id="qz-start">Start</button></div></div>
+<div id="qz-run" hidden><div class="qz-head"><span id="qz-pos"></span><span id="qz-modelbl"></span></div>
+<div id="qz-q"></div>
+<div class="btns" style="justify-content:space-between"><button class="btn sm" id="qz-prev">Back</button><span><button class="btn sm" id="qz-skip">Skip</button> <button class="btn pri sm" id="qz-check">Check</button> <button class="btn sm" id="qz-next">Next</button></span></div>
+<div class="btns" style="justify-content:flex-start"><button class="btn sm" id="qz-quit">Stop and go back</button></div></div>
+<div id="qz-end" hidden><h2>Your result</h2><div class="score" id="qz-score"></div><p class="verdict" id="qz-verdict"></p><p class="ptr" id="qz-penalty"></p>
+<div class="btns" style="justify-content:flex-start"><button class="btn pri" id="qz-copy">Copy result for the group</button><button class="btn" id="qz-again">Try another set</button></div>
+<h3>Review what you missed</h3><div class="review" id="qz-review"></div></div>
+</div></div></div><div class="toast" id="toast" role="status"></div>
+<script>window.__DATA__={"id": "ch06", "short": "Ch6", "title": "Chapter 6: Industry analysis", "cards": [{"f": "Industry versus business sector versus economic sector", "b": "Industry: firms meeting the same need. Business sector: related industries. Economic sector: agriculture, manufacturing, utilities, services."}, {"f": "First step in industry analysis", "b": "<b>Defining the industry</b> the company operates in."}, {"f": "NIC, GICS, NAICS", "b": "NIC: India's National Industry Classification. GICS: Global Industry Classification Standard. NAICS: North American Industry Classification System."}, {"f": "GICS structure (MSCI, March 2023)", "b": "4 tiers: <b>11</b> sectors, <b>25</b> industry groups, <b>74</b> industries, <b>163</b> sub-industries."}, {"f": "How should an analyst classify a company like PVR?", "b": "Group it with businesses that share the <b>same driving factors</b>."}, {"f": "Defensive industries", "b": "Low <b>income elasticity</b>; little affected by economic cycles. Food, agricultural inputs, healthcare."}, {"f": "Semi-cyclical industries", "b": "Grow in expansion, fall in recession, but keep base demand. Consumer durables."}, {"f": "Deep cyclical industries", "b": "Extreme swings from economic and commodity cycles. Capital goods, steel."}, {"f": "Top-down versus bottom-up market sizing", "b": "Top-down: start from macro factors (patients &times; spend). Bottom-up: add up individual companies' data."}, {"f": "Tyre sample: organised players Rs 24,000 crore, unorganised 20%. Market size?", "b": "24,000 &divide; 0.8 = <b>Rs 30,000 crore</b>."}, {"f": "Five drivers of secular trends", "b": "Technology, change in income, demography, culture and tastes, regulation or policy."}, {"f": "Secular trend from GST (book)", "b": "More efficient logistics, so <b>lower demand for new commercial vehicles</b>."}, {"f": "Value migration", "b": "A shift that gives one party a long-term advantage at another's cost, moving shareholder value."}, {"f": "Four kinds of value migration", "b": "Across geographies, across industries, across the value chain, across companies in one industry (least common)."}, {"f": "Value chain migration example (book)", "b": "Cheap Indian telecom hurt telecom companies but helped <b>digital content</b> providers."}, {"f": "Five stages of the business life cycle", "b": "Pioneering, growth, mature, declining, reinvention and revival (rare)."}, {"f": "Indian life cycle example (book)", "b": "<b>Call taxis</b>: grew with phones and incomes, declined with app-based aggregators."}, {"f": "Porter's five forces: horizontal and vertical (book)", "b": "Horizontal: substitutes, new entrants, established rivals. Vertical: supplier power, buyer power."}, {"f": "When was Porter's model developed?", "b": "<b>1979</b>, by Dr. Michael Porter."}, {"f": "Unattractive industries per Porter (book)", "b": "Aviation, telecom, retail, textile, sugar, power."}, {"f": "Attractive industries per Porter (book)", "b": "Education, FMCG, healthcare, IT."}, {"f": "High rivalry leads to...", "b": "<b>Lower</b> pricing power and <b>lower</b> incomes."}, {"f": "Four signs of high rivalry", "b": "Many companies; little differentiation; same strategies (low price, long credit); low switching cost."}, {"f": "Munger on price competition", "b": "\"If only basis of competition in an industry is pricing, it is a self-defeating business.\""}, {"f": "Industries with no threat of substitutes (book)", "b": "Power, healthcare, education."}, {"f": "Kodak's lesson", "b": "Its engineers invented the digital camera, but it protected film, missed the substitute threat and went bankrupt."}, {"f": "When is buyer power high?", "b": "Strong competition among sellers; standardised products; close substitutes with low switching cost."}, {"f": "When is supplier power high?", "b": "Few suppliers and many buyers; critical inputs; differentiated products; no substitutes; high switching cost."}, {"f": "Examples of strong supplier power (book)", "b": "Sugarcane farmers (price set by government); OPEC in crude oil; hospitals and schools."}, {"f": "Entry barriers", "b": "Licensing, patents, huge specialised investment, strong brands, distribution, customer loyalty. Buffett's \"moat\"."}, {"f": "Five features of an attractive industry", "b": "Low competition, high barriers to entry, weak supplier power, weak buyer power, few substitutes."}, {"f": "PESTLE", "b": "Political, Economic, Socio-cultural, Technological, Legal, Environmental. External factors, mainly for choosing a country."}, {"f": "STEEPLED", "b": "PESTLE plus <b>Ethics</b> and <b>Demographics</b>."}, {"f": "Legal factor examples of investor discomfort (book)", "b": "Vodafone retrospective tax; cancelled telecom and mining licences."}, {"f": "What does the BCG matrix analyse?", "b": "Segments <b>within a business</b>, as a portfolio, through market growth and cash generation."}, {"f": "BCG: Star", "b": "Fast-growing market, large share. Book: <b>Cera Sanitaryware</b>."}, {"f": "BCG: Cash cow", "b": "Low growth, established share, steady cash. Book: <b>Navneet Publications</b>, <b>Colgate</b>."}, {"f": "BCG: Question mark", "b": "Fast-growing market, low share. Book: <b>Tata Nano</b> (failed), <b>Bajaj Pulsar</b> (succeeded)."}, {"f": "BCG: Dog", "b": "Slow growth, intense competition, low cash."}, {"f": "SCP", "b": "Structure (players, concentration), Conduct (pricing, seasonality, cyclicality), Performance (RoE, RoIC, WACC). An extension of Porter."}, {"f": "Unit of pricing", "b": "What a company treats as one unit when pricing. Starbucks prices per <b>patron</b>, not per cup."}, {"f": "Three types of constraint", "b": "Demand side, supply side, regulatory."}, {"f": "Constraint to KPI", "b": "Limited market: <b>penetration rate</b>. Limited capacity: <b>capacity utilisation</b>. Regulatory: regulators' metrics."}, {"f": "Airline KPIs", "b": "Passenger or cargo km; price per passenger or cargo km; capacity and occupancy rate."}, {"f": "Bank and NBFC KPIs", "b": "Net interest margin, capital adequacy, NPA ratio, deposit and loan growth, CRR and SLR, CASA ratio."}, {"f": "IT services KPIs", "b": "FTEs billed, revenue per FTE, bench strength, attrition, constant currency growth, customer concentration, million dollar clients."}, {"f": "Media KPIs", "b": "Readership, viewership, TRPs, site visitors; ad realisation per unit; content acquisition cost."}, {"f": "Retail KPIs", "b": "Number of stores; <b>same-store sales growth</b>."}, {"f": "Telecom KPIs", "b": "<b>ARPU</b>, churn rate, subscriber acquisition cost, market share."}, {"f": "Kerala fat tax", "b": "2017: <b>14.5%</b> additional tax on junk food."}, {"f": "Direct versus indirect tax", "b": "Direct: the person bearing it pays it (income tax). Indirect: seller collects, consumer bears (GST)."}, {"f": "R&amp;D tax incentive (book)", "b": "Claim <b>1.5 times</b> actual spend on certain scientific research."}, {"f": "Deferred tax asset versus liability", "b": "Asset: paying more tax now, less later. Liability: paying less now, more later."}, {"f": "Corporate income tax rate (book)", "b": "<b>30%</b>; <b>25%</b> if turnover below Rs 400 crore. Optional schemes 15% to 25%."}, {"f": "MAT", "b": "If tax is below <b>15% of book profits</b>, pay 15% + cess + surcharge. Excess is MAT credit."}, {"f": "Surcharge rates, AY 2025-26 (book)", "b": "<b>12%</b> above Rs 10 crore income; <b>7%</b> for Rs 1 to 10 crore; nil below Rs 1 crore. All to the central government."}, {"f": "Cess (book)", "b": "<b>4%</b> on tax plus surcharge, for health and education. Used only for its purpose."}, {"f": "Which goods still have excise and VAT?", "b": "Liquor, petrol, diesel."}, {"f": "STT", "b": "Securities Transaction Tax, paid on sale of securities. Discourages short-term trading; affects traders and brokers."}, {"f": "Four sources for industry analysis", "b": "Industry reports; annual reports (MD&amp;A); associations and trade bodies; relevant ministry."}], "mcqs": [{"id": "6.1", "q": "The tyre industry has three organised players and several unorganised players. About 20% of total sales come from the unorganised sector. The three major companies reported revenue of Rs 6,000 crore, Rs 8,000 crore and Rs 10,000 crore. Which is closest to a fair estimate of the overall market size?", "o": ["Rs 30,000 crore", "Rs 24,000 crore", "Rs 36,000 crore", "Rs 48,000 crore"], "a": 0, "w": "Book sample question. Organised = 24,000 = 80% of the market. 24,000 &divide; 0.8 = 30,000."}, {"id": "6.2", "q": "In an industry where rivalry is high, the end result will be ______ pricing power and ______ incomes for the industry participants.", "o": ["Higher; higher", "Lower; higher", "Lower; lower", "Higher; lower"], "a": 2, "w": "Book sample question."}, {"id": "6.3", "q": "Which of the following is considered an economic factor in PESTLE analysis?", "o": ["Forex reserves", "Monetary policies of the RBI", "Country's dependence on other countries for important natural resources", "All of the above"], "a": 3, "w": "Book sample question. All three are listed under economic factors."}, {"id": "6.4", "q": "Which of the following relates to industry structure in Structure Conduct Performance (SCP) analysis?", "o": ["Relationship among the various players in the industry", "Market size", "Industry growth rate", "All of the above"], "a": 3, "w": "Book sample question. Structure covers competitive intensity, concentration, relationships, market size and growth."}, {"id": "6.5", "q": "Financial services, comprising insurance, banking, credit rating and investment banking, is an example of a(n):", "o": ["Sub-industry", "Business sector", "Economic sector", "Industry"], "a": 1, "w": "A business sector groups related industries. Economic sectors are agriculture, manufacturing, utilities, services."}, {"id": "6.6", "q": "The National Industry Classification (NIC) system is used in:", "o": ["Europe", "All MSCI indices", "The United States", "India"], "a": 3, "w": "NAICS is North American; GICS is global."}, {"id": "6.7", "q": "GICS, as of March 2023, has how many sectors?", "o": ["74", "163", "25", "11"], "a": 3, "w": "11 sectors, 25 industry groups, 74 industries, 163 sub-industries."}, {"id": "6.8", "q": "According to the book, the most appropriate way to classify a company into an industry is by:", "o": ["The name of its main product", "The largest shareholder", "The common factors that drive its business", "Its stock exchange listing"], "a": 2, "w": "The PVR example: classify by what drives the business."}, {"id": "6.9", "q": "Industries whose products have low income elasticity and are barely affected by economic cycles are called:", "o": ["Deep cyclical industries", "Defensive industries", "Sunrise industries", "Semi-cyclical industries"], "a": 1, "w": "Food, agricultural inputs and healthcare are the book's examples."}, {"id": "6.10", "q": "According to the book, which industry is an example of a deep cyclical industry?", "o": ["Capital goods", "Food", "Agricultural inputs", "Healthcare"], "a": 0, "w": "Capital goods and steel swing hard with economic and commodity cycles."}, {"id": "6.11", "q": "The consumer durables industry has exhibited the traits of a ______ industry.", "o": ["Declining", "Deep cyclical", "Defensive", "Semi-cyclical"], "a": 3, "w": "It grows in expansion and falls in recession but keeps a base level of demand."}, {"id": "6.12", "q": "Estimating a therapy's market by multiplying the number of patients by the average spend per patient is an example of:", "o": ["Value migration", "Top-down market sizing", "SCP analysis", "Bottom-up market sizing"], "a": 1, "w": "Bottom-up would add up the therapy revenue of each hospital."}, {"id": "6.13", "q": "Which of the following is NOT one of the drivers of secular trends listed in the book?", "o": ["Technological advancement", "Quarterly inventory adjustments", "Changes in regulation or government policy", "Demographic changes"], "a": 1, "w": "Inventory adjustments drive short inventory cycles, not secular trends."}, {"id": "6.14", "q": "According to the book, the ageing population in Japan resulted in:", "o": ["Growth of call taxis", "A rise in demand for western clothing", "A shift to electric vehicles", "A decrease in per capita consumption of beer"], "a": 3, "w": "An example of demographic change driving a secular trend."}, {"id": "6.15", "q": "The advent of digital cameras causing the decline of the film roll industry is an example of:", "o": ["Geographic value migration", "Seasonal trend", "Cross-industry value migration", "Migration across the value chain"], "a": 2, "w": "One industry gained at the cost of another."}, {"id": "6.16", "q": "Falling mobile service prices hurt Indian telecom companies but helped digital content providers. This is value migration:", "o": ["Across companies in the same industry", "Across economic cycles", "Across the value chain", "Across geographies"], "a": 2, "w": "Value moved between different levels of the value chain."}, {"id": "6.17", "q": "In which stage of the business life cycle have most potential customers already adopted the product?", "o": ["Pioneering", "Reinvention", "Mature", "Growth"], "a": 2, "w": "In the mature stage, few new customers are left."}, {"id": "6.18", "q": "Porter's five forces model was developed in:", "o": ["1979", "1999", "1969", "1989"], "a": 0, "w": "By Dr. Michael Porter in 1979."}, {"id": "6.19", "q": "As per the book, which of the following are the vertical forces in Porter's model?", "o": ["Bargaining power of suppliers and bargaining power of customers", "Threat of new entrants and bargaining power of suppliers", "Threat of established rivals and threat of substitutes", "Threat of substitutes and threat of new entrants"], "a": 0, "w": "The book lists 3 horizontal forces (substitutes, new entrants, rivals) and 2 vertical ones (suppliers, customers)."}, {"id": "6.20", "q": "As per the book, which of these industries is termed unattractive under Porter's model?", "o": ["IT", "Education", "Aviation", "FMCG"], "a": 2, "w": "Aviation, telecom, retail, textile, sugar and power are termed unattractive."}, {"id": "6.21", "q": "Which of the following indicates high industry rivalry?", "o": ["Few companies in the segment", "Low switching cost for customers", "Strong product differentiation", "High entry barriers"], "a": 1, "w": "The other three reduce rivalry."}, {"id": "6.22", "q": "According to the book, which of the following industries has no threat of substitutes?", "o": ["Film rolls", "Typewriters", "Power", "Telegram"], "a": 2, "w": "Power, healthcare and education. The others were replaced by substitutes."}, {"id": "6.23", "q": "Buyers' bargaining power in an industry would be high when:", "o": ["Products have no substitutes", "Products are standardised with little differentiation", "Switching cost for customers is very high", "There are very few sellers"], "a": 1, "w": "Standard products, strong competition and easy switching give buyers power."}, {"id": "6.24", "q": "In the Indian sugar industry, the price of sugarcane is decided by the government after considering farmers' views. This indicates:", "o": ["Low entry barriers", "Strong bargaining power of buyers", "High threat of substitutes", "Strong bargaining power of suppliers"], "a": 3, "w": "The input cost depends on what the suppliers demand."}, {"id": "6.25", "q": "Warren Buffett's \"economic castles protected by unbreachable moats\" refers to businesses with:", "o": ["Many substitutes", "Strong supplier power", "High industry rivalry", "High barriers to entry"], "a": 3, "w": "Moats keep new entrants out and give pricing power."}, {"id": "6.26", "q": "Which is NOT a feature of an attractive industry from the shareholders' perspective?", "o": ["Low competition", "High barriers to entry", "Strong buyers' bargaining power", "Few substitutes"], "a": 2, "w": "An attractive industry has weak buyer and supplier power."}, {"id": "6.27", "q": "PESTLE extended with Ethics and Demographics is called:", "o": ["STEEPLED", "BCG", "SCP", "SWOT"], "a": 0, "w": "STEEPLED adds the two extra factors."}, {"id": "6.28", "q": "According to the book, PESTLE analysis is done mostly from the perspective of:", "o": ["A regulator setting rules", "A bank assessing a loan", "An investor valuing a single share", "A business choosing a country in which to set up a unit"], "a": 3, "w": "It analyses external environmental factors across countries."}, {"id": "6.29", "q": "The Vodafone retrospective tax case is cited in the book under which PESTLE factor?", "o": ["Technological", "Environmental", "Legal", "Political"], "a": 2, "w": "It is an example of legal discomfort to investors."}, {"id": "6.30", "q": "In the BCG matrix, a segment with low market growth but a large, established market share that generates steady cash is a:", "o": ["Dog", "Question mark", "Cash cow", "Star"], "a": 2, "w": "Book examples: Navneet Publications and Colgate."}, {"id": "6.31", "q": "As per the book, Tata Nano and Bajaj Pulsar are examples of which BCG category?", "o": ["Question mark", "Dog", "Cash cow", "Star"], "a": 0, "w": "Both started in fast-growing markets with low share; Nano failed, Pulsar succeeded."}, {"id": "6.32", "q": "Which of the following is studied under 'performance' in SCP analysis?", "o": ["Return on equity and return on invested capital", "Whether the business is seasonal", "Threat from substitute products", "Number of players in the industry"], "a": 0, "w": "Performance covers RoE, RoIC, WACC. The others are structure or conduct."}, {"id": "6.33", "q": "Whether a business is seasonal or year-round, commoditised or branded, is studied under which part of SCP?", "o": ["Structure", "Conduct", "Performance", "None of the above"], "a": 1, "w": "Conduct covers how businesses behave on pricing and innovation."}, {"id": "6.34", "q": "If an industry's growth is limited by the number of target customers, the key metric to track is:", "o": ["Revenue per employee", "Penetration rate", "Capacity utilisation", "Bench strength"], "a": 1, "w": "Demand constraint: penetration rate. Capacity constraint: utilisation rate."}, {"id": "6.35", "q": "Revenue per employee is a useful KPI for which type of business?", "o": ["An oil refinery", "A BPO service provider", "A cement manufacturer", "A steel plant"], "a": 1, "w": "BPOs bill by headcount. Capital-intensive manufacturers are poorly measured this way."}, {"id": "6.36", "q": "CASA ratio and NPA ratio are key performance indicators for:", "o": ["Banks and NBFCs", "Media companies", "Airlines", "Retailers"], "a": 0, "w": "Other bank KPIs: net interest margin, capital adequacy, deposit and loan growth."}, {"id": "6.37", "q": "Same-store sales growth is a key metric for which industry?", "o": ["Capital goods", "Retail", "IT services", "Telecom"], "a": 1, "w": "Retail growth depends on its store network."}, {"id": "6.38", "q": "ARPU and subscriber churn rate are key metrics for:", "o": ["Consumer goods", "Banks", "Airlines", "Telecom and internet service providers"], "a": 3, "w": "In telecom the subscriber is the unit of pricing."}, {"id": "6.39", "q": "An airline carries 200 passengers each on 5 flights of 1,000 km. The passenger km is:", "o": ["2,00,000", "10,00,000", "1,000", "5,000"], "a": 1, "w": "Passengers &times; distance = (200 &times; 5) &times; 1,000 = 10,00,000 passenger km."}, {"id": "6.40", "q": "In a direct tax:", "o": ["It is charged only on imports", "The end consumer bears it but does not pay it", "The seller collects it from the buyer", "The person who bears the tax also pays it to the government"], "a": 3, "w": "Income tax is the main example. GST is indirect."}, {"id": "6.41", "q": "As per the book, companies in India can claim ______ times the actual expenditure on certain scientific research as an expense.", "o": ["1.5", "3", "1.25", "2"], "a": 0, "w": "This is used to promote research and development."}, {"id": "6.42", "q": "A company pays more tax today than its reported profits suggest, and its future taxes will reduce. This creates a:", "o": ["Deferred tax asset", "Deferred tax liability", "Cess", "MAT liability"], "a": 0, "w": "That is a deferred tax asset. The opposite case, paying less now and more later, creates a deferred tax liability."}, {"id": "6.43", "q": "A company's taxable profit is Rs 100 crore, taxed at 30%. Income is above Rs 10 crore. Using the book's surcharge and cess rates, total tax is about:", "o": ["Rs 34.94 crore", "Rs 30 crore", "Rs 46 crore", "Rs 33.60 crore"], "a": 0, "w": "Tax 30; surcharge 12% of 30 = 3.6; cess 4% of 33.6 = 1.344. Total 34.944."}, {"id": "6.44", "q": "Under MAT, if the income tax payable is less than ______ of book profits, the company pays that percentage of book profits plus cess and surcharge.", "o": ["30%", "15%", "12%", "25%"], "a": 1, "w": "The excess paid can be carried as MAT credit."}, {"id": "6.45", "q": "Which statement about surcharge is correct as per the book?", "o": ["The entire surcharge revenue goes to the central government", "It is charged on turnover", "It is shared equally with state governments", "It is used only for education"], "a": 0, "w": "Income tax is shared with states; surcharge is not. Cess is for specific purposes."}, {"id": "6.46", "q": "Excise duty and VAT currently apply only to:", "o": ["Liquor, petrol and diesel", "Gold and silver", "All imported goods", "Services"], "a": 0, "w": "These products are outside GST."}, {"id": "6.47", "q": "Securities Transaction Tax (STT) mainly:", "o": ["Encourages frequent trading", "Applies to real estate purchases", "Discourages short-term trading", "Is paid on new vehicles"], "a": 2, "w": "It reduces sale proceeds, so it affects traders and brokers."}, {"id": "6.48", "q": "A change in stamp duty affects which of the following, as per the book?", "o": ["Software exporters", "Hospitals", "Airlines", "Real estate and stock broking firms"], "a": 3, "w": "It changes the cost of buying assets and the value realised on selling them."}, {"id": "6.49", "q": "Which section of a company's annual report is listed as a source for industry analysis?", "o": ["Auditor's signature page", "Share transfer form", "Management Discussion and Analysis", "Notice of AGM"], "a": 2, "w": "MD&amp;A discusses industry conditions and KPIs."}], "cases": [{"id": "C10", "title": "Should Meena invest in airlines or education?", "text": "Meena compares two industries. Airlines: many carriers, similar service, fares matched daily, passengers switch easily, fuel supplied by a few oil companies. Private education: demand is growing, many licences are needed to open an institute, quality institutes are few, and students have little bargaining power.", "qs": [{"q": "Which Porter force is clearly strong for airlines from the description?", "o": ["Threat of new entrants being low", "Industry rivalry", "Weak supplier power", "Weak buyer power"], "a": 1, "w": "Many players, little differentiation, same pricing strategy and low switching cost: high rivalry."}, {"q": "Many licences needed to open an institute are an example of:", "o": ["High barriers to entry", "High buyer power", "Low rivalry caused by price wars", "High threat of substitutes"], "a": 0, "w": "Licensing is a classic entry barrier."}, {"q": "Fuel supplied by a few oil companies suggests, for airlines:", "o": ["Strong supplier bargaining power", "High entry barriers", "Low threat of substitutes", "Weak supplier bargaining power"], "a": 0, "w": "Few suppliers of a critical input means strong supplier power."}, {"q": "Which conclusion matches the book?", "o": ["Both are equally attractive", "Neither can be judged with Porter's model", "Aviation is attractive and education is unattractive", "Education is attractive and aviation is unattractive for shareholders"], "a": 3, "w": "The book uses education as its attractive example and lists aviation as unattractive."}]}, {"id": "C11", "title": "Profiling Speedline Telecom", "text": "Rahul is building an industry profile for Speedline Telecom, a mobile operator. Mobile prices fell sharply after a price war, and data use has surged, helping video apps. Speedline also owns a small, fast-growing fibre business with low market share, and a large, slow-growing landline business that still generates steady cash. Its taxable profit is Rs 50 crore.", "qs": [{"q": "Which KPIs should Rahul track first for the mobile business?", "o": ["CASA ratio", "Same-store sales growth", "Passenger km", "ARPU and subscriber churn"], "a": 3, "w": "The subscriber is the unit of pricing in telecom."}, {"q": "Value moving from telecom companies to video apps is value migration:", "o": ["Across economic cycles", "Across industries due to regulation", "Across the value chain", "Across geographies"], "a": 2, "w": "The book uses exactly this Indian telecom example."}, {"q": "In the BCG matrix, the fibre business and the landline business are respectively a:", "o": ["Dog and star", "Question mark and cash cow", "Star and dog", "Cash cow and question mark"], "a": 1, "w": "Fast growth, low share = question mark. Slow growth, established share, steady cash = cash cow."}, {"q": "Which surcharge rate applies to Speedline under the book's figures?", "o": ["7%", "4%", "12%", "Nil"], "a": 2, "w": "Income above Rs 10 crore attracts 12%. 4% is the cess."}]}]};</script>
+<script></script><script>
+(function(){
+const DATA = window.__DATA__;
+const KEY = 'nismra:'+DATA.id+':';
+const store = {
+  get(k,d){try{const v=localStorage.getItem(KEY+k);return v?JSON.parse(v):d}catch(e){return d}},
+  set(k,v){try{localStorage.setItem(KEY+k,JSON.stringify(v))}catch(e){}}
+};
+const $=(s,r=document)=>r.querySelector(s);
+const el=(t,a={},h='')=>{const e=document.createElement(t);for(const k in a){if(k==='class')e.className=a[k];else e.setAttribute(k,a[k])}if(h)e.innerHTML=h;return e};
+function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),1600)}
+/* theme */
+const tb=$('#themebtn');
+function applyTheme(t){if(t)document.documentElement.setAttribute('data-theme',t);else document.documentElement.removeAttribute('data-theme');tb.textContent=(t==='dark'||(!t&&matchMedia('(prefers-color-scheme: dark)').matches))?'\u2600':'\u263E'}
+let th=null;try{th=localStorage.getItem('nismra:theme')}catch(e){}
+applyTheme(th);
+tb.addEventListener('click',()=>{const dark=document.documentElement.getAttribute('data-theme')==='dark'||(!document.documentElement.getAttribute('data-theme')&&matchMedia('(prefers-color-scheme: dark)').matches);const n=dark?'light':'dark';applyTheme(n);try{localStorage.setItem('nismra:theme',n)}catch(e){}});
+/* tabs */
+const tabs=[...document.querySelectorAll('.tab')];
+function show(v){tabs.forEach(t=>t.setAttribute('aria-selected',t.dataset.v===v));document.querySelectorAll('.view').forEach(x=>x.hidden=x.id!=='v-'+v);if(v==='cards')renderCard();window.scrollTo(0,0);try{history.replaceState(null,'','#'+v)}catch(e){}}
+tabs.forEach(t=>t.addEventListener('click',()=>show(t.dataset.v)));
+/* ---------- flashcards ---------- */
+const cards=DATA.cards;
+let known=new Set(store.get('known',[]));
+let missed=new Set(store.get('missed',[]));
+let deck=[],pos=0,onlyMissed=false;
+function buildDeck(shuffle){deck=cards.map((c,i)=>i).filter(i=>!onlyMissed||missed.has(i));if(shuffle){for(let i=deck.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[deck[i],deck[j]]=[deck[j],deck[i]]}}pos=0}
+buildDeck(false);
+function renderCard(){
+  const c3=$('#fc-card');c3.classList.remove('flip');
+  const done=known.size;$('#fc-bar').style.width=(100*done/cards.length)+'%';
+  $('#fc-count').textContent=done+' of '+cards.length+' marked known';
+  if(!deck.length){$('#fc-front').innerHTML='No cards here.';$('#fc-back').innerHTML='Switch off "Only cards I missed" to see the full deck.';$('#fc-pos').textContent='';return}
+  if(pos>=deck.length){$('#fc-front').innerHTML='Deck done.';$('#fc-back').innerHTML='Press Shuffle to go again, or study only the cards you missed.';$('#fc-pos').textContent='';return}
+  const c=cards[deck[pos]];$('#fc-front').innerHTML=c.f;$('#fc-back').innerHTML=c.b;$('#fc-pos').textContent='Card '+(pos+1)+' of '+deck.length;
+}
+function flip(){$('#fc-card').classList.toggle('flip')}
+$('#fc-card').addEventListener('click',flip);
+$('#fc-card').addEventListener('keydown',e=>{if(e.key===' '||e.key==='Enter'){e.preventDefault();flip()}});
+function mark(ok){if(pos>=deck.length)return;const i=deck[pos];if(ok){known.add(i);missed.delete(i)}else{missed.add(i);known.delete(i)}store.set('known',[...known]);store.set('missed',[...missed]);pos++;renderCard()}
+$('#fc-good').addEventListener('click',()=>mark(true));
+$('#fc-bad').addEventListener('click',()=>mark(false));
+$('#fc-shuffle').addEventListener('click',()=>{buildDeck(true);renderCard()});
+$('#fc-missed').addEventListener('change',e=>{onlyMissed=e.target.checked;buildDeck(false);renderCard()});
+$('#fc-reset').addEventListener('click',()=>{known.clear();missed.clear();store.set('known',[]);store.set('missed',[]);buildDeck(false);renderCard();toast('Progress cleared')});
+document.addEventListener('keydown',e=>{if($('#v-cards').hidden)return;if(e.key==='ArrowRight')mark(true);if(e.key==='ArrowLeft')mark(false)});
+/* ---------- quiz ---------- */
+const Q=[];DATA.mcqs.forEach(q=>Q.push(Object.assign({kind:'mcq'},q)));
+(DATA.cases||[]).forEach(cs=>cs.qs.forEach((q,k)=>Q.push(Object.assign({kind:'case',caseTitle:cs.title,caseText:cs.text,id:cs.id+'-'+(k+1)},q))));
+let run=null;
+function pick(set){let arr;
+  if(set==='quick'){arr=Q.filter(q=>q.kind==='mcq').slice();for(let i=arr.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[arr[i],arr[j]]=[arr[j],arr[i]]}arr=arr.slice(0,10)}
+  else if(set==='mcq')arr=Q.filter(q=>q.kind==='mcq');
+  else if(set==='case')arr=Q.filter(q=>q.kind==='case');
+  else if(set==='missed'){const m=new Set(store.get('qmissed',[]));arr=Q.filter(q=>m.has(q.id))}
+  else arr=Q.slice();
+  return arr}
+function start(){const set=document.querySelector('input[name=qset]:checked').value;const mode=document.querySelector('input[name=qmode]:checked').value;const qs=pick(set);
+  if(!qs.length){toast('No questions in this set yet');return}
+  run={qs,mode,i:0,ans:qs.map(()=>null),checked:qs.map(()=>false)};$('#qz-setup').hidden=true;$('#qz-end').hidden=true;$('#qz-run').hidden=false;renderQ()}
+function renderQ(){const q=run.qs[run.i];const box=$('#qz-q');box.innerHTML='';
+  $('#qz-pos').textContent='Question '+(run.i+1)+' of '+run.qs.length;
+  $('#qz-modelbl').textContent=run.mode==='exam'?'Exam mode: answers shown at the end':'Practice mode';
+  if(q.kind==='case'){box.appendChild(el('div',{class:'qcase'},'<b>Case: '+q.caseTitle+'</b><br>'+q.caseText))}
+  box.appendChild(el('div',{class:'qtext'},q.q));
+  const L='abcd';
+  q.o.forEach((o,k)=>{const b=el('button',{class:'opt','aria-pressed':String(run.ans[run.i]===k)},'<span class="lt">'+L[k]+'</span><span>'+o+'</span>');
+    b.addEventListener('click',()=>{if(run.checked[run.i])return;run.ans[run.i]=k;renderQ()});box.appendChild(b)});
+  if(run.checked[run.i])paintCheck();
+  $('#qz-check').hidden=run.mode==='exam'||run.checked[run.i];
+  $('#qz-check').disabled=run.ans[run.i]===null;
+  $('#qz-prev').disabled=run.i===0;
+  $('#qz-next').textContent=run.i===run.qs.length-1?'Finish':'Next';
+  $('#qz-skip').hidden=run.checked[run.i];
+}
+function paintCheck(){const q=run.qs[run.i];const opts=[...document.querySelectorAll('#qz-q .opt')];opts.forEach((b,k)=>{b.disabled=true;if(k===q.a)b.classList.add('right');else if(k===run.ans[run.i])b.classList.add('wrong')});
+  const a=run.ans[run.i];const ok=a===q.a;const ex=el('div',{class:'explain '+(a===null?'':(ok?'ok':'no'))},'<b>'+(a===null?'Skipped. ':ok?'Correct. ':'Not quite. ')+'</b>'+q.w);$('#qz-q').appendChild(ex)}
+$('#qz-check').addEventListener('click',()=>{run.checked[run.i]=true;renderQ()});
+$('#qz-skip').addEventListener('click',()=>{run.ans[run.i]=null;if(run.mode==='practice'){run.checked[run.i]=true;renderQ()}else next()});
+$('#qz-prev').addEventListener('click',()=>{if(run.i>0){run.i--;renderQ()}});
+function next(){if(run.i<run.qs.length-1){run.i++;renderQ();window.scrollTo({top:0})}else finish()}
+$('#qz-next').addEventListener('click',next);
+$('#qz-start').addEventListener('click',start);
+$('#qz-quit').addEventListener('click',()=>{$('#qz-run').hidden=true;$('#qz-setup').hidden=false});
+function finish(){let c=0,w=0,s=0;const miss=new Set(store.get('qmissed',[]));const wrongIdx=[];
+  run.qs.forEach((q,i)=>{const a=run.ans[i];if(a===null){s++;miss.add(q.id);wrongIdx.push(i)}else if(a===q.a){c++;miss.delete(q.id)}else{w++;miss.add(q.id);wrongIdx.push(i)}});
+  store.set('qmissed',[...miss]);
+  const net=c-0.25*w;const pct=100*net/run.qs.length;
+  $('#qz-run').hidden=true;$('#qz-end').hidden=false;
+  $('#qz-score').innerHTML='<div><b>'+c+'</b><small>correct</small></div><div><b>'+w+'</b><small>wrong</small></div><div><b>'+s+'</b><small>skipped</small></div><div><b>'+net.toFixed(2)+'</b><small>net score</small></div>';
+  $('#qz-verdict').textContent=pct>=60?('Pass level. Net '+pct.toFixed(0)+'%.'):('Below the 60% pass line. Net '+pct.toFixed(0)+'%.');
+  $('#qz-penalty').textContent=w?('Wrong answers cost you '+(0.25*w).toFixed(2)+' marks.'):'No marks lost to negative marking.';
+  const rv=$('#qz-review');rv.innerHTML='';const L='abcd';
+  if(!wrongIdx.length)rv.innerHTML='<p>Nothing to review. Every answer was right.</p>';
+  wrongIdx.forEach(i=>{const q=run.qs[i];const a=run.ans[i];rv.appendChild(el('div',{class:'item'},'<p><b>'+q.q+'</b></p><p>Your answer: '+(a===null?'skipped':L[a]+') '+q.o[a])+'</p><p>Right answer: <b>'+L[q.a]+') '+q.o[q.a]+'</b></p><p class="ptr">'+q.w+'</p>'))});
+  run.summary=DATA.short+' quiz: '+c+'/'+run.qs.length+' correct, '+w+' wrong, '+s+' skipped. Net '+net.toFixed(2)+' ('+pct.toFixed(0)+'%).'+(wrongIdx.length?' Missed: '+wrongIdx.map(i=>run.qs[i].id).join(', '):'');
+}
+$('#qz-copy').addEventListener('click',()=>{const t=run&&run.summary||'';(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(()=>toast('Copied. Paste it in the group chat.')).catch(()=>{prompt('Copy this:',t)})});
+$('#qz-again').addEventListener('click',()=>{$('#qz-end').hidden=true;$('#qz-setup').hidden=false;updateMissedCount()});
+function updateMissedCount(){const n=store.get('qmissed',[]).length;$('#qz-missedn').textContent=n?('('+n+' saved)'):'(none yet)'}
+updateMissedCount();
+$('#qz-counts').textContent=DATA.mcqs.length+' MCQs and '+(DATA.cases||[]).reduce((s,c)=>s+c.qs.length,0)+' case questions';
+/* interactive widgets hook */
+if(window.__WIDGETS__)window.__WIDGETS__();
+const h=(location.hash||'').replace('#','');if(['learn','cards','quiz'].includes(h))show(h);
+})();
+</script></body></html>
