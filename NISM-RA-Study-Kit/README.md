@@ -13,12 +13,15 @@ NISM-RA-Study-Kit/
   Ch01-Research-Analyst-Profession/
     Ch01-study-page.html            Notes + flashcards + quiz (one page)
     Ch01-question-bank.md           Printable questions, answers at the end
+    Ch01-board.tldr                 The notes as a tldraw board, for teaching on a big screen
     visuals/                        Every diagram as a PNG, for the group chat
   Ch02-Securities-Market/
-    (same three items)
+    (same four items)
 ```
 
-New chapters get their own `ChNN-...` folder with the same three items.
+New chapters get their own `ChNN-...` folder with the same four items.
+
+To open a board, drag the `.tldr` file onto tldraw.com and choose "Open file".
 
 ## Notes
 
