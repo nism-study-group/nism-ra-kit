@@ -1,0 +1,712 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Chapter 10: Valuation principles | NISM RA study kit</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&display=swap" rel="stylesheet"><style>
+:root{
+ --paper:#F5F6F8;--card:#FFFFFF;--ink:#1B2340;--muted:#586178;--line:#D8DDE7;
+ --indigo:#2E3F8F;--indigo-soft:#E6E9F6;--marker:#FFE27A;--teal:#12705F;--teal-soft:#DDF1EC;
+ --brick:#A83C29;--brick-soft:#F8E3DE;--sun:#F2B233;
+ --head:"Bricolage Grotesque","Segoe UI",system-ui,-apple-system,sans-serif;
+ --body:"Atkinson Hyperlegible","Segoe UI",system-ui,-apple-system,sans-serif;
+ box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+ --paper:#11141C;--card:#1A1E2A;--ink:#E7EAF3;--muted:#9EA7BC;--line:#2C3244;
+ --indigo:#9AABFF;--indigo-soft:#232A45;--marker:rgba(255,214,90,.30);--teal:#52C7AE;--teal-soft:#16332D;
+ --brick:#F2826C;--brick-soft:#3A201B;--sun:#F2B233;}}
+:root[data-theme="dark"]{
+ --paper:#11141C;--card:#1A1E2A;--ink:#E7EAF3;--muted:#9EA7BC;--line:#2C3244;
+ --indigo:#9AABFF;--indigo-soft:#232A45;--marker:rgba(255,214,90,.30);--teal:#52C7AE;--teal-soft:#16332D;
+ --brick:#F2826C;--brick-soft:#3A201B;}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 70px);-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6}
+img,svg{max-width:100%}
+a{color:var(--indigo)}
+:focus-visible{outline:3px solid var(--sun);outline-offset:2px;border-radius:4px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+.col{max-width:720px}
+h1,h2,h3,h4{font-family:var(--head);line-height:1.15;margin:0}
+h2{font-size:clamp(1.5rem,3.4vw,2rem);font-weight:800;margin:0 0 .6rem}
+h3{font-size:1.2rem;font-weight:700;margin:1.8rem 0 .5rem}
+p{margin:.55rem 0}
+ul,ol{margin:.4rem 0 .8rem;padding-left:1.3rem}
+li{margin:.25rem 0}
+/* top bar */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--paper) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.bar .wrap{display:flex;align-items:center;gap:12px;min-height:58px}
+.brand{font-family:var(--head);font-weight:700;font-size:.95rem;color:var(--muted);text-decoration:none;white-space:nowrap}
+.tabs{display:flex;gap:4px;margin-left:auto;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:4px}
+.tab{border:0;background:transparent;color:var(--ink);font:600 .95rem var(--body);padding:.45rem .95rem;border-radius:999px;cursor:pointer}
+.tab[aria-selected="true"]{background:var(--indigo);color:var(--card)}
+.themebtn{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;width:38px;height:38px;cursor:pointer;font-size:1rem}
+@media (max-width:620px){.brand{display:none}.tabs{margin-left:0;flex:1;justify-content:space-between}.tab{padding:.45rem .6rem;flex:1}}
+/* hero */
+.hero{padding:44px 0 18px}
+.kicker{font-family:var(--head);font-weight:700;color:var(--indigo);font-size:1rem;margin-bottom:.4rem}
+.hero h1{font-size:clamp(2.1rem,6vw,3.6rem);font-weight:800;letter-spacing:-.02em;max-width:18ch}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 0}
+.pill{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:.2rem .75rem;font-size:.9rem;color:var(--muted)}
+.pill b{color:var(--ink)}
+.oneline{margin:28px 0 8px;font-family:var(--head);font-size:clamp(1.25rem,3vw,1.7rem);font-weight:500;line-height:1.35;max-width:32ch}
+.oneline .k{font-weight:700}
+/* key term highlighter */
+.k{background:linear-gradient(104deg,transparent 0 .2em,var(--marker) .2em calc(100% - .15em),transparent calc(100% - .15em));padding:0 .2em;margin:0 -.05em;font-weight:700;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+/* sections */
+section.sec{padding:34px 0 10px;border-top:1px solid var(--line);margin-top:26px}
+.secno{font-family:var(--head);font-weight:800;color:var(--indigo);font-size:1rem;display:block;margin-bottom:.2rem}
+.why{border-left:4px solid var(--indigo);background:var(--indigo-soft);padding:.7rem 1rem;border-radius:0 10px 10px 0;margin:1rem 0}
+.why b:first-child{display:block;font-family:var(--head);margin-bottom:.1rem}
+.analogy{background:var(--card);border:1px dashed var(--indigo);border-radius:14px;padding:.8rem 1rem;margin:1rem 0}
+.analogy::before{content:"Think of it like this";display:block;font-family:var(--head);font-weight:700;color:var(--indigo);font-size:.95rem;margin-bottom:.2rem}
+.trap{border:2px solid var(--brick);background:var(--brick-soft);border-radius:12px;padding:.65rem .95rem;margin:1rem 0;position:relative}
+.trap::before{content:"Exam trap";display:inline-block;font-family:var(--head);font-weight:800;color:var(--card);background:var(--brick);border-radius:6px;padding:0 .45rem;font-size:.85rem;margin-right:.45rem;transform:rotate(-2deg)}
+.num{font-family:var(--head);font-weight:800;color:var(--brick)}
+dl.terms{display:grid;grid-template-columns:minmax(120px,max-content) 1fr;gap:.35rem 1rem;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1rem 1.1rem;margin:1rem 0}
+dl.terms dt{font-weight:700}
+dl.terms dd{margin:0;color:var(--muted)}
+@media (max-width:560px){dl.terms{grid-template-columns:1fr}dl.terms dd{margin-bottom:.4rem}}
+.terms-title{font-family:var(--head);font-weight:700;margin:1.4rem 0 -.4rem}
+/* figures */
+figure.fig{margin:1.4rem 0;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px}
+figure.fig figcaption{font-family:var(--head);font-weight:700;font-size:1.02rem;margin-bottom:12px}
+figure.fig figcaption span{display:block;font-family:var(--body);font-weight:400;color:var(--muted);font-size:.9rem;margin-top:2px}
+.scroll{overflow-x:auto}
+/* flow */
+.flow{display:flex;align-items:stretch;gap:0;flex-wrap:nowrap}
+.flow .step{flex:1;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:.7rem .8rem;min-width:0}
+.flow .step h4{font-size:1rem;margin-bottom:.2rem}
+.flow .step p{font-size:.92rem;margin:0;color:var(--muted)}
+.flow .arrow{flex:0 0 28px;display:flex;align-items:center;justify-content:center;color:var(--indigo);font-weight:800;font-size:1.3rem}
+.flow .arrow::before{content:"\2192"}
+@media (max-width:700px){.flow{flex-direction:column}.flow .arrow{flex-basis:26px}.flow .arrow::before{content:"\2193"}}
+.step.hl{border-color:var(--indigo);background:var(--indigo-soft)}
+.step.gd{border-color:var(--teal);background:var(--teal-soft)}
+.step.bd{border-color:var(--brick);background:var(--brick-soft)}
+/* grids */
+.grid{display:grid;gap:12px}
+.g2{grid-template-columns:repeat(2,1fr)}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}
+@media (max-width:760px){.g3,.g4{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:480px){.g2,.g3,.g4{grid-template-columns:1fr}}
+.box{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:.75rem .9rem}
+.box h4{font-size:1.02rem;margin-bottom:.25rem}
+.box p,.box li{font-size:.93rem}
+.box ul{margin:.2rem 0 0}
+.box .tag{display:inline-block;font-size:.78rem;font-weight:700;border-radius:6px;padding:0 .4rem;background:var(--indigo-soft);color:var(--indigo);margin-bottom:.3rem}
+.box.gd{border-color:var(--teal)}.box.bd{border-color:var(--brick)}.box.hl{border-color:var(--indigo)}
+/* table */
+table.cmp{border-collapse:collapse;width:100%;min-width:560px;font-size:.93rem}
+table.cmp th,table.cmp td{border-bottom:1px solid var(--line);padding:.55rem .6rem;text-align:left;vertical-align:top}
+table.cmp thead th{font-family:var(--head);background:var(--indigo-soft);color:var(--ink)}
+table.cmp tbody th{font-weight:700;color:var(--muted);width:24%}
+/* id card */
+.idcard{display:grid;grid-template-columns:auto 1fr;gap:.15rem .7rem;font-size:.88rem;margin-top:.4rem}
+.idcard span:nth-child(odd){color:var(--muted)}
+/* bars */
+.stack{display:flex;height:46px;border-radius:10px;overflow:hidden;border:1px solid var(--line);font-weight:700;font-size:.9rem}
+.stack div{display:flex;align-items:center;justify-content:center;color:var(--card);text-align:center;padding:0 4px}
+/* traps list and talk */
+.traplist{counter-reset:t;list-style:none;padding:0}
+.traplist li{counter-increment:t;background:var(--card);border:1px solid var(--line);border-left:5px solid var(--brick);border-radius:10px;padding:.6rem .9rem .6rem 3rem;position:relative;margin:.5rem 0}
+.traplist li::before{content:counter(t);position:absolute;left:.9rem;top:.55rem;font-family:var(--head);font-weight:800;color:var(--brick);font-size:1.1rem}
+.talk li{margin:.45rem 0}
+.ptr{font-size:.85rem;color:var(--muted)}
+/* chapter map */
+.map{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(170px,1fr))}
+.map a{display:block;text-decoration:none;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:.7rem .85rem;transition:border-color .15s}
+.map a:hover{border-color:var(--indigo)}
+.map a b{display:block;font-family:var(--head);color:var(--indigo);font-size:.9rem}
+.map a span{font-weight:700;display:block;line-height:1.25}
+.map a small{color:var(--muted);display:block;margin-top:.25rem;line-height:1.3}
+.tl{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;position:relative;padding-top:6px}
+.tl::before{content:"";position:absolute;left:8%;right:8%;top:21px;height:4px;background:var(--line);border-radius:4px}
+.tl-i{text-align:center;position:relative}
+.tl-t{display:block;font-family:var(--head);font-size:1.15rem}
+.tl-d{display:block;width:22px;height:22px;border-radius:50%;margin:6px auto 8px;position:relative;border:3px solid var(--card)}
+.tl-i h4{font-size:1.05rem}.tl-i p{font-size:.9rem;color:var(--muted);margin:.2rem 0 0}
+@media (max-width:560px){.tl{grid-template-columns:1fr}.tl::before{display:none}.tl-i{text-align:left;padding-left:34px}.tl-d{position:absolute;left:0;top:0;margin:0}}
+input[type=range]{accent-color:var(--indigo)}
+/* views */
+.view[hidden]{display:none}
+footer{color:var(--muted);font-size:.85rem;padding:40px 0 60px;border-top:1px solid var(--line);margin-top:40px}
+/* flashcards */
+.fc-wrap{max-width:640px;margin:30px auto 0}
+.fc-top{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+.fc-prog{height:8px;background:var(--line);border-radius:99px;overflow:hidden;margin-bottom:16px}
+.fc-prog div{height:100%;background:var(--teal);width:0;transition:width .3s}
+.card3d{perspective:1200px;cursor:pointer;user-select:none}
+.card3d .inner{position:relative;min-height:300px;transition:transform .5s;transform-style:preserve-3d}
+.card3d.flip .inner{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:20px;padding:28px;display:flex;flex-direction:column;justify-content:center;border:1px solid var(--line);background:var(--card)}
+.face.back{transform:rotateY(180deg);background:var(--indigo-soft);border-color:var(--indigo)}
+.face .lbl{position:absolute;top:14px;left:18px;font-size:.8rem;color:var(--muted);font-weight:700}
+.face .front-txt{font-family:var(--head);font-size:clamp(1.3rem,4vw,1.8rem);font-weight:700;line-height:1.25}
+.face .back-txt{font-size:1.08rem}
+.hint{color:var(--muted);font-size:.85rem;text-align:center;margin-top:10px}
+@media (prefers-reduced-motion:reduce){.card3d .inner{transition:none}}
+.btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:16px}
+.btn{font:700 1rem var(--body);border-radius:12px;padding:.65rem 1.1rem;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
+.btn.pri{background:var(--indigo);border-color:var(--indigo);color:var(--card)}
+.btn.good{background:var(--teal);border-color:var(--teal);color:var(--card)}
+.btn.bad{background:var(--brick);border-color:var(--brick);color:var(--card)}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.btn.sm{font-size:.88rem;padding:.4rem .75rem;border-radius:10px}
+/* quiz */
+.qz{max-width:720px;margin:30px auto 0}
+.qz-setup .box{margin:.6rem 0}
+.qz-setup label{display:flex;gap:.6rem;align-items:flex-start;cursor:pointer}
+.qz-head{display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:.9rem;margin-bottom:10px;gap:8px;flex-wrap:wrap}
+.qcase{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--sun);border-radius:12px;padding:.8rem 1rem;margin-bottom:12px;font-size:.95rem}
+.qcase b{font-family:var(--head)}
+.qtext{font-family:var(--head);font-size:1.25rem;font-weight:700;line-height:1.3;margin:4px 0 14px}
+.opt{display:flex;gap:.7rem;align-items:flex-start;width:100%;text-align:left;font:1rem var(--body);color:var(--ink);background:var(--card);border:2px solid var(--line);border-radius:12px;padding:.7rem .9rem;margin:.45rem 0;cursor:pointer}
+.opt .lt{font-family:var(--head);font-weight:800;color:var(--indigo);min-width:1.2rem}
+.opt[aria-pressed="true"]{border-color:var(--indigo);background:var(--indigo-soft)}
+.opt.right{border-color:var(--teal);background:var(--teal-soft)}
+.opt.wrong{border-color:var(--brick);background:var(--brick-soft)}
+.opt:disabled{cursor:default}
+.explain{border-radius:12px;padding:.7rem 1rem;margin-top:12px;background:var(--paper);border:1px solid var(--line)}
+.explain.ok{border-color:var(--teal)}.explain.no{border-color:var(--brick)}
+.explain b{font-family:var(--head)}
+.score{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:16px 0}
+@media (max-width:520px){.score{grid-template-columns:repeat(2,1fr)}}
+.score div{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:.7rem;text-align:center}
+.score b{display:block;font-family:var(--head);font-size:1.8rem}
+.score small{color:var(--muted)}
+.verdict{font-family:var(--head);font-size:1.4rem;font-weight:800;margin:10px 0}
+.review .item{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:.7rem 1rem;margin:.6rem 0}
+.review .item p{margin:.25rem 0}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--paper);padding:.5rem 1rem;border-radius:10px;font-weight:700;opacity:0;transition:opacity .2s;pointer-events:none;z-index:50}
+.toast.show{opacity:1}
+@media print{.bar,.btns,.themebtn{display:none}.view[hidden]{display:block}#v-cards,#v-quiz{display:none}figure.fig,.trap,.analogy{break-inside:avoid}}
+</style></head><body>
+<div class="bar"><div class="wrap"><a class="brand" href="../index.html">NISM RA study kit</a>
+<div class="tabs" role="tablist"><button class="tab" role="tab" data-v="learn" aria-selected="true">Learn</button><button class="tab" role="tab" data-v="cards" aria-selected="false">Flashcards</button><button class="tab" role="tab" data-v="quiz" aria-selected="false">Quiz</button></div>
+<button class="themebtn" id="themebtn" aria-label="Switch light or dark">&#9790;</button></div></div><div class="view" id="v-learn">
+<style>
+.calc{display:grid;gap:14px}
+.calc label{display:block;font-weight:700;font-size:.92rem}
+.calc input[type=number]{font:inherit;width:100%;padding:.45rem .6rem;border:1px solid var(--line);border-radius:8px;background:var(--paper);color:var(--ink)}
+.calcin{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+@media (max-width:620px){.calcin{grid-template-columns:repeat(2,1fr)}}
+.calcres{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+@media (max-width:520px){.calcres{grid-template-columns:repeat(2,1fr)}}
+.calcres div{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:.6rem;text-align:center}
+.calcres b{display:block;font-family:var(--head);font-size:1.45rem}
+.calcres small{color:var(--muted)}
+.calcnote{font-weight:700;margin:.2rem 0 0}
+.calch{font-family:var(--head);font-weight:700;color:var(--indigo);margin:.2rem 0 -.3rem}
+.formula{font-family:var(--head);font-weight:700;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:.55rem .8rem;margin:.7rem 0;overflow-x:auto}
+</style>
+<div class="wrap">
+<header class="hero">
+<div class="kicker">Chapter 10 of 15</div>
+<h1>Valuation principles</h1>
+<div class="meta"><span class="pill">Worth <b>12 marks</b> of 100</span><span class="pill">Book pages 198 to 217</span><span class="pill">About 75 minutes</span></div>
+<p class="oneline"><span class="k">Price</span> is what you pay; <span class="k">value</span> is what you get. Estimate value from <span class="k">cash flows</span>, or compare with <span class="k">similar companies</span>.</p>
+</header>
+
+<figure class="fig" id="fig-map"><figcaption>Chapter map<span>Thirteen parts. 10.5 (DCF) and 10.7 to 10.8 (multiples) carry the numericals. Tap to jump.</span></figcaption>
+<div class="map">
+<a href="#s1"><b>10.1 to 10.3</b><span>Price, value, sources</span><small>Why value, earnings and assets</small></a>
+<a href="#s4"><b>10.4</b><span>Three approaches</span><small>Cost, intrinsic, relative</small></a>
+<a href="#s5"><b>10.5</b><span>Discounted cash flow</span><small>DDM, FCFE, FCFF, CAPM, WACC</small></a>
+<a href="#s7"><b>10.6 and 10.7</b><span>Earnings multiples</span><small>Dividend yield, P/E, PEG, EV/EBITDA, EV/Sales</small></a>
+<a href="#s8"><b>10.8</b><span>Asset multiples</span><small>P/B, EV/capital employed, NAV, others</small></a>
+<a href="#s9"><b>10.9 to 10.13</b><span>Putting it together</span><small>Trading versus transaction multiples, SOTP, new age, cautions</small></a>
+</div></figure>
+
+<div class="col">
+<section class="sec" id="s1"><span class="secno">10.1</span><h2>Price is not value</h2>
+<div class="why"><b>Two quotes from the book</b>Seth Klarman: "In capital markets, price is set by the most panicked seller; value, which is determined by cash flows and assets, is not." Warren Buffett: <b>"Price is what you pay and Value is what you get."</b></div>
+<p><b>Price</b> comes from the stock market and is known to all. <b>Value</b> is the valuer's own estimate at a point in time. No formula gives a precise number, because the inputs are uncertain. At best, value is an <b>educated estimate</b>. That is why valuation is called both an <span class="k">art and a science</span>: it needs knowledge, experience and professional judgement.</p>
+
+<h3 id="s2">10.2 Why value a business?</h3>
+<div class="grid g3">
+<div class="box"><p>Buying a business as an investment</p></div>
+<div class="box"><p>Selling a business as an investment</p></div>
+<div class="box"><p>Mergers and acquisitions</p></div>
+<div class="box"><p>Owners' general sense of what it is worth</p></div>
+<div class="box"><p>Fair treatment of stakeholders in an equity swap</p></div>
+<div class="box"><p>Accounting, tax, regulatory and legal needs</p></div>
+</div>
+<p>Whatever the reason, the purpose is to <b>relate price to value</b>: is it fairly priced, over-priced or under-priced? Because of the uncertainty, valuers usually present <b>several scenarios</b> showing how value changes with the main inputs.</p>
+
+<h3 id="s3">10.3 Where value comes from: earnings and assets</h3>
+<p>Buffett, quoted in the book: <b>"There are only two sources of value in a business: Earnings and Assets."</b> Every asset produces periodic earnings plus a final inflow when it is sold.</p>
+</div>
+
+<figure class="fig" id="fig-sources"><figcaption>Two streams of cash from every asset</figcaption>
+<div class="scroll"><table class="cmp">
+<thead><tr><th>Asset</th><th>Periodic earnings</th><th>One-time inflow</th></tr></thead>
+<tbody>
+<tr><th>Bond</th><td>Coupons</td><td>Redemption or sale</td></tr>
+<tr><th>Equity share</th><td>Dividends</td><td>Sale of the share</td></tr>
+<tr><th>Real estate</th><td>Rent</td><td>Appreciated value on sale</td></tr>
+<tr><th>Business</th><td>Earnings (cash flows)</td><td>Sale of tangible and intangible assets, if earnings fall short</td></tr>
+</tbody></table></div></figure>
+
+<div class="col">
+<div class="analogy">Lenders think the same way. A bank first checks whether the borrower's cash flows can repay the loan. The collateral is only a fallback if those estimates prove wrong. As the book warns, assets may be worth much less than their balance sheet value, but liabilities must be paid in full.</div>
+</section>
+
+<section class="sec" id="s4"><span class="secno">10.4</span><h2>Three approaches to valuation</h2>
+</div>
+
+<figure class="fig" id="fig-approaches"><figcaption>Cost, intrinsic, relative<span>The book focuses on the last two</span></figcaption>
+<div class="grid g3">
+<div class="box"><span class="tag">1</span><h4>Cost based</h4><p>Value = cost to create the asset. Suits only a buyer choosing between <b>buying and making</b>. Most stock market investors cannot build the company themselves, so it is generally <b>not suitable for financial investors</b>. Strategic, long-term investors may use it. Often needs technical assessment by engineers.</p></div>
+<div class="box hl"><span class="tag">2</span><h4>Cash flow based (intrinsic)</h4><p>Value = what an investor would pay for the asset's cash flows, discounted at the return they expect.</p><ul><li><b>Risk neutral:</b> cash flows adjusted for probability, discounted at the <b>risk-free rate</b>. Used for <b>insurance companies</b> (embedded value and appraisal value).</li><li><b>Real world:</b> most likely cash flows, discounted at risk-free rate <b>plus a risk premium</b>.</li></ul></div>
+<div class="box"><span class="tag">3</span><h4>Selling price based (relative)</h4><p>Value from the prices of <b>similar assets</b>, using ratios such as P/E, P/B, EV/EBITDA.</p></div>
+</div></figure>
+
+<div class="col">
+<section class="sec" id="s5"><span class="secno">10.5</span><h2>Discounted cash flow (DCF)</h2>
+<p>Start with a bond. It pays 9% a year and repays its face value of Rs 1,00,000 after 10 years. Investors also expect 9% for this maturity and credit quality. Its value today is the present value of all its cash flows at 9%, which comes to exactly the <b>face value</b>. If investors expect more than 9%, the value is below face value; if less, above.</p>
+<p>Every asset is valued the same way. For equity, dividends replace coupons and the sale price replaces redemption. The difference: a bond's cash flows and timing are <b>known</b>; equity's are <b>uncertain</b>. So DCF valuations of businesses carry significant judgement error and can be very sensitive to some inputs.</p>
+</div>
+
+<figure class="fig" id="fig-dcfneeds"><figcaption>DCF works best when three things are known<span>Then the rest is simple present-value mathematics</span></figcaption>
+<div class="flow">
+<div class="step"><h4>1. Future cash flows</h4><p>The stream of free cash flows (inflows over outflows)</p></div><div class="arrow"></div>
+<div class="step"><h4>2. Their timing</h4><p>When each cash flow arrives</p></div><div class="arrow"></div>
+<div class="step"><h4>3. Discount rate</h4><p>The return investors expect</p></div><div class="arrow"></div>
+<div class="step gd"><h4>Present value</h4><p>What an investor would pay today</p></div>
+</div>
+<p class="ptr" style="margin-top:8px">Analysts' DCF values differ mainly because they estimate the cash flows and the discount rate differently.</p>
+</figure>
+
+<figure class="fig" id="fig-dcfmodels"><figcaption>Three DCF models</figcaption>
+<div class="scroll"><table class="cmp">
+<thead><tr><th>Model</th><th>What is discounted</th><th>Discount rate</th><th>Best for</th></tr></thead>
+<tbody>
+<tr><th>Dividend discount model (DDM)</th><td>Expected future dividends</td><td>Cost of equity</td><td>Companies paying regular, substantial dividends: <b>mature companies in defensive industries</b></td></tr>
+<tr><th>Free cash flow to equity (FCFE)</th><td>Cash flow available to equity shareholders, instead of actual dividends</td><td>Cost of equity</td><td>Companies that pay little or no dividend, and companies in <b>high growth</b>. Book example: Alphabet (Google's parent) has never paid a dividend</td></tr>
+<tr><th>Free cash flow to firm (FCFF)</th><td>Cash flow before any payments to any source of capital</td><td><b>WACC</b></td><td>When the company has no objective debt policy, so future borrowing cannot be estimated for FCFE</td></tr>
+</tbody></table></div></figure>
+
+<div class="col">
+<h3>Gordon growth model</h3>
+<p>Also called the <b>perpetual growth model</b>. It values a company whose dividend is expected to grow forever at a constant rate.</p>
+<div class="formula">P = D1 &divide; (k &minus; g)</div>
+<p><b>D1</b> = dividend expected at the <b>end of the year</b>. <b>k</b> = cost of equity. <b>g</b> = constant growth rate, which must be <b>lower than k</b>.</p>
+<div class="trap">Use <b>next year's</b> dividend (D1), not the one just paid. If the last dividend was Rs 4 and growth is 5%, D1 = 4 &times; 1.05 = Rs 4.20.</div>
+
+<h3>Free cash flow formulas (as given in the book)</h3>
+</div>
+
+<figure class="fig" id="fig-fcf"><figcaption>FCFE and FCFF<span>Figures come from the cash flow statement</span></figcaption>
+<div class="grid g3">
+<div class="box hl"><span class="tag">FCFE</span><p>Operating cash flow<br>&minus; Capital expenditure<br>&minus; Interest payments<br>&plusmn; Net borrowings (repayments)<br><b>= Free cash flow to equity</b></p></div>
+<div class="box hl"><span class="tag">FCFF, direct</span><p>Operating cash flow<br>&minus; Capital expenditure<br>&minus; Tax benefit on interest payments<br><b>= Free cash flow to the firm</b></p></div>
+<div class="box hl"><span class="tag">FCFF, indirect</span><p>EBIT &times; (1 &minus; tax rate)<br>+ Depreciation and non-cash charges<br>&minus; Increase (+ decrease) in non-cash working capital<br>&minus; Capital expenditure (+ sale of assets)</p></div>
+</div>
+<p class="ptr" style="margin-top:8px">Non-cash charges added back include amortisation and loss on sale of assets. A gain on sale of assets is deducted. (In the book the direct FCFF list ends with the label "Free cash flow to equity"; the section is about FCFF.)</p>
+</figure>
+
+<div class="col">
+<h3>Two-stage valuation for high-growth companies</h3>
+<p>A fast-growing company's growth may be unsustainable and even above its cost of capital, so a single constant growth rate does not fit. Value it in two stages:</p>
+</div>
+
+<figure class="fig" id="fig-twostage"><figcaption>Value = high-growth years + terminal value</figcaption>
+<div class="flow">
+<div class="step"><h4>Stage 1</h4><p>Estimate how long high growth lasts. Forecast each year's free cash flow and discount it</p></div><div class="arrow"></div>
+<div class="step"><h4>Stage 2: terminal value</h4><p>Gordon model on the cash flow after high growth, <b>or</b> an exit value: EBITDA (or EBIT) at the end &times; EV/EBITDA (or EV/EBIT) of comparable firms</p></div><div class="arrow"></div>
+<div class="step hl"><h4>Discount the terminal value</h4><p>It is a future amount, so bring it back to present value too</p></div><div class="arrow"></div>
+<div class="step gd"><h4>Add them up</h4><p>Value of equity (FCFE) or of the firm (FCFF)</p></div>
+</div></figure>
+
+<div class="col">
+<div class="why"><b>Capping the perpetual growth rate</b>The perpetual growth rate is often capped at the <b>long-term nominal GDP growth rate</b> of the company's markets, because no business can outgrow the economy forever. Analysts may use a lower rate. A rough forecast can extrapolate past growth; analysts refine it using the share of earnings ploughed back and the expected return on equity.</div>
+<h3>From firm value to equity value (FCFF)</h3>
+<div class="formula">Value of equity = Firm value &minus; minority interest &minus; preferred share capital &minus; interest-bearing debt</div>
+<p>To get <b>enterprise value</b>, the book deducts surplus cash, cash equivalents and short-term investments not needed for current operations from the firm value.</p>
+
+<h3>The discount rate</h3>
+<p>It should reflect the risk in the cash flows. <b>FCFF</b> is discounted at <b>WACC</b> (debt and equity). <b>FCFE</b> is discounted at the <b>cost of equity</b>. <b>Cost of debt</b> is usually the prevailing interest rate for borrowers of comparable credit quality. <b>Cost of equity</b> is the return the company's shareholders require.</p>
+</div>
+
+<figure class="fig" id="fig-capm"><figcaption>CAPM and WACC<span>The book's formulas</span></figcaption>
+<div class="grid g2">
+<div class="box hl"><span class="tag">Cost of equity: CAPM</span><p class="formula" style="margin:.3rem 0">Ke = Rf + &beta; &times; (Rm &minus; Rf)</p><ul><li><b>Rf</b>: risk-free rate</li><li><b>Rm &minus; Rf</b>: market risk premium (MRP)</li><li><b>&beta;</b> (beta): sensitivity of the stock's return to the market's; a proxy for business and financial risk</li><li><b>&beta; &times; (Rm &minus; Rf)</b>: equity risk premium paid over the risk-free rate</li></ul></div>
+<div class="box hl"><span class="tag">Weighted average cost of capital</span><p class="formula" style="margin:.3rem 0">WACC = Ke &times; We + Kd &times; (1 &minus; Tax) &times; Wd</p><ul><li><b>We</b> = Equity &divide; (Equity + Debt)</li><li><b>Wd</b> = Debt &divide; (Equity + Debt)</li><li><b>Kd</b>: cost of debt, taken <b>after tax</b> because interest saves tax</li></ul></div>
+</div></figure>
+
+<figure class="fig" id="fig-wacc"><figcaption>Try it: CAPM, WACC and Gordon<span>Change any number. All rates are % a year.</span></figcaption>
+<div class="calc">
+<p class="calch">Rates</p>
+<div class="calcin">
+<div><label for="w-rf">Risk-free rate</label><input type="number" id="w-rf" value="7" step="0.25"></div>
+<div><label for="w-rm">Market return</label><input type="number" id="w-rm" value="12" step="0.25"></div>
+<div><label for="w-b">Beta</label><input type="number" id="w-b" value="1.2" step="0.05"></div>
+<div><label for="w-kd">Cost of debt</label><input type="number" id="w-kd" value="10" step="0.25"></div>
+</div>
+<p class="calch">Capital mix and dividend</p>
+<div class="calcin">
+<div><label for="w-wd">Debt weight %</label><input type="number" id="w-wd" value="40" step="5"></div>
+<div><label for="w-t">Tax rate %</label><input type="number" id="w-t" value="25" step="1"></div>
+<div><label for="w-d1">Next dividend D1 (Rs)</label><input type="number" id="w-d1" value="5" step="0.5"></div>
+<div><label for="w-g">Dividend growth g</label><input type="number" id="w-g" value="8" step="0.25"></div>
+</div>
+<div class="calcres">
+<div><b id="w-mrp"></b><small>market risk premium</small></div>
+<div><b id="w-ke"></b><small>cost of equity (Ke)</small></div>
+<div><b id="w-wacc"></b><small>WACC</small></div>
+<div><b id="w-p"></b><small>Gordon value per share</small></div>
+</div>
+<p class="calcnote" id="w-note"></p>
+</div></figure>
+
+<div class="col">
+<div class="trap">DCF gives wrong answers if the cash flows and the discount rate are not estimated with enough rigour. A small change in the discount rate or growth rate can move the value a lot.</div>
+</section>
+
+<section class="sec" id="s7"><span class="secno">10.6 and 10.7</span><h2>Relative valuation: earnings multiples</h2>
+<p>DCF is complicated and rests on many assumptions. <span class="k">Relative valuation</span> compares <b>what we pay</b> (price) with <b>what we get</b> (earnings or assets). It does not give an absolute value, but shows whether something looks <b>cheap or expensive</b>, which supports a buy, sell or hold call.</p>
+
+<h3>10.7.1 Dividend yield and price to dividend</h3>
+<div class="formula">Dividend yield = Dividend per share &divide; Current price</div>
+<p>The book's example: a company has paid Rs 5 or more in dividend every year for five years.</p>
+</div>
+
+<figure class="fig" id="fig-divyield"><figcaption>Same Rs 5 dividend, four prices<span>The book's table</span></figcaption>
+<div class="scroll"><table class="cmp">
+<thead><tr><th>Price (Rs)</th><th>50</th><th>100</th><th>150</th><th>200</th></tr></thead>
+<tbody>
+<tr><th>Dividend (Rs)</th><td>5</td><td>5</td><td>5</td><td>5</td></tr>
+<tr><th>Dividend yield</th><td>10.00%</td><td>5.00%</td><td>3.33%</td><td>2.50%</td></tr>
+<tr><th>Price / dividend</th><td>10</td><td>20</td><td>30</td><td>40</td></tr>
+</tbody></table></div>
+<p class="ptr" style="margin-top:8px">Price to dividend = what the market pays for one rupee of dividend.</p>
+</figure>
+
+<div class="col">
+<ul>
+<li>Compare dividend yield with <b>bond yields</b>. The book: a 10% bond taxed at 30% leaves about 7% after tax; at Rs 50 the share's 10% dividend yield looks better, with potential upside too. At Rs 200, the 2.5% yield is clearly inferior.</li>
+<li>When equity yields are generally <b>above</b> bond yields, equity is cheap; this is typical when markets are down. In bull markets, equity yields are well <b>below</b> bond yields.</li>
+<li>A high dividend yield is <b>not always</b> a value pick: a high payout may mean few avenues to grow, limiting capital gains. Check it against company fundamentals, which the book calls <span class="k">companion variables</span>.</li>
+</ul>
+
+<h3>10.7.2 Earnings yield and P/E</h3>
+<div class="formula">Earnings yield = EPS &divide; Current price &nbsp;&nbsp;|&nbsp;&nbsp; P/E = Current price &divide; EPS (its reciprocal)</div>
+<ul>
+<li>Analysts move to earnings yield when dividend yields are very low.</li>
+<li>P/E is the money needed to buy one unit of profit. It uses historical EPS, or forecast EPS for <b>forward P/E</b>.</li>
+<li>All else equal, a P/E above peers and the market looks <b>expensive</b>; below looks <b>undervalued</b>.</li>
+<li>But companies with <b>higher growth or lower risk</b> deserve a premium; lower growth or higher risk, a discount.</li>
+<li>Earnings are for a period; price is at a point. Choose the EPS period with judgement: investors usually weigh <b>future</b> earnings more, and may use next year's if this year's is unusually high or low.</li>
+</ul>
+
+<h3>10.7.3 PEG ratio</h3>
+<div class="formula">PEG = (Price &divide; EPS) &divide; Growth rate</div>
+<p>Coined by <b>Peter Lynch</b>. A high P/E can be justified by high growth, but high growth may not last. Lynch: <b>PEG below 1</b> may be treated as <b>undervalued</b>. Use rules of thumb with care; comparing PEGs across competitors is more useful.</p>
+</div>
+
+<figure class="fig" id="fig-peg"><figcaption>P/E says A, PEG says B<span>The book's example: both have EPS of Rs 10</span></figcaption>
+<div class="scroll"><table class="cmp">
+<thead><tr><th></th><th>A Ltd</th><th>B Ltd</th></tr></thead>
+<tbody>
+<tr><th>Price</th><td>Rs 120</td><td>Rs 140</td></tr>
+<tr><th>P/E</th><td>12x</td><td>14x</td></tr>
+<tr><th>Expected growth</th><td>10% a year</td><td>15% a year</td></tr>
+<tr><th>PEG</th><td>12 &divide; 10 = <b>1.2x</b></td><td>14 &divide; 15 = <b>0.93x</b></td></tr>
+<tr><th>Verdict</th><td>Cheaper on P/E</td><td><b>Better value once growth is counted</b></td></tr>
+</tbody></table></div></figure>
+
+<div class="col">
+<h3>10.7.4 EV to EBIT(DA)</h3>
+<p>EPS, and so P/E and PEG, depend on the company's <b>capital structure</b> (equity has the residual claim). A retail investor cannot change that; a controlling shareholder can. So from an <b>acquirer's</b> view, or for a takeover target, use ratios <b>neutral to capital structure</b>: <span class="k">EV/EBIT</span> or <span class="k">EV/EBITDA</span> (see 3.1.7 for EV).</p>
+<div class="grid g2">
+<div class="box"><h4>EV/EBITDA</h4><p>Preferred for <b>capital-intensive</b> industries, where historical asset costs and depreciation choices distort EBIT.</p></div>
+<div class="box"><h4>EV/EBIT</h4><p>Preferred for <b>other</b> industries.</p></div>
+</div>
+<p>Lower ratios look more attractive, all else equal; higher growth or lower risk earns a premium.</p>
+<h3>10.7.5 EV to sales</h3>
+<p>P/E, EV/EBITDA and EV/EBIT cannot be used when profit is <b>negative</b>, and are too high to mean much when a company has <b>only just broken even</b>. Sales are never negative, so <span class="k">EV/Sales</span> works. But only if the company is likely to turn and stay profitable. If no turnaround is likely, its "going concern" status is doubtful and it should be valued at <b>liquidation value</b>.</p>
+</section>
+
+<section class="sec" id="s8"><span class="secno">10.8</span><h2>Relative valuation: asset multiples</h2>
+<p>Here assets replace earnings. Two ratios from earlier chapters: <b>ROE</b> = net profit &divide; net worth (return on the book value of equity); <b>ROCE</b> = EBIT &divide; capital employed (debt + net worth).</p>
+<h3>10.8.1 Price to book value</h3>
+<div class="formula">P/B = Market cap &divide; Book value of equity = Price per share &divide; Book value per share</div>
+<p>How much an investor pays for ownership of one unit of the company's net assets.</p>
+<div class="grid g3">
+<div class="box gd"><h4>Financial companies</h4><p><b>Preferred here.</b> Their assets are mostly monetary, so book value is close to fair value.</p></div>
+<div class="box bd"><h4>Capital-intensive firms</h4><p>Historical cost accounting means book values often do not reflect fair value.</p></div>
+<div class="box bd"><h4>Services and technology</h4><p>Their key assets, people and self-generated intellectual property, are not on the balance sheet.</p></div>
+</div>
+<p>Because accounting is conservative, book value is often used for a <b>conservative</b> value of equity. Lower P/B looks more attractive, all else equal, but a <b>higher ROE deserves a premium</b>.</p>
+</div>
+
+<figure class="fig" id="fig-pb"><figcaption>The book's P/B example<span>Rs lakh, 50 lakh shares of Rs 10 each</span></figcaption>
+<div class="scroll"><table class="cmp">
+<thead><tr><th></th><th>AFB Finance</th><th>LKH Finance</th></tr></thead>
+<tbody>
+<tr><th>Share capital</th><td>500</td><td>500</td></tr>
+<tr><th>Share premium</th><td>3,200</td><td>2,100</td></tr>
+<tr><th>Reserves and surplus</th><td>6,200</td><td>5,400</td></tr>
+<tr><th>Total equity</th><td>9,900</td><td>8,000</td></tr>
+<tr><th>Book value per share</th><td>9,900 &divide; 50 = <b>Rs 198</b></td><td>8,000 &divide; 50 = <b>Rs 160</b></td></tr>
+<tr><th>Market price</th><td>Rs 200</td><td>Rs 175</td></tr>
+<tr><th>P/B</th><td><b>1.01</b></td><td><b>1.09</b></td></tr>
+</tbody></table></div>
+<p class="ptr" style="margin-top:8px">On P/B alone, AFB Finance is less expensive, even though its share price is higher.</p>
+</figure>
+
+<div class="col">
+<div class="trap">Compare a company's multiple with the <b>industry</b>, not just one peer. In a fragmented industry, a few outliers can pull the <b>mean</b> up while most firms sit near the <b>median</b>. Check both before deciding.</div>
+
+<h3>10.8.2 EV to capital employed</h3>
+<div class="formula">EV / Capital employed = EV &divide; (Total equity + Total debt)</div>
+<p>Used together with ROCE, it shows the return an investor actually earns on the price paid.</p>
+</div>
+
+<figure class="fig" id="fig-evce"><figcaption>The book's EV to capital employed example</figcaption>
+<div class="flow">
+<div class="step"><h4>Capital employed</h4><p>Net worth 1,00,000 + debt 1,00,000 = <b>2,00,000</b></p></div><div class="arrow"></div>
+<div class="step"><h4>EV</h4><p>Market cap 5,00,000 + debt 1,00,000 &minus; cash 0 = <b>6,00,000</b></p></div><div class="arrow"></div>
+<div class="step hl"><h4>EV / CE = 3</h4><p>ROCE of 45% on 2,00,000 is only <b>15%</b> on 6,00,000</p></div><div class="arrow"></div>
+<div class="step gd"><h4>Want 20%?</h4><p>Pay at most 45 &divide; 20 = <b>2.25x</b> capital employed, that is EV of Rs 4,50,000</p></div>
+</div></figure>
+
+<div class="col">
+<h3>10.8.3 Net asset value (NAV)</h3>
+<p><span class="k">NAV</span> = <b>market value</b> of assets minus liabilities. Unlike book value, it uses market values. It can be stated in total or per share. Used for very asset-heavy businesses such as <b>real estate, shipping and aviation</b>.</p>
+<h3>10.8.4 Other metrics</h3>
+</div>
+
+<figure class="fig" id="fig-othermetrics"><figcaption>Industry-specific multiples</figcaption>
+<div class="grid g3">
+<div class="box"><span class="tag">Life insurance</span><h4>Price / Embedded value</h4><p>Embedded value: present value of expected net future cash flows (probability-adjusted) from policies now in force.</p></div>
+<div class="box"><span class="tag">NBFCs</span><h4>Price / Adjusted book value</h4><p>Adjusted book value: fair value of assets minus fair value of liabilities. Includes off-balance sheet items.</p></div>
+<div class="box"><span class="tag">Start-ups, special situations</span><h4>EV / Capacity</h4><p>Operating metrics instead of financial ones: a closed steel plant by its production capacity; an e-commerce start-up by users, transactions or transaction value.</p></div>
+</div></figure>
+
+<div class="col">
+<section class="sec" id="s9"><span class="secno">10.9</span><h2>Trading and transaction multiples</h2>
+<div class="analogy">Buying a flat: you check what similar flats in the locality sold for, and that becomes your starting point for negotiation. That is relative valuation. Quick and intuitive, but it reflects the current market mood, which may be too optimistic or too pessimistic.</div>
+<p>So use the <b>maximum, minimum and average</b> of the multiples, look at each company's own history over several years, and compare across peers and the industry.</p>
+<div class="grid g2">
+<div class="box"><span class="tag">Trading multiples</span><p>From prices in the <b>stock market</b>.</p></div>
+<div class="box gd"><span class="tag">Transaction multiples</span><p>From similar <b>deals</b> completed recently. <b>More relevant</b> and more authentic: someone actually agreed to buy at that value.</p></div>
+</div>
+
+<h3 id="s10">10.10 Sum of the parts (SOTP)</h3>
+<p>Conglomerates such as <b>ITC</b> and <b>L&amp;T</b> run many businesses under one umbrella. Value each business separately, as an independent business, using the methods above, then <b>add them up</b>. The book calls this sum-of-the-parts (SOTP or SOP) valuation.</p>
+
+<h3 id="s11">10.11 New-age businesses</h3>
+<p>Valuations of companies like WhatsApp, Zomato, LinkedIn and Facebook are hard to explain with numbers. Such deals use new measures: <b>eyeballs, page views, footfall, ARPU, number of users</b>. As Buffett would say, these must eventually become <b>profits for owners</b>. Without that, valuations last only as long as the story and the next buyer, and can fall like a pack of cards, as in the <b>dot-com boom of 2000 to 2001</b>.</p>
+
+<h3 id="s12">10.12 Is valuation objective?</h3>
+<p>It may look objective, but it is <b>very subjective</b>: the inputs have no generally accepted standards. It is also not timeless; it can change dramatically when the business changes. Complicated models do not make a value precise. They only give a <b>false impression of preciseness</b>.</p>
+
+<h3 id="s13">10.13 Nine things to keep in mind</h3>
+<ol>
+<li>High earning power: book value matters less. Low earning power: book value matters a lot.</li>
+<li>A share is part ownership, so to value a share, value the whole business.</li>
+<li>For a private owner, the true value of the firm is <b>EV</b>, not market cap.</li>
+<li>P/E of a leveraged firm can deceive: look at its debt.</li>
+<li>Use <b>consolidated</b> numbers, not just standalone.</li>
+<li>Focus on <b>ROE, not EPS</b>: EPS ignores retained earnings.</li>
+<li>Leverage improves ROE, but excessive leverage is risky.</li>
+<li><b>ROCE</b> reflects the true return on capital; ROE can be inflated by high leverage.</li>
+<li>ROCE and ROE should be close. A wide gap should trigger investigation.</li>
+</ol>
+</section>
+
+<section class="sec" id="traps"><h2>All exam traps in this chapter</h2>
+<ol class="traplist">
+<li>Price is known to all; value is an estimate. Valuation is an art and a science.</li>
+<li>Buffett: only two sources of value, earnings and assets.</li>
+<li>Lenders look at cash flows first; collateral is a fallback.</li>
+<li>Cost-based valuation suits buy-versus-make decisions; generally not for financial investors.</li>
+<li>Risk-neutral valuation discounts at the risk-free rate; used for insurers. Real-world adds a risk premium.</li>
+<li>A bond whose coupon equals the required return is worth its face value.</li>
+<li>DCF needs cash flows, timing and discount rate.</li>
+<li>DDM suits mature dividend payers in defensive industries. FCFE suits low-dividend and high-growth firms. FCFF suits firms without an objective debt policy.</li>
+<li>Gordon: P = D1 &divide; (k &minus; g). D1 is next year's dividend; g must be below k.</li>
+<li>FCFF is discounted at WACC; FCFE and dividends at cost of equity.</li>
+<li>Terminal value: perpetual growth capped at long-term nominal GDP growth, or an exit multiple. Discount it to present value.</li>
+<li>Equity value = firm value &minus; minority interest &minus; preferred capital &minus; interest-bearing debt.</li>
+<li>CAPM: Ke = Rf + &beta;(Rm &minus; Rf). Rm &minus; Rf is the market risk premium.</li>
+<li>WACC uses after-tax cost of debt: Kd &times; (1 &minus; tax).</li>
+<li>Dividend yield = DPS &divide; price. Price/dividend is its reciprocal.</li>
+<li>Earnings yield = EPS &divide; price; P/E is its reciprocal.</li>
+<li>PEG = P/E &divide; growth; coined by Peter Lynch; below 1 may mean undervalued.</li>
+<li>EV/EBITDA and EV/EBIT are neutral to capital structure; suit acquirers. EV/EBITDA for capital-intensive industries.</li>
+<li>EV/Sales for loss-making or just-profitable firms likely to turn profitable; otherwise liquidation value.</li>
+<li>P/B is preferred for financial companies; poor for services and technology firms.</li>
+<li>NAV uses market value of assets; used for real estate, shipping, aviation.</li>
+<li>P/Embedded value: life insurers. P/Adjusted book value: NBFCs. EV/Capacity: start-ups and special situations.</li>
+<li>Transaction multiples are more relevant than trading multiples.</li>
+<li>SOTP: value each business separately and add up (ITC, L&amp;T).</li>
+<li>Focus on ROE, not EPS. ROCE reflects true return on capital; a wide gap with ROE needs investigation.</li>
+</ol>
+</section>
+
+<section class="sec" id="talk"><h2>For the group discussion</h2>
+<ol class="talk">
+<li>Pick a listed company. What would you need to know to value it by DCF? Which input are you least sure of?</li>
+<li>Why might a bank trade on P/B and a software company on P/E? What could go wrong with each?</li>
+<li>A start-up is valued on users, not profit. When is that reasonable, and when is it a story?</li>
+<li>Two companies have the same P/E. One has no debt, the other is heavily borrowed. Which is cheaper?</li>
+<li>Try the calculator: how much does the Gordon value change if growth moves from 8% to 9%? What does that tell you about DCF?</li>
+</ol>
+</section>
+</div>
+
+<footer>Notes built from the NISM Series XV workbook (February 2026 version). Study aid only.</footer>
+</div>
+</div><div class="view" id="v-cards" hidden><div class="wrap"><div class="fc-wrap">
+<div class="fc-top"><span id="fc-count" class="ptr"></span><label class="ptr"><input type="checkbox" id="fc-missed"> Only cards I missed</label></div>
+<div class="fc-prog"><div id="fc-bar"></div></div>
+<div class="card3d" id="fc-card" tabindex="0" role="button" aria-label="Flip card"><div class="inner">
+<div class="face"><span class="lbl" id="fc-pos"></span><div class="front-txt" id="fc-front"></div></div>
+<div class="face back"><span class="lbl">Answer</span><div class="back-txt" id="fc-back"></div></div></div></div>
+<p class="hint">Tap the card to flip. On a keyboard: space flips, right arrow = got it, left arrow = again.</p>
+<div class="btns"><button class="btn bad" id="fc-bad">Again</button><button class="btn good" id="fc-good">Got it</button></div>
+<div class="btns"><button class="btn sm" id="fc-shuffle">Shuffle</button><button class="btn sm" id="fc-reset">Clear progress</button></div>
+</div></div></div><div class="view" id="v-quiz" hidden><div class="wrap"><div class="qz">
+<div id="qz-setup" class="qz-setup"><h2>Test yourself</h2><p class="ptr" id="qz-counts"></p>
+<p>Scoring works like the real exam: +1 for a right answer, minus 0.25 for a wrong one, 0 for a skip. Skipping is allowed.</p>
+<div class="box"><h4>Which questions?</h4>
+<label><input type="radio" name="qset" value="quick" checked> Quick 10 (random MCQs)</label>
+<label><input type="radio" name="qset" value="mcq"> All MCQs</label>
+<label><input type="radio" name="qset" value="case"> Case sets only (the exam has 5 of these, 4 questions each)</label>
+<label><input type="radio" name="qset" value="all"> Everything</label>
+<label><input type="radio" name="qset" value="missed"> Only questions I got wrong before <span id="qz-missedn" class="ptr"></span></label></div>
+<div class="box"><h4>How?</h4>
+<label><input type="radio" name="qmode" value="practice" checked> Practice: see the answer after each question</label>
+<label><input type="radio" name="qmode" value="exam"> Exam: see everything at the end</label></div>
+<div class="btns" style="justify-content:flex-start"><button class="btn pri" id="qz-start">Start</button></div></div>
+<div id="qz-run" hidden><div class="qz-head"><span id="qz-pos"></span><span id="qz-modelbl"></span></div>
+<div id="qz-q"></div>
+<div class="btns" style="justify-content:space-between"><button class="btn sm" id="qz-prev">Back</button><span><button class="btn sm" id="qz-skip">Skip</button> <button class="btn pri sm" id="qz-check">Check</button> <button class="btn sm" id="qz-next">Next</button></span></div>
+<div class="btns" style="justify-content:flex-start"><button class="btn sm" id="qz-quit">Stop and go back</button></div></div>
+<div id="qz-end" hidden><h2>Your result</h2><div class="score" id="qz-score"></div><p class="verdict" id="qz-verdict"></p><p class="ptr" id="qz-penalty"></p>
+<div class="btns" style="justify-content:flex-start"><button class="btn pri" id="qz-copy">Copy result for the group</button><button class="btn" id="qz-again">Try another set</button></div>
+<h3>Review what you missed</h3><div class="review" id="qz-review"></div></div>
+</div></div></div><div class="toast" id="toast" role="status"></div>
+<script>window.__DATA__={"id": "ch10", "short": "Ch10", "title": "Chapter 10: Valuation principles", "cards": [{"f": "Seth Klarman on price and value", "b": "\"Price is set by the most panicked seller; value, which is determined by cash flows and assets, is not.\""}, {"f": "Buffett on price and value", "b": "<b>\"Price is what you pay and Value is what you get.\"</b>"}, {"f": "Why is valuation an art and a science?", "b": "No formula gives a precise value; inputs are uncertain. It needs knowledge, experience and judgement. The result is an educated estimate."}, {"f": "Six reasons to value a business", "b": "Buying; selling; M&amp;A; owners' sense of value; fairness in an equity swap; accounting, tax, regulatory and legal needs."}, {"f": "Purpose of any valuation", "b": "Relate price to value: fairly priced, over-priced or under-priced. Valuers show several scenarios."}, {"f": "Buffett: sources of value in a business", "b": "Only two: <b>earnings and assets</b>."}, {"f": "How do lenders look at a borrower?", "b": "Cash flows first. Collateral is only a fallback."}, {"f": "Three approaches to valuation", "b": "Cost based; cash flow based (intrinsic); selling price based (relative)."}, {"f": "Cost-based valuation", "b": "Value = cost to create the asset. For buy-versus-make decisions; generally not for financial investors; strategic investors may use it."}, {"f": "Risk-neutral valuation", "b": "Probability-adjusted cash flows discounted at the <b>risk-free rate</b>. Used for insurance companies (embedded value, appraisal value)."}, {"f": "Real-world valuation", "b": "Most likely cash flows discounted at risk-free rate <b>plus a risk premium</b>."}, {"f": "Bond with coupon equal to required return", "b": "Worth its <b>face value</b>. Required return higher: below face value; lower: above."}, {"f": "Three things DCF needs", "b": "Future cash flows, their timing, and the discount rate."}, {"f": "DDM suits...", "b": "Regular, substantial dividend payers: <b>mature companies in defensive industries</b>. Discount at cost of equity."}, {"f": "Gordon growth model", "b": "P = D1 &divide; (k &minus; g). D1 = dividend expected at year end; g must be below k. Also called the perpetual growth model."}, {"f": "Why use FCFE instead of DDM?", "b": "Some companies pay little or no dividend (book: Alphabet has never paid one). FCFE suits high-growth companies."}, {"f": "FCFE (book)", "b": "Operating cash flow &minus; capex &minus; interest payments &plusmn; net borrowings."}, {"f": "Why use FCFF instead of FCFE?", "b": "Without an objective debt policy, future borrowing cannot be estimated without bias."}, {"f": "FCFF, indirect (book)", "b": "EBIT &times; (1 &minus; tax) + depreciation and non-cash charges &minus; increase in non-cash working capital &minus; capex."}, {"f": "Discount rate for FCFF versus FCFE", "b": "FCFF: <b>WACC</b>. FCFE: <b>cost of equity</b>."}, {"f": "Two-stage valuation", "b": "PV of cash flows in the high-growth years + PV of terminal value."}, {"f": "Cap on the perpetual growth rate", "b": "Often the <b>long-term nominal GDP growth rate</b>: no business outgrows the economy forever."}, {"f": "Terminal value by exit multiple", "b": "EBITDA (or EBIT) at the end of high growth &times; EV/EBITDA (or EV/EBIT) of comparable firms."}, {"f": "From firm value to equity value", "b": "Subtract minority interest, preferred share capital and interest-bearing debt."}, {"f": "Cost of debt in valuations", "b": "Prevailing interest rate for borrowers of comparable credit quality."}, {"f": "CAPM", "b": "Ke = Rf + &beta; &times; (Rm &minus; Rf)."}, {"f": "Market risk premium versus equity risk premium", "b": "MRP = Rm &minus; Rf. Equity risk premium = &beta; &times; MRP."}, {"f": "Beta", "b": "Sensitivity of a stock's return to the market's return; proxy for business and financial risk."}, {"f": "WACC", "b": "Ke &times; We + Kd &times; (1 &minus; tax) &times; Wd."}, {"f": "Dividend yield", "b": "DPS &divide; current price. Price/dividend is its reciprocal."}, {"f": "Equity yields above bond yields means...", "b": "Equity is <b>cheap</b>; typical when markets are down."}, {"f": "Companion variables", "b": "Company fundamentals checked alongside a market multiple, to tell a real bargain from a weak company."}, {"f": "Earnings yield", "b": "EPS &divide; current price. P/E is its reciprocal."}, {"f": "Which companies deserve a higher P/E?", "b": "Higher growth or lower risk. Lower growth or higher risk: a discount."}, {"f": "PEG ratio", "b": "(Price &divide; EPS) &divide; growth rate. Coined by <b>Peter Lynch</b>. Below 1 may mean undervalued."}, {"f": "PEG example (book)", "b": "A: P/E 12, growth 10% = 1.2x. B: P/E 14, growth 15% = 0.93x. B is better value."}, {"f": "Why EV/EBITDA for acquirers?", "b": "It is <b>neutral to capital structure</b>, which a controlling shareholder can change."}, {"f": "EV/EBITDA versus EV/EBIT", "b": "EV/EBITDA for <b>capital-intensive</b> industries (depreciation distorts). EV/EBIT for others."}, {"f": "When to use EV/Sales", "b": "Losses or just broken even, but likely to turn and stay profitable. Otherwise: liquidation value."}, {"f": "P/B ratio", "b": "Market cap &divide; book value of equity, or price &divide; BVPS."}, {"f": "Where is P/B preferred, and where poor?", "b": "Preferred: <b>financial companies</b> (monetary assets). Poor: capital-intensive (historical cost), services and tech (people and IP off balance sheet)."}, {"f": "P/B example (book)", "b": "AFB: 200 &divide; 198 = 1.01. LKH: 175 &divide; 160 = 1.09. AFB is less expensive."}, {"f": "Industry average multiple: mean or median?", "b": "Check <b>both</b>. Outliers in fragmented industries can pull up the mean."}, {"f": "EV to capital employed", "b": "EV &divide; (equity + debt). With ROCE, shows the return on the price paid."}, {"f": "EV/CE example (book)", "b": "EV/CE 3, ROCE 45%: return on price paid 15%. For 20%, pay at most 2.25x."}, {"f": "Net asset value (NAV)", "b": "<b>Market</b> value of assets minus liabilities. Used for real estate, shipping, aviation."}, {"f": "Price / Embedded value", "b": "For <b>life insurers</b>. Embedded value: PV of expected net future cash flows from policies in force."}, {"f": "Price / Adjusted book value", "b": "For <b>NBFCs</b>. Fair value of assets minus fair value of liabilities, including off-balance sheet items."}, {"f": "EV / Capacity", "b": "For start-ups and special situations: a closed steel plant by capacity; e-commerce by users or transactions."}, {"f": "Trading versus transaction multiples", "b": "Trading: stock market prices. Transaction: recent deals. Transaction multiples are <b>more relevant</b>."}, {"f": "SOTP valuation", "b": "Value each business separately, then add. Book examples: ITC, L&amp;T."}, {"f": "New-age valuation measures (book)", "b": "Eyeballs, page views, footfall, ARPU, number of users. They must eventually become profits."}, {"f": "Is valuation objective?", "b": "<b>No.</b> Subjective inputs, no generally accepted standards, not timeless. Complex models give a false impression of preciseness."}, {"f": "True value of the firm for a private owner", "b": "<b>EV</b>, not market cap."}, {"f": "ROE or EPS?", "b": "Focus on <b>ROE</b>: EPS does not account for retained earnings."}, {"f": "ROCE versus ROE", "b": "ROCE reflects the true return on capital; ROE can be inflated by leverage. A wide gap needs investigation."}], "mcqs": [{"id": "10.1", "q": "If interest rates in the economy rise, the price of a bond would:", "o": ["Fall", "Rise"], "a": 0, "w": "Book sample question. Bond prices move opposite to interest rates."}, {"id": "10.2", "q": "What is the earnings yield if the price of a stock is Rs 195 and EPS is Rs 13?", "o": ["0.067 percent", "0.15 percent", "6.67 percent", "15 percent"], "a": 2, "w": "Book sample question. Earnings yield = EPS &divide; price = 13 &divide; 195 = 6.67%."}, {"id": "10.3", "q": "How is the price to earnings ratio calculated?", "o": ["Current price of stock &divide; EPS", "EPS &times; Current price of stock", "Current price of stock &times; EPS", "EPS &divide; Current price of stock"], "a": 0, "w": "Book sample question. EPS &divide; price is the earnings yield, its reciprocal."}, {"id": "10.4", "q": "\"Price is what you pay and value is what you get\" is a quote from:", "o": ["Seth Klarman", "Peter Lynch", "Charlie Munger", "Warren Buffett"], "a": 3, "w": "The book also quotes Seth Klarman on price being set by the most panicked seller."}, {"id": "10.5", "q": "According to Warren Buffett, as quoted in the book, the only two sources of value in a business are:", "o": ["Debt and equity", "Earnings and assets", "Brand and management", "Price and volume"], "a": 1, "w": "Every asset produces periodic earnings and a final inflow on sale."}, {"id": "10.6", "q": "Valuation is often considered an art as well as a science because:", "o": ["It always gives one precise value", "Only artists can do it", "It needs no numbers", "The inputs are uncertain, so the result is an educated estimate needing judgement"], "a": 3, "w": "It combines knowledge, experience and professional judgement."}, {"id": "10.7", "q": "Which valuation approach is suitable only for a buyer choosing between buying and making, and is generally not suitable for financial investors?", "o": ["Dividend discount model", "Relative valuation", "Cost based valuation", "Discounted cash flow"], "a": 2, "w": "Strategic investors may use it. It often needs technical assessment by engineers."}, {"id": "10.8", "q": "In risk-neutral valuation, probability-adjusted cash flows are discounted at the:", "o": ["Risk-free rate", "Cost of equity plus a risk premium", "WACC", "Inflation rate"], "a": 0, "w": "Insurance companies are typically valued this way. Real-world valuation adds a risk premium."}, {"id": "10.9", "q": "A 10-year bond pays a 9% coupon on face value of Rs 1,00,000. Investors expect 9% for this maturity and credit quality. Its value today is:", "o": ["Rs 1,00,000", "More than Rs 1,00,000", "Rs 9,000", "Less than Rs 1,00,000"], "a": 0, "w": "When the coupon equals the discount rate, the value equals face value. The book's own example."}, {"id": "10.10", "q": "The same bond's required return rises to 10%. Its value will be:", "o": ["Rs 10,000", "Exactly Rs 1,00,000", "Less than Rs 1,00,000", "More than Rs 1,00,000"], "a": 2, "w": "A higher required return than the coupon means a value below face value (about Rs 93,855)."}, {"id": "10.11", "q": "Which of the following is NOT one of the three things DCF needs to be known with certainty?", "o": ["The company's share price", "The timing of the cash flows", "The expected rate of return (discount rate)", "The stream of future cash flows"], "a": 0, "w": "DCF estimates value; it does not need the market price."}, {"id": "10.12", "q": "The dividend discount model is most suitable for:", "o": ["Mature companies in defensive industries paying regular, substantial dividends", "Companies that never pay dividends", "High-growth start-ups", "Loss-making companies"], "a": 0, "w": "Dividends are discounted at the cost of equity."}, {"id": "10.13", "q": "Using the Gordon growth model, what is the value of a share if next year's dividend is Rs 5, cost of equity is 13% and growth is 8%?", "o": ["Rs 38.46", "Rs 100", "Rs 62.50", "Rs 23.81"], "a": 1, "w": "P = D1 &divide; (k &minus; g) = 5 &divide; (0.13 &minus; 0.08) = 100."}, {"id": "10.14", "q": "A company just paid a dividend of Rs 4. Dividends grow at 5% a year forever and the cost of equity is 10%. The Gordon model value is:", "o": ["Rs 26.67", "Rs 84", "Rs 80", "Rs 40"], "a": 1, "w": "D1 = 4 &times; 1.05 = 4.20. P = 4.20 &divide; (0.10 &minus; 0.05) = 84. Using 4 instead of D1 gives the wrong 80."}, {"id": "10.15", "q": "An important assumption of the Gordon growth model is that:", "o": ["The company pays no dividend", "The cost of equity is zero", "The growth rate is higher than the cost of equity", "The growth rate is lower than the cost of equity"], "a": 3, "w": "If g were equal to or above k, the formula would break down."}, {"id": "10.16", "q": "Why might an analyst use FCFE instead of DDM?", "o": ["FCFE ignores capital expenditure", "The company pays little or no dividend", "The company pays very regular dividends", "The company has no cash flow statement"], "a": 1, "w": "The book's example: Alphabet has never paid a dividend."}, {"id": "10.17", "q": "Operating cash flow Rs 500 crore, capex Rs 200 crore, interest payments Rs 50 crore, net borrowings Rs 30 crore. FCFE is:", "o": ["Rs 330 crore", "Rs 220 crore", "Rs 280 crore", "Rs 250 crore"], "a": 2, "w": "500 &minus; 200 &minus; 50 + 30 = 280."}, {"id": "10.18", "q": "EBIT Rs 400 crore, tax rate 25%, depreciation Rs 80 crore, increase in non-cash working capital Rs 30 crore, capex Rs 150 crore. FCFF (indirect method) is:", "o": ["Rs 260 crore", "Rs 230 crore", "Rs 300 crore", "Rs 200 crore"], "a": 3, "w": "400 &times; 0.75 = 300; + 80 &minus; 30 &minus; 150 = 200."}, {"id": "10.19", "q": "Analysts prefer the FCFF model over the FCFE model mainly when:", "o": ["The company is a life insurer", "The company has no debt", "The company pays large dividends", "The company has no objective debt policy, so future borrowings are hard to estimate"], "a": 3, "w": "Estimating borrowings arbitrarily can bias an FCFE valuation."}, {"id": "10.20", "q": "Free cash flow to the firm (FCFF) is discounted at the:", "o": ["Weighted average cost of capital", "Cost of equity", "Cost of debt only", "Risk-free rate"], "a": 0, "w": "FCFF belongs to all sources of capital. FCFE is discounted at the cost of equity."}, {"id": "10.21", "q": "Firm value is Rs 2,000 crore. Minority interest is Rs 50 crore, preferred share capital Rs 100 crore and interest-bearing debt Rs 500 crore. The value of equity is:", "o": ["Rs 2,650 crore", "Rs 1,350 crore", "Rs 1,450 crore", "Rs 1,500 crore"], "a": 1, "w": "2,000 &minus; 50 &minus; 100 &minus; 500 = 1,350."}, {"id": "10.22", "q": "In a two-stage valuation, the perpetual growth rate for the terminal value is often capped at:", "o": ["The cost of equity", "The company's current growth rate", "Zero", "The long-term nominal GDP growth rate"], "a": 3, "w": "No business can grow faster than the economy forever."}, {"id": "10.23", "q": "Which statement about terminal value is correct?", "o": ["It must also be discounted to present value", "It is always calculated using P/B", "It is added without discounting", "It ignores the high-growth phase"], "a": 0, "w": "The book stresses that terminal value has to be discounted further to its present value."}, {"id": "10.24", "q": "Risk-free rate 7%, beta 1.2, expected market return 12%. The cost of equity under CAPM is:", "o": ["19%", "8.4%", "14.4%", "13%"], "a": 3, "w": "Ke = 7 + 1.2 &times; (12 &minus; 7) = 13%."}, {"id": "10.25", "q": "In CAPM, (Rm &minus; Rf) is called the:", "o": ["Market risk premium", "Risk-free rate", "Equity risk premium", "Beta"], "a": 0, "w": "Beta &times; (Rm &minus; Rf) is the equity risk premium."}, {"id": "10.26", "q": "Cost of equity 13%, pre-tax cost of debt 10%, tax rate 25%, equity 60% and debt 40% of capital. WACC is:", "o": ["11.8%", "12.0%", "10.8%", "9.3%"], "a": 2, "w": "0.6 &times; 13 + 0.4 &times; 10 &times; 0.75 = 7.8 + 3.0 = 10.8%."}, {"id": "10.27", "q": "In valuations, the cost of debt is usually taken as:", "o": ["The prevailing interest rate for borrowers with comparable credit quality", "The risk-free rate always", "Zero, as interest is tax-deductible", "The company's dividend yield"], "a": 0, "w": "As stated in the book."}, {"id": "10.28", "q": "A share pays a dividend of Rs 6 and trades at Rs 150. Its dividend yield and price to dividend ratio are:", "o": ["6% and 15 times", "4% and 6 times", "25% and 4 times", "4% and 25 times"], "a": 3, "w": "6 &divide; 150 = 4%. 150 &divide; 6 = 25."}, {"id": "10.29", "q": "When equity yields are generally higher than bond yields:", "o": ["Dividends must be cut", "Bonds are always better", "Equity is expensive; this is typical in bull markets", "Equity is available cheap; this is typical when markets are down"], "a": 3, "w": "In bull markets equity yields are well below bond yields."}, {"id": "10.30", "q": "A stock has a much higher dividend yield than its peers. According to the book:", "o": ["It may not necessarily be a value pick; a high payout may mean limited avenues for growth", "It is always a value pick", "It must be overvalued", "It will always outperform"], "a": 0, "w": "Check it against company fundamentals, the companion variables."}, {"id": "10.31", "q": "All else held constant, a stock with a higher P/E than its peer group and the market is considered:", "o": ["Risk-free", "Undervalued", "Fairly valued", "Expensive"], "a": 3, "w": "But higher growth or lower risk can justify a premium."}, {"id": "10.32", "q": "According to the book, shares of companies with higher growth potential or lesser risk should trade at:", "o": ["A discount to their peer group", "Book value", "A premium to their peer group", "The same multiple as peers"], "a": 2, "w": "Lower growth or higher risk should trade at a discount."}, {"id": "10.33", "q": "A stock has a P/E of 20 and expected earnings growth of 25%. Its PEG ratio is:", "o": ["500", "0.8", "1.25", "5"], "a": 1, "w": "PEG = 20 &divide; 25 = 0.8. Below 1, so Lynch's rule of thumb would call it undervalued."}, {"id": "10.34", "q": "The PEG ratio was coined by:", "o": ["Seth Klarman", "Peter Lynch", "Benjamin Graham", "Warren Buffett"], "a": 1, "w": "He warned that high growth may not last very long."}, {"id": "10.35", "q": "Why is EV/EBITDA preferred when valuing a company from an acquirer's perspective?", "o": ["It is required by SEBI", "It is neutral to the capital structure", "It ignores the company's debt", "It uses only the share price"], "a": 1, "w": "A controlling shareholder can change the capital structure, which affects EPS and P/E."}, {"id": "10.36", "q": "According to the book, EV/EBITDA rather than EV/EBIT is preferable for:", "o": ["Service industries", "Banks", "Capital-intensive industries", "Life insurers"], "a": 2, "w": "Historical asset costs and depreciation choices distort EBIT in capital-intensive industries."}, {"id": "10.37", "q": "Market cap Rs 900 crore, debt Rs 300 crore, cash Rs 100 crore, EBITDA Rs 110 crore. EV/EBITDA is:", "o": ["11.8x", "10x", "8.2x", "9.1x"], "a": 1, "w": "EV = 900 + 300 &minus; 100 = 1,100. 1,100 &divide; 110 = 10x."}, {"id": "10.38", "q": "EV/Sales is most meaningful for a company that:", "o": ["Is making losses but is likely to turn and stay profitable", "Is loss-making with no turnaround in sight", "Is profitable with stable earnings", "Has no sales"], "a": 0, "w": "If no turnaround is likely, the company should be valued at liquidation value."}, {"id": "10.39", "q": "The price to book value ratio is preferred for valuing companies in the:", "o": ["Services sector", "Capital-intensive manufacturing sector", "Financial sector", "Technology sector"], "a": 2, "w": "Their assets are mostly monetary, so book value is close to fair value."}, {"id": "10.40", "q": "Market cap is Rs 1,200 crore and book value of equity is Rs 800 crore. The P/B ratio is:", "o": ["0.67", "1.5", "2.0", "400"], "a": 1, "w": "1,200 &divide; 800 = 1.5."}, {"id": "10.41", "q": "In the book's example, AFB Finance (price Rs 200, BVPS Rs 198) and LKH Finance (price Rs 175, BVPS Rs 160). On P/B alone:", "o": ["AFB Finance is less expensive", "Both are equally priced", "LKH Finance is less expensive, because its price is lower", "Neither can be compared"], "a": 0, "w": "AFB P/B = 1.01, LKH P/B = 1.09. A lower share price does not mean cheaper."}, {"id": "10.42", "q": "When comparing a company's multiple with its industry, the book advises checking:", "o": ["Only one peer", "Both the mean and the median of the industry", "Only the highest multiple", "Only the mean"], "a": 1, "w": "Outliers in a fragmented industry can pull the mean up."}, {"id": "10.43", "q": "Net worth Rs 200, debt Rs 100, market cap Rs 800, cash nil, ROCE 30%. What return does an investor earn on the EV paid?", "o": ["15%", "3.75%", "10%", "30%"], "a": 2, "w": "EV = 800 + 100 = 900; capital employed = 300; EV/CE = 3. 30% &divide; 3 = 10%. Same logic as the book's example."}, {"id": "10.44", "q": "Net asset value (NAV) differs from book value because NAV uses:", "o": ["Face value of shares", "Market value of assets", "Only intangible assets", "Historical cost of assets"], "a": 1, "w": "It is used for asset-heavy businesses like real estate, shipping and aviation."}, {"id": "10.45", "q": "Price to embedded value is specifically used for valuing:", "o": ["NBFCs", "Steel plants", "E-commerce start-ups", "Life insurance businesses"], "a": 3, "w": "Price to adjusted book value is for NBFCs; EV/capacity for start-ups and special situations."}, {"id": "10.46", "q": "A large steel plant that is currently out of operation may be valued using:", "o": ["P/E", "PEG ratio", "EV/Capacity", "Dividend yield"], "a": 2, "w": "Operating metrics replace financial metrics when the financials do not reflect potential."}, {"id": "10.47", "q": "Which multiples are considered more relevant and authentic, according to the book?", "o": ["Trading multiples", "Transaction multiples", "Historical P/E only", "Dividend yields"], "a": 1, "w": "They show that someone was actually willing to acquire the asset at that value."}, {"id": "10.48", "q": "Valuing each business of a conglomerate separately and adding them up is called:", "o": ["Cost-based valuation", "Gordon growth model", "Sum-of-the-parts valuation", "Relative valuation"], "a": 2, "w": "Book examples: ITC and L&amp;T."}, {"id": "10.49", "q": "According to the book, complicated quantitative valuation models:", "o": ["Make valuation fully objective", "Remove the need for judgement", "Are timeless", "Only give a false impression of preciseness"], "a": 3, "w": "Valuation is subjective and can change dramatically when circumstances change."}, {"id": "10.50", "q": "According to the book, the true value of the firm for a private owner is:", "o": ["Market capitalisation", "Book value", "Enterprise value", "Face value"], "a": 2, "w": "One of the book's important considerations in valuation."}, {"id": "10.51", "q": "Which statement is part of the book's important considerations in valuation?", "o": ["Use only standalone numbers", "Focus on EPS and not ROE", "Focus on ROE and not EPS, because EPS does not account for retained earnings", "Leverage never affects ROE"], "a": 2, "w": "The book also says to look at consolidated numbers."}], "cases": [{"id": "C19", "title": "Book case study: valuing Company A and Company B", "text": "Financial summary of two companies: one year of history and one year of estimates (E). (Book case study 4.)<div class=\"scroll\"><table class=\"cmp\"><thead><tr><th>Rs lakhs</th><th>A 2XX8</th><th>A 2XX9 E</th><th>B 2XX8</th><th>B 2XX9 E</th></tr></thead><tbody><tr><th colspan=\"5\">Income statement summary</th></tr><tr><th>Operating revenue</th><td>8,642.0</td><td>9,100.0</td><td>6,427.0</td><td>7,524.0</td></tr><tr><th>EBITDA</th><td>4,611.8</td><td>4,754.6</td><td>3,375.2</td><td>3,938.8</td></tr><tr><th>Net profit</th><td>2,376.5</td><td>2,763.1</td><td>1,607.8</td><td>1,962.8</td></tr><tr><th>EPS</th><td>17.0</td><td>19.5</td><td>26.8</td><td>32.2</td></tr><tr><th>PE ratio</th><td>17.7</td><td>15.4</td><td>21.9</td><td>18.2</td></tr><tr><th colspan=\"5\">Balance sheet summary</th></tr><tr><th>Cash, cash equivalents and investments</th><td>165.0</td><td>169.0</td><td>54.0</td><td>57.0</td></tr><tr><th>Other assets</th><td>4,402.5</td><td>4,518.0</td><td>3,685.8</td><td>4,010.0</td></tr><tr><th>Total assets</th><td>4,567.5</td><td>4,687.0</td><td>3,739.8</td><td>4,067.0</td></tr><tr><th>Debt</th><td>1,598.6</td><td>1,640.5</td><td>1,540.0</td><td>1,626.8</td></tr><tr><th>Equity</th><td>2,968.9</td><td>3,046.6</td><td>2,199.8</td><td>2,440.2</td></tr><tr><th>Total debt and equity</th><td>4,567.5</td><td>4,687.0</td><td>3,739.8</td><td>4,067.0</td></tr></tbody></table></div>", "qs": [{"q": "Company B's PE ratio is higher than Company A's. Which is a plausible reason to justify B's higher PE?", "o": ["EPS growth rate for Company B is higher than for Company A, and higher growth justifies a higher PE", "Company B has high financial leverage, which justifies a higher PE", "Company B is a relatively smaller company, and the smaller base justifies a higher PE", "None of the above"], "a": 0, "w": "EPS growth for 2XX9: A 17.0 to 19.5 = 14.7%; B 26.8 to 32.2 = 20.1%. Higher growth justifies a premium."}, {"q": "Which company appears cheaper on PEG? Use the expected growth rate for 2XX9.", "o": ["Company A, as its PEG is 1.05x compared to 0.91x for B", "Company B, as its PEG is 0.91x compared to 1.05x for A", "Company B, as its PEG is 1.07x compared to 2.91x for A", "Company A, as its PEG is 2.91x compared to 1.07x for B"], "a": 1, "w": "A: 15.4 &divide; 14.7 = 1.05. B: 18.2 &divide; 20.1 = 0.91 (about 0.90). The lower PEG is cheaper."}, {"q": "Which is closest to the market value of equity (market capitalisation) of Company A in 2XX9?", "o": ["Rs 42,600 lakhs", "Rs 30,000 lakhs", "Rs 3,046 lakhs", "None of the above"], "a": 0, "w": "Market cap = PE &times; net profit = 15.4 &times; 2,763.1 = 42,552, about 42,600. Rs 3,046 lakhs is the book value of equity."}, {"q": "Company B's market cap based on its last traded price is Rs 36,000 (lakhs). Which is closest to its EV/EBITDA based on the 2XX9 forecast?", "o": ["9.14x", "8.74x", "9.54x", "8.17x"], "a": 2, "w": "EV = 36,000 + debt 1,626.8 &minus; cash 57.0 = 37,569.8. &divide; EBITDA 3,938.8 = 9.54x. The book's question says \"crores\", but only the table's unit, lakhs, fits the options."}, {"q": "The industry's average PE is 16x on 2XX9 earnings. The analyst thinks Company B deserves a 20% premium for its low risk and high growth. Which is closest to the fair price of its share?", "o": ["Rs 617.8", "Rs 428.7", "Rs 514.8", "Rs 643.6"], "a": 0, "w": "Fair PE = 16 &times; 1.2 = 19.2. &times; 2XX9 EPS of 32.2 = about 618."}, {"q": "The analyst's fair EV/EBITDA multiple for Company A is 8.5x. Which is closest to the fair value of A's equity in 2XX9?", "o": ["Rs 42,224 lakhs", "Rs 38,943 lakhs", "Rs 40,415 lakhs", "Rs 41,886 lakhs"], "a": 1, "w": "EV = 8.5 &times; 4,754.6 = 40,414. Equity = EV &minus; debt 1,640.5 + cash 169.0 = 38,943. (40,415 is the EV, not equity.)"}]}, {"id": "C20", "title": "Valuing Delta Foods", "text": "Delta Foods is a mature, steady dividend payer. The risk-free rate is 7%, the expected market return is 12% and Delta's beta is 0.8. Next year's dividend is expected to be Rs 4.40, growing at 6% a year forever. Delta's pre-tax cost of debt is 9%, its tax rate 25%, and its capital is 70% equity and 30% debt. It trades at a P/E of 22 with expected earnings growth of 20%.", "qs": [{"q": "What is Delta's cost of equity under CAPM?", "o": ["11%", "15.8%", "12%", "9.6%"], "a": 0, "w": "7 + 0.8 &times; (12 &minus; 7) = 11%."}, {"q": "Using the Gordon growth model, what is the value of a Delta share?", "o": ["Rs 40", "Rs 93.28", "Rs 73.33", "Rs 88"], "a": 3, "w": "4.40 &divide; (0.11 &minus; 0.06) = 88."}, {"q": "What is Delta's WACC, closest to?", "o": ["10.4%", "8.3%", "9.7%", "11.0%"], "a": 2, "w": "0.7 &times; 11 + 0.3 &times; 9 &times; 0.75 = 7.7 + 2.03 = 9.73%."}, {"q": "What is Delta's PEG ratio, and what does Lynch's rule of thumb suggest?", "o": ["4.4; heavily overvalued", "0.91; undervalued", "1.1; clearly undervalued", "1.1; slightly above 1, so not undervalued by the rule"], "a": 3, "w": "22 &divide; 20 = 1.1. The rule treats a PEG below 1 as undervalued."}]}]};</script>
+<script>
+window.__WIDGETS__=function(){
+const g=id=>document.getElementById(id);
+if(!g('w-rf'))return;
+const ids=['w-rf','w-rm','w-b','w-kd','w-wd','w-t','w-d1','w-g'];
+const pct=v=>(Math.round(v*100)/100).toFixed(2)+'%';
+function calc(){const rf=+g('w-rf').value,rm=+g('w-rm').value,b=+g('w-b').value,kd=+g('w-kd').value,wd=Math.min(100,Math.max(0,+g('w-wd').value))/100,t=+g('w-t').value/100,d1=+g('w-d1').value,gr=+g('w-g').value;
+ const mrp=rm-rf,ke=rf+b*mrp,wacc=ke*(1-wd)+kd*(1-t)*wd;
+ g('w-mrp').textContent=pct(mrp);g('w-ke').textContent=pct(ke);g('w-wacc').textContent=pct(wacc);
+ let note='Ke = '+rf+' + '+b+' x ('+rm+' - '+rf+'). WACC = Ke x '+(1-wd).toFixed(2)+' + '+kd+' x (1 - '+t.toFixed(2)+') x '+wd.toFixed(2)+'.';
+ if(gr>=ke){g('w-p').textContent='n/a';note+=' Gordon needs growth below the cost of equity.'}
+ else{g('w-p').textContent='Rs '+(Math.round(d1/((ke-gr)/100)*100)/100).toLocaleString('en-IN');note+=' Gordon value = D1 / (Ke - g).'}
+ g('w-note').textContent=note;}
+ids.forEach(i=>g(i).addEventListener('input',calc));calc();
+};
+</script><script>
+(function(){
+const DATA = window.__DATA__;
+const KEY = 'nismra:'+DATA.id+':';
+const store = {
+  get(k,d){try{const v=localStorage.getItem(KEY+k);return v?JSON.parse(v):d}catch(e){return d}},
+  set(k,v){try{localStorage.setItem(KEY+k,JSON.stringify(v))}catch(e){}}
+};
+const $=(s,r=document)=>r.querySelector(s);
+const el=(t,a={},h='')=>{const e=document.createElement(t);for(const k in a){if(k==='class')e.className=a[k];else e.setAttribute(k,a[k])}if(h)e.innerHTML=h;return e};
+function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),1600)}
+/* theme */
+const tb=$('#themebtn');
+function applyTheme(t){if(t)document.documentElement.setAttribute('data-theme',t);else document.documentElement.removeAttribute('data-theme');tb.textContent=(t==='dark'||(!t&&matchMedia('(prefers-color-scheme: dark)').matches))?'\u2600':'\u263E'}
+let th=null;try{th=localStorage.getItem('nismra:theme')}catch(e){}
+applyTheme(th);
+tb.addEventListener('click',()=>{const dark=document.documentElement.getAttribute('data-theme')==='dark'||(!document.documentElement.getAttribute('data-theme')&&matchMedia('(prefers-color-scheme: dark)').matches);const n=dark?'light':'dark';applyTheme(n);try{localStorage.setItem('nismra:theme',n)}catch(e){}});
+/* tabs */
+const tabs=[...document.querySelectorAll('.tab')];
+function show(v){tabs.forEach(t=>t.setAttribute('aria-selected',t.dataset.v===v));document.querySelectorAll('.view').forEach(x=>x.hidden=x.id!=='v-'+v);if(v==='cards')renderCard();window.scrollTo(0,0);try{history.replaceState(null,'','#'+v)}catch(e){}}
+tabs.forEach(t=>t.addEventListener('click',()=>show(t.dataset.v)));
+/* ---------- flashcards ---------- */
+const cards=DATA.cards;
+let known=new Set(store.get('known',[]));
+let missed=new Set(store.get('missed',[]));
+let deck=[],pos=0,onlyMissed=false;
+function buildDeck(shuffle){deck=cards.map((c,i)=>i).filter(i=>!onlyMissed||missed.has(i));if(shuffle){for(let i=deck.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[deck[i],deck[j]]=[deck[j],deck[i]]}}pos=0}
+buildDeck(false);
+function renderCard(){
+  const c3=$('#fc-card');c3.classList.remove('flip');
+  const done=known.size;$('#fc-bar').style.width=(100*done/cards.length)+'%';
+  $('#fc-count').textContent=done+' of '+cards.length+' marked known';
+  if(!deck.length){$('#fc-front').innerHTML='No cards here.';$('#fc-back').innerHTML='Switch off "Only cards I missed" to see the full deck.';$('#fc-pos').textContent='';return}
+  if(pos>=deck.length){$('#fc-front').innerHTML='Deck done.';$('#fc-back').innerHTML='Press Shuffle to go again, or study only the cards you missed.';$('#fc-pos').textContent='';return}
+  const c=cards[deck[pos]];$('#fc-front').innerHTML=c.f;$('#fc-back').innerHTML=c.b;$('#fc-pos').textContent='Card '+(pos+1)+' of '+deck.length;
+}
+function flip(){$('#fc-card').classList.toggle('flip')}
+$('#fc-card').addEventListener('click',flip);
+$('#fc-card').addEventListener('keydown',e=>{if(e.key===' '||e.key==='Enter'){e.preventDefault();flip()}});
+function mark(ok){if(pos>=deck.length)return;const i=deck[pos];if(ok){known.add(i);missed.delete(i)}else{missed.add(i);known.delete(i)}store.set('known',[...known]);store.set('missed',[...missed]);pos++;renderCard()}
+$('#fc-good').addEventListener('click',()=>mark(true));
+$('#fc-bad').addEventListener('click',()=>mark(false));
+$('#fc-shuffle').addEventListener('click',()=>{buildDeck(true);renderCard()});
+$('#fc-missed').addEventListener('change',e=>{onlyMissed=e.target.checked;buildDeck(false);renderCard()});
+$('#fc-reset').addEventListener('click',()=>{known.clear();missed.clear();store.set('known',[]);store.set('missed',[]);buildDeck(false);renderCard();toast('Progress cleared')});
+document.addEventListener('keydown',e=>{if($('#v-cards').hidden)return;if(e.key==='ArrowRight')mark(true);if(e.key==='ArrowLeft')mark(false)});
+/* ---------- quiz ---------- */
+const Q=[];DATA.mcqs.forEach(q=>Q.push(Object.assign({kind:'mcq'},q)));
+(DATA.cases||[]).forEach(cs=>cs.qs.forEach((q,k)=>Q.push(Object.assign({kind:'case',caseTitle:cs.title,caseText:cs.text,id:cs.id+'-'+(k+1)},q))));
+let run=null;
+function pick(set){let arr;
+  if(set==='quick'){arr=Q.filter(q=>q.kind==='mcq').slice();for(let i=arr.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[arr[i],arr[j]]=[arr[j],arr[i]]}arr=arr.slice(0,10)}
+  else if(set==='mcq')arr=Q.filter(q=>q.kind==='mcq');
+  else if(set==='case')arr=Q.filter(q=>q.kind==='case');
+  else if(set==='missed'){const m=new Set(store.get('qmissed',[]));arr=Q.filter(q=>m.has(q.id))}
+  else arr=Q.slice();
+  return arr}
+function start(){const set=document.querySelector('input[name=qset]:checked').value;const mode=document.querySelector('input[name=qmode]:checked').value;const qs=pick(set);
+  if(!qs.length){toast('No questions in this set yet');return}
+  run={qs,mode,i:0,ans:qs.map(()=>null),checked:qs.map(()=>false)};$('#qz-setup').hidden=true;$('#qz-end').hidden=true;$('#qz-run').hidden=false;renderQ()}
+function renderQ(){const q=run.qs[run.i];const box=$('#qz-q');box.innerHTML='';
+  $('#qz-pos').textContent='Question '+(run.i+1)+' of '+run.qs.length;
+  $('#qz-modelbl').textContent=run.mode==='exam'?'Exam mode: answers shown at the end':'Practice mode';
+  if(q.kind==='case'){box.appendChild(el('div',{class:'qcase'},'<b>Case: '+q.caseTitle+'</b><br>'+q.caseText))}
+  box.appendChild(el('div',{class:'qtext'},q.q));
+  const L='abcd';
+  q.o.forEach((o,k)=>{const b=el('button',{class:'opt','aria-pressed':String(run.ans[run.i]===k)},'<span class="lt">'+L[k]+'</span><span>'+o+'</span>');
+    b.addEventListener('click',()=>{if(run.checked[run.i])return;run.ans[run.i]=k;renderQ()});box.appendChild(b)});
+  if(run.checked[run.i])paintCheck();
+  $('#qz-check').hidden=run.mode==='exam'||run.checked[run.i];
+  $('#qz-check').disabled=run.ans[run.i]===null;
+  $('#qz-prev').disabled=run.i===0;
+  $('#qz-next').textContent=run.i===run.qs.length-1?'Finish':'Next';
+  $('#qz-skip').hidden=run.checked[run.i];
+}
+function paintCheck(){const q=run.qs[run.i];const opts=[...document.querySelectorAll('#qz-q .opt')];opts.forEach((b,k)=>{b.disabled=true;if(k===q.a)b.classList.add('right');else if(k===run.ans[run.i])b.classList.add('wrong')});
+  const a=run.ans[run.i];const ok=a===q.a;const ex=el('div',{class:'explain '+(a===null?'':(ok?'ok':'no'))},'<b>'+(a===null?'Skipped. ':ok?'Correct. ':'Not quite. ')+'</b>'+q.w);$('#qz-q').appendChild(ex)}
+$('#qz-check').addEventListener('click',()=>{run.checked[run.i]=true;renderQ()});
+$('#qz-skip').addEventListener('click',()=>{run.ans[run.i]=null;if(run.mode==='practice'){run.checked[run.i]=true;renderQ()}else next()});
+$('#qz-prev').addEventListener('click',()=>{if(run.i>0){run.i--;renderQ()}});
+function next(){if(run.i<run.qs.length-1){run.i++;renderQ();window.scrollTo({top:0})}else finish()}
+$('#qz-next').addEventListener('click',next);
+$('#qz-start').addEventListener('click',start);
+$('#qz-quit').addEventListener('click',()=>{$('#qz-run').hidden=true;$('#qz-setup').hidden=false});
+function finish(){let c=0,w=0,s=0;const miss=new Set(store.get('qmissed',[]));const wrongIdx=[];
+  run.qs.forEach((q,i)=>{const a=run.ans[i];if(a===null){s++;miss.add(q.id);wrongIdx.push(i)}else if(a===q.a){c++;miss.delete(q.id)}else{w++;miss.add(q.id);wrongIdx.push(i)}});
+  store.set('qmissed',[...miss]);
+  const net=c-0.25*w;const pct=100*net/run.qs.length;
+  $('#qz-run').hidden=true;$('#qz-end').hidden=false;
+  $('#qz-score').innerHTML='<div><b>'+c+'</b><small>correct</small></div><div><b>'+w+'</b><small>wrong</small></div><div><b>'+s+'</b><small>skipped</small></div><div><b>'+net.toFixed(2)+'</b><small>net score</small></div>';
+  $('#qz-verdict').textContent=pct>=60?('Pass level. Net '+pct.toFixed(0)+'%.'):('Below the 60% pass line. Net '+pct.toFixed(0)+'%.');
+  $('#qz-penalty').textContent=w?('Wrong answers cost you '+(0.25*w).toFixed(2)+' marks.'):'No marks lost to negative marking.';
+  const rv=$('#qz-review');rv.innerHTML='';const L='abcd';
+  if(!wrongIdx.length)rv.innerHTML='<p>Nothing to review. Every answer was right.</p>';
+  wrongIdx.forEach(i=>{const q=run.qs[i];const a=run.ans[i];rv.appendChild(el('div',{class:'item'},'<p><b>'+q.q+'</b></p><p>Your answer: '+(a===null?'skipped':L[a]+') '+q.o[a])+'</p><p>Right answer: <b>'+L[q.a]+') '+q.o[q.a]+'</b></p><p class="ptr">'+q.w+'</p>'))});
+  run.summary=DATA.short+' quiz: '+c+'/'+run.qs.length+' correct, '+w+' wrong, '+s+' skipped. Net '+net.toFixed(2)+' ('+pct.toFixed(0)+'%).'+(wrongIdx.length?' Missed: '+wrongIdx.map(i=>run.qs[i].id).join(', '):'');
+}
+$('#qz-copy').addEventListener('click',()=>{const t=run&&run.summary||'';(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(()=>toast('Copied. Paste it in the group chat.')).catch(()=>{prompt('Copy this:',t)})});
+$('#qz-again').addEventListener('click',()=>{$('#qz-end').hidden=true;$('#qz-setup').hidden=false;updateMissedCount()});
+function updateMissedCount(){const n=store.get('qmissed',[]).length;$('#qz-missedn').textContent=n?('('+n+' saved)'):'(none yet)'}
+updateMissedCount();
+$('#qz-counts').textContent=DATA.mcqs.length+' MCQs and '+(DATA.cases||[]).reduce((s,c)=>s+c.qs.length,0)+' case questions';
+/* interactive widgets hook */
+if(window.__WIDGETS__)window.__WIDGETS__();
+const h=(location.hash||'').replace('#','');if(['learn','cards','quiz'].includes(h))show(h);
+})();
+</script></body></html>

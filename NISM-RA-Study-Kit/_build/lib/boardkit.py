@@ -70,6 +70,7 @@ TEXT_SWAPS = {
     "Red text: the two commodities move opposite ways.": "Highlighted cells: the two commodities move opposite ways.",
     " Tap a chapter to open it.": "",
     "open the **Quiz** tab at the top of this page.": "open the **Quiz** tab on this session's web page.",
+    "Try the calculator:": "Try the calculator on the web page:",
 }
 
 def _segs(n, mark=None):
