@@ -1,0 +1,781 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Chapter 8: Company analysis, financial analysis | NISM RA study kit</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&display=swap" rel="stylesheet"><style>
+:root{
+ --paper:#F5F6F8;--card:#FFFFFF;--ink:#1B2340;--muted:#586178;--line:#D8DDE7;
+ --indigo:#2E3F8F;--indigo-soft:#E6E9F6;--marker:#FFE27A;--teal:#12705F;--teal-soft:#DDF1EC;
+ --brick:#A83C29;--brick-soft:#F8E3DE;--sun:#F2B233;
+ --head:"Bricolage Grotesque","Segoe UI",system-ui,-apple-system,sans-serif;
+ --body:"Atkinson Hyperlegible","Segoe UI",system-ui,-apple-system,sans-serif;
+ box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+ --paper:#11141C;--card:#1A1E2A;--ink:#E7EAF3;--muted:#9EA7BC;--line:#2C3244;
+ --indigo:#9AABFF;--indigo-soft:#232A45;--marker:rgba(255,214,90,.30);--teal:#52C7AE;--teal-soft:#16332D;
+ --brick:#F2826C;--brick-soft:#3A201B;--sun:#F2B233;}}
+:root[data-theme="dark"]{
+ --paper:#11141C;--card:#1A1E2A;--ink:#E7EAF3;--muted:#9EA7BC;--line:#2C3244;
+ --indigo:#9AABFF;--indigo-soft:#232A45;--marker:rgba(255,214,90,.30);--teal:#52C7AE;--teal-soft:#16332D;
+ --brick:#F2826C;--brick-soft:#3A201B;}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 70px);-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6}
+img,svg{max-width:100%}
+a{color:var(--indigo)}
+:focus-visible{outline:3px solid var(--sun);outline-offset:2px;border-radius:4px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+.col{max-width:720px}
+h1,h2,h3,h4{font-family:var(--head);line-height:1.15;margin:0}
+h2{font-size:clamp(1.5rem,3.4vw,2rem);font-weight:800;margin:0 0 .6rem}
+h3{font-size:1.2rem;font-weight:700;margin:1.8rem 0 .5rem}
+p{margin:.55rem 0}
+ul,ol{margin:.4rem 0 .8rem;padding-left:1.3rem}
+li{margin:.25rem 0}
+/* top bar */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--paper) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.bar .wrap{display:flex;align-items:center;gap:12px;min-height:58px}
+.brand{font-family:var(--head);font-weight:700;font-size:.95rem;color:var(--muted);text-decoration:none;white-space:nowrap}
+.tabs{display:flex;gap:4px;margin-left:auto;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:4px}
+.tab{border:0;background:transparent;color:var(--ink);font:600 .95rem var(--body);padding:.45rem .95rem;border-radius:999px;cursor:pointer}
+.tab[aria-selected="true"]{background:var(--indigo);color:var(--card)}
+.themebtn{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;width:38px;height:38px;cursor:pointer;font-size:1rem}
+@media (max-width:620px){.brand{display:none}.tabs{margin-left:0;flex:1;justify-content:space-between}.tab{padding:.45rem .6rem;flex:1}}
+/* hero */
+.hero{padding:44px 0 18px}
+.kicker{font-family:var(--head);font-weight:700;color:var(--indigo);font-size:1rem;margin-bottom:.4rem}
+.hero h1{font-size:clamp(2.1rem,6vw,3.6rem);font-weight:800;letter-spacing:-.02em;max-width:18ch}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 0}
+.pill{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:.2rem .75rem;font-size:.9rem;color:var(--muted)}
+.pill b{color:var(--ink)}
+.oneline{margin:28px 0 8px;font-family:var(--head);font-size:clamp(1.25rem,3vw,1.7rem);font-weight:500;line-height:1.35;max-width:32ch}
+.oneline .k{font-weight:700}
+/* key term highlighter */
+.k{background:linear-gradient(104deg,transparent 0 .2em,var(--marker) .2em calc(100% - .15em),transparent calc(100% - .15em));padding:0 .2em;margin:0 -.05em;font-weight:700;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+/* sections */
+section.sec{padding:34px 0 10px;border-top:1px solid var(--line);margin-top:26px}
+.secno{font-family:var(--head);font-weight:800;color:var(--indigo);font-size:1rem;display:block;margin-bottom:.2rem}
+.why{border-left:4px solid var(--indigo);background:var(--indigo-soft);padding:.7rem 1rem;border-radius:0 10px 10px 0;margin:1rem 0}
+.why b:first-child{display:block;font-family:var(--head);margin-bottom:.1rem}
+.analogy{background:var(--card);border:1px dashed var(--indigo);border-radius:14px;padding:.8rem 1rem;margin:1rem 0}
+.analogy::before{content:"Think of it like this";display:block;font-family:var(--head);font-weight:700;color:var(--indigo);font-size:.95rem;margin-bottom:.2rem}
+.trap{border:2px solid var(--brick);background:var(--brick-soft);border-radius:12px;padding:.65rem .95rem;margin:1rem 0;position:relative}
+.trap::before{content:"Exam trap";display:inline-block;font-family:var(--head);font-weight:800;color:var(--card);background:var(--brick);border-radius:6px;padding:0 .45rem;font-size:.85rem;margin-right:.45rem;transform:rotate(-2deg)}
+.num{font-family:var(--head);font-weight:800;color:var(--brick)}
+dl.terms{display:grid;grid-template-columns:minmax(120px,max-content) 1fr;gap:.35rem 1rem;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1rem 1.1rem;margin:1rem 0}
+dl.terms dt{font-weight:700}
+dl.terms dd{margin:0;color:var(--muted)}
+@media (max-width:560px){dl.terms{grid-template-columns:1fr}dl.terms dd{margin-bottom:.4rem}}
+.terms-title{font-family:var(--head);font-weight:700;margin:1.4rem 0 -.4rem}
+/* figures */
+figure.fig{margin:1.4rem 0;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px}
+figure.fig figcaption{font-family:var(--head);font-weight:700;font-size:1.02rem;margin-bottom:12px}
+figure.fig figcaption span{display:block;font-family:var(--body);font-weight:400;color:var(--muted);font-size:.9rem;margin-top:2px}
+.scroll{overflow-x:auto}
+/* flow */
+.flow{display:flex;align-items:stretch;gap:0;flex-wrap:nowrap}
+.flow .step{flex:1;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:.7rem .8rem;min-width:0}
+.flow .step h4{font-size:1rem;margin-bottom:.2rem}
+.flow .step p{font-size:.92rem;margin:0;color:var(--muted)}
+.flow .arrow{flex:0 0 28px;display:flex;align-items:center;justify-content:center;color:var(--indigo);font-weight:800;font-size:1.3rem}
+.flow .arrow::before{content:"\2192"}
+@media (max-width:700px){.flow{flex-direction:column}.flow .arrow{flex-basis:26px}.flow .arrow::before{content:"\2193"}}
+.step.hl{border-color:var(--indigo);background:var(--indigo-soft)}
+.step.gd{border-color:var(--teal);background:var(--teal-soft)}
+.step.bd{border-color:var(--brick);background:var(--brick-soft)}
+/* grids */
+.grid{display:grid;gap:12px}
+.g2{grid-template-columns:repeat(2,1fr)}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}
+@media (max-width:760px){.g3,.g4{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:480px){.g2,.g3,.g4{grid-template-columns:1fr}}
+.box{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:.75rem .9rem}
+.box h4{font-size:1.02rem;margin-bottom:.25rem}
+.box p,.box li{font-size:.93rem}
+.box ul{margin:.2rem 0 0}
+.box .tag{display:inline-block;font-size:.78rem;font-weight:700;border-radius:6px;padding:0 .4rem;background:var(--indigo-soft);color:var(--indigo);margin-bottom:.3rem}
+.box.gd{border-color:var(--teal)}.box.bd{border-color:var(--brick)}.box.hl{border-color:var(--indigo)}
+/* table */
+table.cmp{border-collapse:collapse;width:100%;min-width:560px;font-size:.93rem}
+table.cmp th,table.cmp td{border-bottom:1px solid var(--line);padding:.55rem .6rem;text-align:left;vertical-align:top}
+table.cmp thead th{font-family:var(--head);background:var(--indigo-soft);color:var(--ink)}
+table.cmp tbody th{font-weight:700;color:var(--muted);width:24%}
+/* id card */
+.idcard{display:grid;grid-template-columns:auto 1fr;gap:.15rem .7rem;font-size:.88rem;margin-top:.4rem}
+.idcard span:nth-child(odd){color:var(--muted)}
+/* bars */
+.stack{display:flex;height:46px;border-radius:10px;overflow:hidden;border:1px solid var(--line);font-weight:700;font-size:.9rem}
+.stack div{display:flex;align-items:center;justify-content:center;color:var(--card);text-align:center;padding:0 4px}
+/* traps list and talk */
+.traplist{counter-reset:t;list-style:none;padding:0}
+.traplist li{counter-increment:t;background:var(--card);border:1px solid var(--line);border-left:5px solid var(--brick);border-radius:10px;padding:.6rem .9rem .6rem 3rem;position:relative;margin:.5rem 0}
+.traplist li::before{content:counter(t);position:absolute;left:.9rem;top:.55rem;font-family:var(--head);font-weight:800;color:var(--brick);font-size:1.1rem}
+.talk li{margin:.45rem 0}
+.ptr{font-size:.85rem;color:var(--muted)}
+/* chapter map */
+.map{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(170px,1fr))}
+.map a{display:block;text-decoration:none;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:.7rem .85rem;transition:border-color .15s}
+.map a:hover{border-color:var(--indigo)}
+.map a b{display:block;font-family:var(--head);color:var(--indigo);font-size:.9rem}
+.map a span{font-weight:700;display:block;line-height:1.25}
+.map a small{color:var(--muted);display:block;margin-top:.25rem;line-height:1.3}
+.tl{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;position:relative;padding-top:6px}
+.tl::before{content:"";position:absolute;left:8%;right:8%;top:21px;height:4px;background:var(--line);border-radius:4px}
+.tl-i{text-align:center;position:relative}
+.tl-t{display:block;font-family:var(--head);font-size:1.15rem}
+.tl-d{display:block;width:22px;height:22px;border-radius:50%;margin:6px auto 8px;position:relative;border:3px solid var(--card)}
+.tl-i h4{font-size:1.05rem}.tl-i p{font-size:.9rem;color:var(--muted);margin:.2rem 0 0}
+@media (max-width:560px){.tl{grid-template-columns:1fr}.tl::before{display:none}.tl-i{text-align:left;padding-left:34px}.tl-d{position:absolute;left:0;top:0;margin:0}}
+input[type=range]{accent-color:var(--indigo)}
+/* views */
+.view[hidden]{display:none}
+footer{color:var(--muted);font-size:.85rem;padding:40px 0 60px;border-top:1px solid var(--line);margin-top:40px}
+/* flashcards */
+.fc-wrap{max-width:640px;margin:30px auto 0}
+.fc-top{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+.fc-prog{height:8px;background:var(--line);border-radius:99px;overflow:hidden;margin-bottom:16px}
+.fc-prog div{height:100%;background:var(--teal);width:0;transition:width .3s}
+.card3d{perspective:1200px;cursor:pointer;user-select:none}
+.card3d .inner{position:relative;min-height:300px;transition:transform .5s;transform-style:preserve-3d}
+.card3d.flip .inner{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:20px;padding:28px;display:flex;flex-direction:column;justify-content:center;border:1px solid var(--line);background:var(--card)}
+.face.back{transform:rotateY(180deg);background:var(--indigo-soft);border-color:var(--indigo)}
+.face .lbl{position:absolute;top:14px;left:18px;font-size:.8rem;color:var(--muted);font-weight:700}
+.face .front-txt{font-family:var(--head);font-size:clamp(1.3rem,4vw,1.8rem);font-weight:700;line-height:1.25}
+.face .back-txt{font-size:1.08rem}
+.hint{color:var(--muted);font-size:.85rem;text-align:center;margin-top:10px}
+@media (prefers-reduced-motion:reduce){.card3d .inner{transition:none}}
+.btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:16px}
+.btn{font:700 1rem var(--body);border-radius:12px;padding:.65rem 1.1rem;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
+.btn.pri{background:var(--indigo);border-color:var(--indigo);color:var(--card)}
+.btn.good{background:var(--teal);border-color:var(--teal);color:var(--card)}
+.btn.bad{background:var(--brick);border-color:var(--brick);color:var(--card)}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.btn.sm{font-size:.88rem;padding:.4rem .75rem;border-radius:10px}
+/* quiz */
+.qz{max-width:720px;margin:30px auto 0}
+.qz-setup .box{margin:.6rem 0}
+.qz-setup label{display:flex;gap:.6rem;align-items:flex-start;cursor:pointer}
+.qz-head{display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:.9rem;margin-bottom:10px;gap:8px;flex-wrap:wrap}
+.qcase{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--sun);border-radius:12px;padding:.8rem 1rem;margin-bottom:12px;font-size:.95rem}
+.qcase b{font-family:var(--head)}
+.qtext{font-family:var(--head);font-size:1.25rem;font-weight:700;line-height:1.3;margin:4px 0 14px}
+.opt{display:flex;gap:.7rem;align-items:flex-start;width:100%;text-align:left;font:1rem var(--body);color:var(--ink);background:var(--card);border:2px solid var(--line);border-radius:12px;padding:.7rem .9rem;margin:.45rem 0;cursor:pointer}
+.opt .lt{font-family:var(--head);font-weight:800;color:var(--indigo);min-width:1.2rem}
+.opt[aria-pressed="true"]{border-color:var(--indigo);background:var(--indigo-soft)}
+.opt.right{border-color:var(--teal);background:var(--teal-soft)}
+.opt.wrong{border-color:var(--brick);background:var(--brick-soft)}
+.opt:disabled{cursor:default}
+.explain{border-radius:12px;padding:.7rem 1rem;margin-top:12px;background:var(--paper);border:1px solid var(--line)}
+.explain.ok{border-color:var(--teal)}.explain.no{border-color:var(--brick)}
+.explain b{font-family:var(--head)}
+.score{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:16px 0}
+@media (max-width:520px){.score{grid-template-columns:repeat(2,1fr)}}
+.score div{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:.7rem;text-align:center}
+.score b{display:block;font-family:var(--head);font-size:1.8rem}
+.score small{color:var(--muted)}
+.verdict{font-family:var(--head);font-size:1.4rem;font-weight:800;margin:10px 0}
+.review .item{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:.7rem 1rem;margin:.6rem 0}
+.review .item p{margin:.25rem 0}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--paper);padding:.5rem 1rem;border-radius:10px;font-weight:700;opacity:0;transition:opacity .2s;pointer-events:none;z-index:50}
+.toast.show{opacity:1}
+@media print{.bar,.btns,.themebtn{display:none}.view[hidden]{display:block}#v-cards,#v-quiz{display:none}figure.fig,.trap,.analogy{break-inside:avoid}}
+</style></head><body>
+<div class="bar"><div class="wrap"><a class="brand" href="../index.html">NISM RA study kit</a>
+<div class="tabs" role="tablist"><button class="tab" role="tab" data-v="learn" aria-selected="true">Learn</button><button class="tab" role="tab" data-v="cards" aria-selected="false">Flashcards</button><button class="tab" role="tab" data-v="quiz" aria-selected="false">Quiz</button></div>
+<button class="themebtn" id="themebtn" aria-label="Switch light or dark">&#9790;</button></div></div><div class="view" id="v-learn">
+<style>
+.calc{display:grid;gap:14px}
+.calc label{display:block;font-weight:700}
+.calc input[type=number]{font:inherit;width:100%;padding:.45rem .6rem;border:1px solid var(--line);border-radius:8px;background:var(--paper);color:var(--ink)}
+.calcin{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+@media (max-width:620px){.calcin{grid-template-columns:repeat(2,1fr)}}
+.calcres{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+@media (max-width:520px){.calcres{grid-template-columns:repeat(2,1fr)}}
+.calcres div{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:.6rem;text-align:center}
+.calcres b{display:block;font-family:var(--head);font-size:1.45rem}
+.calcres small{color:var(--muted)}
+.calcnote{font-weight:700;margin:.2rem 0 0}
+.formula{font-family:var(--head);font-weight:700;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:.55rem .8rem;margin:.7rem 0;overflow-x:auto}
+table.fs td:nth-child(2){font-family:var(--head);font-weight:700}
+</style>
+<div class="wrap">
+<header class="hero">
+<div class="kicker">Chapter 8 of 15</div>
+<h1>Company analysis: financial analysis</h1>
+<div class="meta"><span class="pill">Worth <b>12 marks</b> of 100</span><span class="pill">Book pages 145 to 186</span><span class="pill">About 90 minutes</span></div>
+<p class="oneline">Read the <span class="k">balance sheet</span>, the <span class="k">profit and loss account</span> and the <span class="k">cash flow</span>, then turn them into <span class="k">ratios</span> that tell a story.</p>
+</header>
+
+<figure class="fig" id="fig-map"><figcaption>Chapter map<span>A long, numbers-heavy chapter. 8.11 (ratios) and 8.12 (DuPont) are the core for numericals. Tap to jump.</span></figcaption>
+<div class="map">
+<a href="#s1"><b>8.1 and 8.2</b><span>The statements</span><small>Five parts, standalone versus consolidated</small></a>
+<a href="#s3"><b>8.3</b><span>Balance sheet</span><small>Line items, total debt, working capital</small></a>
+<a href="#s4"><b>8.4 and 8.5</b><span>Profit and loss</span><small>Line items, EPS, EBITDA, EBIT</small></a>
+<a href="#s6"><b>8.6</b><span>Cash flow</span><small>Operating, investing, financing</small></a>
+<a href="#s7"><b>8.7 to 8.9</b><span>Notes and audit report</span><small>Policies, contingent liabilities, opinions</small></a>
+<a href="#s10"><b>8.10 and 8.11</b><span>Ratios</span><small>Profitability, return, leverage, liquidity, efficiency</small></a>
+<a href="#s12"><b>8.12 to 8.14</b><span>DuPont, forecasts, peers</span><small>Three parts of ROE</small></a>
+<a href="#s15"><b>8.15</b><span>Other things to track</span><small>Dilution, dividends, insider trades</small></a>
+</div></figure>
+
+<div class="col">
+<section class="sec" id="s0"><span class="secno">Intro</span><h2>Why financial analysis?</h2>
+<p>Chapters 5 to 7 looked at the economy, the industry and the company's business. Financial analysis turns all that into the company's likely <b>profits, cash flows</b> and, finally, the <b>fair value</b> of its shares. Financial statements also supply the numbers for market sizing (6.4), industry KPIs (6.7) and strengths and weaknesses (7.5).</p>
+<div class="why"><b>You do not need to be an accountant</b>The book says an analyst need not be a great accountant, but must be able to read and interpret financial statements. Accounting knowledge helps.</div>
+</section>
+
+<section class="sec" id="s1"><span class="secno">8.1</span><h2>The financial statements</h2>
+<p>In India, the statements and their format are governed by <b>Schedule III of the Companies Act, 2013</b> and <b>Ind AS 1</b>. A complete set under Ind AS 1:</p>
+</div>
+
+<figure class="fig" id="fig-statements"><figcaption>A complete set of financial statements<span>Ind AS 1</span></figcaption>
+<div class="grid g2">
+<div class="box hl"><span class="tag">1</span><h4>Balance sheet</h4><p>Statement of financial position: assets, liabilities and equity <b>at the end</b> of the period. A snapshot.</p></div>
+<div class="box hl"><span class="tag">2</span><h4>Statement of profit and loss</h4><p>Income, expenses and profit <b>for the period</b>. Must include <b>other comprehensive income (OCI)</b>.</p></div>
+<div class="box"><span class="tag">3</span><h4>Statement of changes in equity</h4><p>How shareholders' funds changed: profit, dividends, new shares, buybacks, OCI.</p></div>
+<div class="box"><span class="tag">4</span><h4>Cash flow statement</h4><p>Sources and uses of cash.</p></div>
+<div class="box"><span class="tag">5</span><h4>Notes</h4><p>Accounting policies and break-ups of the figures.</p></div>
+</div>
+<p class="ptr" style="margin-top:8px">Each statement must show figures for at least <b>one prior period</b> for comparison. Companies may show more.</p>
+</figure>
+
+<div class="col">
+<h3 id="s2">8.2 Standalone versus consolidated</h3>
+<p>Every company is a separate legal entity and prepares its own <span class="k">standalone</span> statements. But for groups these can mislead: Toyota Motor Corporation's standalone accounts show only sales of that entity in Japan, not sales through subsidiaries in China, India or North America.</p>
+<p><span class="k">Consolidated</span> statements treat all companies <b>controlled</b> by the parent as one group and combine their results.</p>
+<dl class="terms">
+<dt>Control</dt><dd>Owning more than 50% of voting rights, <b>or</b> the right to appoint a majority of the board. Even without 50%, a company that can direct a subsidiary's strategy and operations to change its returns is in de facto control, and must consolidate under <b>Ind AS 110</b>.</dd>
+<dt>Holding (parent)</dt><dd>The company that controls.</dd>
+<dt>Subsidiary</dt><dd>The company that is controlled. Book examples: Jio Platforms (controlled by Reliance Industries); Toyota Kirloskar Motor (majority owned by Toyota Motor Corporation, Japan).</dd>
+</dl>
+<div class="grid g2">
+<div class="box gd"><h4>Usually prefer consolidated</h4><p>It gives a more holistic picture of the group.</p></div>
+<div class="box"><h4>Also check standalone when...</h4><p>Subsidiaries cannot pass dividends to the parent: strict capital controls in their country, or a debt covenant banning dividends. Then ask: can the parent stand on its own in a crisis?</p></div>
+</div>
+<div class="trap">As per the book, SEBI requires listed companies to publish <b>consolidated statements annually</b> and <b>standalone results quarterly</b>. Quarterly consolidated results are voluntary, which leaves analysts with dated group numbers between annual reports.</div>
+</section>
+
+<section class="sec" id="s3"><span class="secno">8.3</span><h2>The balance sheet</h2>
+<p>Format: Schedule III of the Companies Act, 2013. <b>Banks, insurers and utilities</b> follow formats set by their own regulators. The book uses Bharti Airtel's consolidated balance sheet for 31 March 2019 as its example.</p>
+<p><span class="k">Assets</span> are items expected to give future benefits. A company can show only assets that can be measured in money and <b>have been paid for</b>. So a company generally cannot show its own <b>self-generated brand</b>.</p>
+<dl class="terms">
+<dt>Current asset</dt><dd>Gives benefit within one operating cycle, usually taken as one year. If the cycle is longer than a year, one year is the convention.</dd>
+<dt>Non-current asset</dt><dd>Gives benefit over the long term, usually more than one year. Everything that is not current.</dd>
+</dl>
+</div>
+
+<figure class="fig" id="fig-bsassets"><figcaption>Asset line items<span>What each one means, and how it is valued</span></figcaption>
+<div class="scroll"><table class="cmp">
+<thead><tr><th>Line item</th><th>What it is</th><th>How it is shown</th></tr></thead>
+<tbody>
+<tr><th>Property, plant and equipment (PPE)</th><td>Land, buildings, machines, furniture, computers</td><td>Historical cost less accumulated depreciation. Ind AS 16 allows a revaluation model, applied to a <b>whole class</b> of assets</td></tr>
+<tr><th>Capital work in progress</th><td>PPE still under construction</td><td>Moved to PPE when ready to operate</td></tr>
+<tr><th>Goodwill</th><td>Price paid for a business above the fair value of net assets taken over</td><td>Tested for impairment; any shortfall written off</td></tr>
+<tr><th>Intangible assets</th><td>Legal rights: acquired copyrights, patents, brands. Internally developed software can be shown; other self-generated assets cannot</td><td>Cost less accumulated amortisation</td></tr>
+<tr><th>Intangibles under development</th><td>Intangibles not yet ready</td><td>Moved to intangibles when ready</td></tr>
+<tr><th>Investment in joint ventures and associates</th><td>Strategic stakes the company does not control</td><td><b>Equity method</b>: adjusted for its share of profit and OCI, reduced by dividends received</td></tr>
+<tr><th>Non-current financial assets</th><td>Long-term investments, loans, advances</td><td>Debt held to collect interest and principal: amortised cost. Others: fair value</td></tr>
+<tr><th>Inventory</th><td>Raw material, work in progress, unsold finished goods</td><td><b>Lower of cost or market value</b></td></tr>
+<tr><th>Current financial assets</th><td>Cash and cash equivalents, bank balances, receivables, short-term investments</td><td>Receivables net of provision for doubtful debts. Investments at fair value</td></tr>
+<tr><th>Other current assets</th><td>Prepaid expenses; benefits received in kind within a year</td><td>&nbsp;</td></tr>
+</tbody></table></div></figure>
+
+<div class="col">
+<div class="why"><b>The book's goodwill example</b>In FY 2018, Bharti Airtel bought 100% of Tigo Rwanda for <b>Rs 3,200 crore</b>. Tigo's net assets were worth <b>Rs 2,838 crore</b>. The extra <b>Rs 362 crore</b> was recorded as goodwill. If a company pays <b>less</b> than fair value, the difference goes to <b>capital reserve</b> under equity.</div>
+
+<h3>Equity: the owners' residual share</h3>
+<p><span class="k">Equity</span> = assets minus liabilities. Its parts:</p>
+<dl class="terms">
+<dt>Share capital</dt><dd>Face value of paid-up shares.</dd>
+<dt>Share premium</dt><dd>Amount received above face value when shares were issued (IPO or FPO).</dd>
+<dt>Retained earnings</dt><dd>Profit and OCI not paid out as dividend or set aside.</dd>
+<dt>General reserve</dt><dd>Retained earnings set aside for future use.</dd>
+<dt>Capital and revaluation reserve</dt><dd>Surplus from showing assets above purchase price. Usually <b>not available for dividends</b>.</dd>
+<dt>Non-controlling (minority) interest</dt><dd>Outside shareholders' share of a subsidiary's equity. Appears <b>only in consolidated</b> statements.</dd>
+</dl>
+<h3>Liabilities</h3>
+</div>
+
+<figure class="fig" id="fig-bsliab"><figcaption>Liability line items</figcaption>
+<div class="grid g2">
+<div class="box"><span class="tag">Non-current (beyond one year)</span><ul>
+<li><b>Long-term debt</b>: loans, bonds, debentures due after a year. The part due within a year is shown as <b>current portion of long-term debt</b>.</li>
+<li><b>Lease liability</b>: right to use an asset for more than a year. Analysts often treat it as <b>debt</b>.</li>
+<li><b>Derivative instruments</b>: mark-to-market losses on contracts settled after a year.</li>
+<li><b>Other long-term financial liabilities</b>.</li>
+<li><b>Deferred revenue</b>: advance received for service still to be given.</li>
+<li><b>Provisions</b>: for a <b>specific</b> obligation not yet fully quantified: retirement benefits, warranties, pending legal cases.</li></ul></div>
+<div class="box"><span class="tag">Current (within one year)</span><ul>
+<li><b>Payables</b>: owed to suppliers.</li>
+<li><b>Short-term debt</b>: borrowed for under a year, but often rolled over.</li>
+<li>Short-term provisions</li>
+<li>Current portion of long-term liability</li>
+<li>Deferred revenue (due within a year)</li>
+<li>Advances from customers</li>
+<li>Unpaid and accrued expenses</li></ul></div>
+</div></figure>
+
+<div class="col">
+<div class="analogy">Deferred revenue, the book's example: a customer buys a 6-month prepaid pack for Rs 1,200. After one month, the company counts Rs 200 as revenue. The other <b>Rs 1,000</b> (1,200 &times; 5/6) is deferred revenue: a promise still owed.</div>
+<div class="trap">A <b>provision</b> is for a specific obligation (like retirement benefits). A <b>reserve</b> is set aside without a specific obligation. Do not mix them up.</div>
+
+<h3>8.3.2 Balance sheet metrics analysts add</h3>
+<p>Balance sheets often miss fair value because of the historical cost and money measurement concepts. So analysts compute extra metrics.</p>
+</div>
+
+<figure class="fig" id="fig-bsmetrics"><figcaption>Total debt and working capital</figcaption>
+<div class="grid g3">
+<div class="box hl"><span class="tag">Total debt</span><p>Long-term debt + current portion of long-term debt + short-term debt + finance lease obligations + accrued interest.</p><p class="ptr">Debt is settled in cash and carries interest, unlike other liabilities.</p></div>
+<div class="box"><span class="tag">Net working capital</span><p>Current assets &minus; current liabilities. The accountant's measure.</p><p class="ptr">Bharti Airtel FY 2019: 329.06 &minus; 930.55 = <b>minus Rs 601.49 billion</b>.</p></div>
+<div class="box gd"><span class="tag">Core working capital</span><p>Inventory + trade receivables &minus; trade payables.</p><p class="ptr">Only items from core operations. Helps judge the need for bank working capital finance. The book suggests also including a reasonable cash balance.</p></div>
+</div></figure>
+
+<div class="col">
+<div class="why"><b>Why working capital is needed</b>The book says the "day-to-day needs" idea is a misnomer. A company needs working capital because it <b>spends first</b> (raw materials, production) and <b>waits to be paid</b> by customers who buy on credit.</div>
+</section>
+
+<section class="sec" id="s4"><span class="secno">8.4</span><h2>The profit and loss account</h2>
+<p>Shows performance <b>for a period</b>. Format: Schedule III; Ind AS 1 adds <b>OCI</b>, shown below net profit. Banks, insurers and utilities use their regulators' formats.</p>
+</div>
+
+<figure class="fig" id="fig-pl"><figcaption>P&amp;L line items</figcaption>
+<div class="scroll"><table class="cmp">
+<thead><tr><th>Line item</th><th>Meaning</th></tr></thead>
+<tbody>
+<tr><th>Revenue</th><td>Sales of goods and services from core and incidental operations. Some show incidental income as "other operating income"</td></tr>
+<tr><th>Other income</th><td>Non-operating income: investment income, profit on sale of assets</td></tr>
+<tr><th>Cost of raw materials</th><td><b>Purchases + opening stock &minus; closing stock</b> of raw materials</td></tr>
+<tr><th>Purchase of stock-in-trade</th><td>Goods bought and resold without processing. Most retail purchases</td></tr>
+<tr><th>Change in inventory of WIP and finished goods</th><td>Opening minus closing balance of WIP and finished goods</td></tr>
+<tr><th>Employee cost</th><td>Salaries, benefits, stock-based compensation, staff welfare, annual retirement provision</td></tr>
+<tr><th>Depreciation</th><td>Allocates the cost of tangible assets over their useful life. Ind AS 16: method should reflect how the asset is used (a cab fleet by distance)</td></tr>
+<tr><th>Amortisation</th><td>Gradual write-off of intangible assets</td></tr>
+<tr><th>Finance cost</th><td>Interest, processing fees, amortised cost of issuing securities</td></tr>
+<tr><th>Income from equity-accounted entities</th><td>Share of profit of joint ventures and associates</td></tr>
+<tr><th>Exceptional items</th><td>Not from the normal course of business: natural calamity losses, one-time regulatory charges</td></tr>
+<tr><th>Tax</th><td>Current tax, MAT, deferred tax. Deferred tax has <b>no cash impact</b></td></tr>
+<tr><th>Non-controlling interest</th><td>Subsidiary profit belonging to outside shareholders</td></tr>
+</tbody></table></div></figure>
+
+<div class="col">
+<h3>EPS: basic and diluted</h3>
+<div class="formula">Basic EPS = net profit to equity shareholders &divide; weighted average shares outstanding</div>
+<p><b>Diluted EPS</b> assumes all instruments that could become shares without full payment are converted: in-the-money warrants, ESOPs, convertibles. Profit is adjusted for the effect too. For a <b>loss-making</b> company, basic and diluted EPS are the <b>same</b>.</p>
+<h3>Other comprehensive income (OCI)</h3>
+<p>Income or expense that bypasses the P&amp;L, mostly changes in value from non-operating factors: revaluation surplus changes; remeasurement of defined benefit plans; translation of foreign operations; fair value changes of certain financial assets or liabilities; gains or losses on derivatives that hedge risk.</p>
+
+<h3>8.4.2 Profit metrics</h3>
+<p>Most companies present a <b>single-step</b> P&amp;L (all income minus all expenses = profit before tax). Some, like Bharti Airtel, present a <b>multi-step</b> P&amp;L showing EBITDA. Analysts often redraw single-step statements into multi-step ones.</p>
+</div>
+
+<figure class="fig" id="fig-waterfall"><figcaption>From revenue to profit<span>The profit "waterfall"</span></figcaption>
+<div class="flow">
+<div class="step"><h4>Revenue</h4><p>&nbsp;</p></div><div class="arrow"></div>
+<div class="step"><h4>Gross profit</h4><p>Revenue &minus; cost of goods sold. Not computable for most Indian companies</p></div><div class="arrow"></div>
+<div class="step hl"><h4>EBITDA</h4><p>Before interest, tax, depreciation, amortisation</p></div><div class="arrow"></div>
+<div class="step hl"><h4>EBIT</h4><p>"Operating profit"</p></div><div class="arrow"></div>
+<div class="step gd"><h4>PAT</h4><p>Net profit for shareholders</p></div>
+</div></figure>
+
+<div class="col">
+<ul>
+<li><b>Gross profit</b> suits manufacturers, but Indian companies disclose only raw material costs among direct costs, so it usually <b>cannot be calculated</b>.</li>
+<li><span class="k">EBITDA</span> is not affected by <b>capital structure</b> (interest) or <b>infrastructure and accounting choices</b> (depreciation), so it is the right metric to <b>compare firms</b>, even across sectors. "Adjusted EBITDA" also strips out investment and other non-operating income. EBITDA is a proxy for cash profit, but use it that way only as a last resort.</li>
+<li><span class="k">EBIT</span> is called <b>operating profit</b>. It shows the ability to meet interest, and feeds the interest coverage ratio and free cash flow to the firm.</li>
+<li><b>PAT</b> (net profit, EAT) is what is left for shareholders after interest and tax.</li>
+<li><b>Adjusted PAT</b> removes exceptional items, <b>with their tax impact</b>, so years can be compared. It may need judgement: Bharti Airtel's FY 2019 effective tax rate was "not meaningful" because it paid huge taxes despite reporting losses.</li>
+</ul>
+
+<h3 id="s5">8.5 Statement of changes in equity</h3>
+<p>Required by Ind AS 1. Shows how each type of transaction changed each part of shareholders' equity.</p>
+</section>
+
+<section class="sec" id="s6"><span class="secno">8.6</span><h2>Cash flow</h2>
+<p>Accounts use the <b>accrual</b> basis: income counts when earned, not when received; expenses when incurred, not when paid. So profit and cash can differ a lot.</p>
+<div class="analogy">The book's example: buy goods for Rs 80,000 in cash, sell them for Rs 1,00,000. If the sale is in cash, you have a Rs 20,000 profit and the cash. If the sale is on credit, the P&amp;L still shows Rs 20,000 profit, but there is no money. If the customer never pays, even the Rs 80,000 is lost. Profit without cash is "paper profit".</div>
+</div>
+
+<figure class="fig" id="fig-cashflow"><figcaption>Three kinds of cash flow<span>Signs, as the book describes them</span></figcaption>
+<div class="grid g3">
+<div class="box hl"><span class="tag">Operating</span><h4>From the business (P&amp;L items)</h4><p>Net profit + non-cash expenses (depreciation, amortisation) &plusmn; changes in receivables and payables.</p></div>
+<div class="box"><span class="tag">Investing</span><h4>From assets (B/S items)</h4><p>Buying assets: <b>negative</b>. Selling assets: <b>positive</b>.</p></div>
+<div class="box"><span class="tag">Financing</span><h4>From liabilities and equity (B/S items)</h4><p>Borrowing or issuing equity: <b>positive</b>. Repaying debt or buying back equity: <b>negative</b>.</p></div>
+</div></figure>
+
+<div class="col">
+<h3>A warning from Kingfisher Airlines</h3>
+<p>A business with <b>negative operating cash flow</b> for years needs constant doses of borrowing or new equity. In the end it either turns cash-positive or dies when lenders and investors stop. The book's example (Rs crore, source moneycontrol.com):</p>
+</div>
+
+<figure class="fig" id="fig-kingfisher"><figcaption>Kingfisher Airlines, years ending March</figcaption>
+<div class="scroll"><table class="cmp">
+<thead><tr><th>Rs crore</th><th>2013</th><th>2012</th><th>2011</th><th>2010</th><th>2009</th></tr></thead>
+<tbody>
+<tr><th>Net profit before tax</th><td>&minus;4,301.12</td><td>&minus;3,446.09</td><td>&minus;1,520.78</td><td>&minus;2,417.92</td><td>&minus;2,155.21</td></tr>
+<tr><th>Net cash from operating activities</th><td>&minus;1,390.86</td><td>&minus;885.55</td><td>&minus;2.23</td><td>&minus;1,665.09</td><td>&minus;645.78</td></tr>
+</tbody></table></div>
+<p class="ptr" style="margin-top:8px">EBIT stayed far below interest for years, so it borrowed to pay interest, until lenders refused.</p>
+</figure>
+
+<div class="col">
+<p>Expansion (negative investing cash flow) is funded by operating cash, past cash balances, or financing. Be cautious with firms that rely heavily on borrowing to expand: assets may realise less than book value, but liabilities must be paid in full.</p>
+<div class="trap">Four rules from the book: <b>net cash flow can deceive</b>; analyse operating, investing and financing <b>separately</b>; focus on <b>sustainable, recurring</b> cash flows; adjust for <b>non-recurring</b> items.</div>
+</section>
+
+<section class="sec" id="s7"><span class="secno">8.7</span><h2>Notes to accounts</h2>
+<h3>8.7.1 Significant accounting policies</h3>
+<p>There are several ways to account for an item, for example <b>straight-line</b> or <b>written-down value</b> depreciation. The policies show which way the company chose. Companies must state any change from last year. <b>Frequent changes</b> in policy are a reason for suspicion of manipulation.</p>
+<h3>8.7.2 Contingent liabilities</h3>
+<p>Liabilities that arise only if an uncertain future event goes against the company. They are <b>not recorded in the accounts</b>, only in the notes. Examples: outstanding lawsuits, tax disputes, bank guarantees given, product warranty claims, pending investigations, changes in FX or government policy.</p>
+<div class="trap">Management will usually say it does not expect to lose. Look at the <b>size</b> of contingent liabilities compared with the P&amp;L and balance sheet. If large, be cautious.</div>
+<h3>Off-balance sheet items</h3>
+<p>Any asset or liability that does not appear on the balance sheet. The book's examples: <b>operating leases</b>, <b>contingent liabilities</b>, and <b>derivative contracts</b> (shown only in notes). Derivatives have threatened many businesses worldwide, so analyse these in detail, especially negative surprises.</p>
+
+<h3 id="s8">8.8 Points to keep in mind</h3>
+<ul>
+<li>Numbers can be dressed up by assumptions or creative accounting. Auditors' <b>qualifications</b> in the notes (the fine print) are very useful.</li>
+<li>A <b>change in accounting period</b> can confuse comparisons with past years.</li>
+<li>One-off items can raise or lower profit; miss them and the whole analysis changes.</li>
+<li>The best company for investors shows <b>consistent</b> growth in sales, profit and net worth, lower debt, better margins and a rising <b>return on net worth (RoNW)</b>.</li>
+</ul>
+
+<h3 id="s9">8.9 The audit report</h3>
+<p>Management prepares the accounts; auditors check that they give a <b>true and fair view</b>. Auditors work on the information given to them and cannot vouch for every transaction. So they check, in order: are adequate <b>control systems</b> in place; were they <b>properly implemented</b>; were <b>accounting standards</b> followed in measuring and disclosing items?</p>
+</div>
+
+<figure class="fig" id="fig-audit"><figcaption>Three kinds of audit report<span>As listed in the book</span></figcaption>
+<div class="grid g3">
+<div class="box gd"><span class="tag">Clean</span><h4>No issues</h4><p>Standard format, looks much the same across companies.</p></div>
+<div class="box"><span class="tag">Disclaimer</span><h4>Could not verify</h4><p>Auditors could not verify part of the financials because information was not available.</p></div>
+<div class="box bd"><span class="tag">Qualified</span><h4>Not true and fair</h4><p>Auditors believe all or part of the statements do not give a true and fair view: they disagree with a policy, or see serious discrepancies.</p></div>
+</div>
+<p class="ptr" style="margin-top:8px">For a disclaimer or a qualified report, auditors explain their reasons. Always read the audit report for reservations.</p>
+</figure>
+
+<div class="col">
+<section class="sec" id="s10"><span class="secno">8.10</span><h2>Why ratios?</h2>
+<p>A number alone means little. Bharti Airtel's FY 2019 EBIT of Rs 47.62 billion sounds large, until you compare it with revenue of Rs 807.8 billion (only 5.8%), or with interest expense of over Rs 110 billion (not enough to pay it). <span class="k">Ratio analysis</span> expresses one line item as a percentage or multiple of a related one. Only compare numbers that are related.</p>
+</div>
+
+<figure class="fig" id="fig-purposes"><figcaption>Three uses of ratio analysis<span>The book's Bharti Airtel FY 2019 example</span></figcaption>
+<div class="grid g3">
+<div class="box"><span class="tag">Descriptive</span><p>Adds a sense of proportion: operating profit was <b>5.8%</b> of revenue.</p></div>
+<div class="box"><span class="tag">Diagnostic</span><p>Finds what went wrong: revenue fell <b>2.19%</b> but EBITDA fell <b>13.9%</b>. Network operating expense rose from <b>23.8%</b> to <b>27.6%</b> of revenue.</p></div>
+<div class="box"><span class="tag">Predictive</span><p>Shows how costs behave: most costs stayed a steady % of sales (they move with sales); network costs rose as sales fell, so they are largely <b>fixed</b>. Two years of data is too little; more data gives more confidence.</p></div>
+</div></figure>
+
+<div class="col">
+<h3 id="s11">8.11 Commonly used ratios</h3>
+<p>Very high profitability rarely lasts: new entrants and competition pull it back to moderate levels. Ratios that compare a period figure (sales, profit) with a balance sheet figure (equity, assets) should use the <b>average</b> balance, usually the average of opening and closing.</p>
+</div>
+
+<figure class="fig" id="fig-formulas"><figcaption>Ratio formula sheet<span>Formulas exactly as the book defines them, with the book's Bharti Airtel FY 2019 figures</span></figcaption>
+<div class="scroll"><table class="cmp fs">
+<thead><tr><th>Ratio</th><th>Formula</th><th>Reading it</th></tr></thead>
+<tbody>
+<tr><th colspan="3" style="color:var(--indigo)">Profitability</th></tr>
+<tr><th>EBITDA margin</th><td>EBITDA &divide; Net sales</td><td>Operating efficiency; not affected by depreciation policy, funding or tax. Bharti: 32.2% (FY18: 36.6%)</td></tr>
+<tr><th>PAT margin</th><td>PAT &divide; Net sales</td><td>Share of sales left for shareholders. Bharti: 2.1%</td></tr>
+<tr><th>NOPAT</th><td>EBIT &times; (1 &minus; tax rate)</td><td>Used in valuation (later chapters)</td></tr>
+<tr><th colspan="3" style="color:var(--indigo)">Return</th></tr>
+<tr><th>ROE (RoNW)</th><td>PAT &divide; Net worth</td><td>"Single most important parameter" for equity investors. Net worth = share capital + reserves and surplus. Bharti: 2.1%</td></tr>
+<tr><th>ROCE</th><td>EBIT &divide; Capital employed</td><td>Capital employed = total assets &minus; non-interest-bearing current liabilities, or equity + debt (book values). Pre-tax. Bharti: 2.38%</td></tr>
+<tr><th colspan="3" style="color:var(--indigo)">Leverage</th></tr>
+<tr><th>Debt / Equity</th><td>Total adjusted debt &divide; Net worth</td><td>Most conservative benchmark: <b>1 or less</b>. Bharti: 1.52x</td></tr>
+<tr><th>Interest coverage</th><td>EBIT &divide; Interest expense</td><td>Below 1 or negative: earnings do not cover interest</td></tr>
+<tr><th colspan="3" style="color:var(--indigo)">Liquidity</th></tr>
+<tr><th>Current ratio</th><td>Current assets &divide; Current liabilities</td><td>Also called working capital ratio. Bharti: 0.35</td></tr>
+<tr><th>Quick ratio</th><td>(Current assets &minus; Inventories) &divide; Current liabilities</td><td>Stricter: inventory cannot become cash immediately</td></tr>
+<tr><th colspan="3" style="color:var(--indigo)">Efficiency</th></tr>
+<tr><th>Receivable turnover</th><td>Revenue &divide; Average receivables</td><td>Higher is better: faster collection</td></tr>
+<tr><th>Payable turnover</th><td>Purchases &divide; Accounts payable</td><td>Low means long supplier credit: strength, or lack of cash</td></tr>
+<tr><th>Asset turnover</th><td>Net sales &divide; Total assets</td><td>Higher is better: assets put to work. Used in DuPont</td></tr>
+<tr><th>Inventory turnover</th><td>Sales &divide; Inventory</td><td>Higher is better. High for FMCG, low for capital goods</td></tr>
+</tbody></table></div></figure>
+
+<div class="col">
+<h3>Reading the liquidity ratios</h3>
+<ul>
+<li>High finished goods stock may mean slowing sales; high raw material stock may mean poor planning.</li>
+<li>High receivables: selling on credit and struggling to collect. High payables: may show strength in getting good credit terms.</li>
+<li>A current ratio <b>below 1</b> is <b>not always a red flag</b>. A company that collects cash on sales and pays suppliers on credit has its working capital funded by customers. Firms with strong bargaining power often <b>prefer</b> negative working capital: it is an interest-free obligation.</li>
+<li>A very <b>high</b> current ratio may point to poor management of inventory, receivables and cash.</li>
+</ul>
+<div class="trap">ROE uses <b>PAT</b>; ROCE uses <b>EBIT</b>. ROE's denominator is net worth only; ROCE's is equity plus debt. Interest coverage uses <b>EBIT</b>, not PAT. Quick ratio removes <b>inventories</b>.</div>
+<p class="ptr">The book notes several versions of ROCE and D/E are used in the industry (for example, net debt = total debt minus cash). For the exam, use the formulas in the sheet above.</p>
+</section>
+
+<section class="sec" id="s12"><span class="secno">8.12</span><h2>DuPont analysis</h2>
+<p>Reading ratios together gives more insight. For example, sales rising while the collection period lengthens suggests lenient credit to push sales. <span class="k">DuPont analysis</span> breaks ROE into three parts:</p>
+<div class="formula">ROE = (Net profit &divide; Sales) &times; (Sales &divide; Assets) &times; (Assets &divide; Equity)</div>
+<div class="grid g3">
+<div class="box gd"><span class="tag">1</span><h4>Net profit margin</h4><p>Profitability</p></div>
+<div class="box gd"><span class="tag">2</span><h4>Asset turnover</h4><p>Efficiency</p></div>
+<div class="box bd"><span class="tag">3</span><h4>Equity multiplier</h4><p>Leverage</p></div>
+</div>
+<div class="why"><b>Why split it?</b>ROE that rises from better margins or efficiency is good news. ROE that rises from more leverage need not be, because leverage also adds risk.</div>
+</div>
+
+<figure class="fig" id="fig-dupont"><figcaption>DuPont calculator<span>Starts with the book's HighLevCo. Press LowLevCo to compare.</span></figcaption>
+<div class="calc">
+<div class="btns" style="justify-content:flex-start;margin-top:0"><button class="btn sm" id="dp-high">HighLevCo (book)</button><button class="btn sm" id="dp-low">LowLevCo (book)</button></div>
+<div class="calcin">
+<div><label for="dp-s">Revenue</label><input type="number" id="dp-s" value="12000"></div>
+<div><label for="dp-p">Net profit</label><input type="number" id="dp-p" value="2400"></div>
+<div><label for="dp-a">Assets</label><input type="number" id="dp-a" value="5200"></div>
+<div><label for="dp-e">Equity</label><input type="number" id="dp-e" value="2600"></div>
+</div>
+<div class="calcres">
+<div><b id="dp-npm"></b><small>net profit margin</small></div>
+<div><b id="dp-at"></b><small>asset turnover</small></div>
+<div><b id="dp-em"></b><small>equity multiplier</small></div>
+<div><b id="dp-roe"></b><small>ROE</small></div>
+</div>
+<p class="calcnote" id="dp-note"></p>
+</div></figure>
+
+<div class="col">
+<p><b>The book's comparison.</b> HighLevCo: ROE <b>92.3%</b> = 20% margin &times; 2.3x turnover &times; 2.0x leverage. LowLevCo: ROE <b>52.4%</b> = 22% margin &times; 2.4x turnover &times; 1.0x leverage (no debt). LowLevCo is the better operator, with higher margin and slightly higher turnover. Its ROE is lower only because it uses no debt, which also means less risk.</p>
+
+<h3 id="s13">8.13 Forecasting with ratios</h3>
+<p>Analysts use how items behaved in the past to forecast. But that assumes the past represents the future, which need not hold. Apply judgement and adjust for changes.</p>
+<div class="trap">The book's example: <b>Suzlon</b> was the only wind turbine maker, with great pricing power, until it faced tremendous domestic and offshore competition starting from the middle of 2000 (as the book puts it). Projecting its financials purely from history would have been a blunder.</div>
+<p>Quotes from the book: Warren Buffett has "no use whatsoever for projections or forecasts" and looks deeply at <b>track records</b>. Charlie Munger says projections "do more harm than good". Graham and Dodd: a past trend is a fact, a future trend only an assumption, and the past is only a "rough index" to the future.</p>
+
+<h3 id="s14">8.14 Peer comparison</h3>
+<p>Comparing a company's ratios with those of peers in the same sector shows its competitive position. The book calls peer comparison <b>critical</b> for any research report. Databases give quick peer snapshots.</p>
+</section>
+
+<section class="sec" id="s15"><span class="secno">8.15</span><h2>Other things to track</h2>
+<h3>History of equity expansion</h3>
+<p>Raising money costs the business; if raised expensively, existing shareholders bear it. Debt costs are clear from the contract; the cost of issuing equity is harder to see. Ways to issue shares:</p>
+<ul><li>Rights issue (to existing shareholders in proportion to holdings)</li><li>Public issue (IPO or FPO)</li><li>Private placement: preferential issue, qualified institutional placement (QIP)</li><li>Exercise of warrants</li><li>ESOPs or sweat equity</li></ul>
+</div>
+
+<figure class="fig" id="fig-dilution"><figcaption>Which issues dilute existing shareholders?<span>As the book explains</span></figcaption>
+<div class="grid g2">
+<div class="box gd"><span class="tag">Rights issue</span><p>No major dilution: offered to all in proportion. Dilutes <b>only those who do not take up</b> their rights.</p></div>
+<div class="box"><span class="tag">Preferential allotment</span><p>Raises the chosen investor's stake, cuts everyone else's. Two views: dilution risk, <b>or</b> a sign that someone may bail the company out in a crisis. Check the situation and price: a <b>premium</b> price is value-accretive for minorities.</p></div>
+<div class="box"><span class="tag">QIP</span><p>Dilutes, but likely shows <b>institutional confidence</b> in fundamentals.</p></div>
+<div class="box gd"><span class="tag">Internal accruals</span><p>Growth funded from the company's own profits: very little dilution concern.</p></div>
+</div></figure>
+
+<div class="col">
+<h3>Dividend and earnings history</h3>
+<ul>
+<li>Dividends plus capital gains make up an investor's total return.</li>
+<li><b>Growth phase:</b> companies pay little or no dividend; shareholders do not mind if the company earns more on the money than they could.</li>
+<li><b>Mature phase:</b> shareholders expect timely dividends. Predictability matters; high-yield stocks attract long-term income seekers.</li>
+<li>Mature companies in <b>defensive</b> industries offer the most predictable dividends, often with interim dividends. Book examples: <b>Colgate Palmolive</b>, <b>Britannia</b>.</li>
+<li>Some companies smooth dividends: build reserves in good years, use them in bad years.</li>
+<li><b>Buybacks</b> (other than for stock-based compensation) are also a way to distribute profit; companies may prefer them for tax reasons, and they let investors choose to sell or raise their stake.</li>
+</ul>
+<div class="why"><b>Reading the signals</b>A strong company retaining more profit than usual may plan a big investment, or may expect hard times. A high-growth company raising its dividend may see fewer growth opportunities. When a dividend breaks sharply from the past, ask management why.</div>
+<h3>History of corporate actions</h3>
+<p>Dividends, bonuses, splits and rights affect the share price. Chapter 9 covers them.</p>
+<h3>Insider buying and selling</h3>
+<p>Owners know the business best, and trade within SEBI's guidelines. Their trades can give insight. Peter Lynch, quoted in the book: insiders sell for many reasons, which need not ring alarm bells, "but if insiders are buying, then there can be only one reason that the company is likely to make huge profits in future".</p>
+<p class="ptr">The book's text gives Bharti Airtel's total debt as "Rs.12.87 billion" and core working capital as "negative Rs.2.36 billion", but its own tables (in Rs million) show 12,87,036 and minus 2,36,141. The quiz does not use these two figures.</p>
+</section>
+
+<section class="sec" id="traps"><h2>All exam traps in this chapter</h2>
+<ol class="traplist">
+<li>Statement format: Schedule III of the Companies Act, 2013 and Ind AS 1. Banks, insurers, utilities use their regulators' formats.</li>
+<li>Ind AS 1 requires OCI in the P&amp;L statement, below net profit.</li>
+<li>Control: more than 50% votes, or right to appoint the board majority, or de facto control (Ind AS 110).</li>
+<li>SEBI (as per the book): consolidated annually, standalone quarterly.</li>
+<li>Self-generated brands cannot be shown as assets; internally developed software can.</li>
+<li>Goodwill = price paid minus fair value of net assets. Paying less goes to capital reserve.</li>
+<li>Inventory: lower of cost or market value. Receivables: net of doubtful debt provision.</li>
+<li>Investments in JVs and associates use the equity method.</li>
+<li>Minority interest appears only in consolidated statements.</li>
+<li>Provision: specific obligation. Reserve: no specific obligation.</li>
+<li>Total debt includes current portion of long-term debt, finance leases and accrued interest.</li>
+<li>Core working capital = inventory + receivables &minus; payables.</li>
+<li>Raw material cost = purchases + opening stock &minus; closing stock.</li>
+<li>Loss-making company: basic EPS = diluted EPS.</li>
+<li>Gross profit usually cannot be computed for Indian companies.</li>
+<li>EBITDA is best for comparing firms; EBIT is "operating profit".</li>
+<li>Deferred tax has no cash impact.</li>
+<li>Buying assets: negative investing cash flow. Borrowing: positive financing cash flow.</li>
+<li>Contingent liabilities are not recorded in the accounts, only in notes.</li>
+<li>Audit reports: clean, disclaimer, qualified.</li>
+<li>ROE = PAT &divide; net worth. ROCE = EBIT &divide; capital employed. Use average balances.</li>
+<li>D/E benchmark: 1 or less on the most conservative basis.</li>
+<li>Current ratio below 1 is not always bad: customers may be funding working capital.</li>
+<li>Inventory turnover is high for FMCG, low for capital goods.</li>
+<li>DuPont: margin &times; asset turnover &times; equity multiplier. ROE from leverage adds risk.</li>
+<li>Rights issues dilute only those who do not subscribe.</li>
+<li>Insider buying is a stronger signal than insider selling (Peter Lynch).</li>
+</ol>
+</section>
+
+<section class="sec" id="talk"><h2>For the group discussion</h2>
+<ol class="talk">
+<li>Pick a listed company. Do its standalone and consolidated revenues differ much? Why?</li>
+<li>Why might a profitable company still run out of cash? Use the book's Rs 80,000 example.</li>
+<li>Bharti Airtel's current ratio was 0.35. Is that a problem? Argue both sides.</li>
+<li>Two companies have the same ROE. How would DuPont help you choose between them?</li>
+<li>A company has made three preferential allotments in four years. What would you check?</li>
+</ol>
+</section>
+</div>
+
+<footer>Notes built from the NISM Series XV workbook (February 2026 version). Study aid only.</footer>
+</div>
+</div><div class="view" id="v-cards" hidden><div class="wrap"><div class="fc-wrap">
+<div class="fc-top"><span id="fc-count" class="ptr"></span><label class="ptr"><input type="checkbox" id="fc-missed"> Only cards I missed</label></div>
+<div class="fc-prog"><div id="fc-bar"></div></div>
+<div class="card3d" id="fc-card" tabindex="0" role="button" aria-label="Flip card"><div class="inner">
+<div class="face"><span class="lbl" id="fc-pos"></span><div class="front-txt" id="fc-front"></div></div>
+<div class="face back"><span class="lbl">Answer</span><div class="back-txt" id="fc-back"></div></div></div></div>
+<p class="hint">Tap the card to flip. On a keyboard: space flips, right arrow = got it, left arrow = again.</p>
+<div class="btns"><button class="btn bad" id="fc-bad">Again</button><button class="btn good" id="fc-good">Got it</button></div>
+<div class="btns"><button class="btn sm" id="fc-shuffle">Shuffle</button><button class="btn sm" id="fc-reset">Clear progress</button></div>
+</div></div></div><div class="view" id="v-quiz" hidden><div class="wrap"><div class="qz">
+<div id="qz-setup" class="qz-setup"><h2>Test yourself</h2><p class="ptr" id="qz-counts"></p>
+<p>Scoring works like the real exam: +1 for a right answer, minus 0.25 for a wrong one, 0 for a skip. Skipping is allowed.</p>
+<div class="box"><h4>Which questions?</h4>
+<label><input type="radio" name="qset" value="quick" checked> Quick 10 (random MCQs)</label>
+<label><input type="radio" name="qset" value="mcq"> All MCQs</label>
+<label><input type="radio" name="qset" value="case"> Case sets only (the exam has 5 of these, 4 questions each)</label>
+<label><input type="radio" name="qset" value="all"> Everything</label>
+<label><input type="radio" name="qset" value="missed"> Only questions I got wrong before <span id="qz-missedn" class="ptr"></span></label></div>
+<div class="box"><h4>How?</h4>
+<label><input type="radio" name="qmode" value="practice" checked> Practice: see the answer after each question</label>
+<label><input type="radio" name="qmode" value="exam"> Exam: see everything at the end</label></div>
+<div class="btns" style="justify-content:flex-start"><button class="btn pri" id="qz-start">Start</button></div></div>
+<div id="qz-run" hidden><div class="qz-head"><span id="qz-pos"></span><span id="qz-modelbl"></span></div>
+<div id="qz-q"></div>
+<div class="btns" style="justify-content:space-between"><button class="btn sm" id="qz-prev">Back</button><span><button class="btn sm" id="qz-skip">Skip</button> <button class="btn pri sm" id="qz-check">Check</button> <button class="btn sm" id="qz-next">Next</button></span></div>
+<div class="btns" style="justify-content:flex-start"><button class="btn sm" id="qz-quit">Stop and go back</button></div></div>
+<div id="qz-end" hidden><h2>Your result</h2><div class="score" id="qz-score"></div><p class="verdict" id="qz-verdict"></p><p class="ptr" id="qz-penalty"></p>
+<div class="btns" style="justify-content:flex-start"><button class="btn pri" id="qz-copy">Copy result for the group</button><button class="btn" id="qz-again">Try another set</button></div>
+<h3>Review what you missed</h3><div class="review" id="qz-review"></div></div>
+</div></div></div><div class="toast" id="toast" role="status"></div>
+<script>window.__DATA__={"id": "ch08", "short": "Ch8", "title": "Chapter 8: Company analysis, financial analysis", "cards": [{"f": "Which rules govern the format of Indian financial statements?", "b": "<b>Schedule III</b> of the Companies Act, 2013 and <b>Ind AS 1</b>."}, {"f": "Complete set of financial statements under Ind AS 1", "b": "Balance sheet, statement of profit and loss (with OCI), statement of changes in equity, cash flow statement, notes."}, {"f": "Minimum comparative period", "b": "At least <b>one prior period</b> for every statement."}, {"f": "Who does not follow the Schedule III format?", "b": "<b>Banks, insurers and utilities</b>: they use formats set by their regulators."}, {"f": "Standalone versus consolidated", "b": "Standalone: one legal entity. Consolidated: all companies controlled by the parent, combined as one group."}, {"f": "When does a company control another?", "b": "More than 50% of voting rights, or the right to appoint a majority of the board, or de facto control (Ind AS 110)."}, {"f": "Which is usually preferred for equity analysis?", "b": "<b>Consolidated</b>: more holistic. Check standalone too if subsidiaries cannot pay dividends to the parent."}, {"f": "SEBI publishing rules, as per the book", "b": "Consolidated statements <b>annually</b>; standalone results <b>quarterly</b>. Quarterly consolidated is voluntary."}, {"f": "Can a company show its own brand as an asset?", "b": "<b>No.</b> Only assets measurable in money and paid for. Internally developed software is an exception that can be shown."}, {"f": "Current versus non-current asset", "b": "Current: benefit within one operating cycle (usually one year). Non-current: everything else, usually over a year."}, {"f": "PPE valuation", "b": "Historical cost less accumulated depreciation. Ind AS 16 allows revaluation, applied to a whole asset class."}, {"f": "Goodwill", "b": "Price paid for a business above the fair value of net assets. Tested for impairment. Book: Tigo Rwanda, 3,200 &minus; 2,838 = Rs 362 crore."}, {"f": "Paying less than fair value of net assets acquired", "b": "The difference goes to <b>capital reserve</b> under equity."}, {"f": "Investments in JVs and associates are shown using...", "b": "The <b>equity method</b>."}, {"f": "Inventory valuation", "b": "<b>Lower of cost or market value.</b>"}, {"f": "Receivables are shown...", "b": "Net of <b>provision for doubtful debts</b>."}, {"f": "Capital and revaluation reserves", "b": "Surplus from showing assets above purchase price. Usually <b>not available for dividends</b>."}, {"f": "Non-controlling (minority) interest", "b": "Outside shareholders' share in a subsidiary. Appears <b>only in consolidated</b> statements."}, {"f": "Lease liability", "b": "Right to use an asset for more than a year. Analysts often treat it as <b>debt</b>."}, {"f": "Deferred revenue (book example)", "b": "6-month pack for Rs 1,200, 5 months left: Rs 200 revenue, Rs <b>1,000</b> deferred."}, {"f": "Provision versus reserve", "b": "Provision: for a <b>specific</b> obligation not fully quantified (retirement benefits, warranty). Reserve: no specific obligation."}, {"f": "Total debt (book)", "b": "Long-term debt + current portion of long-term debt + short-term debt + finance lease obligations + accrued interest."}, {"f": "Net working capital (accountant's)", "b": "Current assets &minus; current liabilities."}, {"f": "Core working capital", "b": "Inventory + trade receivables &minus; trade payables (book suggests adding a reasonable cash balance)."}, {"f": "Why does a company need working capital, per the book?", "b": "It spends first and waits for customers to pay later. \"Day-to-day needs\" is a misnomer."}, {"f": "Cost of raw materials consumed", "b": "Purchases + opening stock &minus; closing stock."}, {"f": "Purchase of stock-in-trade", "b": "Goods bought and sold without further processing (most retail purchases)."}, {"f": "Depreciation method under Ind AS 16", "b": "Should reflect how the asset is used, for example a cab fleet by distance."}, {"f": "Exceptional items", "b": "Income or expenses outside the normal course of business: natural calamity losses, one-time regulatory charges."}, {"f": "Three parts of tax expense", "b": "Current tax, MAT, deferred tax. Deferred tax has no cash impact."}, {"f": "Basic versus diluted EPS", "b": "Diluted assumes in-the-money warrants, ESOPs and convertibles are converted. Same as basic for a <b>loss-making</b> company."}, {"f": "Five OCI items (book)", "b": "Revaluation surplus changes; defined benefit remeasurement; foreign operation translation; fair value changes through OCI; effective hedge gains or losses."}, {"f": "Single-step versus multi-step P&amp;L", "b": "Single-step: all income minus all expenses = PBT. Multi-step: shows intermediate profits like EBITDA."}, {"f": "Why can't most Indian companies' gross profit be computed?", "b": "They disclose only raw material costs, not other direct costs."}, {"f": "Why is EBITDA good for comparing firms?", "b": "Unaffected by capital structure (interest) and infrastructure and accounting choices (depreciation)."}, {"f": "EBIT is also called...", "b": "<b>Operating profit.</b> Used for interest coverage and free cash flow to the firm."}, {"f": "Adjusted PAT", "b": "PAT without exceptional items, adjusted for their tax impact."}, {"f": "Accrual basis", "b": "Income when earned, expenses when incurred, not when cash moves. So profit and cash differ."}, {"f": "Three cash flow types and signs", "b": "Operating: from the business. Investing: buying assets negative, selling positive. Financing: borrowing or issuing equity positive, repaying negative."}, {"f": "Kingfisher Airlines lesson", "b": "Years of negative operating cash flow; borrowed to pay interest until lenders stopped."}, {"f": "Four cash flow rules (book)", "b": "Net cash flow can deceive; analyse each stream separately; focus on sustainable recurring flows; adjust non-recurring items."}, {"f": "Frequent changes in accounting policy suggest...", "b": "A reason for <b>suspicion</b> of manipulation."}, {"f": "Contingent liabilities", "b": "Depend on an uncertain future event. <b>Not recorded</b> in the accounts; disclosed in notes. Judge their size."}, {"f": "Off-balance sheet items (book)", "b": "Operating leases, contingent liabilities, derivative contracts."}, {"f": "Signs of a value-creating company (8.8)", "b": "Consistent growth in sales, profit and net worth; falling debt; better margins; rising RoNW."}, {"f": "Three kinds of audit report (book)", "b": "<b>Clean</b> (no issues), <b>disclaimer</b> (could not verify), <b>qualified</b> (not true and fair)."}, {"f": "Three purposes of ratio analysis", "b": "Descriptive, diagnostic, predictive."}, {"f": "EBITDA margin", "b": "EBITDA &divide; Net sales. Bharti FY 2019: <b>32.2%</b>."}, {"f": "PAT margin", "b": "PAT &divide; Net sales."}, {"f": "ROE", "b": "PAT &divide; Net worth (use average net worth). \"Single most important parameter\" for equity investors."}, {"f": "ROCE", "b": "EBIT &divide; Capital employed. Capital employed = total assets &minus; non-interest-bearing current liabilities, or equity + debt."}, {"f": "D/E ratio and benchmark", "b": "Total adjusted debt &divide; Net worth. Most conservative benchmark: <b>1 or less</b>."}, {"f": "Interest coverage ratio", "b": "<b>EBIT &divide; Interest expense.</b> Below 1: earnings do not cover interest."}, {"f": "Current ratio", "b": "Current assets &divide; Current liabilities. Also called working capital ratio."}, {"f": "Quick ratio", "b": "(Current assets &minus; <b>Inventories</b>) &divide; Current liabilities."}, {"f": "Is a current ratio below 1 always bad?", "b": "<b>No.</b> If customers pay cash and suppliers give credit, customers are funding working capital."}, {"f": "Receivable turnover", "b": "Revenue &divide; Average receivables. Higher is better."}, {"f": "Payable turnover", "b": "Purchases &divide; Accounts payable. Low: long supplier credit (strength, or lack of cash)."}, {"f": "Asset turnover", "b": "Net sales &divide; Total assets."}, {"f": "Inventory turnover", "b": "Sales &divide; Inventory. High for FMCG, low for capital goods."}, {"f": "DuPont formula", "b": "ROE = Net profit margin &times; Asset turnover &times; Equity multiplier (Assets &divide; Equity)."}, {"f": "DuPont: HighLevCo versus LowLevCo (book)", "b": "HighLevCo ROE 92.3% (20%, 2.3x, 2.0x). LowLevCo 52.4% (22%, 2.4x, 1.0x). LowLevCo operates better; its lower ROE is only from no debt."}, {"f": "Suzlon lesson (8.13)", "b": "Past behaviour may not represent the future: competition ended its pricing power."}, {"f": "Which share issues dilute existing holders?", "b": "All except rights issues, which dilute only those who do not subscribe."}, {"f": "Preferential allotment at a premium", "b": "Value-accretive to minority shareholders: less dilution risk."}, {"f": "QIP signal", "b": "Dilutes, but likely shows institutional confidence in fundamentals."}, {"f": "Predictable dividends with interims (book examples)", "b": "Mature defensive companies such as <b>Colgate Palmolive</b> and <b>Britannia</b>."}, {"f": "High-growth company raises its dividend", "b": "May signal fewer growth opportunities ahead."}, {"f": "Peter Lynch on insiders", "b": "Insiders sell for many reasons; if they are <b>buying</b>, there is only one: they expect big profits."}], "mcqs": [{"id": "8.1", "q": "Which of the following items is found in an income statement?", "o": ["Change in accounts receivables", "Changes in inventory of finished goods and work in progress", "Changes in long-term debt", "None of the above"], "a": 1, "w": "Book sample question. Changes in inventory of WIP and finished goods is a P&amp;L expense line. The others are balance sheet or cash flow items."}, {"id": "8.2", "q": "Which section of the cash flow statement provides information about the amount of funds a company borrowed during the preceding year?", "o": ["Cash flow from investing activities", "Cash flows from net operations", "Cash flow from operating activities", "Cash flow from financing activities"], "a": 3, "w": "Book sample question. Borrowing and issuing equity are financing cash flows."}, {"id": "8.3", "q": "Which of the following measures the ability of a company to satisfy its short-term obligations as and when they come due?", "o": ["Return on equity", "Inventory turnover ratio", "Return on capital employed", "Current ratio"], "a": 3, "w": "Book sample question. Current ratio is a liquidity ratio."}, {"id": "8.4", "q": "The P/E ratio of a business is 10, its P/BV ratio is 5, book value per share is Rs 15 and there are 10,000 shares outstanding. What is the return on equity?", "o": ["25%", "50%", "20%", "75%"], "a": 1, "w": "Book sample question. Price = 5 &times; 15 = 75. EPS = 75 &divide; 10 = 7.5. ROE = EPS &divide; BV = 7.5 &divide; 15 = 50%. The number of shares is not needed."}, {"id": "8.5", "q": "Which of the following is NOT part of a complete set of financial statements under Ind AS 1?", "o": ["Directors' report", "Balance sheet", "Statement of changes in shareholders' equity", "Cash flow statement"], "a": 0, "w": "Ind AS 1 lists the balance sheet, profit and loss (with OCI), changes in equity, cash flow and notes."}, {"id": "8.6", "q": "Ind AS 1 requires the statement of profit and loss to also include:", "o": ["The directors' remuneration policy", "Share price history", "The auditor's report", "Other comprehensive income"], "a": 3, "w": "OCI is shown below net profit."}, {"id": "8.7", "q": "Banking, insurance and utility companies prepare their financial statements in the format prescribed by:", "o": ["Their respective industry regulators", "The stock exchange", "The statutory auditor", "Schedule III of the Companies Act, 2013"], "a": 0, "w": "The Schedule III format applies to all other industries."}, {"id": "8.8", "q": "According to the book, a company controls another company if it:", "o": ["Owns more than 50% of the voting rights or has the right to appoint a majority of the board", "Is its largest supplier", "Owns at least 10% of the shares", "Has a seat on its board"], "a": 0, "w": "Even below 50%, de facto control over strategy and operations requires consolidation under Ind AS 110."}, {"id": "8.9", "q": "As per the book, SEBI regulations require listed companies to publish:", "o": ["Neither standalone nor consolidated results", "Standalone statements annually only", "Consolidated results quarterly only", "Consolidated statements annually and standalone results quarterly"], "a": 3, "w": "Quarterly consolidated results are voluntary, as per the book."}, {"id": "8.10", "q": "When is it especially important to also analyse a parent company's standalone financial position?", "o": ["Never; consolidated statements are always enough", "When the parent has no subsidiaries", "When subsidiaries cannot pay dividends to the parent due to capital controls or debt covenants", "When the group publishes quarterly consolidated results"], "a": 2, "w": "Then the parent must be able to stand on its own in a crisis."}, {"id": "8.11", "q": "Which of the following cannot be recognised as an asset on the balance sheet?", "o": ["Internally developed software", "An acquired brand", "An acquired patent", "A self-generated brand name"], "a": 3, "w": "Self-generated assets cannot be shown, except that internally developed software can be."}, {"id": "8.12", "q": "A company pays Rs 500 crore to acquire 100% of a business whose net assets have a fair value of Rs 420 crore. The goodwill recognised is:", "o": ["Rs 500 crore", "Rs 80 crore", "Rs 920 crore", "Rs 420 crore"], "a": 1, "w": "Goodwill = consideration &minus; fair value of net assets = 500 &minus; 420 = 80. Same logic as the book's Tigo Rwanda example."}, {"id": "8.13", "q": "If a company pays less than the fair value of net assets taken over, the difference is taken to:", "o": ["Goodwill", "Deferred tax", "Capital reserve", "Revenue"], "a": 2, "w": "It goes to capital reserve under equity."}, {"id": "8.14", "q": "Inventory is shown in the balance sheet at:", "o": ["Cost price or market value, whichever is lower", "Market value always", "Selling price", "Cost price plus profit margin"], "a": 0, "w": "Lower of cost or market value."}, {"id": "8.15", "q": "Investments in joint ventures and associates are reported under the:", "o": ["Cost of carry method", "Equity method", "Straight-line method", "Revaluation model"], "a": 1, "w": "The carrying amount is adjusted for the investor's share of profit and OCI, and reduced by dividends."}, {"id": "8.16", "q": "Non-controlling (minority) interest appears in:", "o": ["Both standalone and consolidated statements", "Consolidated financial statements only", "Standalone financial statements only", "Neither"], "a": 1, "w": "It is the outside shareholders' share of a subsidiary's equity."}, {"id": "8.17", "q": "A customer buys a 12-month prepaid pack for Rs 2,400. After 3 months, the deferred revenue shown is:", "o": ["Rs 2,400", "Rs 200", "Rs 1,800", "Rs 600"], "a": 2, "w": "9 months of service remain: 2,400 &times; 9/12 = 1,800. Same logic as the book's 6-month pack example."}, {"id": "8.18", "q": "An amount set aside to meet a specific obligation that cannot yet be fully quantified, such as retirement benefits, is a:", "o": ["Provision", "Share premium", "General reserve", "Revaluation reserve"], "a": 0, "w": "Reserves are set aside without a specific obligation."}, {"id": "8.19", "q": "Which of the following is NOT included in total debt as calculated in the book?", "o": ["Accrued interest", "Current portion of long-term debt", "Financial lease obligations", "Trade payables"], "a": 3, "w": "Total debt = long-term debt + current portion + short-term debt + finance leases + accrued interest. Payables carry no interest."}, {"id": "8.20", "q": "Inventory Rs 50 crore, trade receivables Rs 120 crore, trade payables Rs 90 crore, cash Rs 30 crore. Core working capital (as usually calculated in the book) is:", "o": ["Rs 170 crore", "Rs 260 crore", "Rs 80 crore", "Rs 110 crore"], "a": 2, "w": "Inventory + receivables &minus; payables = 50 + 120 &minus; 90 = 80. The usual calculation leaves out cash."}, {"id": "8.21", "q": "Opening raw material stock Rs 40 lakh, purchases Rs 300 lakh, closing stock Rs 60 lakh. Cost of raw materials consumed is:", "o": ["Rs 300 lakh", "Rs 320 lakh", "Rs 280 lakh", "Rs 400 lakh"], "a": 2, "w": "Purchases + opening stock &minus; closing stock = 300 + 40 &minus; 60 = 280."}, {"id": "8.22", "q": "Most of the purchases in the retail sector are shown under:", "o": ["Purchase of stock-in-trade", "Finance cost", "Capital work in progress", "Cost of raw materials"], "a": 0, "w": "Stock-in-trade is goods sold without further processing."}, {"id": "8.23", "q": "According to Ind AS 16, the method of depreciation should take into consideration:", "o": ["The way the asset is used", "The share price", "Only the tax rate", "The auditor's preference"], "a": 0, "w": "The book's example: a cab operator may depreciate by distance travelled."}, {"id": "8.24", "q": "For a loss-making company, diluted EPS is:", "o": ["Not reported", "Always zero", "The same as basic EPS", "Always higher than basic EPS"], "a": 2, "w": "The book states that for loss-making companies the two are one and the same."}, {"id": "8.25", "q": "A company earns net profit of Rs 22 lakh. It had 10 lakh shares all year and issued 2 lakh more exactly halfway through the year. Basic EPS is:", "o": ["Rs 1.83", "Rs 1.10", "Rs 2.00", "Rs 2.20"], "a": 2, "w": "Weighted average shares = 10 + 2 &times; 0.5 = 11 lakh. EPS = 22 &divide; 11 = Rs 2.00."}, {"id": "8.26", "q": "Which of the following is an item of other comprehensive income?", "o": ["Re-measurement gain or loss on defined benefit plans", "Purchase of stock-in-trade", "Finance cost", "Revenue from operations"], "a": 0, "w": "OCI bypasses the P&amp;L and mostly covers non-operating value changes."}, {"id": "8.27", "q": "Why is it generally not possible to calculate gross profit for Indian companies?", "o": ["They report only cash flows", "They do not report revenue", "Gross profit is banned by Ind AS", "They do not separately disclose direct costs other than raw materials"], "a": 3, "w": "Raw material cost is disclosed, but other direct costs are not."}, {"id": "8.28", "q": "EBITDA is an appropriate metric for comparing two firms because it is:", "o": ["Not affected by capital structure and infrastructure choices", "Required by SEBI", "Always equal to cash flow", "Calculated after tax"], "a": 0, "w": "Interest depends on funding choices; depreciation on infrastructure and accounting choices."}, {"id": "8.29", "q": "EBIT is referred to as:", "o": ["Net profit", "Gross profit", "Cash profit", "Operating profit"], "a": 3, "w": "It is also the numerator of the interest coverage ratio."}, {"id": "8.30", "q": "While calculating adjusted profit after tax, analysts remove exceptional items and also factor in:", "o": ["Their tax impact", "Their effect on share price", "The auditor's fees", "Dividends paid"], "a": 0, "w": "Exceptional items affect tax too, so the tax impact must be adjusted."}, {"id": "8.31", "q": "A business buys goods for Rs 80,000 in cash and sells them for Rs 1,00,000 on credit. At this point the business has:", "o": ["Neither profit nor cash", "A loss of Rs 80,000", "A profit of Rs 20,000 but no cash from the sale", "A cash gain of Rs 20,000"], "a": 2, "w": "The book's example of accrual profit without cash. If the customer never pays, even the Rs 80,000 is lost."}, {"id": "8.32", "q": "A company buys new machinery for cash. In the cash flow statement this is a:", "o": ["Positive investing cash flow", "Negative investing cash flow", "Negative financing cash flow", "Positive operating cash flow"], "a": 1, "w": "Buying assets is negative investing cash flow; selling them is positive."}, {"id": "8.33", "q": "Repaying a bank loan is shown as a:", "o": ["Negative financing cash flow", "Negative operating cash flow", "Negative investing cash flow", "Positive financing cash flow"], "a": 0, "w": "Borrowing is positive financing cash flow; repaying is negative."}, {"id": "8.34", "q": "PAT is Rs 100 crore and depreciation is Rs 30 crore. Receivables rose by Rs 20 crore and payables rose by Rs 10 crore. Operating cash flow is:", "o": ["Rs 130 crore", "Rs 120 crore", "Rs 100 crore", "Rs 160 crore"], "a": 1, "w": "Add back non-cash depreciation: 130. Higher receivables means sales not yet collected in cash: minus 20. Higher payables means purchases not yet paid: plus 10. Total 120."}, {"id": "8.35", "q": "According to the book, a business that runs negative operating cash flows for several years:", "o": ["Has no need for external funds", "Is always growing healthily", "Signals an alarming risk and needs continuous borrowing or equity to keep going", "Should be valued on P/E only"], "a": 2, "w": "The book's example is Kingfisher Airlines."}, {"id": "8.36", "q": "Which of the following is NOT one of the book's points on cash flow analysis?", "o": ["Each cash flow stream should be analysed independently", "Net cash flow alone is the best measure of health", "Focus on sustainable and recurring cash flows", "Adjust for non-recurring or extraordinary items"], "a": 1, "w": "The book warns that looking at net cash flows could be deceptive."}, {"id": "8.37", "q": "Contingent liabilities are:", "o": ["Shown as negative assets", "Recorded as current liabilities", "Not recorded in the accounts, but disclosed in the notes to accounts", "Recorded as provisions"], "a": 2, "w": "Examples: lawsuits, tax disputes, bank guarantees, warranty claims."}, {"id": "8.38", "q": "Which of the following is an off-balance sheet item as per the book?", "o": ["Trade payables", "Share capital", "Long-term debt", "Operating lease"], "a": 3, "w": "Operating leases, contingent liabilities and derivative contracts are the book's examples."}, {"id": "8.39", "q": "A company that keeps changing its accounting policies every year should:", "o": ["Be ignored, as policies do not matter", "Be seen as more transparent", "Attract closer scrutiny for possible manipulation", "Get a clean audit report automatically"], "a": 2, "w": "The book calls frequent changes a reason for suspicion."}, {"id": "8.40", "q": "Auditors are unable to verify part of the financials because information is not available. They will issue a:", "o": ["Disclaimer", "Clean report", "Qualified report", "Unmodified report"], "a": 0, "w": "A qualified report is when auditors believe the statements do not give a true and fair view."}, {"id": "8.41", "q": "Auditors believe part of the financial statements do not reflect a true and fair view because they disagree with an accounting policy. They will issue a:", "o": ["Qualified report", "Disclaimer", "Clean report", "Comfort letter"], "a": 0, "w": "They must also explain the reasons."}, {"id": "8.42", "q": "Which of the following is NOT one of the three purposes of ratio analysis listed in the book?", "o": ["Diagnostic", "Descriptive", "Regulatory", "Predictive"], "a": 2, "w": "The book lists descriptive, diagnostic and predictive studies."}, {"id": "8.43", "q": "EBITDA is Rs 300 crore and net sales are Rs 1,200 crore. The EBITDA margin is:", "o": ["25%", "30%", "4%", "400%"], "a": 0, "w": "EBITDA &divide; Net sales = 300 &divide; 1,200 = 25%."}, {"id": "8.44", "q": "PAT is Rs 50 crore. Net worth was Rs 450 crore at the start of the year and Rs 550 crore at the end. ROE on average net worth is:", "o": ["9.1%", "11.1%", "5%", "10%"], "a": 3, "w": "Average net worth = (450 + 550) &divide; 2 = 500. ROE = 50 &divide; 500 = 10%. The book recommends averages for balance sheet items."}, {"id": "8.45", "q": "EBIT is Rs 150 crore. Capital employed was Rs 1,100 crore at the start and Rs 1,300 crore at the end. ROCE on average capital employed is:", "o": ["8.0%", "11.5%", "12.5%", "13.6%"], "a": 2, "w": "Average = 1,200. ROCE = 150 &divide; 1,200 = 12.5%."}, {"id": "8.46", "q": "On the most conservative basis, the book suggests a debt-to-equity ratio benchmark of:", "o": ["2 or more", "Exactly 3", "There is no benchmark", "1 or less"], "a": 3, "w": "Then the decision should depend on industry, track record and capital needs."}, {"id": "8.47", "q": "An interest coverage ratio below 1 means:", "o": ["Net profit is higher than interest", "The company is very liquid", "The company has no debt", "Earnings before interest and tax are less than the interest expense"], "a": 3, "w": "Interest coverage = EBIT &divide; interest expense."}, {"id": "8.48", "q": "The quick ratio differs from the current ratio because it excludes:", "o": ["Cash", "Inventories", "Receivables", "Liquid fund investments"], "a": 1, "w": "Inventories cannot be converted into cash immediately."}, {"id": "8.49", "q": "A company collects cash on sales and pays its suppliers on credit, so its current ratio is below 1. According to the book this is:", "o": ["Always a sign of distress", "A reason for a qualified audit report", "A sign of excess inventory", "Not a red flag; its working capital is funded by customers"], "a": 3, "w": "Firms with strong bargaining power often prefer negative working capital."}, {"id": "8.50", "q": "Revenue is Rs 1,200 crore and average accounts receivable are Rs 200 crore. Accounts receivable turnover is:", "o": ["1,000 times", "6 times", "2 times", "0.17 times"], "a": 1, "w": "Revenue &divide; average receivables = 1,200 &divide; 200 = 6."}, {"id": "8.51", "q": "According to the book, inventory turnover would typically be:", "o": ["The same across all industries", "Irrelevant for manufacturers", "Low for FMCG and high for capital goods", "High for FMCG companies and low for capital goods companies"], "a": 3, "w": "FMCG goods sell fast; capital goods take long to build and sell."}, {"id": "8.52", "q": "Asset turnover ratio is calculated as:", "o": ["Total assets &divide; Net worth", "Current assets &divide; Current liabilities", "Net sales &divide; Total assets", "Net profit &divide; Total assets"], "a": 2, "w": "It is also a component of DuPont analysis."}, {"id": "8.53", "q": "A company has a net profit margin of 5%, asset turnover of 2 times and an equity multiplier of 3 times. Its ROE is:", "o": ["10%", "6%", "15%", "30%"], "a": 3, "w": "ROE = 5% &times; 2 &times; 3 = 30%."}, {"id": "8.54", "q": "According to DuPont analysis, a rise in ROE caused only by higher leverage is:", "o": ["Always the best kind of improvement", "A sign of higher operating efficiency", "Not necessarily a reason to cheer, as it also brings higher risk", "A sign of higher profit margin"], "a": 2, "w": "Rises from margin or efficiency are welcome; leverage adds risk."}, {"id": "8.55", "q": "In the book's example, LowLevCo has a lower ROE than HighLevCo mainly because of its:", "o": ["Higher tax rate", "Lower leverage", "Lower asset turnover", "Lower profit margin"], "a": 1, "w": "LowLevCo has a higher margin and slightly higher turnover; its equity multiplier is only 1.0x."}, {"id": "8.56", "q": "The book's Suzlon example shows that:", "o": ["Ratios cannot be used for forecasting at all", "Projecting financials purely from history can be a blunder when the business environment changes", "Pricing power never changes", "Wind energy is a defensive industry"], "a": 1, "w": "Suzlon lost its pricing power when competition arrived."}, {"id": "8.57", "q": "A rights issue causes dilution only for:", "o": ["All shareholders equally", "Shareholders who do not exercise their rights", "New investors only", "Promoters only"], "a": 1, "w": "Rights shares are offered to existing holders in proportion to their holdings."}, {"id": "8.58", "q": "According to the book, a preferential allotment made at a premium is:", "o": ["Not allowed by regulators", "Value-accretive to minority shareholders and poses lesser dilution risk", "Always harmful to minority shareholders", "The same as a rights issue"], "a": 1, "w": "The price of such issues should be considered along with the situation."}, {"id": "8.59", "q": "According to the book, when a high-growth company increases its dividend, it may indicate that:", "o": ["The company foresees reduced growth opportunities", "The company is about to go bankrupt", "The company has stopped making profits", "Insiders are selling shares"], "a": 0, "w": "When a dividend deviates sharply from the past, ask management why."}, {"id": "8.60", "q": "According to Peter Lynch, as quoted in the book, insiders buying their company's shares suggests:", "o": ["The shares are overvalued", "The company is likely to make huge profits in future", "Nothing at all", "Insiders need cash"], "a": 1, "w": "Insider selling can happen for many reasons; buying has only one."}], "cases": [{"id": "C14", "title": "Book case study: Company A versus Company B", "text": "Comparative financials of two companies for the past two years. Both are in the same industry and of reasonably similar size. (Book case study 5.)<div class=\"scroll\"><table class=\"cmp\"><thead><tr><th>Rs lakhs</th><th>A 2XX8</th><th>A 2XX9</th><th>B 2XX8</th><th>B 2XX9</th></tr></thead><tbody><tr><th colspan=\"5\">Income statement summary</th></tr><tr><th>Operating revenue</th><td>8,642.0</td><td>9,100.0</td><td>6,427.0</td><td>7,524.0</td></tr><tr><th>Cost of raw materials</th><td>3,024.7</td><td>3,003.0</td><td>2,185.2</td><td>2,558.2</td></tr><tr><th>Changes in inventory of finished goods and WIP</th><td>120.0</td><td>-35.0</td><td>160.0</td><td>140.0</td></tr><tr><th>Employee cost</th><td>976.5</td><td>1,055.6</td><td>687.7</td><td>880.3</td></tr><tr><th>Depreciation and amortisation</th><td>240.7</td><td>241.2</td><td>213.3</td><td>218.6</td></tr><tr><th>Finance cost</th><td>175.8</td><td>180.4</td><td>184.8</td><td>195.2</td></tr><tr><th>Other expenses</th><td>557.2</td><td>561.7</td><td>596.3</td><td>602.1</td></tr><tr><th>Profit before tax</th><td>3,547.1</td><td>4,093.1</td><td>2,399.7</td><td>2,929.6</td></tr><tr><th>(-) Tax expense</th><td>1,170.5</td><td>1,330.0</td><td>791.9</td><td>966.8</td></tr><tr><th>Profit after tax</th><td>2,376.5</td><td>2,763.1</td><td>1,607.8</td><td>1,962.8</td></tr><tr><th colspan=\"5\">Balance sheet summary</th></tr><tr><th>Fixed assets</th><td>2,407.0</td><td>2,412.0</td><td>2,133.0</td><td>2,186.0</td></tr><tr><th>Net working capital</th><td>2,160.5</td><td>2,275.0</td><td>1,606.8</td><td>1,881.0</td></tr><tr><th>Total assets</th><td>4,567.5</td><td>4,687.0</td><td>3,739.8</td><td>4,067.0</td></tr><tr><th>Debt</th><td>1,598.6</td><td>1,640.5</td><td>1,540.0</td><td>1,626.8</td></tr><tr><th>Equity</th><td>2,968.9</td><td>3,046.6</td><td>2,199.8</td><td>2,440.2</td></tr><tr><th>Total debt and equity</th><td>4,567.5</td><td>4,687.0</td><td>3,739.8</td><td>4,067.0</td></tr></tbody></table></div>", "qs": [{"q": "Company A had Rs 320 lakhs of finished goods and WIP in inventory at the end of 2XX8. Which is closest to its inventory of finished goods and WIP at the end of 2XX9?", "o": ["Rs 220 lakhs", "Rs 440 lakhs", "Rs 285 lakhs", "Rs 355 lakhs"], "a": 3, "w": "Change in inventory (an expense line) = opening &minus; closing = &minus;35. So closing = 320 + 35 = 355."}, {"q": "Companies in the industry raised selling prices, at different rates. Which company is likely to have raised its price at a higher rate, and why?", "o": ["Company A, as it earned higher net profit", "Company B, as its sales grew faster than A's", "Company B, as its net profit margin increased by 23% compared to only 15% growth for Company A", "Company A, as its cost of materials to sales ratio decreased year over year, while it remained constant for Company B"], "a": 3, "w": "Raw materials to sales: A fell from 35.0% to 33.0%; B stayed at 34.0%. A falling ratio points to higher selling prices. Faster sales growth can come from volume, so it proves nothing about price."}, {"q": "Which is closest to the difference between the EBITDA margins of Company A and Company B for 2XX9? (1 basis point = 0.01%)", "o": ["Company A's EBITDA margin is 427 bps higher than Company B's", "Company A's EBITDA margin is 518 bps higher than Company B's", "Company B's EBITDA margin is 450 bps higher than Company A's", "Both companies have very similar margins"], "a": 1, "w": "EBITDA = PBT + finance cost + D&amp;A. A: 4,093.1 + 180.4 + 241.2 = 4,514.7, margin 49.6%. B: 2,929.6 + 195.2 + 218.6 = 3,343.4, margin 44.4%. Gap about 518 bps."}, {"q": "Which of the two companies has a higher level of financial leverage?", "o": ["Company A, as it has a higher debt to asset ratio", "Company B, as it has a higher debt to asset ratio", "Company B, as it has a higher finance cost", "Company A, as it has a higher level of debt"], "a": 1, "w": "Debt &divide; assets in 2XX9: A 1,640.5 &divide; 4,687 = 35.0%; B 1,626.8 &divide; 4,067 = 40.0%. A has more debt in rupees only because it is bigger."}, {"q": "Which is closest to the operating profit of Company B for 2XX9?", "o": ["Rs 2,929.6 lakhs", "Rs 3,343.4 lakhs", "Rs 3,945.5 lakhs", "Rs 3,124.8 lakhs"], "a": 3, "w": "The book calls EBIT operating profit. EBIT = PBT + finance cost = 2,929.6 + 195.2 = 3,124.8. (3,343.4 is EBITDA.)"}, {"q": "Company A has a higher ROE than Company B. Which combination of factors has favourably contributed to A's higher ROE?", "o": ["Higher net profit margin only", "Higher net profit margin, higher activity ratio and lower financial leverage", "Higher net profit margin, higher activity ratio and higher financial leverage", "Higher net profit margin and higher activity ratio"], "a": 3, "w": "2XX9: margin A 30.4% vs B 26.1%; asset turnover A 1.94 vs B 1.85; equity multiplier A 1.54 vs B 1.67. A's lower leverage pulls its ROE down, so it is not a favourable factor."}]}, {"id": "C15", "title": "Book case study: forecasting from two years of data", "text": "Financial statements of a company for the previous two years. (Book case study 6.)<div class=\"scroll\"><table class=\"cmp\"><thead><tr><th>Rs lakhs</th><th>2XX6</th><th>2XX7</th></tr></thead><tbody><tr><th colspan=\"3\">Income statement summary</th></tr><tr><th>Operating revenue</th><td>8,642.0</td><td>9,100.0</td></tr><tr><th>Cost of raw materials</th><td>3,024.7</td><td>3,003.0</td></tr><tr><th>Changes in inventory of finished goods and WIP</th><td>120.0</td><td>-35.0</td></tr><tr><th>Employee cost</th><td>976.5</td><td>1,055.6</td></tr><tr><th>Depreciation and amortisation</th><td>240.7</td><td>241.2</td></tr><tr><th>Finance cost</th><td>175.8</td><td>180.4</td></tr><tr><th>Other expenses</th><td>557.2</td><td>561.7</td></tr><tr><th>Profit before tax</th><td>3,547.1</td><td>4,093.1</td></tr><tr><th>(-) Tax expense</th><td>1,170.5</td><td>1,330.0</td></tr><tr><th>Profit after tax</th><td>2,376.5</td><td>2,763.1</td></tr><tr><th colspan=\"3\">Balance sheet summary</th></tr><tr><th>Fixed assets</th><td>2,407.0</td><td>2,412.0</td></tr><tr><th>Net working capital</th><td>2,160.5</td><td>2,275.0</td></tr><tr><th>Total assets</th><td>4,567.5</td><td>4,687.0</td></tr><tr><th>Debt</th><td>1,598.6</td><td>1,640.5</td></tr><tr><th>Equity</th><td>2,968.9</td><td>3,046.6</td></tr><tr><th>Total debt and equity</th><td>4,567.5</td><td>4,687.0</td></tr></tbody></table></div>", "qs": [{"q": "Which is closest to the capital expenditure incurred by the company in 2XX7?", "o": ["Rs 6.2 lakhs", "Rs 241.2 lakhs", "Rs 246.2 lakhs", "Rs 5.0 lakhs"], "a": 2, "w": "Capex = closing fixed assets &minus; opening fixed assets + depreciation = 2,412.0 &minus; 2,407.0 + 241.2 = 246.2."}, {"q": "Which is closest to the estimated revenue for 2XX8, if revenue grows at the same rate as in 2XX7?", "o": ["Rs 9,582 lakhs", "Rs 9,614 lakhs", "Rs 9,100 lakhs", "Rs 9,558 lakhs"], "a": 0, "w": "Growth = 9,100 &divide; 8,642 &minus; 1 = 5.30%. 9,100 &times; 1.053 = 9,582."}, {"q": "Revenue for 2XX8 is expected to be Rs 9,500 lakhs, with EBITDA margin 25 bps lower than the previous year. Which is closest to the estimated EBITDA for 2XX8?", "o": ["Rs 4,475 lakhs", "Rs 2,860 lakhs", "Rs 4,689 lakhs", "Rs 2,647 lakhs"], "a": 2, "w": "2XX7 EBITDA = 4,093.1 + 180.4 + 241.2 = 4,514.7, margin 49.61%. Less 0.25% = 49.36%. 9,500 &times; 49.36% = 4,689."}, {"q": "Net working capital as a % of revenue is expected to stay the same in 2XX8. With revenue of Rs 9,500 lakhs, which is closest to the increase or decrease in working capital?", "o": ["Rs 100.0 lakhs", "Rs 275.0 lakhs", "Rs 0.0 lakhs", "Rs 400.0 lakhs"], "a": 0, "w": "2XX7 ratio = 2,275 &divide; 9,100 = 25%. 2XX8 NWC = 25% &times; 9,500 = 2,375. Increase = 100."}, {"q": "The company will repay Rs 200 lakhs of debt in the middle of 2XX8. If its average interest rate is unchanged, which is closest to the expected finance cost for 2XX8?", "o": ["Rs 180 lakhs", "Rs 172 lakhs", "Rs 200 lakhs", "Rs 144 lakhs"], "a": 1, "w": "Rate = 180.4 &divide; average 2XX7 debt (1,598.6 + 1,640.5) &divide; 2 = 11.1%. 2XX8 average debt = 1,640.5 &minus; 100 = 1,540.5 (the repayment counts for half a year). 1,540.5 &times; 11.1% = about 172."}, {"q": "2XX8 profit is estimated at Rs 3,200 lakhs. The company will pay an interim dividend of Rs 900 lakhs and a special dividend of Rs 1,000 lakhs. No other dividend, buyback or share issue. Which is closest to the book value of equity at the end of 2XX8?", "o": ["Rs 5,347 lakhs", "Rs 6,247 lakhs", "Rs 4,347 lakhs", "Rs 1,300 lakhs"], "a": 2, "w": "3,046.6 + 3,200 &minus; 900 &minus; 1,000 = 4,346.6."}]}, {"id": "C16", "title": "Sharma Textiles: a health check", "text": "An analyst pulls these figures for Sharma Textiles for the latest year.<div class=\"scroll\"><table class=\"cmp\"><thead><tr><th>Rs crore</th><th>Value</th></tr></thead><tbody><tr><th>Net sales</th><td>1,000</td></tr><tr><th>EBIT</th><td>90</td></tr><tr><th>Interest expense</th><td>30</td></tr><tr><th>Net profit (PAT)</th><td>40</td></tr><tr><th>Current assets (of which inventory 200)</th><td>600</td></tr><tr><th>Current liabilities</th><td>400</td></tr><tr><th>Total debt</th><td>500</td></tr><tr><th>Net worth</th><td>400</td></tr><tr><th>Total assets</th><td>1,000</td></tr></tbody></table></div>", "qs": [{"q": "What is Sharma's current ratio?", "o": ["1.5", "0.67", "2.5", "1.0"], "a": 0, "w": "Current assets &divide; current liabilities = 600 &divide; 400 = 1.5."}, {"q": "What is Sharma's quick ratio?", "o": ["1.0", "2.0", "1.5", "0.5"], "a": 0, "w": "(Current assets &minus; inventories) &divide; current liabilities = (600 &minus; 200) &divide; 400 = 1.0."}, {"q": "What is Sharma's interest coverage ratio?", "o": ["1.33 times", "0.33 times", "3.0 times", "2.0 times"], "a": 2, "w": "EBIT &divide; interest = 90 &divide; 30 = 3.0. (Using PAT, 40 &divide; 30, would be wrong.)"}, {"q": "How does Sharma's debt to equity ratio compare with the book's most conservative benchmark?", "o": ["1.25, below the benchmark of 2", "0.5, well below the benchmark", "0.8, below the benchmark of 1", "1.25, above the benchmark of 1"], "a": 3, "w": "Total debt &divide; net worth = 500 &divide; 400 = 1.25. The book's most conservative benchmark is 1 or less."}]}]};</script>
+<script>
+window.__WIDGETS__=function(){
+const s=document.getElementById('dp-s'),p=document.getElementById('dp-p'),a=document.getElementById('dp-a'),e=document.getElementById('dp-e');
+if(!s)return;
+function set(v){s.value=v[0];p.value=v[1];a.value=v[2];e.value=v[3];calc()}
+function calc(){const S=+s.value,P=+p.value,A=+a.value,E=+e.value;
+ const ok=S>0&&A>0&&E>0;
+ const npm=ok?P/S:0,at=ok?S/A:0,em=ok?A/E:0,roe=npm*at*em;
+ document.getElementById('dp-npm').textContent=ok?(npm*100).toFixed(1)+'%':'-';
+ document.getElementById('dp-at').textContent=ok?at.toFixed(2)+'x':'-';
+ document.getElementById('dp-em').textContent=ok?em.toFixed(2)+'x':'-';
+ document.getElementById('dp-roe').textContent=ok?(roe*100).toFixed(1)+'%':'-';
+ document.getElementById('dp-note').textContent=!ok?'Enter positive revenue, assets and equity.':(em>1.5?'Much of this ROE comes from leverage (assets are '+em.toFixed(1)+' times equity). That adds risk.':'Little or no leverage: this ROE comes mainly from margin and asset turnover.');
+}
+[s,p,a,e].forEach(x=>x.addEventListener('input',calc));
+document.getElementById('dp-high').addEventListener('click',()=>set([12000,2400,5200,2600]));
+document.getElementById('dp-low').addEventListener('click',()=>set([11800,2620,5000,5000]));
+calc();
+};
+</script><script>
+(function(){
+const DATA = window.__DATA__;
+const KEY = 'nismra:'+DATA.id+':';
+const store = {
+  get(k,d){try{const v=localStorage.getItem(KEY+k);return v?JSON.parse(v):d}catch(e){return d}},
+  set(k,v){try{localStorage.setItem(KEY+k,JSON.stringify(v))}catch(e){}}
+};
+const $=(s,r=document)=>r.querySelector(s);
+const el=(t,a={},h='')=>{const e=document.createElement(t);for(const k in a){if(k==='class')e.className=a[k];else e.setAttribute(k,a[k])}if(h)e.innerHTML=h;return e};
+function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),1600)}
+/* theme */
+const tb=$('#themebtn');
+function applyTheme(t){if(t)document.documentElement.setAttribute('data-theme',t);else document.documentElement.removeAttribute('data-theme');tb.textContent=(t==='dark'||(!t&&matchMedia('(prefers-color-scheme: dark)').matches))?'\u2600':'\u263E'}
+let th=null;try{th=localStorage.getItem('nismra:theme')}catch(e){}
+applyTheme(th);
+tb.addEventListener('click',()=>{const dark=document.documentElement.getAttribute('data-theme')==='dark'||(!document.documentElement.getAttribute('data-theme')&&matchMedia('(prefers-color-scheme: dark)').matches);const n=dark?'light':'dark';applyTheme(n);try{localStorage.setItem('nismra:theme',n)}catch(e){}});
+/* tabs */
+const tabs=[...document.querySelectorAll('.tab')];
+function show(v){tabs.forEach(t=>t.setAttribute('aria-selected',t.dataset.v===v));document.querySelectorAll('.view').forEach(x=>x.hidden=x.id!=='v-'+v);if(v==='cards')renderCard();window.scrollTo(0,0);try{history.replaceState(null,'','#'+v)}catch(e){}}
+tabs.forEach(t=>t.addEventListener('click',()=>show(t.dataset.v)));
+/* ---------- flashcards ---------- */
+const cards=DATA.cards;
+let known=new Set(store.get('known',[]));
+let missed=new Set(store.get('missed',[]));
+let deck=[],pos=0,onlyMissed=false;
+function buildDeck(shuffle){deck=cards.map((c,i)=>i).filter(i=>!onlyMissed||missed.has(i));if(shuffle){for(let i=deck.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[deck[i],deck[j]]=[deck[j],deck[i]]}}pos=0}
+buildDeck(false);
+function renderCard(){
+  const c3=$('#fc-card');c3.classList.remove('flip');
+  const done=known.size;$('#fc-bar').style.width=(100*done/cards.length)+'%';
+  $('#fc-count').textContent=done+' of '+cards.length+' marked known';
+  if(!deck.length){$('#fc-front').innerHTML='No cards here.';$('#fc-back').innerHTML='Switch off "Only cards I missed" to see the full deck.';$('#fc-pos').textContent='';return}
+  if(pos>=deck.length){$('#fc-front').innerHTML='Deck done.';$('#fc-back').innerHTML='Press Shuffle to go again, or study only the cards you missed.';$('#fc-pos').textContent='';return}
+  const c=cards[deck[pos]];$('#fc-front').innerHTML=c.f;$('#fc-back').innerHTML=c.b;$('#fc-pos').textContent='Card '+(pos+1)+' of '+deck.length;
+}
+function flip(){$('#fc-card').classList.toggle('flip')}
+$('#fc-card').addEventListener('click',flip);
+$('#fc-card').addEventListener('keydown',e=>{if(e.key===' '||e.key==='Enter'){e.preventDefault();flip()}});
+function mark(ok){if(pos>=deck.length)return;const i=deck[pos];if(ok){known.add(i);missed.delete(i)}else{missed.add(i);known.delete(i)}store.set('known',[...known]);store.set('missed',[...missed]);pos++;renderCard()}
+$('#fc-good').addEventListener('click',()=>mark(true));
+$('#fc-bad').addEventListener('click',()=>mark(false));
+$('#fc-shuffle').addEventListener('click',()=>{buildDeck(true);renderCard()});
+$('#fc-missed').addEventListener('change',e=>{onlyMissed=e.target.checked;buildDeck(false);renderCard()});
+$('#fc-reset').addEventListener('click',()=>{known.clear();missed.clear();store.set('known',[]);store.set('missed',[]);buildDeck(false);renderCard();toast('Progress cleared')});
+document.addEventListener('keydown',e=>{if($('#v-cards').hidden)return;if(e.key==='ArrowRight')mark(true);if(e.key==='ArrowLeft')mark(false)});
+/* ---------- quiz ---------- */
+const Q=[];DATA.mcqs.forEach(q=>Q.push(Object.assign({kind:'mcq'},q)));
+(DATA.cases||[]).forEach(cs=>cs.qs.forEach((q,k)=>Q.push(Object.assign({kind:'case',caseTitle:cs.title,caseText:cs.text,id:cs.id+'-'+(k+1)},q))));
+let run=null;
+function pick(set){let arr;
+  if(set==='quick'){arr=Q.filter(q=>q.kind==='mcq').slice();for(let i=arr.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[arr[i],arr[j]]=[arr[j],arr[i]]}arr=arr.slice(0,10)}
+  else if(set==='mcq')arr=Q.filter(q=>q.kind==='mcq');
+  else if(set==='case')arr=Q.filter(q=>q.kind==='case');
+  else if(set==='missed'){const m=new Set(store.get('qmissed',[]));arr=Q.filter(q=>m.has(q.id))}
+  else arr=Q.slice();
+  return arr}
+function start(){const set=document.querySelector('input[name=qset]:checked').value;const mode=document.querySelector('input[name=qmode]:checked').value;const qs=pick(set);
+  if(!qs.length){toast('No questions in this set yet');return}
+  run={qs,mode,i:0,ans:qs.map(()=>null),checked:qs.map(()=>false)};$('#qz-setup').hidden=true;$('#qz-end').hidden=true;$('#qz-run').hidden=false;renderQ()}
+function renderQ(){const q=run.qs[run.i];const box=$('#qz-q');box.innerHTML='';
+  $('#qz-pos').textContent='Question '+(run.i+1)+' of '+run.qs.length;
+  $('#qz-modelbl').textContent=run.mode==='exam'?'Exam mode: answers shown at the end':'Practice mode';
+  if(q.kind==='case'){box.appendChild(el('div',{class:'qcase'},'<b>Case: '+q.caseTitle+'</b><br>'+q.caseText))}
+  box.appendChild(el('div',{class:'qtext'},q.q));
+  const L='abcd';
+  q.o.forEach((o,k)=>{const b=el('button',{class:'opt','aria-pressed':String(run.ans[run.i]===k)},'<span class="lt">'+L[k]+'</span><span>'+o+'</span>');
+    b.addEventListener('click',()=>{if(run.checked[run.i])return;run.ans[run.i]=k;renderQ()});box.appendChild(b)});
+  if(run.checked[run.i])paintCheck();
+  $('#qz-check').hidden=run.mode==='exam'||run.checked[run.i];
+  $('#qz-check').disabled=run.ans[run.i]===null;
+  $('#qz-prev').disabled=run.i===0;
+  $('#qz-next').textContent=run.i===run.qs.length-1?'Finish':'Next';
+  $('#qz-skip').hidden=run.checked[run.i];
+}
+function paintCheck(){const q=run.qs[run.i];const opts=[...document.querySelectorAll('#qz-q .opt')];opts.forEach((b,k)=>{b.disabled=true;if(k===q.a)b.classList.add('right');else if(k===run.ans[run.i])b.classList.add('wrong')});
+  const a=run.ans[run.i];const ok=a===q.a;const ex=el('div',{class:'explain '+(a===null?'':(ok?'ok':'no'))},'<b>'+(a===null?'Skipped. ':ok?'Correct. ':'Not quite. ')+'</b>'+q.w);$('#qz-q').appendChild(ex)}
+$('#qz-check').addEventListener('click',()=>{run.checked[run.i]=true;renderQ()});
+$('#qz-skip').addEventListener('click',()=>{run.ans[run.i]=null;if(run.mode==='practice'){run.checked[run.i]=true;renderQ()}else next()});
+$('#qz-prev').addEventListener('click',()=>{if(run.i>0){run.i--;renderQ()}});
+function next(){if(run.i<run.qs.length-1){run.i++;renderQ();window.scrollTo({top:0})}else finish()}
+$('#qz-next').addEventListener('click',next);
+$('#qz-start').addEventListener('click',start);
+$('#qz-quit').addEventListener('click',()=>{$('#qz-run').hidden=true;$('#qz-setup').hidden=false});
+function finish(){let c=0,w=0,s=0;const miss=new Set(store.get('qmissed',[]));const wrongIdx=[];
+  run.qs.forEach((q,i)=>{const a=run.ans[i];if(a===null){s++;miss.add(q.id);wrongIdx.push(i)}else if(a===q.a){c++;miss.delete(q.id)}else{w++;miss.add(q.id);wrongIdx.push(i)}});
+  store.set('qmissed',[...miss]);
+  const net=c-0.25*w;const pct=100*net/run.qs.length;
+  $('#qz-run').hidden=true;$('#qz-end').hidden=false;
+  $('#qz-score').innerHTML='<div><b>'+c+'</b><small>correct</small></div><div><b>'+w+'</b><small>wrong</small></div><div><b>'+s+'</b><small>skipped</small></div><div><b>'+net.toFixed(2)+'</b><small>net score</small></div>';
+  $('#qz-verdict').textContent=pct>=60?('Pass level. Net '+pct.toFixed(0)+'%.'):('Below the 60% pass line. Net '+pct.toFixed(0)+'%.');
+  $('#qz-penalty').textContent=w?('Wrong answers cost you '+(0.25*w).toFixed(2)+' marks.'):'No marks lost to negative marking.';
+  const rv=$('#qz-review');rv.innerHTML='';const L='abcd';
+  if(!wrongIdx.length)rv.innerHTML='<p>Nothing to review. Every answer was right.</p>';
+  wrongIdx.forEach(i=>{const q=run.qs[i];const a=run.ans[i];rv.appendChild(el('div',{class:'item'},'<p><b>'+q.q+'</b></p><p>Your answer: '+(a===null?'skipped':L[a]+') '+q.o[a])+'</p><p>Right answer: <b>'+L[q.a]+') '+q.o[q.a]+'</b></p><p class="ptr">'+q.w+'</p>'))});
+  run.summary=DATA.short+' quiz: '+c+'/'+run.qs.length+' correct, '+w+' wrong, '+s+' skipped. Net '+net.toFixed(2)+' ('+pct.toFixed(0)+'%).'+(wrongIdx.length?' Missed: '+wrongIdx.map(i=>run.qs[i].id).join(', '):'');
+}
+$('#qz-copy').addEventListener('click',()=>{const t=run&&run.summary||'';(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(()=>toast('Copied. Paste it in the group chat.')).catch(()=>{prompt('Copy this:',t)})});
+$('#qz-again').addEventListener('click',()=>{$('#qz-end').hidden=true;$('#qz-setup').hidden=false;updateMissedCount()});
+function updateMissedCount(){const n=store.get('qmissed',[]).length;$('#qz-missedn').textContent=n?('('+n+' saved)'):'(none yet)'}
+updateMissedCount();
+$('#qz-counts').textContent=DATA.mcqs.length+' MCQs and '+(DATA.cases||[]).reduce((s,c)=>s+c.qs.length,0)+' case questions';
+/* interactive widgets hook */
+if(window.__WIDGETS__)window.__WIDGETS__();
+const h=(location.hash||'').replace('#','');if(['learn','cards','quiz'].includes(h))show(h);
+})();
+</script></body></html>

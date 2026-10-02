@@ -6,7 +6,7 @@ Read this whole file before doing anything. It covers the goal, the user's rules
 
 ## 1. The project in one paragraph
 
-The organiser runs a study group preparing for the **NISM Series XV: Research Analyst** certification exam (SEBI). The group reads the official NISM workbook **one chapter at a time, in order**, and meets to discuss. For each chapter we produce: tighter, simpler, more visual notes than the book, plus assessment material (exam-style MCQs, case-based question sets, flashcards, quizzes). An orientation page (Session 0) and Chapters 1 to 6 are done and live. **Chapter 7 is next.**
+The organiser runs a study group preparing for the **NISM Series XV: Research Analyst** certification exam (SEBI). The group reads the official NISM workbook **one chapter at a time, in order**, and meets to discuss. For each chapter we produce: tighter, simpler, more visual notes than the book, plus assessment material (exam-style MCQs, case-based question sets, flashcards, quizzes). An orientation page (Session 0) and Chapters 1 to 8 are done and live. **Chapter 9 is next.**
 
 ---
 
@@ -38,9 +38,9 @@ The organiser runs a study group preparing for the **NISM Series XV: Research An
 | 4 | Fundamentals of Research | 5 | 78 | Done |
 | 5 | Economic Analysis | 5 | 90 | Done |
 | 6 | Industry Analysis | 8 | 105 | Done |
-| 7 | Company Analysis: Business and Governance | 6 | 130 | **Next** |
-| 8 | Company Analysis: Financial Analysis | 12 | 145 | |
-| 9 | Corporate Actions | 5 | 187 | |
+| 7 | Company Analysis: Business and Governance | 6 | 130 | Done |
+| 8 | Company Analysis: Financial Analysis | 12 | 145 | Done |
+| 9 | Corporate Actions | 5 | 187 | **Next** |
 | 10 | Valuation Principles | 12 | 198 | |
 | 11 | Fundamental Analysis of Commodities | 5 | 218 | |
 | 12 | Fundamentals of Risk and Return | 7 | 228 | |
@@ -85,7 +85,9 @@ NISM-RA-Study-Kit/
   Ch03-Equity-Debt-Terms/
   Ch04-Fundamentals-of-Research/
   Ch05-Economic-Analysis/
-  Ch06-Industry-Analysis/           (each with study page, question bank, visuals/)
+  Ch06-Industry-Analysis/
+  Ch07-Company-Business-Governance/
+  Ch08-Company-Financial-Analysis/  (each with study page, question bank, visuals/)
   _build/
     template.py                     Shared CSS, JS and HTML shell for every chapter page
     ch01.py                         Chapter 1 content: LEARN html, CARDS, MCQS, CASES, DATA
@@ -96,6 +98,8 @@ NISM-RA-Study-Kit/
     ch04.py                         Chapter 4
     ch05.py                         Chapter 5
     ch06_learn.py, ch06_qs.py       Chapter 6
+    ch07.py                         Chapter 7
+    ch08_learn.py, ch08_qs.py       Chapter 8 (widget: DuPont calculator; case tables built by _table())
     build.py                        Builds every page, the home page, question banks, README
     export.py                       Screenshots each <figure class="fig"> to visuals/*.png
     publish/                        Copies of chapter pages with the home link removed (for hosting)
@@ -109,6 +113,8 @@ Content counts:
 - Chapter 4: 41 flashcards, 34 MCQs, 2 case sets (C6, C7).
 - Chapter 5: 43 flashcards, 39 MCQs, 2 case sets (C8, C9). Includes one two-option true/false question from the book.
 - Chapter 6: 60 flashcards, 49 MCQs, 2 case sets (C10, C11). Porter five forces and BCG matrix diagrams.
+- Chapter 7: 45 flashcards, 35 MCQs, 2 case sets (C12, C13). Book sample questions 2 and 3 are not in the quiz: the chapter text does not settle their answers.
+- Chapter 8: 69 flashcards, 60 MCQs, 3 case sets: C14 and C15 are the book's own case studies (6 questions each, answers worked out from the book's figures), C16 is ours. Ratio formula sheet and DuPont calculator.
 
 **The question bank .md files are not extra questions.** They are the same questions as each page's quiz, in a printable text form, for anyone who prefers paper or wants to discuss specific question numbers.
 
@@ -122,6 +128,8 @@ Content counts:
 - Chapter 4: https://nism-study-group.github.io/nism-ra-kit/Ch04-Fundamentals-of-Research/Ch04-study-page.html
 - Chapter 5: https://nism-study-group.github.io/nism-ra-kit/Ch05-Economic-Analysis/Ch05-study-page.html
 - Chapter 6: https://nism-study-group.github.io/nism-ra-kit/Ch06-Industry-Analysis/Ch06-study-page.html
+- Chapter 7: https://nism-study-group.github.io/nism-ra-kit/Ch07-Company-Business-Governance/Ch07-study-page.html
+- Chapter 8: https://nism-study-group.github.io/nism-ra-kit/Ch08-Company-Financial-Analysis/Ch08-study-page.html
 - Add `#cards` or `#quiz` to any chapter link to open that tab directly.
 
 Repo: https://github.com/nism-study-group/nism-ra-kit (public, owned by the free organization `nism-study-group`). The repo root is the folder that contains `NISM-RA-Study-Kit/`. A GitHub Actions workflow (`.github/workflows/pages.yml`) publishes `NISM-RA-Study-Kit/` on every push to `main`, leaving out `_build/` and `HANDOVER.md`. Commits use the author `nism-study-group <nism-study-group@users.noreply.github.com>` (set in the repo's local git config) so no personal email appears. The `.gitignore` excludes `source/`, `*.pdf`, `workbook*`, `_build/publish/`, `__pycache__/`, `*.zip`, `archive/`, `.venv/` and `.DS_Store`.
@@ -164,7 +172,9 @@ DATA  = {"id": "ch03", "short": "Ch3", "title": "Chapter 3: ...", "cards": CARDS
 
 - `a` is the index of the correct option **as written**. `build.py` then shuffles options with **balanced answer placement** (each letter correct about equally often; MCQs and case questions are balanced separately). Any option containing "above" ("All of the above", "None of the above") stays last. Write questions in any order; do not hand-balance.
 - `w` should say why the right answer is right and, where useful, why a tempting wrong option is wrong.
-- Case set IDs run across the whole kit: C0 (orientation), C1 (Ch1), C2 and C3 (Ch2), C4 and C5 (Ch3), C6 and C7 (Ch4), C8 and C9 (Ch5), C10 and C11 (Ch6). Chapter 7 should start at C12.
+- Case set IDs run across the whole kit: C0 (orientation), C1 (Ch1), C2 and C3 (Ch2), C4 and C5 (Ch3), C6 and C7 (Ch4), C8 and C9 (Ch5), C10 and C11 (Ch6), C12 and C13 (Ch7), C14 to C16 (Ch8). Chapter 9 should start at C17.
+- The workbook prints sample questions without answers. Work out each answer from the chapter text or the book's own figures; leave a sample question out of the quiz if the text does not settle it.
+- Case sets may hold a table: put an HTML table in `text` (see `_table()` in `ch08_qs.py`); `build.py` turns it into readable rows in the printable bank.
 - New chapters go at the **end** of the `CH` dict: each chapter's shuffle seed comes from its position.
 
 ### The page engine (template.py)
@@ -260,7 +270,7 @@ No file names should print.
 
 ## 11. Suggested next steps
 
-1. Chapter 7 (Company Analysis: Business and Governance, 6 marks).
+1. Chapter 9 (Corporate Actions, 5 marks).
 2. Keep the linear pace, one chapter per meeting.
 3. Later, once several chapters exist: a mixed mock test page drawing from all built chapters, weighted by the official marks, 80 MCQs plus 5 case sets, timed at 120 minutes.
 4. Consider a small "formula sheet" page when reaching Chapters 8, 10 and 12.

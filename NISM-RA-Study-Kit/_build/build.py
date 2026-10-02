@@ -1,7 +1,7 @@
 import os, random, json, re, sys
 sys.path.insert(0, os.path.dirname(__file__))
 from template import page, CSS, FONTS
-import ch00, ch01, ch02_learn, ch02_qs, ch03_learn, ch03_qs, ch04, ch05, ch06_learn, ch06_qs
+import ch00, ch01, ch02_learn, ch02_qs, ch03_learn, ch03_qs, ch04, ch05, ch06_learn, ch06_qs, ch07, ch08_learn, ch08_qs
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
@@ -16,6 +16,8 @@ CH = {
  "ch04": {"dir":"Ch04-Fundamentals-of-Research","file":"Ch04-study-page.html","data":ch04.DATA,"learn":ch04.LEARN,"widgets":"","title":"Fundamentals of research","n":4},
  "ch05": {"dir":"Ch05-Economic-Analysis","file":"Ch05-study-page.html","data":ch05.DATA,"learn":ch05.LEARN,"widgets":"","title":"Economic analysis","n":5},
  "ch06": {"dir":"Ch06-Industry-Analysis","file":"Ch06-study-page.html","data":ch06_qs.DATA,"learn":ch06_learn.LEARN,"widgets":"","title":"Industry analysis","n":6},
+ "ch07": {"dir":"Ch07-Company-Business-Governance","file":"Ch07-study-page.html","data":ch07.DATA,"learn":ch07.LEARN,"widgets":"","title":"Company analysis: business and governance","n":7},
+ "ch08": {"dir":"Ch08-Company-Financial-Analysis","file":"Ch08-study-page.html","data":ch08_qs.DATA,"learn":ch08_learn.LEARN,"widgets":ch08_learn.WIDGETS,"title":"Company analysis: financial analysis","n":8,"extra":"Includes both book case studies, a ratio formula sheet and a DuPont calculator."},
 }
 
 def shuffle_q(q, rng, target):
@@ -39,6 +41,12 @@ def prep(data, seed):
 
 def strip(h): return re.sub(r"<[^>]+>", "", h).replace("&amp;","&")
 
+def strip_rich(h):
+    # Keep tables readable in the printable bank: one row per line, cells separated by " | ".
+    h = re.sub(r"</t[hd]>", " | ", h); h = re.sub(r"</tr>", "\n", h)
+    h = re.sub(r"<table", "\n<table", h)
+    return "\n".join(l.strip().rstrip(" |") + "  " for l in strip(h).split("\n") if l.strip())
+
 def bank_md(key, c):
     d = c["data"]; L = "abcd"
     out = [f"# Chapter {c['n']}: {c['title']}" if c['n'] else f"# Session 0: {c['title']}", "", "Question bank for the NISM Series XV study group. Answers and explanations are at the end of each section so you can test yourself first.", "", "Scoring in the exam: +1 right, minus 0.25 wrong, 0 skipped.", "", "## Multiple-choice questions", ""]
@@ -50,7 +58,7 @@ def bank_md(key, c):
     for q in d["mcqs"]:
         out.append(f"- **Q{q['id']}: {L[q['a']]}**. {strip(q['w'])}")
     for cs in d.get("cases", []):
-        out += ["", f"## Case {cs['id']}: {cs['title']}", "", strip(cs["text"]), ""]
+        out += ["", f"## Case {cs['id']}: {cs['title']}", "", (strip_rich(cs["text"]) if "<table" in cs["text"] else strip(cs["text"])), ""]
         for k,q in enumerate(cs["qs"],1):
             out.append(f"**{cs['id']}-{k}.** {strip(q['q'])}  ")
             for j,o in enumerate(q["o"]): out.append(f"{L[j]}) {strip(o)}  ")
