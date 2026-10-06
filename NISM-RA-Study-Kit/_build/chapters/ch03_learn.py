@@ -91,7 +91,7 @@ LEARN = r"""
 </figure>
 
 <div class="col">
-<div class="trap">The book says there is <b>no fixed size cut-off</b> for large, mid and small cap. The ranking floats with the market, the period and the regulatory definition. (SEBI's current mutual fund definition uses different numbers. The exam follows the book.)</div>
+<div class="trap">The book says there is <b>no fixed size cut-off</b> for large, mid and small cap. The ranking floats with the market, the period and the regulatory definition.</div>
 <p>The ratio of a country's total <b>market cap to its GDP</b> is used to judge the size and importance of its stock market.</p>
 
 <h3>Enterprise value (EV)</h3>
