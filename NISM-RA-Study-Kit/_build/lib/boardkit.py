@@ -71,6 +71,9 @@ TEXT_SWAPS = {
     " Tap a chapter to open it.": "",
     "open the **Quiz** tab at the top of this page.": "open the **Quiz** tab on this session's web page.",
     "Try the calculator:": "Try the calculator on the web page:",
+    "Below, green candles closed higher and red candles closed lower. The highlighted candles form the pattern.": "The drawn pattern diagrams are on this chapter's web page.",
+    " Dashed lines are the trendlines drawn along the highs and lows.": " The drawn diagrams are on this chapter's web page.",
+    "The lower line is support; the upper line is resistance. A break above resistance on volume is a breakout.": "A break above resistance on volume is a breakout.",
 }
 
 def _segs(n, mark=None):

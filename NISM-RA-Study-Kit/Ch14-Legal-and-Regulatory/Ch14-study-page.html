@@ -1,0 +1,636 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Chapter 14: Legal and regulatory environment | NISM RA study kit</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&display=swap" rel="stylesheet"><style>
+:root{
+ --paper:#F5F6F8;--card:#FFFFFF;--ink:#1B2340;--muted:#586178;--line:#D8DDE7;
+ --indigo:#2E3F8F;--indigo-soft:#E6E9F6;--marker:#FFE27A;--teal:#12705F;--teal-soft:#DDF1EC;
+ --brick:#A83C29;--brick-soft:#F8E3DE;--sun:#F2B233;
+ --head:"Bricolage Grotesque","Segoe UI",system-ui,-apple-system,sans-serif;
+ --body:"Atkinson Hyperlegible","Segoe UI",system-ui,-apple-system,sans-serif;
+ box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+ --paper:#11141C;--card:#1A1E2A;--ink:#E7EAF3;--muted:#9EA7BC;--line:#2C3244;
+ --indigo:#9AABFF;--indigo-soft:#232A45;--marker:rgba(255,214,90,.30);--teal:#52C7AE;--teal-soft:#16332D;
+ --brick:#F2826C;--brick-soft:#3A201B;--sun:#F2B233;}}
+:root[data-theme="dark"]{
+ --paper:#11141C;--card:#1A1E2A;--ink:#E7EAF3;--muted:#9EA7BC;--line:#2C3244;
+ --indigo:#9AABFF;--indigo-soft:#232A45;--marker:rgba(255,214,90,.30);--teal:#52C7AE;--teal-soft:#16332D;
+ --brick:#F2826C;--brick-soft:#3A201B;}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 70px);-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6}
+img,svg{max-width:100%}
+a{color:var(--indigo)}
+:focus-visible{outline:3px solid var(--sun);outline-offset:2px;border-radius:4px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+.col{max-width:720px}
+h1,h2,h3,h4{font-family:var(--head);line-height:1.15;margin:0}
+h2{font-size:clamp(1.5rem,3.4vw,2rem);font-weight:800;margin:0 0 .6rem}
+h3{font-size:1.2rem;font-weight:700;margin:1.8rem 0 .5rem}
+p{margin:.55rem 0}
+ul,ol{margin:.4rem 0 .8rem;padding-left:1.3rem}
+li{margin:.25rem 0}
+/* top bar */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--paper) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.bar .wrap{display:flex;align-items:center;gap:12px;min-height:58px}
+.brand{font-family:var(--head);font-weight:700;font-size:.95rem;color:var(--muted);text-decoration:none;white-space:nowrap}
+.tabs{display:flex;gap:4px;margin-left:auto;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:4px}
+.tab{border:0;background:transparent;color:var(--ink);font:600 .95rem var(--body);padding:.45rem .95rem;border-radius:999px;cursor:pointer}
+.tab[aria-selected="true"]{background:var(--indigo);color:var(--card)}
+.themebtn{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;width:38px;height:38px;cursor:pointer;font-size:1rem}
+@media (max-width:620px){.brand{display:none}.tabs{margin-left:0;flex:1;justify-content:space-between}.tab{padding:.45rem .6rem;flex:1}}
+/* hero */
+.hero{padding:44px 0 18px}
+.kicker{font-family:var(--head);font-weight:700;color:var(--indigo);font-size:1rem;margin-bottom:.4rem}
+.hero h1{font-size:clamp(2.1rem,6vw,3.6rem);font-weight:800;letter-spacing:-.02em;max-width:18ch}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 0}
+.pill{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:.2rem .75rem;font-size:.9rem;color:var(--muted)}
+.pill b{color:var(--ink)}
+.oneline{margin:28px 0 8px;font-family:var(--head);font-size:clamp(1.25rem,3vw,1.7rem);font-weight:500;line-height:1.35;max-width:32ch}
+.oneline .k{font-weight:700}
+/* key term highlighter */
+.k{background:linear-gradient(104deg,transparent 0 .2em,var(--marker) .2em calc(100% - .15em),transparent calc(100% - .15em));padding:0 .2em;margin:0 -.05em;font-weight:700;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+/* sections */
+section.sec{padding:34px 0 10px;border-top:1px solid var(--line);margin-top:26px}
+.secno{font-family:var(--head);font-weight:800;color:var(--indigo);font-size:1rem;display:block;margin-bottom:.2rem}
+.why{border-left:4px solid var(--indigo);background:var(--indigo-soft);padding:.7rem 1rem;border-radius:0 10px 10px 0;margin:1rem 0}
+.why b:first-child{display:block;font-family:var(--head);margin-bottom:.1rem}
+.analogy{background:var(--card);border:1px dashed var(--indigo);border-radius:14px;padding:.8rem 1rem;margin:1rem 0}
+.analogy::before{content:"Think of it like this";display:block;font-family:var(--head);font-weight:700;color:var(--indigo);font-size:.95rem;margin-bottom:.2rem}
+.trap{border:2px solid var(--brick);background:var(--brick-soft);border-radius:12px;padding:.65rem .95rem;margin:1rem 0;position:relative}
+.trap::before{content:"Exam trap";display:inline-block;font-family:var(--head);font-weight:800;color:var(--card);background:var(--brick);border-radius:6px;padding:0 .45rem;font-size:.85rem;margin-right:.45rem;transform:rotate(-2deg)}
+.num{font-family:var(--head);font-weight:800;color:var(--brick)}
+dl.terms{display:grid;grid-template-columns:minmax(120px,max-content) 1fr;gap:.35rem 1rem;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1rem 1.1rem;margin:1rem 0}
+dl.terms dt{font-weight:700}
+dl.terms dd{margin:0;color:var(--muted)}
+@media (max-width:560px){dl.terms{grid-template-columns:1fr}dl.terms dd{margin-bottom:.4rem}}
+.terms-title{font-family:var(--head);font-weight:700;margin:1.4rem 0 -.4rem}
+/* figures */
+figure.fig{margin:1.4rem 0;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px}
+figure.fig figcaption{font-family:var(--head);font-weight:700;font-size:1.02rem;margin-bottom:12px}
+figure.fig figcaption span{display:block;font-family:var(--body);font-weight:400;color:var(--muted);font-size:.9rem;margin-top:2px}
+.scroll{overflow-x:auto}
+/* flow */
+.flow{display:flex;align-items:stretch;gap:0;flex-wrap:nowrap}
+.flow .step{flex:1;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:.7rem .8rem;min-width:0}
+.flow .step h4{font-size:1rem;margin-bottom:.2rem}
+.flow .step p{font-size:.92rem;margin:0;color:var(--muted)}
+.flow .arrow{flex:0 0 28px;display:flex;align-items:center;justify-content:center;color:var(--indigo);font-weight:800;font-size:1.3rem}
+.flow .arrow::before{content:"\2192"}
+@media (max-width:700px){.flow{flex-direction:column}.flow .arrow{flex-basis:26px}.flow .arrow::before{content:"\2193"}}
+.step.hl{border-color:var(--indigo);background:var(--indigo-soft)}
+.step.gd{border-color:var(--teal);background:var(--teal-soft)}
+.step.bd{border-color:var(--brick);background:var(--brick-soft)}
+/* grids */
+.grid{display:grid;gap:12px}
+.g2{grid-template-columns:repeat(2,1fr)}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}
+@media (max-width:760px){.g3,.g4{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:480px){.g2,.g3,.g4{grid-template-columns:1fr}}
+.box{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:.75rem .9rem}
+.box h4{font-size:1.02rem;margin-bottom:.25rem}
+.box p,.box li{font-size:.93rem}
+.box ul{margin:.2rem 0 0}
+.box .tag{display:inline-block;font-size:.78rem;font-weight:700;border-radius:6px;padding:0 .4rem;background:var(--indigo-soft);color:var(--indigo);margin-bottom:.3rem}
+.box.gd{border-color:var(--teal)}.box.bd{border-color:var(--brick)}.box.hl{border-color:var(--indigo)}
+/* table */
+table.cmp{border-collapse:collapse;width:100%;min-width:560px;font-size:.93rem}
+table.cmp th,table.cmp td{border-bottom:1px solid var(--line);padding:.55rem .6rem;text-align:left;vertical-align:top}
+table.cmp thead th{font-family:var(--head);background:var(--indigo-soft);color:var(--ink)}
+table.cmp tbody th{font-weight:700;color:var(--muted);width:24%}
+/* id card */
+.idcard{display:grid;grid-template-columns:auto 1fr;gap:.15rem .7rem;font-size:.88rem;margin-top:.4rem}
+.idcard span:nth-child(odd){color:var(--muted)}
+/* bars */
+.stack{display:flex;height:46px;border-radius:10px;overflow:hidden;border:1px solid var(--line);font-weight:700;font-size:.9rem}
+.stack div{display:flex;align-items:center;justify-content:center;color:var(--card);text-align:center;padding:0 4px}
+/* traps list and talk */
+.traplist{counter-reset:t;list-style:none;padding:0}
+.traplist li{counter-increment:t;background:var(--card);border:1px solid var(--line);border-left:5px solid var(--brick);border-radius:10px;padding:.6rem .9rem .6rem 3rem;position:relative;margin:.5rem 0}
+.traplist li::before{content:counter(t);position:absolute;left:.9rem;top:.55rem;font-family:var(--head);font-weight:800;color:var(--brick);font-size:1.1rem}
+.talk li{margin:.45rem 0}
+.ptr{font-size:.85rem;color:var(--muted)}
+/* chapter map */
+.map{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(170px,1fr))}
+.map a{display:block;text-decoration:none;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:.7rem .85rem;transition:border-color .15s}
+.map a:hover{border-color:var(--indigo)}
+.map a b{display:block;font-family:var(--head);color:var(--indigo);font-size:.9rem}
+.map a span{font-weight:700;display:block;line-height:1.25}
+.map a small{color:var(--muted);display:block;margin-top:.25rem;line-height:1.3}
+.tl{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;position:relative;padding-top:6px}
+.tl::before{content:"";position:absolute;left:8%;right:8%;top:21px;height:4px;background:var(--line);border-radius:4px}
+.tl-i{text-align:center;position:relative}
+.tl-t{display:block;font-family:var(--head);font-size:1.15rem}
+.tl-d{display:block;width:22px;height:22px;border-radius:50%;margin:6px auto 8px;position:relative;border:3px solid var(--card)}
+.tl-i h4{font-size:1.05rem}.tl-i p{font-size:.9rem;color:var(--muted);margin:.2rem 0 0}
+@media (max-width:560px){.tl{grid-template-columns:1fr}.tl::before{display:none}.tl-i{text-align:left;padding-left:34px}.tl-d{position:absolute;left:0;top:0;margin:0}}
+input[type=range]{accent-color:var(--indigo)}
+/* views */
+.view[hidden]{display:none}
+footer{color:var(--muted);font-size:.85rem;padding:40px 0 60px;border-top:1px solid var(--line);margin-top:40px}
+/* flashcards */
+.fc-wrap{max-width:640px;margin:30px auto 0}
+.fc-top{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+.fc-prog{height:8px;background:var(--line);border-radius:99px;overflow:hidden;margin-bottom:16px}
+.fc-prog div{height:100%;background:var(--teal);width:0;transition:width .3s}
+.card3d{perspective:1200px;cursor:pointer;user-select:none}
+.card3d .inner{position:relative;min-height:300px;transition:transform .5s;transform-style:preserve-3d}
+.card3d.flip .inner{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:20px;padding:28px;display:flex;flex-direction:column;justify-content:center;border:1px solid var(--line);background:var(--card)}
+.face.back{transform:rotateY(180deg);background:var(--indigo-soft);border-color:var(--indigo)}
+.face .lbl{position:absolute;top:14px;left:18px;font-size:.8rem;color:var(--muted);font-weight:700}
+.face .front-txt{font-family:var(--head);font-size:clamp(1.3rem,4vw,1.8rem);font-weight:700;line-height:1.25}
+.face .back-txt{font-size:1.08rem}
+.hint{color:var(--muted);font-size:.85rem;text-align:center;margin-top:10px}
+@media (prefers-reduced-motion:reduce){.card3d .inner{transition:none}}
+.btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:16px}
+.btn{font:700 1rem var(--body);border-radius:12px;padding:.65rem 1.1rem;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
+.btn.pri{background:var(--indigo);border-color:var(--indigo);color:var(--card)}
+.btn.good{background:var(--teal);border-color:var(--teal);color:var(--card)}
+.btn.bad{background:var(--brick);border-color:var(--brick);color:var(--card)}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.btn.sm{font-size:.88rem;padding:.4rem .75rem;border-radius:10px}
+/* quiz */
+.qz{max-width:720px;margin:30px auto 0}
+.qz-setup .box{margin:.6rem 0}
+.qz-setup label{display:flex;gap:.6rem;align-items:flex-start;cursor:pointer}
+.qz-head{display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:.9rem;margin-bottom:10px;gap:8px;flex-wrap:wrap}
+.qcase{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--sun);border-radius:12px;padding:.8rem 1rem;margin-bottom:12px;font-size:.95rem}
+.qcase b{font-family:var(--head)}
+.qtext{font-family:var(--head);font-size:1.25rem;font-weight:700;line-height:1.3;margin:4px 0 14px}
+.opt{display:flex;gap:.7rem;align-items:flex-start;width:100%;text-align:left;font:1rem var(--body);color:var(--ink);background:var(--card);border:2px solid var(--line);border-radius:12px;padding:.7rem .9rem;margin:.45rem 0;cursor:pointer}
+.opt .lt{font-family:var(--head);font-weight:800;color:var(--indigo);min-width:1.2rem}
+.opt[aria-pressed="true"]{border-color:var(--indigo);background:var(--indigo-soft)}
+.opt.right{border-color:var(--teal);background:var(--teal-soft)}
+.opt.wrong{border-color:var(--brick);background:var(--brick-soft)}
+.opt:disabled{cursor:default}
+.explain{border-radius:12px;padding:.7rem 1rem;margin-top:12px;background:var(--paper);border:1px solid var(--line)}
+.explain.ok{border-color:var(--teal)}.explain.no{border-color:var(--brick)}
+.explain b{font-family:var(--head)}
+.score{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:16px 0}
+@media (max-width:520px){.score{grid-template-columns:repeat(2,1fr)}}
+.score div{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:.7rem;text-align:center}
+.score b{display:block;font-family:var(--head);font-size:1.8rem}
+.score small{color:var(--muted)}
+.verdict{font-family:var(--head);font-size:1.4rem;font-weight:800;margin:10px 0}
+.review .item{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:.7rem 1rem;margin:.6rem 0}
+.review .item p{margin:.25rem 0}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--paper);padding:.5rem 1rem;border-radius:10px;font-weight:700;opacity:0;transition:opacity .2s;pointer-events:none;z-index:50}
+.toast.show{opacity:1}
+@media print{.bar,.btns,.themebtn{display:none}.view[hidden]{display:block}#v-cards,#v-quiz{display:none}figure.fig,.trap,.analogy{break-inside:avoid}}
+</style></head><body>
+<div class="bar"><div class="wrap"><a class="brand" href="../index.html">NISM RA study kit</a>
+<div class="tabs" role="tablist"><button class="tab" role="tab" data-v="learn" aria-selected="true">Learn</button><button class="tab" role="tab" data-v="cards" aria-selected="false">Flashcards</button><button class="tab" role="tab" data-v="quiz" aria-selected="false">Quiz</button></div>
+<button class="themebtn" id="themebtn" aria-label="Switch light or dark">&#9790;</button></div></div><div class="view" id="v-learn">
+<div class="wrap">
+<header class="hero">
+<div class="kicker">Chapter 14 of 15</div>
+<h1>Legal and regulatory environment</h1>
+<div class="meta"><span class="pill">Worth <b>10 marks</b> of 100</span><span class="pill">Book pages 255 to 294</span><span class="pill">About 90 minutes</span></div>
+<p class="oneline">Who regulates the markets, which laws stop <span class="k">insider trading</span> and <span class="k">manipulation</span>, and the rules that keep a research analyst <span class="k">honest and independent</span>.</p>
+</header>
+
+<figure class="fig" id="fig-map"><figcaption>Chapter map<span>Seven parts. 14.2 (the laws) and 14.4 (RA conflicts and disclosures) carry the most marks. Tap to jump.</span></figcaption>
+<div class="map">
+<a href="#s1"><b>14.1</b><span>The regulators</span><small>MoF, MCA, RBI, SEBI, IRDAI, PFRDA, IBBI</small></a>
+<a href="#s2"><b>14.2</b><span>The key laws</span><small>SCRA, SEBI Act, insider trading, PFUTP, RA Regulations, IBC</small></a>
+<a href="#s3"><b>14.3</b><span>Code of conduct</span><small>Eight duties of an analyst</small></a>
+<a href="#s4"><b>14.4</b><span>Conflicts and disclosures</span><small>Trading limits, quiet periods, disclosures, records</small></a>
+<a href="#s5"><b>14.5</b><span>Surveillance and advertising</span><small>GSM, ASM, advertisement code</small></a>
+<a href="#s6"><b>14.6 and 14.7</b><span>Investor charter and cyber security</span><small>Grievances, CSCRF</small></a>
+</div></figure>
+
+<div class="col">
+<section class="sec" id="s1"><span class="secno">14.1</span><h2>The regulators</h2>
+<p>Regulators make sure market participants behave responsibly, so the market keeps financing companies and government, and investors are protected. Their shared aim: a <b>fair and competitive</b> marketplace with high service standards.</p>
+</div>
+
+<figure class="fig" id="fig-regulators"><figcaption>Who regulates what<span>As described in the book</span></figcaption>
+<div class="scroll"><table class="cmp">
+<thead><tr><th>Regulator</th><th>Set up under</th><th>Main role</th></tr></thead>
+<tbody>
+<tr><th>Ministry of Finance (MoF)</th><td>Government of India</td><td>Taxation, financial legislation, institutions, capital markets, state finances, Union Budget. Five departments (below)</td></tr>
+<tr><th>Ministry of Corporate Affairs (MCA)</th><td>Government of India</td><td>Companies Act; Registrar of Companies (ROC); Competition Act 2002 (replaced MRTP Act 1969); supervises ICAI, ICSI, ICWAI; Partnership Act 1932, Societies Registration Act and others</td></tr>
+<tr><th>Reserve Bank of India (RBI)</th><td>Central bank</td><td>Monetary policy; regulator of banks and the financial system; manager of foreign exchange (FEMA 1999); issuer of currency; developmental role; banker to government and banks</td></tr>
+<tr><th>SEBI</th><td>Section 3 of the SEBI Act, 1992</td><td>Protect investors, develop and regulate the securities market. Also commodities since merging with the Forward Markets Commission on <b>28 September 2015</b></td></tr>
+<tr><th>IRDAI</th><td>IRDA Act, 1999</td><td>Licenses insurers, sets capital rules, product and contract terms, distributor training and commission, supervises the Tariff Advisory Committee, investment of insurers' funds</td></tr>
+<tr><th>PFRDA</th><td>PFRDA Act, 2013 (constituted October 2003)</td><td>Promote old age income security; regulate pension funds; protect subscribers; design and run the National Pension System (NPS)</td></tr>
+<tr><th>IBBI</th><td>Insolvency and Bankruptcy Code, 2016</td><td>Oversees insolvency processes and insolvency professionals; rules on corporate and individual insolvency; also the authority for valuers</td></tr>
+</tbody></table></div>
+<p class="ptr" style="margin-top:8px">The official syllabus also lists WDRA (Warehouse Development Regulatory Authority), but the book's chapter does not describe it.</p>
+</figure>
+
+<div class="col">
+<h3>The five departments of the Ministry of Finance</h3>
+<dl class="terms">
+<dt>Economic Affairs</dt><dd>Nodal agency for fiscal policy and the capital market including stock exchanges; external resources; bank notes and coins; prepares the <b>Union Budget</b>.</dd>
+<dt>Expenditure</dt><dd>Government spending, financial rules, central employees' service conditions, help to and borrowing by states.</dd>
+<dt>Revenue</dt><dd>Direct and indirect taxes, through the <b>CBDT</b> and <b>CBEC</b>.</dd>
+<dt>Financial Services</dt><dd>Banks, insurance, pension reforms, industrial finance, MSMEs.</dd>
+<dt>Disinvestment</dt><dd>Disinvestment and privatisation of public sector undertakings, and use of the proceeds.</dd>
+</dl>
+<div class="why"><b>Preambles worth knowing</b>RBI: "to regulate the issue of Bank Notes and keeping of reserves with a view to securing monetary stability in India and generally to operate the currency and credit system of the country to its advantage." SEBI: "to protect the interests of investors in securities and to promote the development of, and to regulate the securities market."</div>
+<h3>SEBI's main functions</h3>
+<ul>
+<li>Protect investors; develop and regulate the securities market and stock exchanges</li>
+<li>Register and regulate brokers, sub-brokers and other intermediaries; promote and regulate self-regulatory organisations</li>
+<li>Investor education and training of intermediaries</li>
+<li>Prohibit insider trading and fraudulent and unfair trade practices</li>
+<li>Regulate substantial acquisition of shares and takeovers</li>
+<li>Call for information, inspect, inquire and audit exchanges, intermediaries, SROs, mutual funds and others</li>
+</ul>
+<p>For commodities, SEBI monitors forward markets, advises the government on recognising associations, and sets open position limits, circuit filters, margins and physical delivery rules.</p>
+</section>
+
+<section class="sec" id="s2"><span class="secno">14.2</span><h2>The key laws</h2>
+<h3>14.2.1 Securities Contracts (Regulation) Act, 1956</h3>
+<p>Gives SEBI direct and indirect control over almost all of the market: instruments, intermediaries, issuers and investors. It prevents undesirable transactions. It covers:</p>
+<div class="grid g2">
+<div class="box"><ul><li>Recognising stock exchanges</li><li>Corporatisation and demutualisation of exchanges</li><li>Central Government power to call for periodic returns from exchanges</li><li>SEBI's power to make or amend exchanges' <b>bye-laws</b></li></ul></div>
+<div class="box"><ul><li>Central Government (also SEBI) power to supersede an exchange's governing body</li><li>Power to suspend an exchange's business</li><li>Power to prohibit undesirable speculation</li></ul></div>
+</div>
+
+<h3>14.2.2 SEBI Act, 1992</h3>
+<p><b>Section 11(1)</b> makes it SEBI's duty to protect investors and to develop and regulate the market by measures it thinks fit. <b>Section 11(2)</b> lists those measures, including: regulating exchanges; registering and regulating brokers, sub-brokers, share transfer agents, bankers to an issue, trustees, registrars, merchant bankers, underwriters, portfolio managers, investment advisers, depositories, DPs, custodians, FIIs, credit rating agencies; registering venture capital funds and collective investment schemes including mutual funds; regulating SROs; prohibiting fraud, unfair practices and insider trading; regulating takeovers; inspection and audit; levying fees; and research. The Act also lets SEBI impose penalties and run adjudication.</p>
+
+<h3>14.2.3 Prohibition of Insider Trading (PIT) Regulations, 2015</h3>
+<p>Made under <b>section 30</b> of the SEBI Act.</p>
+</div>
+
+<figure class="fig" id="fig-insider"><figcaption>Insider trading: the key definitions</figcaption>
+<div class="grid g2">
+<div class="box hl"><span class="tag">Insider</span><p>A <b>connected person</b>, or anyone in possession of or with access to <b>unpublished price sensitive information (UPSI)</b>.</p></div>
+<div class="box hl"><span class="tag">Connected person</span><p>Anyone associated with the company in any capacity during the <b>six months</b> before the act, in a way that gives or could give access to UPSI. Deemed connected unless shown otherwise: relatives, group companies, intermediaries and their staff, AMC and trustee staff, exchange officials, bankers of the company, and others.</p></div>
+</div>
+<div class="box" style="margin-top:12px"><span class="tag">UPSI (Regulation 2(n))</span><p>Information about a company or its securities, not generally available, which would likely <b>materially affect the price</b> once public. Includes: financial results; dividends; change in capital structure; mergers, demergers, acquisitions, delisting, disposals, expansion; changes in key managerial personnel; resignation of a statutory or secretarial auditor; change in ratings (other than ESG ratings); proposed fund raising; agreements affecting management or control; fraud, defaults or arrests; loan restructuring or one-time settlement; insolvency admissions; forensic audits; regulatory actions; litigation outcomes; guarantees outside normal business; grant or loss of key licences.</p></div>
+</figure>
+
+<div class="col">
+<ul>
+<li><b>Regulation 3(1):</b> an insider must not communicate or give access to UPSI to anyone, other insiders included, except for <b>legitimate purposes</b>, duties or legal obligations. Information is handled on a <span class="k">need-to-know</span> basis.</li>
+<li><b>Regulation 4:</b> no insider may trade in listed (or to-be-listed) securities while <b>in possession of UPSI</b>. Such trades are presumed to be motivated by it; the insider may prove innocence in the circumstances the regulation allows.</li>
+<li><b>Initial disclosure:</b> a new key managerial person, director or promoter must disclose holdings to the company within <span class="num">seven days</span>.</li>
+<li>A <b>compliance officer</b> sets and monitors the codes of fair disclosure and conduct.</li>
+<li><b>Fair disclosure:</b> prompt, uniform, universal release of UPSI; no selective disclosure; information given to analysts must not be UPSI; record meetings with analysts.</li>
+<li><b>Designated persons</b> (including analysts, law firms, auditors, consultants) cannot trade while expected to hold UPSI; trades above board limits need <b>pre-clearance</b>.</li>
+</ul>
+<div class="why"><b>The Chinese wall</b>Firms separate "insider areas" that routinely see confidential information from "public areas" such as sales, marketing and investment advice. Insiders must not pass price-sensitive information across; teams may be physically separated. In exceptional cases a person may be brought "over the wall" on a need-to-know basis, and the compliance officer must be told.</div>
+<div class="trap">Under the PIT section, the book quotes: analysts preparing reports on a client company must disclose their holdings to the compliance officer, and analysts who prepare a report on a listed company <b>shall not trade in it for thirty days from preparation</b> of the report. (The RA Regulations' own window, in 14.4, is different: 30 days before and 5 days after publication.)</div>
+
+<h3>14.2.4 Prohibition of Fraudulent and Unfair Trade Practices (PFUTP) Regulations, 2003</h3>
+<p>Also made under <b>section 30</b> of the SEBI Act. <b>Fraud</b> (Regulation 2(1)(c)) includes any act, expression, omission or concealment to induce someone to deal in securities. Whether anyone gains or avoids a loss <b>does not matter</b>. Examples: wilful misrepresentation; false suggestion; active concealment; a promise made with no intention to keep it; reckless representation; false statements without reasonable grounds; an issuer's misinformation that moves the price.</p>
+</div>
+
+<figure class="fig" id="fig-pfutp"><figcaption>Deemed manipulative, fraudulent or unfair (selected)<span>The book's list is not exhaustive</span></figcaption>
+<div class="grid g2">
+<div class="box bd"><ul><li>Creating a false or misleading appearance of trading</li><li>Dealing not meant to transfer ownership, only to move the price</li><li>Funding people to subscribe so an issue meets minimum subscription</li><li>Paying people to trade to inflate, depress or hold a price</li><li>Manipulating a reference or benchmark price</li><li>Publishing false financial results, M&amp;A or approval news while dealing</li></ul></div>
+<div class="box bd"><ul><li>Trades without intention to perform or change ownership</li><li>Dealing in stolen or counterfeit securities (with exceptions for holders in due course)</li><li>Spreading false or misleading information or advice in any media</li><li>Trading for clients without their knowledge; misusing client funds</li><li><b>Circular transactions</b>; inducing trades to earn brokerage; falsifying records</li><li><b>Front running</b>-type orders on non-public knowledge of a big impending trade; planting false news; <b>mis-selling</b>; illegal collective investment schemes</li></ul></div>
+</div></figure>
+
+<div class="col">
+<p><b>Investigation:</b> a person under investigation must produce books and documents and appear in person when required (Regulation 8(1)). SEBI may, pending or after investigation: suspend trading in a security; restrain persons from the market; suspend exchange or SRO office-bearers; impound proceeds; stop disposal of assets or securities. Against an intermediary: <b>warning or censure, suspension, or cancellation</b> of registration.</p>
+<div class="trap">Mis-selling means selling securities or services by knowingly making false statements, concealing material facts or risks, or <b>not taking reasonable care</b> to ensure suitability for the buyer.</div>
+
+<h3>14.2.5 SEBI (Research Analyst) Regulations, 2014</h3>
+<p>Analysts' advice can be distorted by conflicts of interest. Regulators worldwide responded; the <b>IOSCO</b> report of <b>September 2003</b> set principles: analysts' own trading and their firms' business must not prejudice research; reporting lines and pay should limit conflicts; firms need written procedures; undue influence of issuers and investors must be managed; disclosures must be complete, timely, clear and prominent; high integrity; investor education. India's RA Regulations followed.</p>
+</div>
+
+<figure class="fig" id="fig-raregs"><figcaption>Registration rules at a glance<span>Regulations 3 to 12, as in the book</span></figcaption>
+<div class="scroll"><table class="cmp">
+<thead><tr><th>Regulation</th><th>What it says</th></tr></thead>
+<tbody>
+<tr><th>3: Registration</th><td>No one may act as an RA without SEBI registration. Existing RAs had 6 months to apply. Exempt (if they comply with Chapter III): investment advisers, credit rating agencies, AMCs or fund managers issuing research, and their staff making public appearances. A registered RA's principal officer, associated persons and partners need not register separately (if they meet regulation 7)</td></tr>
+<tr><th>4: Outside India</th><td>A person outside India issuing research on Indian listed securities must have an <b>agreement with a registered RA</b></td></tr>
+<tr><th>6: Eligibility</th><td>Qualifications and certification (reg 7); deposit (reg 8); fit and proper; infrastructure; past refusals and disciplinary history; enlistment with the body recognised under reg 14</td></tr>
+<tr><th>7: Qualification</th><td>A graduate degree (or CFA Charter) <b>plus</b> NISM certification; <b>or</b> NISM's Post Graduate Program in the Securities Market (Research Analysis). Renew NISM certification before it expires, or within 3 years of registration</td></tr>
+<tr><th>8: Deposit</th><td>As specified by SEBI, marked as lien to the body recognised under reg 14 (RAASB); held as liquid or overnight mutual fund units or a scheduled bank deposit</td></tr>
+<tr><th>9: Certificate</th><td>Form B for an RA; <b>Form C for a part-time RA</b>. An individual or partnership registered as an investment adviser may also be registered as an RA</td></tr>
+<tr><th>10: Validity</th><td>Valid until suspended or cancelled by SEBI</td></tr>
+<tr><th>12: Refusal</th><td>After a hearing; decision communicated within <b>30 days</b>; applicant must stop acting as an RA</td></tr>
+</tbody></table></div>
+<p class="ptr" style="margin-top:8px">Book footnotes: persons doing sales and other non-core research services need NISM Series XXV-A; SEBI moved RA compliance reporting to BSE Ltd.</p>
+</figure>
+
+<div class="col">
+<h3>14.2.6 Insolvency and Bankruptcy Code, 2016</h3>
+<p>Consolidates insolvency laws for companies, partnership firms and individuals, with <b>time-bound</b> resolution.</p>
+</div>
+
+<figure class="fig" id="fig-ibc"><figcaption>How a corporate insolvency runs under the IBC<span>As described in the book</span></figcaption>
+<div class="flow">
+<div class="step"><h4>Application</h4><p>Any financial or operational creditor (or the company itself) on default. Threshold in the book: undisputed dues above Rs 1,00,000</p></div><div class="arrow"></div>
+<div class="step"><h4>IRP appointed</h4><p>Interim resolution professional runs the company; the board is dissolved</p></div><div class="arrow"></div>
+<div class="step"><h4>Committee of creditors</h4><p>Financial creditors only; confirms the IRP or appoints another insolvency professional</p></div><div class="arrow"></div>
+<div class="step gd"><h4>Resolution in 180 days</h4><p>Restructuring, takeover, or liquidation as a last resort</p></div>
+</div></figure>
+
+<div class="col">
+<div class="trap">Operational creditors can <b>start</b> insolvency proceedings but <b>cannot sit</b> on the committee of creditors. A financial creditor is one paid for the time value of money (earns interest).</div>
+</section>
+
+<section class="sec" id="s3"><span class="secno">14.3</span><h2>Code of conduct for research analysts</h2>
+<p>Set out in the <b>Third Schedule</b> of the RA Regulations.</p>
+</div>
+
+<figure class="fig" id="fig-code"><figcaption>Eight duties</figcaption>
+<div class="grid g4">
+<div class="box"><span class="tag">1</span><h4>Honesty and good faith</h4></div>
+<div class="box"><span class="tag">2</span><h4>Diligence</h4><p>Due skill and care; report after thorough analysis</p></div>
+<div class="box"><span class="tag">3</span><h4>Conflict of interest</h4><p>Address it; disclose it</p></div>
+<div class="box"><span class="tag">4</span><h4>No insider trading or front running</h4><p>Including front running its own report</p></div>
+<div class="box"><span class="tag">5</span><h4>Confidentiality</h4><p>Of the report until made public</p></div>
+<div class="box"><span class="tag">6</span><h4>Professional standard</h4></div>
+<div class="box"><span class="tag">7</span><h4>Compliance</h4><p>With all regulatory requirements</p></div>
+<div class="box"><span class="tag">8</span><h4>Senior management responsibility</h4><p>Primary responsibility for standards and procedures</p></div>
+</div></figure>
+
+<div class="col">
+<section class="sec" id="s4"><span class="secno">14.4</span><h2>Conflicts of interest and disclosures</h2>
+<p>Chapter III of the RA Regulations.</p>
+<ul>
+<li><b>Regulation 15:</b> written internal policies on analysts' dealing and trading, to (i) address actual or potential conflicts from dealing in the subject company's securities, (ii) promote objective, reliable, unbiased research, (iii) <b>prevent the use of research to manipulate the market</b>; plus mechanisms to keep research independent of other business. <b>15A:</b> RAs may charge fees as SEBI specifies.</li>
+<li><b>Regulation 17 (compensation):</b> no pay linked to a specific merchant banking, investment banking or brokerage deal; pay reviewed and approved annually by a board or committee with no representation from those divisions; analysts not supervised by those divisions.</li>
+</ul>
+</div>
+
+<figure class="fig" id="fig-windows"><figcaption>The time windows to remember<span>Regulations 16 and 18</span></figcaption>
+<div class="scroll"><table class="cmp">
+<thead><tr><th>Rule</th><th>Window</th><th>Applies to</th></tr></thead>
+<tbody>
+<tr><th>No trading in a recommended or followed security (reg 16(2))</th><td><b>30 days before</b> and <b>5 days after</b> publication of a report</td><td>Independent and part-time RAs, employed analysts and their associates</td></tr>
+<tr><th>No report or public appearance after an IPO the RA managed (reg 18(1))</th><td><b>40 days</b> after pricing</td><td>Manager or co-manager of the issue</td></tr>
+<tr><th>Same, after a further public offer</th><td><b>10 days</b> after pricing</td><td>Manager or co-manager</td></tr>
+<tr><th>Underwriter of an IPO (reg 18(2))</th><td><b>25 days</b> from the date of the offering</td><td>Research entity acting as underwriter</td></tr>
+<tr><th>Around a lock-up agreement (reg 18(3))</th><td><b>15 days before</b> and <b>15 days after</b> its expiry, waiver or termination</td><td>Manager or co-manager of the offering</td></tr>
+</tbody></table></div>
+<p class="ptr" style="margin-top:8px">The 40, 10 and 15-day windows can be relaxed with prior written approval of legal or compliance staff. The 30/5-day trading ban can be relaxed for significant news or an unexpected change in the analyst's personal finances, with prior written approval.</p>
+</figure>
+
+<div class="col">
+<h3>More limits under regulation 16</h3>
+<ul>
+<li>Employed analysts' personal trading is monitored, recorded and, where needed, approved.</li>
+<li>No trading <b>contrary</b> to one's own recommendation.</li>
+<li>No buying or receiving shares of an issuer <b>before its IPO</b> if it is in the same business as companies the analyst covers.</li>
+<li>These apply to a research entity too, unless research is segregated and at arm's length.</li>
+</ul>
+<h3>Regulation 18: other limits</h3>
+<ul>
+<li>Analysts may not take part in <b>sales pitches or deal road shows</b> for investment banking or brokerage business, or talk to clients about such deals in the presence of those divisions or company management.</li>
+<li>Those divisions may not direct analysts to do sales or marketing.</li>
+<li>Reports need adequate documentary basis; no promise of a favourable review in exchange for business; no report inconsistent with the analyst's own view; analysts kept separate from sales, trading and corporate finance staff (feedback from sales on a report's impact is allowed).</li>
+</ul>
+</div>
+
+<figure class="fig" id="fig-disclose"><figcaption>Regulation 19: what to disclose<span>In research reports and public appearances</span></figcaption>
+<div class="grid g2">
+<div class="box"><span class="tag">Ownership and conflicts</span><ul><li>Any financial interest of the RA, associates or relatives in the subject company</li><li>Ownership of <b>1% or more</b> of its securities at the end of the month before publication</li><li>Any other material conflict of interest</li></ul></div>
+<div class="box"><span class="tag">Compensation (past 12 months)</span><ul><li>Any compensation from the subject company</li><li>Managed or co-managed its public offering</li><li>Investment banking, merchant banking or brokerage fees from it</li><li>Fees for other products or services from it</li><li>Any benefit from the company or a third party in connection with the report</li></ul></div>
+<div class="box"><span class="tag">Other</span><ul><li>Whether the analyst served as officer, director or employee of the subject company</li><li>Whether the RA has been a <b>market maker</b> in it</li><li>The extent of use of <b>Artificial Intelligence</b> tools in research services</li></ul></div>
+<div class="box"><span class="tag">Report contents (reg 20)</span><ul><li>Facts from reliable information; terms defined and used consistently</li><li>Define each rating, its time horizon and benchmark</li><li>If a rating or target has existed for at least one year: a graph of daily closing prices for that period or <b>three years, whichever is shorter</b></li><li>Recommendations backed by data and analysis</li></ul></div>
+</div></figure>
+
+<div class="col">
+<h3>Other regulations in Chapter III onwards</h3>
+<dl class="terms">
+<dt>19A Website</dt><dd>Maintain a functional website.</dd>
+<dt>21 Public media</dt><dd>Disclose registration status and financial interest when appearing in public. Staff of IAs, CRAs, AMCs and fund managers commenting in media follow regs 16 and 17 and disclose name, registration status and interest.</dd>
+<dt>22 Distribution</dt><dd>No selective early release to internal traders or favoured clients. Review third-party reports for false statements and disclose the third party's conflicts (unless there is no business relationship).</dd>
+<dt>23 Proxy advisers</dt><dd>Covered by the RA Regulations. Review voting policies at least <b>annually</b>; alert clients of factual errors within <b>24 hours</b>; communicate material revisions within <b>72 hours</b>; share reports with clients and the company at the same time.</dd>
+<dt>24 General</dt><dd>Arm's length between research and other activities; follow the code of conduct; SEBI's <b>prior approval for a change in control</b>; sole responsibility for client data and outputs when using AI tools; follow model portfolio guidelines and the Investor Charter.</dd>
+<dt>25 Records</dt><dd>Signed, dated reports; recommendations and their rationale; public appearances; KYC; client register with PAN; communication records; client terms and consent. Kept at least <b>five years</b>. Annual compliance audit by a member of ICAI, ICSI or the Institute of Cost Accountants.</dd>
+<dt>26 Compliance officer</dt><dd>A non-individual RA appoints a compliance officer, or an independent ICAI, ICSI or ICMAI professional with NISM certification.</dd>
+<dt>26A Disputes</dt><dd>Mediation, conciliation and/or arbitration as SEBI specifies.</dd>
+<dt>26B Grievances</dt><dd>Redress within <b>21 calendar days</b>.</dd>
+<dt>26C Segregation</dt><dd>An individual RA may <b>not provide distribution services</b>. Its family may not distribute to the RA's research clients. A non-individual RA keeps client-level segregation at group level: a client gets research or distribution, not both.</dd>
+<dt>32 Default</dt><dd>Breaches, false information, missing returns, non-cooperation or unresolved complaints are dealt with under the SEBI Act or the Intermediaries Regulations, 2008.</dd>
+</dl>
+</section>
+
+<section class="sec" id="s5"><span class="secno">14.5</span><h2>Exchange surveillance: GSM and ASM</h2>
+<p>Some traders use unscrupulous practices that distort prices. SEBI and the exchanges watch stocks against objective criteria and impose extra restrictions.</p>
+</div>
+
+<figure class="fig" id="fig-gsmasm"><figcaption>GSM versus ASM</figcaption>
+<div class="grid g2">
+<div class="box hl"><span class="tag">Graded Surveillance Measures</span><h4>Based on valuation</h4><p>Stocks with low market cap or net worth whose <b>valuation is not justified by fundamentals</b>.</p><ul><li>Criteria (book): net worth up to Rs 10 crore and net fixed assets up to Rs 25 crore, with negative P/E or P/E at 2x the benchmark index; or market cap below Rs 25 crore with P/E above 2x the benchmark, or negative P/E with negative P/B or P/B at 2x the benchmark</li><li>Measures: trade-for-trade (delivery only), surveillance deposit, narrower price band, higher margin, freeze on upside price</li><li>Not applied to PSUs, index stocks, recent IPOs, F&amp;O stocks and others listed in the book</li></ul></div>
+<div class="box hl"><span class="tag">Additional Surveillance Measures</span><h4>Based on price and volume</h4><ul><li>High-low price variation over 3 months; close-to-close variation over 1 month, 60 days and 365 days</li><li><b>Client concentration</b>: share of volume by the <b>top 25 clients</b></li><li>Volume variation over time</li><li>Once shortlisted: margin raised to <b>80%</b>, then tighter price bands and margin up to <b>100%</b></li><li>Not applied to: stocks already in GSM, trade-for-trade stocks, F&amp;O stocks, PSUs</li><li>Reviewed after a minimum period; removed if criteria no longer met</li></ul></div>
+</div></figure>
+
+<div class="col">
+<h3>The advertisement code for RAs and IAs</h3>
+<p>"Advertisement" covers all communications that may influence investment decisions, in any medium, print, electronic, social media or audio-visual. A research report counts as an advertisement if it promotes the RA's products or services.</p>
+<div class="grid g2">
+<div class="box gd"><span class="tag">Must include</span><ul><li>Registered name, address, SEBI registration number, logo, CIN</li><li>Accurate, true, complete, concise information</li><li>The standard warning, unchanged, in at least <b>10-point</b> font: "Investment in securities market is subject to market risks. Read all the related documents carefully before investing."</li><li>In audio-visual ads, the warning shown and spoken clearly (the book's example: 20 words over at least 10 seconds)</li><li>Translated accurately if the ad is not in English</li><li>For SMS or pop-ups without full details: a link to the website that has them</li><li>"The securities quoted are for illustration only and are not recommendatory" if securities are shown</li><li>The disclaimer that SEBI registration, BASL membership (for IAs) and NISM certification do not guarantee performance or returns</li></ul></div>
+<div class="box bd"><span class="tag">Must not include</span><ul><li>False, misleading, biased or deceptive statements; misleading testimonials</li><li>Statements that exploit inexperience; exaggeration; excessive jargon</li><li>"Free" unless truly free</li><li>Any promise of assured, minimum or target returns, or percentage accuracy</li><li>Discrediting other intermediaries</li><li><b>Past performance</b> of the RA</li><li>Superlatives: "Best", "No. 1", "Leading" (factual awards from independent bodies are allowed)</li><li>The <b>SEBI logo</b></li></ul></div>
+</div>
+<p>Also: get prior approval from the SEBI-recognised supervisory body; no ads while suspended; no games, leagues or prize schemes; keep a copy of each ad for <b>five years</b>. RAs may use brand names and logos if the registered name, number and contact details are shown prominently everywhere.</p>
+</section>
+
+<section class="sec" id="s6"><span class="secno">14.6</span><h2>Investor charter and complaints</h2>
+<p>SEBI's <b>Investor Charter for Research Analysts</b> (Annexure 1 of the book) puts in one place the services, investors' rights, do's and don'ts and grievance timelines. RAs must share it: on their website and app, at their office, during onboarding, and by email or letter. RAs must also publish <b>monthly complaint data</b>, including SCORES complaints, in SEBI's format (Annexure 2); those without a website email it to investors.</p>
+</div>
+
+<figure class="fig" id="fig-charter"><figcaption>The Investor Charter in brief<span>Annexure 1 of the book</span></figcaption>
+<div class="grid g3">
+<div class="box"><span class="tag">Grievance route</span><ul><li>Approach the RA: redress within <b>21 days</b></li><li>Then <b>SCORES 2.0</b> (SEBI's online system) or email the RAASB. Two-level review: first RAASB, then SEBI</li><li>Still unhappy: <b>SMART ODR</b> for online conciliation or arbitration</li></ul></div>
+<div class="box"><span class="tag">Do's</span><ul><li>Deal only with SEBI-registered RAs; check the registration number</li><li>Read the disclosures</li><li>Pay through banking channels and keep receipts (or CeFCoM if the RA uses it)</li><li>Report any RA offering assured returns to SEBI</li></ul></div>
+<div class="box"><span class="tag">Don'ts</span><ul><li>Do not give the RA funds to invest</li><li>Do not fall for luring ads, rumours or limited-period offers</li><li>Never share trading or demat login credentials</li></ul></div>
+</div>
+<p class="ptr" style="margin-top:8px">Investor rights include privacy, transparency, fair treatment, adequate information, fair advertisement, timely grievance redressal, exit as per agreed terms, and caution notices for complex, high-risk products.</p>
+</figure>
+
+<div class="col">
+<h3 id="s7">14.7 Cybersecurity and Cyber Resilience Framework (CSCRF)</h3>
+<p>All RAs must comply with SEBI's CSCRF. Its five cyber resiliency goals:</p>
+<div class="flow">
+<div class="step"><h4>Anticipate</h4><p>Stay prepared</p></div><div class="arrow"></div>
+<div class="step"><h4>Withstand</h4><p>Keep running during an attack</p></div><div class="arrow"></div>
+<div class="step"><h4>Contain</h4><p>Isolate trusted systems</p></div><div class="arrow"></div>
+<div class="step"><h4>Recover</h4><p>Restore functions</p></div><div class="arrow"></div>
+<div class="step"><h4>Evolve</h4><p>Adapt to reduce future harm</p></div>
+</div>
+<p>CSCRF grades regulated entities into five categories: Market Infrastructure Institutions, Qualified, Mid-size, Small-size and Self-certification REs. RAs <b>not registered in any other category</b> are excluded from submitting CSCRF compliance, but must submit a declaration under SEBI's 2020 SaaS (software-as-a-service) advisory. Institutional RAs registered in another category follow that category's classification.</p>
+</section>
+
+<section class="sec" id="traps"><h2>All exam traps in this chapter</h2>
+<ol class="traplist">
+<li>SEBI was set up under section 3 of the SEBI Act, 1992; merged with the FMC on 28 September 2015.</li>
+<li>MoF's Department of Economic Affairs prepares the Union Budget; Department of Revenue works through CBDT and CBEC.</li>
+<li>MCA administers the Companies Act and the Competition Act 2002 (which replaced MRTP 1969).</li>
+<li>RBI administers FEMA 1999 and is banker to government and banks.</li>
+<li>PFRDA: PFRDA Act 2013, constituted October 2003; promotes old age income security; runs NPS.</li>
+<li>IBBI: under IBC 2016; also regulates valuers.</li>
+<li>SCRA 1956 gives SEBI power to make or amend exchange bye-laws.</li>
+<li>PIT 2015 and PFUTP 2003 are both made under section 30 of the SEBI Act.</li>
+<li>A connected person: associated with the company in the six months before the act.</li>
+<li>Change in ESG ratings is excluded from the UPSI list; other rating changes are included.</li>
+<li>Initial disclosure of holdings within seven days of appointment.</li>
+<li>Fraud under PFUTP does not need wrongful gain or loss avoidance.</li>
+<li>IOSCO principles on analyst conflicts: September 2003.</li>
+<li>RA qualification: graduate or CFA Charter plus NISM certification, or NISM's PG Program in Securities Market (Research Analysis).</li>
+<li>Form B for an RA, Form C for a part-time RA. Registration valid until suspended or cancelled.</li>
+<li>No trading 30 days before and 5 days after a report; never contrary to one's own recommendation.</li>
+<li>Quiet periods: 40 days after IPO pricing, 10 days after FPO pricing, 25 days for an IPO underwriter, 15 days either side of a lock-up end.</li>
+<li>Disclose ownership of 1% or more at the end of the month before publication; compensation over the past 12 months.</li>
+<li>Price chart: daily closes for the rating period or three years, whichever is shorter.</li>
+<li>Records kept at least five years; grievances redressed within 21 calendar days.</li>
+<li>An individual RA cannot provide distribution services.</li>
+<li>GSM is valuation-based; ASM is price and volume based (top 25 clients). ASM margin 80%, then up to 100%.</li>
+<li>Advertisements: no past performance, no superlatives, no SEBI logo, no assured returns; standard warning in at least 10-point font.</li>
+<li>Investor Charter: RA redress within 21 days; then SCORES 2.0 or RAASB; then SMART ODR.</li>
+<li>CSCRF goals: anticipate, withstand, contain, recover, evolve.</li>
+</ol>
+</section>
+
+<section class="sec" id="talk"><h2>For the group discussion</h2>
+<ol class="talk">
+<li>A friend at a listed company mentions results will be "very strong" next week. What does the PIT regulation say you must do?</li>
+<li>Why should an analyst's pay not depend on investment banking deals? Give a real-world example of what could go wrong.</li>
+<li>A finfluencer posts stock tips with "100% accuracy" claims. Which rules does that break?</li>
+<li>GSM or ASM: which would catch a small company whose price tripled in a month on huge volumes?</li>
+<li>Why might SEBI stop an individual RA from also distributing mutual funds?</li>
+</ol>
+</section>
+</div>
+
+<footer>Notes built from the NISM Series XV workbook (February 2026 version). Study aid only.</footer>
+</div>
+</div><div class="view" id="v-cards" hidden><div class="wrap"><div class="fc-wrap">
+<div class="fc-top"><span id="fc-count" class="ptr"></span><label class="ptr"><input type="checkbox" id="fc-missed"> Only cards I missed</label></div>
+<div class="fc-prog"><div id="fc-bar"></div></div>
+<div class="card3d" id="fc-card" tabindex="0" role="button" aria-label="Flip card"><div class="inner">
+<div class="face"><span class="lbl" id="fc-pos"></span><div class="front-txt" id="fc-front"></div></div>
+<div class="face back"><span class="lbl">Answer</span><div class="back-txt" id="fc-back"></div></div></div></div>
+<p class="hint">Tap the card to flip. On a keyboard: space flips, right arrow = got it, left arrow = again.</p>
+<div class="btns"><button class="btn bad" id="fc-bad">Again</button><button class="btn good" id="fc-good">Got it</button></div>
+<div class="btns"><button class="btn sm" id="fc-shuffle">Shuffle</button><button class="btn sm" id="fc-reset">Clear progress</button></div>
+</div></div></div><div class="view" id="v-quiz" hidden><div class="wrap"><div class="qz">
+<div id="qz-setup" class="qz-setup"><h2>Test yourself</h2><p class="ptr" id="qz-counts"></p>
+<p>Scoring works like the real exam: +1 for a right answer, minus 0.25 for a wrong one, 0 for a skip. Skipping is allowed.</p>
+<div class="box"><h4>Which questions?</h4>
+<label><input type="radio" name="qset" value="quick" checked> Quick 10 (random MCQs)</label>
+<label><input type="radio" name="qset" value="mcq"> All MCQs</label>
+<label><input type="radio" name="qset" value="case"> Case sets only (the exam has 5 of these, 4 questions each)</label>
+<label><input type="radio" name="qset" value="all"> Everything</label>
+<label><input type="radio" name="qset" value="missed"> Only questions I got wrong before <span id="qz-missedn" class="ptr"></span></label></div>
+<div class="box"><h4>How?</h4>
+<label><input type="radio" name="qmode" value="practice" checked> Practice: see the answer after each question</label>
+<label><input type="radio" name="qmode" value="exam"> Exam: see everything at the end</label></div>
+<div class="btns" style="justify-content:flex-start"><button class="btn pri" id="qz-start">Start</button></div></div>
+<div id="qz-run" hidden><div class="qz-head"><span id="qz-pos"></span><span id="qz-modelbl"></span></div>
+<div id="qz-q"></div>
+<div class="btns" style="justify-content:space-between"><button class="btn sm" id="qz-prev">Back</button><span><button class="btn sm" id="qz-skip">Skip</button> <button class="btn pri sm" id="qz-check">Check</button> <button class="btn sm" id="qz-next">Next</button></span></div>
+<div class="btns" style="justify-content:flex-start"><button class="btn sm" id="qz-quit">Stop and go back</button></div></div>
+<div id="qz-end" hidden><h2>Your result</h2><div class="score" id="qz-score"></div><p class="verdict" id="qz-verdict"></p><p class="ptr" id="qz-penalty"></p>
+<div class="btns" style="justify-content:flex-start"><button class="btn pri" id="qz-copy">Copy result for the group</button><button class="btn" id="qz-again">Try another set</button></div>
+<h3>Review what you missed</h3><div class="review" id="qz-review"></div></div>
+</div></div></div><div class="toast" id="toast" role="status"></div>
+<script>window.__DATA__={"id": "ch14", "short": "Ch14", "title": "Chapter 14: Legal and regulatory environment", "cards": [{"f": "Five departments of the Ministry of Finance (book)", "b": "Economic Affairs, Expenditure, Revenue, Financial Services, Disinvestment."}, {"f": "Which MoF department prepares the Union Budget?", "b": "<b>Department of Economic Affairs</b> (also nodal for capital markets and fiscal policy)."}, {"f": "Department of Revenue works through...", "b": "Two boards: <b>CBDT</b> and <b>CBEC</b>."}, {"f": "Ministry of Corporate Affairs", "b": "Companies Act, ROC, Competition Act 2002 (replaced MRTP 1969); supervises ICAI, ICSI, ICWAI."}, {"f": "RBI's six functions (book)", "b": "Monetary authority; regulator of financial system; manager of forex (FEMA 1999); issuer of currency; developmental role; banker to government and banks."}, {"f": "SEBI was established under...", "b": "<b>Section 3</b> of the SEBI Act, 1992."}, {"f": "SEBI and the Forward Markets Commission", "b": "Merged on <b>28 September 2015</b>; SEBI now regulates commodity markets."}, {"f": "IRDAI", "b": "Insurance regulator under the IRDA Act, <b>1999</b>; supervises the Tariff Advisory Committee."}, {"f": "PFRDA", "b": "PFRDA Act <b>2013</b>; constituted October <b>2003</b>; promotes old age income security; runs the NPS."}, {"f": "IBBI", "b": "Under the IBC <b>2016</b>; regulates insolvency professionals; also the authority for <b>valuers</b>."}, {"f": "SCRA 1956: SEBI's power over exchange rules", "b": "SEBI can make or amend the <b>bye-laws</b> of recognised stock exchanges."}, {"f": "SEBI Act sections 11(1) and 11(2)", "b": "11(1): SEBI's duty to protect investors and develop and regulate the market. 11(2): the measures it may take."}, {"f": "PIT and PFUTP regulations are made under...", "b": "<b>Section 30</b> of the SEBI Act."}, {"f": "Insider (PIT 2015)", "b": "A connected person, or anyone with possession of or access to UPSI."}, {"f": "Connected person: time window", "b": "Associated with the company during the <b>six months</b> before the act."}, {"f": "UPSI", "b": "Unpublished price sensitive information: not generally available and likely to materially affect the price once public."}, {"f": "Which rating change is excluded from UPSI?", "b": "<b>ESG</b> rating changes."}, {"f": "Regulation 3(1) of PIT", "b": "No sharing of UPSI except for legitimate purposes, duties or legal obligations: <b>need to know</b>."}, {"f": "Regulation 4 of PIT", "b": "No trading while in possession of UPSI; such trades are presumed to be motivated by it."}, {"f": "Initial disclosure of holdings (PIT)", "b": "Within <b>seven days</b> of becoming KMP, director or promoter."}, {"f": "Chinese wall", "b": "Separates insider areas from public areas (sales, marketing, advice). Crossing the wall only on need to know, with the compliance officer informed."}, {"f": "Analysts under the PIT code (book)", "b": "Disclose holdings to the compliance officer; do not trade in a listed company for <b>30 days from preparing</b> a report on it."}, {"f": "Fraud under PFUTP", "b": "Any act, expression, omission or concealment to induce dealing. Gain or loss avoidance is irrelevant."}, {"f": "Mis-selling (PFUTP)", "b": "Selling by false statements, concealing facts or risks, or <b>not taking reasonable care</b> on suitability."}, {"f": "SEBI's actions against an intermediary (PFUTP)", "b": "Warning or censure; suspension; cancellation of registration."}, {"f": "IOSCO report on analyst conflicts", "b": "<b>September 2003</b>."}, {"f": "RA Regulation 4", "b": "A person outside India issuing research on Indian listed securities must have an <b>agreement with a registered RA</b>."}, {"f": "Who is exempt from RA registration (reg 3)?", "b": "IAs, credit rating agencies, AMCs or fund managers issuing research (complying with Chapter III); a registered RA's principal officer, associated persons and partners (complying with reg 7)."}, {"f": "RA qualification (reg 7)", "b": "Graduate degree or CFA Charter <b>plus</b> NISM certification; <b>or</b> NISM PG Program in Securities Market (Research Analysis)."}, {"f": "Renewing NISM certification (reg 7(2))", "b": "Before the existing one expires, or within <b>three years</b> of registration."}, {"f": "RA deposit (reg 8)", "b": "Marked as lien to the body recognised under reg 14 (RAASB); in liquid or overnight fund units or a scheduled bank deposit."}, {"f": "Forms of certificate (reg 9)", "b": "Form <b>B</b>: research analyst. Form <b>C</b>: part-time research analyst."}, {"f": "Validity of RA registration (reg 10)", "b": "Until <b>suspended or cancelled</b> by SEBI."}, {"f": "Rejected RA application (reg 12)", "b": "After a hearing; communicated within <b>30 days</b>; must stop acting as an RA."}, {"f": "IBC: who forms the committee of creditors?", "b": "<b>Financial</b> creditors. Operational creditors can start proceedings but cannot sit on it."}, {"f": "IBC timeline", "b": "<b>180 days</b> for resolution; extensions often granted. Liquidation is a last resort."}, {"f": "IBC: what happens to the board?", "b": "Considered dissolved once the IRP is appointed; management reports to the IRP."}, {"f": "Eight items of the RA code of conduct", "b": "Honesty and good faith; diligence; conflict of interest; no insider trading or front running; confidentiality; professional standard; compliance; senior management responsibility."}, {"f": "Purpose of internal policies (reg 15)", "b": "Address conflicts from dealing; promote objective research; <b>prevent use of research to manipulate the market</b>."}, {"f": "Trading ban around a report (reg 16)", "b": "<b>30 days before</b> and <b>5 days after</b> publication, for securities the analyst recommends or follows."}, {"f": "Pre-IPO shares (reg 16)", "b": "Analysts may not buy or receive an issuer's shares before its IPO if it is in the same business as companies they cover."}, {"f": "Analyst compensation (reg 17)", "b": "Not linked to specific IB, merchant banking or brokerage deals; approved annually by a board or committee without those divisions."}, {"f": "Quiet periods after a managed issue (reg 18)", "b": "<b>40 days</b> after IPO pricing; <b>10 days</b> after FPO pricing."}, {"f": "IPO underwriter quiet period (reg 18(2))", "b": "<b>25 days</b> from the date of the offering."}, {"f": "Lock-up quiet period (reg 18(3))", "b": "<b>15 days before</b> and <b>15 days after</b> the lock-up ends."}, {"f": "Ownership disclosure threshold (reg 19)", "b": "<b>1% or more</b>, at the end of the month before publication."}, {"f": "Compensation disclosure period (reg 19)", "b": "The <b>past twelve months</b>."}, {"f": "New disclosure on technology (reg 19)", "b": "Extent of use of <b>Artificial Intelligence</b> tools in research services."}, {"f": "Price chart in a report (reg 20)", "b": "If a rating or target has existed for 1 year or more: daily closing prices for that period or <b>3 years, whichever is shorter</b>."}, {"f": "Distribution of reports (reg 22)", "b": "Never selectively in advance to internal traders or favoured clients."}, {"f": "Proxy advisers: timelines", "b": "Review policies annually; alert clients of factual errors within <b>24 hours</b>; material revisions within <b>72 hours</b>."}, {"f": "Change in control of an RA (reg 24)", "b": "Needs SEBI's <b>prior approval</b>."}, {"f": "Record keeping (reg 25)", "b": "At least <b>five years</b>; annual compliance audit by an ICAI, ICSI or ICMAI member."}, {"f": "Grievance redressal (reg 26B)", "b": "Within <b>21 calendar days</b>."}, {"f": "Segregation (reg 26C)", "b": "An individual RA cannot provide distribution services; a client gets either research or distribution at group level."}, {"f": "GSM", "b": "Graded Surveillance Measures: for low market cap or net worth stocks whose <b>valuation</b> is not justified by fundamentals."}, {"f": "ASM", "b": "Additional Surveillance Measures: based on <b>price and volume</b> variation and top 25 clients' concentration. Margin 80%, then up to 100%."}, {"f": "ASM does not apply to...", "b": "Stocks already in GSM, trade-for-trade stocks, F&amp;O stocks, PSUs."}, {"f": "Standard warning in RA ads", "b": "\"Investment in securities market is subject to market risks. Read all the related documents carefully before investing.\" At least 10-point font, unchanged."}, {"f": "Five things RA ads must not contain", "b": "Past performance; superlatives like \"Best\" or \"No. 1\"; SEBI logo; assured or target returns; misleading testimonials."}, {"f": "How long to keep a copy of each ad", "b": "<b>Five years</b>."}, {"f": "Investor Charter grievance route", "b": "RA within 21 days; then SCORES 2.0 or RAASB (review by RAASB, then SEBI); then SMART ODR."}, {"f": "Two investor don'ts in the Investor Charter", "b": "Don't give the RA funds to invest; don't share trading or demat login credentials."}, {"f": "CSCRF's five goals", "b": "Anticipate, withstand, contain, recover, evolve."}, {"f": "CSCRF for standalone RAs", "b": "Excluded from CSCRF compliance submission; must give a SaaS declaration."}], "mcqs": [{"id": "14.1", "q": "Unhealthy practice in the securities markets includes which of the following?", "o": ["Surveillance", "Disclosure", "Transparency", "Insider trading"], "a": 3, "w": "Book sample question."}, {"id": "14.2", "q": "Which is the central bank in India with the responsibility of administering monetary policy?", "o": ["Central Bank of India", "Reserve Bank of India", "State Bank of India", "All of the above"], "a": 1, "w": "Book sample question."}, {"id": "14.3", "q": "Which authority was set up with the primary responsibility of promoting old age income security by establishing, developing and regulating pension funds?", "o": ["Insurance Regulatory and Development Authority", "Pension Fund Regulatory and Development Authority", "Association of Mutual Funds in India", "Securities and Exchange Board of India"], "a": 1, "w": "Book sample question."}, {"id": "14.4", "q": "______ is the purpose of having written internal policies and controls by a research analyst.", "o": ["Preventing the use of research reports to manipulate the securities market", "Promoting objective research that reflects the biased view of the research analyst", "Addressing only the actual conflict of interest arising from dealings in a company's securities", "All of the above"], "a": 0, "w": "Book sample question. Regulation 15 covers actual <b>or potential</b> conflicts and <b>unbiased</b> research, so the other two options misstate it."}, {"id": "14.5", "q": "Which department of the Ministry of Finance prepares the Union Budget?", "o": ["Department of Financial Services", "Department of Economic Affairs", "Department of Revenue", "Department of Expenditure"], "a": 1, "w": "It is also the nodal agency for fiscal policy and the capital market."}, {"id": "14.6", "q": "The Competition Act, 2002, which replaced the MRTP Act, 1969, is administered by the:", "o": ["Ministry of Corporate Affairs", "SEBI", "Ministry of Finance", "RBI"], "a": 0, "w": "MCA also administers the Companies Act."}, {"id": "14.7", "q": "The Foreign Exchange Management Act, 1999 is administered by:", "o": ["IRDAI", "SEBI", "RBI", "Ministry of Corporate Affairs"], "a": 2, "w": "As the manager of foreign exchange."}, {"id": "14.8", "q": "SEBI was established under:", "o": ["The Companies Act, 2013", "Section 3 of the SEBI Act, 1992", "The SCRA, 1956", "Section 30 of the SEBI Act, 1992"], "a": 1, "w": "Section 30 is the power under which PIT and PFUTP regulations are made."}, {"id": "14.9", "q": "SEBI merged with the Forward Markets Commission on:", "o": ["28 September 2015", "30 March 2026", "1 April 1992", "28 September 2005"], "a": 0, "w": "SEBI now regulates commodity markets."}, {"id": "14.10", "q": "Which regulator is also the authority for regulation and development of valuers in India?", "o": ["IRDAI", "PFRDA", "RBI", "IBBI"], "a": 3, "w": "IBBI was set up under the IBC, 2016."}, {"id": "14.11", "q": "Under the SCRA, 1956, who has the power to make or amend the bye-laws of recognised stock exchanges?", "o": ["RBI", "Ministry of Corporate Affairs", "SEBI", "The exchanges alone"], "a": 2, "w": "One of the SCRA powers listed in the book."}, {"id": "14.12", "q": "The SEBI (Prohibition of Insider Trading) Regulations, 2015 were made under:", "o": ["The IBC, 2016", "Section 30 of the SEBI Act, 1992", "Section 230 of the Companies Act, 2013", "Section 3 of the SEBI Act, 1992"], "a": 1, "w": "PFUTP 2003 was also made under section 30."}, {"id": "14.13", "q": "A person associated with a company in a way that gives access to UPSI is a 'connected person' if the association was within the ______ before the act.", "o": ["Six months", "Twelve months", "One month", "Three years"], "a": 0, "w": "As defined in the PIT regulations."}, {"id": "14.14", "q": "Which of the following is NOT listed as UPSI in the book?", "o": ["Mergers and acquisitions", "Financial results", "Change in ESG rating", "Dividends"], "a": 2, "w": "The list includes change in ratings \"other than ESG ratings\"."}, {"id": "14.15", "q": "Under Regulation 4 of the PIT Regulations, an insider who trades while in possession of UPSI:", "o": ["Is presumed to have been motivated by it, but may prove innocence in specified circumstances", "Must only inform the stock exchange afterwards", "Is always allowed to trade", "Is exempt if the trade is small"], "a": 0, "w": "Connected persons must establish that their trades did not violate the regulations."}, {"id": "14.16", "q": "A newly appointed director must disclose holdings in the company's securities within:", "o": ["Ninety days", "Seven days", "One day", "Thirty days"], "a": 1, "w": "Initial disclosure under the PIT regulations."}, {"id": "14.17", "q": "A 'Chinese wall' policy separates:", "o": ["Indian and foreign clients", "Insider areas with confidential information from public areas such as sales and marketing", "Equity research from debt research", "The board from shareholders"], "a": 1, "w": "Crossing the wall is allowed only on need to know, with the compliance officer informed."}, {"id": "14.18", "q": "Under the SEBI PFUTP Regulations, whether there is wrongful gain or avoidance of loss is:", "o": ["Relevant only for intermediaries", "Inconsequential in deciding whether fraud has been committed", "Required to prove fraud", "The main test of fraud"], "a": 1, "w": "Fraud includes any act, expression, omission or concealment to induce dealing."}, {"id": "14.19", "q": "Transactions between persons to create a false appearance of trading or to move the price are called:", "o": ["Hedging", "Arbitrage", "Block deals", "Circular transactions"], "a": 3, "w": "One of the deemed manipulative practices."}, {"id": "14.20", "q": "Which of the following is NOT an action SEBI can take against an intermediary under PFUTP, as per the book?", "o": ["Cancel its registration", "Suspend its registration", "Award a performance bonus", "Issue a warning or censure"], "a": 2, "w": "The book lists warning or censure, suspension and cancellation."}, {"id": "14.21", "q": "The IOSCO report on addressing analysts' conflicts of interest was released in:", "o": ["September 2015", "September 2003", "January 2014", "March 1992"], "a": 1, "w": "It set principles that informed the RA Regulations, 2014."}, {"id": "14.22", "q": "A person located outside India issuing research reports on securities listed in India must:", "o": ["Get approval from the stock exchange only", "Register with RBI", "Enter into an agreement with a SEBI-registered research analyst or research entity", "Do nothing; foreign persons are exempt"], "a": 2, "w": "Regulation 4 of the RA Regulations."}, {"id": "14.23", "q": "Which qualification meets Regulation 7 of the RA Regulations?", "o": ["Class 12 plus five years' trading experience", "A graduate degree plus relevant NISM certification", "Any NISM certificate without a degree", "A stock broker's licence"], "a": 1, "w": "Alternatively, NISM's Post Graduate Program in the Securities Market (Research Analysis), or a CFA Charter plus NISM certification."}, {"id": "14.24", "q": "A part-time research analyst is granted a certificate of registration in:", "o": ["Form C", "Form D", "Form A", "Form B"], "a": 0, "w": "Form B is for a research analyst."}, {"id": "14.25", "q": "A research analyst's certificate of registration is valid:", "o": ["For five years", "For one year, renewable", "For three years", "Until it is suspended or cancelled by SEBI"], "a": 3, "w": "Regulation 10. NISM certification, separately, must be renewed."}, {"id": "14.26", "q": "Under the IBC as described in the book, which creditors form the committee of creditors?", "o": ["Financial creditors", "Both financial and operational creditors", "Shareholders", "Operational creditors"], "a": 0, "w": "Operational creditors can initiate proceedings but cannot be part of the committee."}, {"id": "14.27", "q": "The IBC envisages that an insolvency proceeding should be completed within:", "o": ["30 days", "365 days", "90 days", "180 days"], "a": 3, "w": "Extensions have often been granted."}, {"id": "14.28", "q": "The code of conduct for research analysts is set out in the RA Regulations':", "o": ["Third Schedule", "Regulation 4", "Chapter V", "First Schedule"], "a": 0, "w": "It has eight items."}, {"id": "14.29", "q": "Which of the following is NOT part of the code of conduct for research analysts?", "o": ["Honesty and good faith", "Responsibility of senior management", "Confidentiality of the report until made public", "Guaranteeing returns to clients"], "a": 3, "w": "Assured returns are prohibited, not required."}, {"id": "14.30", "q": "An independent research analyst may not trade in a security they recommend within:", "o": ["10 days before and 10 days after publication", "40 days after publication", "30 days before and 5 days after publication of the report", "5 days before and 30 days after publication"], "a": 2, "w": "Regulation 16(2)."}, {"id": "14.31", "q": "Research analysts may not trade in securities they review:", "o": ["In a manner contrary to their own recommendation", "Without a demat account", "Only during market hours", "At any time"], "a": 0, "w": "Regulation 16(3)."}, {"id": "14.32", "q": "A research entity's analyst compensation must NOT be based on:", "o": ["Annual review by the board", "Specific merchant banking, investment banking or brokerage transactions", "Years of experience", "The quality of research"], "a": 1, "w": "Regulation 17. Pay is reviewed annually by a board or committee without those divisions."}, {"id": "14.33", "q": "An RA that managed a company's IPO cannot publish a report on it for ______ after the securities are priced.", "o": ["40 days", "15 days", "25 days", "10 days"], "a": 0, "w": "10 days for a further public offer; 25 days from the offering for an IPO underwriter."}, {"id": "14.34", "q": "A research entity participating as an underwriter of an IPO cannot publish a report on that issuer before ______ from the date of the offering.", "o": ["5 days", "40 days", "25 days", "10 days"], "a": 2, "w": "Regulation 18(2)."}, {"id": "14.35", "q": "Research analysts must NOT participate in:", "o": ["Writing reports", "Meetings with company management for research", "Sales pitches and deal road shows for investment banking business", "Investor education activities"], "a": 2, "w": "Regulation 18(4). Investor education, including pre-deal research, is allowed."}, {"id": "14.36", "q": "In a research report, an RA must disclose ownership of ______ or more of the subject company's securities.", "o": ["10%", "0.5%", "1%", "5%"], "a": 2, "w": "At the end of the month immediately before publication."}, {"id": "14.37", "q": "Disclosures about compensation received from the subject company cover the past:", "o": ["Five years", "Three months", "Twelve months", "Three years"], "a": 2, "w": "Regulation 19."}, {"id": "14.38", "q": "If a report has held a rating or target for at least one year, it must include a graph of daily closing prices for:", "o": ["Since listing", "Ten years", "The last month only", "The period assigned or three years, whichever is shorter"], "a": 3, "w": "Regulation 20(3)."}, {"id": "14.39", "q": "According to Regulation 22, a research report:", "o": ["Needs stock exchange approval", "Must not be made available selectively to internal traders or particular clients in advance", "Must first go to the trading desk", "Can be sold to the highest bidder first"], "a": 1, "w": "All entitled clients must receive it fairly."}, {"id": "14.40", "q": "Research analysts must preserve records for a minimum of:", "o": ["Ten years", "Five years", "One year", "Three years"], "a": 1, "w": "Regulation 25(2). Annual compliance audit is also required."}, {"id": "14.41", "q": "A research analyst must redress investor grievances within:", "o": ["45 days", "7 days", "30 days", "21 calendar days"], "a": 3, "w": "Regulation 26B; also in the Investor Charter."}, {"id": "14.42", "q": "Under Regulation 26C, an individual research analyst:", "o": ["May provide distribution services to the same client", "Must also register as a distributor", "Shall not provide distribution services", "May distribute only mutual funds"], "a": 2, "w": "Client-level segregation of research and distribution."}, {"id": "14.43", "q": "Graded Surveillance Measures (GSM) target securities:", "o": ["Of public sector units", "With the highest trading volumes", "In the derivatives segment", "With low market cap or net worth whose valuation is not commensurate with fundamentals"], "a": 3, "w": "ASM, by contrast, is based on price and volume variations."}, {"id": "14.44", "q": "Which factor does ASM consider?", "o": ["Share of volume traded by the top 25 clients", "Credit rating", "Dividend history", "Promoter holding"], "a": 0, "w": "Along with price variation and volume variation."}, {"id": "14.45", "q": "Once a stock is shortlisted under ASM, the margin is first raised to:", "o": ["50%", "100%", "25%", "80%"], "a": 3, "w": "It can later be raised to 100% with narrower price bands."}, {"id": "14.46", "q": "Which of the following may an RA's advertisement contain?", "o": ["The phrase \"No. 1 research analyst\"", "The SEBI logo", "Factual details of awards received from independent organisations", "Past performance of the RA"], "a": 2, "w": "Superlatives, past performance and the SEBI logo are prohibited."}, {"id": "14.47", "q": "The standard warning in an RA's advertisement must be in a font size of at least:", "o": ["10", "8", "12", "6"], "a": 0, "w": "With no words added or removed."}, {"id": "14.48", "q": "Under the Investor Charter, if an investor is not satisfied after SCORES or RAASB, they can go to:", "o": ["The RA's sales team", "No further option", "The stock exchange trading desk", "SMART ODR for online conciliation or arbitration"], "a": 3, "w": "The RA must first try to redress within 21 days."}, {"id": "14.49", "q": "Which of the following is a 'don't' for investors in the Investor Charter?", "o": ["Sharing trading or demat login credentials with the RA", "Reading disclosures in research reports", "Paying fees through banking channels", "Checking the RA's SEBI registration number"], "a": 0, "w": "The other three are do's."}, {"id": "14.50", "q": "Which of the following is NOT one of the five CSCRF cyber resiliency goals?", "o": ["Ignore", "Withstand", "Anticipate", "Recover"], "a": 0, "w": "The five: anticipate, withstand, contain, recover, evolve."}], "cases": [{"id": "C27", "title": "Priyanka's busy month", "text": "Priyanka is an analyst at a research entity that also has an investment banking division. On 1 June she starts preparing a buy report on Zeta Ltd, published on 20 June. Her firm co-managed Zeta's IPO, priced on 5 June. Her bonus this year is proposed to include a share of the IPO fee. She owns 1.2% of Zeta.", "qs": [{"q": "Under the RA Regulations, when can Priyanka not trade in Zeta's shares?", "o": ["From 30 days before to 5 days after publication on 20 June", "She can trade at any time", "Only on 20 June", "Only for 5 days before publication"], "a": 0, "w": "Regulation 16(2): 30 days before and 5 days after publication."}, {"q": "Since her firm co-managed the IPO priced on 5 June, the earliest it may publish without special approval is:", "o": ["25 days after 5 June", "Immediately", "10 days after 5 June", "40 days after 5 June"], "a": 3, "w": "40 days after pricing for an IPO; the 20 June date is too early unless legal or compliance staff give prior written approval."}, {"q": "The proposed bonus is:", "o": ["Allowed after SEBI approval", "Allowed if disclosed", "Not allowed, as pay cannot be based on a specific investment banking transaction", "Allowed if under 1% of the fee"], "a": 2, "w": "Regulation 17(1)."}, {"q": "What must the report disclose about her 1.2% holding?", "o": ["That she owns 1% or more of Zeta's securities", "Only if she sells", "Nothing, as it is under 5%", "Only her purchase price"], "a": 0, "w": "Regulation 19 requires disclosure of ownership of 1% or more."}]}, {"id": "C28", "title": "A tip at the dinner table", "text": "Arun's brother-in-law is the CFO of Omega Ltd. At dinner, he mentions that Omega will announce a merger next week and that the auditors resigned yesterday. Arun runs a small research firm and plans to send a 'buy Omega' message to all his clients the next morning, and to buy for himself first.", "qs": [{"q": "The merger news and the auditor's resignation are best described as:", "o": ["Mosaic analysis", "Public information", "Market commentary", "Unpublished price sensitive information"], "a": 3, "w": "Both are on the UPSI list: mergers, and resignation of a statutory auditor."}, {"q": "As the CFO's relative who has received UPSI, Arun is:", "o": ["Free to trade, as he is not an employee", "An insider, and must not trade while in possession of it", "Only barred from selling", "Allowed to trade if he informs the exchange"], "a": 1, "w": "An insider includes anyone in possession of UPSI; relatives of connected persons are deemed connected."}, {"q": "Buying for himself before sending the recommendation to clients would also breach the code of conduct on:", "o": ["None, it is allowed", "Front running", "Professional standard only", "Diligence only"], "a": 1, "w": "The code bars insider trading and front running, including of one's own report."}, {"q": "Under which section of the SEBI Act were the PIT Regulations made?", "o": ["Section 11(2) only", "Section 30", "Section 3", "Section 12"], "a": 1, "w": "Both PIT 2015 and PFUTP 2003 were made under section 30."}]}, {"id": "C29", "title": "Sunil's social media launch", "text": "Sunil, an individual SEBI-registered research analyst, plans an Instagram campaign: \"India's No. 1 research analyst. 90% accuracy guaranteed. Last year our picks returned 45%. Free trial!\" (the trial needs a paid sign-up). He also wants to sell mutual funds to his research clients and to use the SEBI logo for credibility.", "qs": [{"q": "Which part of the ad is allowed?", "o": ["\"90% accuracy guaranteed\"", "\"No. 1 research analyst\"", "\"Last year our picks returned 45%\"", "None of the quoted claims; each one breaks the advertisement code"], "a": 3, "w": "Superlatives, percentage accuracy or assured returns, past performance and \"free\" when not free are all prohibited."}, {"q": "Can Sunil use the SEBI logo?", "o": ["Only on his website", "Yes, as he is registered", "No, advertisements shall not include the SEBI logo", "Yes, with SEBI's email approval"], "a": 2, "w": "The SEBI logo must not be used by IAs or RAs."}, {"q": "Can Sunil sell mutual funds to his research clients?", "o": ["Yes, for clients who agree in writing", "Yes, if he discloses it", "No, an individual RA shall not provide distribution services", "Only debt funds"], "a": 2, "w": "Regulation 26C."}, {"q": "What standard warning must the ad carry?", "o": ["\"Investment in securities market is subject to market risks. Read all the related documents carefully before investing.\"", "No warning is needed on social media", "\"Past performance guarantees future returns.\"", "\"Approved by SEBI.\""], "a": 0, "w": "Unchanged, in at least 10-point font, and accurately translated if not in English."}]}]};</script>
+<script></script><script>
+(function(){
+const DATA = window.__DATA__;
+const KEY = 'nismra:'+DATA.id+':';
+const store = {
+  get(k,d){try{const v=localStorage.getItem(KEY+k);return v?JSON.parse(v):d}catch(e){return d}},
+  set(k,v){try{localStorage.setItem(KEY+k,JSON.stringify(v))}catch(e){}}
+};
+const $=(s,r=document)=>r.querySelector(s);
+const el=(t,a={},h='')=>{const e=document.createElement(t);for(const k in a){if(k==='class')e.className=a[k];else e.setAttribute(k,a[k])}if(h)e.innerHTML=h;return e};
+function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),1600)}
+/* theme */
+const tb=$('#themebtn');
+function applyTheme(t){if(t)document.documentElement.setAttribute('data-theme',t);else document.documentElement.removeAttribute('data-theme');tb.textContent=(t==='dark'||(!t&&matchMedia('(prefers-color-scheme: dark)').matches))?'\u2600':'\u263E'}
+let th=null;try{th=localStorage.getItem('nismra:theme')}catch(e){}
+applyTheme(th);
+tb.addEventListener('click',()=>{const dark=document.documentElement.getAttribute('data-theme')==='dark'||(!document.documentElement.getAttribute('data-theme')&&matchMedia('(prefers-color-scheme: dark)').matches);const n=dark?'light':'dark';applyTheme(n);try{localStorage.setItem('nismra:theme',n)}catch(e){}});
+/* tabs */
+const tabs=[...document.querySelectorAll('.tab')];
+function show(v){tabs.forEach(t=>t.setAttribute('aria-selected',t.dataset.v===v));document.querySelectorAll('.view').forEach(x=>x.hidden=x.id!=='v-'+v);if(v==='cards')renderCard();window.scrollTo(0,0);try{history.replaceState(null,'','#'+v)}catch(e){}}
+tabs.forEach(t=>t.addEventListener('click',()=>show(t.dataset.v)));
+/* ---------- flashcards ---------- */
+const cards=DATA.cards;
+let known=new Set(store.get('known',[]));
+let missed=new Set(store.get('missed',[]));
+let deck=[],pos=0,onlyMissed=false;
+function buildDeck(shuffle){deck=cards.map((c,i)=>i).filter(i=>!onlyMissed||missed.has(i));if(shuffle){for(let i=deck.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[deck[i],deck[j]]=[deck[j],deck[i]]}}pos=0}
+buildDeck(false);
+function renderCard(){
+  const c3=$('#fc-card');c3.classList.remove('flip');
+  const done=known.size;$('#fc-bar').style.width=(100*done/cards.length)+'%';
+  $('#fc-count').textContent=done+' of '+cards.length+' marked known';
+  if(!deck.length){$('#fc-front').innerHTML='No cards here.';$('#fc-back').innerHTML='Switch off "Only cards I missed" to see the full deck.';$('#fc-pos').textContent='';return}
+  if(pos>=deck.length){$('#fc-front').innerHTML='Deck done.';$('#fc-back').innerHTML='Press Shuffle to go again, or study only the cards you missed.';$('#fc-pos').textContent='';return}
+  const c=cards[deck[pos]];$('#fc-front').innerHTML=c.f;$('#fc-back').innerHTML=c.b;$('#fc-pos').textContent='Card '+(pos+1)+' of '+deck.length;
+}
+function flip(){$('#fc-card').classList.toggle('flip')}
+$('#fc-card').addEventListener('click',flip);
+$('#fc-card').addEventListener('keydown',e=>{if(e.key===' '||e.key==='Enter'){e.preventDefault();flip()}});
+function mark(ok){if(pos>=deck.length)return;const i=deck[pos];if(ok){known.add(i);missed.delete(i)}else{missed.add(i);known.delete(i)}store.set('known',[...known]);store.set('missed',[...missed]);pos++;renderCard()}
+$('#fc-good').addEventListener('click',()=>mark(true));
+$('#fc-bad').addEventListener('click',()=>mark(false));
+$('#fc-shuffle').addEventListener('click',()=>{buildDeck(true);renderCard()});
+$('#fc-missed').addEventListener('change',e=>{onlyMissed=e.target.checked;buildDeck(false);renderCard()});
+$('#fc-reset').addEventListener('click',()=>{known.clear();missed.clear();store.set('known',[]);store.set('missed',[]);buildDeck(false);renderCard();toast('Progress cleared')});
+document.addEventListener('keydown',e=>{if($('#v-cards').hidden)return;if(e.key==='ArrowRight')mark(true);if(e.key==='ArrowLeft')mark(false)});
+/* ---------- quiz ---------- */
+const Q=[];DATA.mcqs.forEach(q=>Q.push(Object.assign({kind:'mcq'},q)));
+(DATA.cases||[]).forEach(cs=>cs.qs.forEach((q,k)=>Q.push(Object.assign({kind:'case',caseTitle:cs.title,caseText:cs.text,id:cs.id+'-'+(k+1)},q))));
+let run=null;
+function pick(set){let arr;
+  if(set==='quick'){arr=Q.filter(q=>q.kind==='mcq').slice();for(let i=arr.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[arr[i],arr[j]]=[arr[j],arr[i]]}arr=arr.slice(0,10)}
+  else if(set==='mcq')arr=Q.filter(q=>q.kind==='mcq');
+  else if(set==='case')arr=Q.filter(q=>q.kind==='case');
+  else if(set==='missed'){const m=new Set(store.get('qmissed',[]));arr=Q.filter(q=>m.has(q.id))}
+  else arr=Q.slice();
+  return arr}
+function start(){const set=document.querySelector('input[name=qset]:checked').value;const mode=document.querySelector('input[name=qmode]:checked').value;const qs=pick(set);
+  if(!qs.length){toast('No questions in this set yet');return}
+  run={qs,mode,i:0,ans:qs.map(()=>null),checked:qs.map(()=>false)};$('#qz-setup').hidden=true;$('#qz-end').hidden=true;$('#qz-run').hidden=false;renderQ()}
+function renderQ(){const q=run.qs[run.i];const box=$('#qz-q');box.innerHTML='';
+  $('#qz-pos').textContent='Question '+(run.i+1)+' of '+run.qs.length;
+  $('#qz-modelbl').textContent=run.mode==='exam'?'Exam mode: answers shown at the end':'Practice mode';
+  if(q.kind==='case'){box.appendChild(el('div',{class:'qcase'},'<b>Case: '+q.caseTitle+'</b><br>'+q.caseText))}
+  box.appendChild(el('div',{class:'qtext'},q.q));
+  const L='abcd';
+  q.o.forEach((o,k)=>{const b=el('button',{class:'opt','aria-pressed':String(run.ans[run.i]===k)},'<span class="lt">'+L[k]+'</span><span>'+o+'</span>');
+    b.addEventListener('click',()=>{if(run.checked[run.i])return;run.ans[run.i]=k;renderQ()});box.appendChild(b)});
+  if(run.checked[run.i])paintCheck();
+  $('#qz-check').hidden=run.mode==='exam'||run.checked[run.i];
+  $('#qz-check').disabled=run.ans[run.i]===null;
+  $('#qz-prev').disabled=run.i===0;
+  $('#qz-next').textContent=run.i===run.qs.length-1?'Finish':'Next';
+  $('#qz-skip').hidden=run.checked[run.i];
+}
+function paintCheck(){const q=run.qs[run.i];const opts=[...document.querySelectorAll('#qz-q .opt')];opts.forEach((b,k)=>{b.disabled=true;if(k===q.a)b.classList.add('right');else if(k===run.ans[run.i])b.classList.add('wrong')});
+  const a=run.ans[run.i];const ok=a===q.a;const ex=el('div',{class:'explain '+(a===null?'':(ok?'ok':'no'))},'<b>'+(a===null?'Skipped. ':ok?'Correct. ':'Not quite. ')+'</b>'+q.w);$('#qz-q').appendChild(ex)}
+$('#qz-check').addEventListener('click',()=>{run.checked[run.i]=true;renderQ()});
+$('#qz-skip').addEventListener('click',()=>{run.ans[run.i]=null;if(run.mode==='practice'){run.checked[run.i]=true;renderQ()}else next()});
+$('#qz-prev').addEventListener('click',()=>{if(run.i>0){run.i--;renderQ()}});
+function next(){if(run.i<run.qs.length-1){run.i++;renderQ();window.scrollTo({top:0})}else finish()}
+$('#qz-next').addEventListener('click',next);
+$('#qz-start').addEventListener('click',start);
+$('#qz-quit').addEventListener('click',()=>{$('#qz-run').hidden=true;$('#qz-setup').hidden=false});
+function finish(){let c=0,w=0,s=0;const miss=new Set(store.get('qmissed',[]));const wrongIdx=[];
+  run.qs.forEach((q,i)=>{const a=run.ans[i];if(a===null){s++;miss.add(q.id);wrongIdx.push(i)}else if(a===q.a){c++;miss.delete(q.id)}else{w++;miss.add(q.id);wrongIdx.push(i)}});
+  store.set('qmissed',[...miss]);
+  const net=c-0.25*w;const pct=100*net/run.qs.length;
+  $('#qz-run').hidden=true;$('#qz-end').hidden=false;
+  $('#qz-score').innerHTML='<div><b>'+c+'</b><small>correct</small></div><div><b>'+w+'</b><small>wrong</small></div><div><b>'+s+'</b><small>skipped</small></div><div><b>'+net.toFixed(2)+'</b><small>net score</small></div>';
+  $('#qz-verdict').textContent=pct>=60?('Pass level. Net '+pct.toFixed(0)+'%.'):('Below the 60% pass line. Net '+pct.toFixed(0)+'%.');
+  $('#qz-penalty').textContent=w?('Wrong answers cost you '+(0.25*w).toFixed(2)+' marks.'):'No marks lost to negative marking.';
+  const rv=$('#qz-review');rv.innerHTML='';const L='abcd';
+  if(!wrongIdx.length)rv.innerHTML='<p>Nothing to review. Every answer was right.</p>';
+  wrongIdx.forEach(i=>{const q=run.qs[i];const a=run.ans[i];rv.appendChild(el('div',{class:'item'},'<p><b>'+q.q+'</b></p><p>Your answer: '+(a===null?'skipped':L[a]+') '+q.o[a])+'</p><p>Right answer: <b>'+L[q.a]+') '+q.o[q.a]+'</b></p><p class="ptr">'+q.w+'</p>'))});
+  run.summary=DATA.short+' quiz: '+c+'/'+run.qs.length+' correct, '+w+' wrong, '+s+' skipped. Net '+net.toFixed(2)+' ('+pct.toFixed(0)+'%).'+(wrongIdx.length?' Missed: '+wrongIdx.map(i=>run.qs[i].id).join(', '):'');
+}
+$('#qz-copy').addEventListener('click',()=>{const t=run&&run.summary||'';(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(()=>toast('Copied. Paste it in the group chat.')).catch(()=>{prompt('Copy this:',t)})});
+$('#qz-again').addEventListener('click',()=>{$('#qz-end').hidden=true;$('#qz-setup').hidden=false;updateMissedCount()});
+function updateMissedCount(){const n=store.get('qmissed',[]).length;$('#qz-missedn').textContent=n?('('+n+' saved)'):'(none yet)'}
+updateMissedCount();
+$('#qz-counts').textContent=DATA.mcqs.length+' MCQs and '+(DATA.cases||[]).reduce((s,c)=>s+c.qs.length,0)+' case questions';
+/* interactive widgets hook */
+if(window.__WIDGETS__)window.__WIDGETS__();
+const h=(location.hash||'').replace('#','');if(['learn','cards','quiz'].includes(h))show(h);
+})();
+</script></body></html>

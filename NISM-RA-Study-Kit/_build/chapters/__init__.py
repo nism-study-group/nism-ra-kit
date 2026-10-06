@@ -1,7 +1,7 @@
 # Chapter registry: one entry per chapter page. build.py, export.py and boards.py all read it.
 # Keep the order: build.py derives each chapter's answer-shuffle seed from its position,
 # so new chapters go at the END.
-from . import ch00, ch01, ch02_learn, ch02_qs, ch03_learn, ch03_qs, ch04, ch05, ch06_learn, ch06_qs, ch07, ch08_learn, ch08_qs, ch09, ch10_learn, ch10_qs, ch11, ch12_learn, ch12_qs
+from . import ch00, ch01, ch02_learn, ch02_qs, ch03_learn, ch03_qs, ch04, ch05, ch06_learn, ch06_qs, ch07, ch08_learn, ch08_qs, ch09, ch10_learn, ch10_qs, ch11, ch12_learn, ch12_qs, ch13, ch14_learn, ch14_qs, ch15_learn, ch15_qs
 
 CH = {
  "ch01": {"dir":"Ch01-Research-Analyst-Profession","file":"Ch01-study-page.html","data":ch01.DATA,"learn":ch01.LEARN,"widgets":"","title":"The research analyst profession","n":1},
@@ -20,6 +20,9 @@ CH = {
  "ch10": {"dir":"Ch10-Valuation-Principles","file":"Ch10-study-page.html","data":ch10_qs.DATA,"learn":ch10_learn.LEARN,"widgets":ch10_learn.WIDGETS,"title":"Valuation principles","n":10,"extra":"Includes the book's case study and a CAPM, WACC and Gordon calculator."},
  "ch11": {"dir":"Ch11-Commodities","file":"Ch11-study-page.html","data":ch11.DATA,"learn":ch11.LEARN,"widgets":ch11.WIDGETS,"title":"Fundamental analysis of commodities","n":11,"extra":"Hedge ratio calculator."},
  "ch12": {"dir":"Ch12-Risk-and-Return","file":"Ch12-study-page.html","data":ch12_qs.DATA,"learn":ch12_learn.LEARN,"widgets":ch12_learn.WIDGETS,"title":"Fundamentals of risk and return","n":12,"extra":"Return calculator and Sharpe, Treynor and Jensen calculator."},
+ "ch13": {"dir":"Ch13-Research-Report","file":"Ch13-study-page.html","data":ch13.DATA,"learn":ch13.LEARN,"widgets":"","title":"Qualities of a good research report","n":13},
+ "ch14": {"dir":"Ch14-Legal-and-Regulatory","file":"Ch14-study-page.html","data":ch14_qs.DATA,"learn":ch14_learn.LEARN,"widgets":"","title":"Legal and regulatory environment","n":14,"extra":"Includes the Investor Charter and a table of all quiet periods."},
+ "ch15": {"dir":"Ch15-Technical-Analysis","file":"Ch15-study-page.html","data":ch15_qs.DATA,"learn":ch15_learn.LEARN,"widgets":"","title":"Technical analysis","n":15,"extra":"Drawn candlestick and chart pattern diagrams."},
 }
 
 # Figures that are interactive tools: skipped by the PNG export and drawn as a pointer on the boards.

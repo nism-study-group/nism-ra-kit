@@ -1,0 +1,633 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Chapter 15: Technical analysis | NISM RA study kit</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&display=swap" rel="stylesheet"><style>
+:root{
+ --paper:#F5F6F8;--card:#FFFFFF;--ink:#1B2340;--muted:#586178;--line:#D8DDE7;
+ --indigo:#2E3F8F;--indigo-soft:#E6E9F6;--marker:#FFE27A;--teal:#12705F;--teal-soft:#DDF1EC;
+ --brick:#A83C29;--brick-soft:#F8E3DE;--sun:#F2B233;
+ --head:"Bricolage Grotesque","Segoe UI",system-ui,-apple-system,sans-serif;
+ --body:"Atkinson Hyperlegible","Segoe UI",system-ui,-apple-system,sans-serif;
+ box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+ --paper:#11141C;--card:#1A1E2A;--ink:#E7EAF3;--muted:#9EA7BC;--line:#2C3244;
+ --indigo:#9AABFF;--indigo-soft:#232A45;--marker:rgba(255,214,90,.30);--teal:#52C7AE;--teal-soft:#16332D;
+ --brick:#F2826C;--brick-soft:#3A201B;--sun:#F2B233;}}
+:root[data-theme="dark"]{
+ --paper:#11141C;--card:#1A1E2A;--ink:#E7EAF3;--muted:#9EA7BC;--line:#2C3244;
+ --indigo:#9AABFF;--indigo-soft:#232A45;--marker:rgba(255,214,90,.30);--teal:#52C7AE;--teal-soft:#16332D;
+ --brick:#F2826C;--brick-soft:#3A201B;}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 70px);-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6}
+img,svg{max-width:100%}
+a{color:var(--indigo)}
+:focus-visible{outline:3px solid var(--sun);outline-offset:2px;border-radius:4px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+.col{max-width:720px}
+h1,h2,h3,h4{font-family:var(--head);line-height:1.15;margin:0}
+h2{font-size:clamp(1.5rem,3.4vw,2rem);font-weight:800;margin:0 0 .6rem}
+h3{font-size:1.2rem;font-weight:700;margin:1.8rem 0 .5rem}
+p{margin:.55rem 0}
+ul,ol{margin:.4rem 0 .8rem;padding-left:1.3rem}
+li{margin:.25rem 0}
+/* top bar */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--paper) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.bar .wrap{display:flex;align-items:center;gap:12px;min-height:58px}
+.brand{font-family:var(--head);font-weight:700;font-size:.95rem;color:var(--muted);text-decoration:none;white-space:nowrap}
+.tabs{display:flex;gap:4px;margin-left:auto;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:4px}
+.tab{border:0;background:transparent;color:var(--ink);font:600 .95rem var(--body);padding:.45rem .95rem;border-radius:999px;cursor:pointer}
+.tab[aria-selected="true"]{background:var(--indigo);color:var(--card)}
+.themebtn{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;width:38px;height:38px;cursor:pointer;font-size:1rem}
+@media (max-width:620px){.brand{display:none}.tabs{margin-left:0;flex:1;justify-content:space-between}.tab{padding:.45rem .6rem;flex:1}}
+/* hero */
+.hero{padding:44px 0 18px}
+.kicker{font-family:var(--head);font-weight:700;color:var(--indigo);font-size:1rem;margin-bottom:.4rem}
+.hero h1{font-size:clamp(2.1rem,6vw,3.6rem);font-weight:800;letter-spacing:-.02em;max-width:18ch}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 0}
+.pill{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:.2rem .75rem;font-size:.9rem;color:var(--muted)}
+.pill b{color:var(--ink)}
+.oneline{margin:28px 0 8px;font-family:var(--head);font-size:clamp(1.25rem,3vw,1.7rem);font-weight:500;line-height:1.35;max-width:32ch}
+.oneline .k{font-weight:700}
+/* key term highlighter */
+.k{background:linear-gradient(104deg,transparent 0 .2em,var(--marker) .2em calc(100% - .15em),transparent calc(100% - .15em));padding:0 .2em;margin:0 -.05em;font-weight:700;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+/* sections */
+section.sec{padding:34px 0 10px;border-top:1px solid var(--line);margin-top:26px}
+.secno{font-family:var(--head);font-weight:800;color:var(--indigo);font-size:1rem;display:block;margin-bottom:.2rem}
+.why{border-left:4px solid var(--indigo);background:var(--indigo-soft);padding:.7rem 1rem;border-radius:0 10px 10px 0;margin:1rem 0}
+.why b:first-child{display:block;font-family:var(--head);margin-bottom:.1rem}
+.analogy{background:var(--card);border:1px dashed var(--indigo);border-radius:14px;padding:.8rem 1rem;margin:1rem 0}
+.analogy::before{content:"Think of it like this";display:block;font-family:var(--head);font-weight:700;color:var(--indigo);font-size:.95rem;margin-bottom:.2rem}
+.trap{border:2px solid var(--brick);background:var(--brick-soft);border-radius:12px;padding:.65rem .95rem;margin:1rem 0;position:relative}
+.trap::before{content:"Exam trap";display:inline-block;font-family:var(--head);font-weight:800;color:var(--card);background:var(--brick);border-radius:6px;padding:0 .45rem;font-size:.85rem;margin-right:.45rem;transform:rotate(-2deg)}
+.num{font-family:var(--head);font-weight:800;color:var(--brick)}
+dl.terms{display:grid;grid-template-columns:minmax(120px,max-content) 1fr;gap:.35rem 1rem;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1rem 1.1rem;margin:1rem 0}
+dl.terms dt{font-weight:700}
+dl.terms dd{margin:0;color:var(--muted)}
+@media (max-width:560px){dl.terms{grid-template-columns:1fr}dl.terms dd{margin-bottom:.4rem}}
+.terms-title{font-family:var(--head);font-weight:700;margin:1.4rem 0 -.4rem}
+/* figures */
+figure.fig{margin:1.4rem 0;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px}
+figure.fig figcaption{font-family:var(--head);font-weight:700;font-size:1.02rem;margin-bottom:12px}
+figure.fig figcaption span{display:block;font-family:var(--body);font-weight:400;color:var(--muted);font-size:.9rem;margin-top:2px}
+.scroll{overflow-x:auto}
+/* flow */
+.flow{display:flex;align-items:stretch;gap:0;flex-wrap:nowrap}
+.flow .step{flex:1;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:.7rem .8rem;min-width:0}
+.flow .step h4{font-size:1rem;margin-bottom:.2rem}
+.flow .step p{font-size:.92rem;margin:0;color:var(--muted)}
+.flow .arrow{flex:0 0 28px;display:flex;align-items:center;justify-content:center;color:var(--indigo);font-weight:800;font-size:1.3rem}
+.flow .arrow::before{content:"\2192"}
+@media (max-width:700px){.flow{flex-direction:column}.flow .arrow{flex-basis:26px}.flow .arrow::before{content:"\2193"}}
+.step.hl{border-color:var(--indigo);background:var(--indigo-soft)}
+.step.gd{border-color:var(--teal);background:var(--teal-soft)}
+.step.bd{border-color:var(--brick);background:var(--brick-soft)}
+/* grids */
+.grid{display:grid;gap:12px}
+.g2{grid-template-columns:repeat(2,1fr)}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}
+@media (max-width:760px){.g3,.g4{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:480px){.g2,.g3,.g4{grid-template-columns:1fr}}
+.box{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:.75rem .9rem}
+.box h4{font-size:1.02rem;margin-bottom:.25rem}
+.box p,.box li{font-size:.93rem}
+.box ul{margin:.2rem 0 0}
+.box .tag{display:inline-block;font-size:.78rem;font-weight:700;border-radius:6px;padding:0 .4rem;background:var(--indigo-soft);color:var(--indigo);margin-bottom:.3rem}
+.box.gd{border-color:var(--teal)}.box.bd{border-color:var(--brick)}.box.hl{border-color:var(--indigo)}
+/* table */
+table.cmp{border-collapse:collapse;width:100%;min-width:560px;font-size:.93rem}
+table.cmp th,table.cmp td{border-bottom:1px solid var(--line);padding:.55rem .6rem;text-align:left;vertical-align:top}
+table.cmp thead th{font-family:var(--head);background:var(--indigo-soft);color:var(--ink)}
+table.cmp tbody th{font-weight:700;color:var(--muted);width:24%}
+/* id card */
+.idcard{display:grid;grid-template-columns:auto 1fr;gap:.15rem .7rem;font-size:.88rem;margin-top:.4rem}
+.idcard span:nth-child(odd){color:var(--muted)}
+/* bars */
+.stack{display:flex;height:46px;border-radius:10px;overflow:hidden;border:1px solid var(--line);font-weight:700;font-size:.9rem}
+.stack div{display:flex;align-items:center;justify-content:center;color:var(--card);text-align:center;padding:0 4px}
+/* traps list and talk */
+.traplist{counter-reset:t;list-style:none;padding:0}
+.traplist li{counter-increment:t;background:var(--card);border:1px solid var(--line);border-left:5px solid var(--brick);border-radius:10px;padding:.6rem .9rem .6rem 3rem;position:relative;margin:.5rem 0}
+.traplist li::before{content:counter(t);position:absolute;left:.9rem;top:.55rem;font-family:var(--head);font-weight:800;color:var(--brick);font-size:1.1rem}
+.talk li{margin:.45rem 0}
+.ptr{font-size:.85rem;color:var(--muted)}
+/* chapter map */
+.map{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(170px,1fr))}
+.map a{display:block;text-decoration:none;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:.7rem .85rem;transition:border-color .15s}
+.map a:hover{border-color:var(--indigo)}
+.map a b{display:block;font-family:var(--head);color:var(--indigo);font-size:.9rem}
+.map a span{font-weight:700;display:block;line-height:1.25}
+.map a small{color:var(--muted);display:block;margin-top:.25rem;line-height:1.3}
+.tl{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;position:relative;padding-top:6px}
+.tl::before{content:"";position:absolute;left:8%;right:8%;top:21px;height:4px;background:var(--line);border-radius:4px}
+.tl-i{text-align:center;position:relative}
+.tl-t{display:block;font-family:var(--head);font-size:1.15rem}
+.tl-d{display:block;width:22px;height:22px;border-radius:50%;margin:6px auto 8px;position:relative;border:3px solid var(--card)}
+.tl-i h4{font-size:1.05rem}.tl-i p{font-size:.9rem;color:var(--muted);margin:.2rem 0 0}
+@media (max-width:560px){.tl{grid-template-columns:1fr}.tl::before{display:none}.tl-i{text-align:left;padding-left:34px}.tl-d{position:absolute;left:0;top:0;margin:0}}
+input[type=range]{accent-color:var(--indigo)}
+/* views */
+.view[hidden]{display:none}
+footer{color:var(--muted);font-size:.85rem;padding:40px 0 60px;border-top:1px solid var(--line);margin-top:40px}
+/* flashcards */
+.fc-wrap{max-width:640px;margin:30px auto 0}
+.fc-top{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+.fc-prog{height:8px;background:var(--line);border-radius:99px;overflow:hidden;margin-bottom:16px}
+.fc-prog div{height:100%;background:var(--teal);width:0;transition:width .3s}
+.card3d{perspective:1200px;cursor:pointer;user-select:none}
+.card3d .inner{position:relative;min-height:300px;transition:transform .5s;transform-style:preserve-3d}
+.card3d.flip .inner{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:20px;padding:28px;display:flex;flex-direction:column;justify-content:center;border:1px solid var(--line);background:var(--card)}
+.face.back{transform:rotateY(180deg);background:var(--indigo-soft);border-color:var(--indigo)}
+.face .lbl{position:absolute;top:14px;left:18px;font-size:.8rem;color:var(--muted);font-weight:700}
+.face .front-txt{font-family:var(--head);font-size:clamp(1.3rem,4vw,1.8rem);font-weight:700;line-height:1.25}
+.face .back-txt{font-size:1.08rem}
+.hint{color:var(--muted);font-size:.85rem;text-align:center;margin-top:10px}
+@media (prefers-reduced-motion:reduce){.card3d .inner{transition:none}}
+.btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:16px}
+.btn{font:700 1rem var(--body);border-radius:12px;padding:.65rem 1.1rem;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
+.btn.pri{background:var(--indigo);border-color:var(--indigo);color:var(--card)}
+.btn.good{background:var(--teal);border-color:var(--teal);color:var(--card)}
+.btn.bad{background:var(--brick);border-color:var(--brick);color:var(--card)}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.btn.sm{font-size:.88rem;padding:.4rem .75rem;border-radius:10px}
+/* quiz */
+.qz{max-width:720px;margin:30px auto 0}
+.qz-setup .box{margin:.6rem 0}
+.qz-setup label{display:flex;gap:.6rem;align-items:flex-start;cursor:pointer}
+.qz-head{display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:.9rem;margin-bottom:10px;gap:8px;flex-wrap:wrap}
+.qcase{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--sun);border-radius:12px;padding:.8rem 1rem;margin-bottom:12px;font-size:.95rem}
+.qcase b{font-family:var(--head)}
+.qtext{font-family:var(--head);font-size:1.25rem;font-weight:700;line-height:1.3;margin:4px 0 14px}
+.opt{display:flex;gap:.7rem;align-items:flex-start;width:100%;text-align:left;font:1rem var(--body);color:var(--ink);background:var(--card);border:2px solid var(--line);border-radius:12px;padding:.7rem .9rem;margin:.45rem 0;cursor:pointer}
+.opt .lt{font-family:var(--head);font-weight:800;color:var(--indigo);min-width:1.2rem}
+.opt[aria-pressed="true"]{border-color:var(--indigo);background:var(--indigo-soft)}
+.opt.right{border-color:var(--teal);background:var(--teal-soft)}
+.opt.wrong{border-color:var(--brick);background:var(--brick-soft)}
+.opt:disabled{cursor:default}
+.explain{border-radius:12px;padding:.7rem 1rem;margin-top:12px;background:var(--paper);border:1px solid var(--line)}
+.explain.ok{border-color:var(--teal)}.explain.no{border-color:var(--brick)}
+.explain b{font-family:var(--head)}
+.score{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:16px 0}
+@media (max-width:520px){.score{grid-template-columns:repeat(2,1fr)}}
+.score div{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:.7rem;text-align:center}
+.score b{display:block;font-family:var(--head);font-size:1.8rem}
+.score small{color:var(--muted)}
+.verdict{font-family:var(--head);font-size:1.4rem;font-weight:800;margin:10px 0}
+.review .item{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:.7rem 1rem;margin:.6rem 0}
+.review .item p{margin:.25rem 0}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--paper);padding:.5rem 1rem;border-radius:10px;font-weight:700;opacity:0;transition:opacity .2s;pointer-events:none;z-index:50}
+.toast.show{opacity:1}
+@media print{.bar,.btns,.themebtn{display:none}.view[hidden]{display:block}#v-cards,#v-quiz{display:none}figure.fig,.trap,.analogy{break-inside:avoid}}
+</style></head><body>
+<div class="bar"><div class="wrap"><a class="brand" href="../index.html">NISM RA study kit</a>
+<div class="tabs" role="tablist"><button class="tab" role="tab" data-v="learn" aria-selected="true">Learn</button><button class="tab" role="tab" data-v="cards" aria-selected="false">Flashcards</button><button class="tab" role="tab" data-v="quiz" aria-selected="false">Quiz</button></div>
+<button class="themebtn" id="themebtn" aria-label="Switch light or dark">&#9790;</button></div></div><div class="view" id="v-learn">
+<div class="wrap">
+<header class="hero">
+<div class="kicker">Chapter 15 of 15</div>
+<h1>Technical analysis</h1>
+<div class="meta"><span class="pill">Worth <b>15 marks</b> of 100</span><span class="pill">Book pages 295 to 327</span><span class="pill">About 90 minutes</span></div>
+<p class="oneline">Read the market from its own record of <span class="k">price and volume</span>: the trend, the <span class="k">patterns</span> that signal a turn, and the <span class="k">indicators</span> that confirm it.</p>
+</header>
+
+<figure class="fig" id="fig-map"><figcaption>Chapter map<span>Nine parts. The highest-weighted chapter: learn the patterns and indicator rules exactly. Tap to jump.</span></figcaption>
+<div class="map">
+<a href="#s1"><b>15.1</b><span>What technical analysis is</span><small>Five assumptions; versus fundamental</small></a>
+<a href="#s2"><b>15.2</b><span>Chart types</span><small>Line, bar, candlestick, P&amp;F, Renko, Heikin-Ashi</small></a>
+<a href="#s3"><b>15.3 and 15.4</b><span>Dow Theory and trends</span><small>Six tenets; primary, secondary, tertiary</small></a>
+<a href="#s5"><b>15.5</b><span>Reversal patterns</span><small>Eight candlestick patterns</small></a>
+<a href="#s6"><b>15.6</b><span>Consolidation patterns</span><small>Triangles, flags, pennants</small></a>
+<a href="#s7"><b>15.7 and 15.8</b><span>Support, resistance, trendlines</span><small>Floors, ceilings, channels</small></a>
+<a href="#s9"><b>15.9</b><span>Indicators</span><small>MA, MACD, RSI, ADX, RSC, OBV</small></a>
+</div></figure>
+
+<div class="col">
+<section class="sec" id="s1"><span class="secno">15.1</span><h2>What technical analysis is</h2>
+<p><span class="k">Technical analysis</span> evaluates securities from statistics of trading activity, mainly <b>price and volume</b>. Unlike fundamental analysis, it assumes all relevant information is <b>already in the price</b>. It is used across equities, currencies, commodities and crypto, especially for <b>short to medium term</b> trading. Chapter 4 (4.3) gave a first look.</p>
+</div>
+
+<figure class="fig" id="fig-assume"><figcaption>Five core assumptions</figcaption>
+<div class="grid g3">
+<div class="box hl"><span class="tag">1</span><h4>Price discounts everything</h4><p>Economic, political and psychological information is already in the price. Analysts look only at price and volume.</p></div>
+<div class="box hl"><span class="tag">2</span><h4>Price moves in trends</h4><p>Up, down or sideways. An established trend is more likely to continue than reverse.</p></div>
+<div class="box hl"><span class="tag">3</span><h4>History repeats itself</h4><p>Behaviour is cyclical and driven by psychology; patterns recur.</p></div>
+<div class="box hl"><span class="tag">4</span><h4>Predictable, to a degree</h4><p>Patterns give probabilities, not certainty. It is about managing risk, not guaranteeing outcomes.</p></div>
+<div class="box hl"><span class="tag">5</span><h4>Volume confirms price</h4><p>High volume on breakouts or reversals adds credibility.</p></div>
+</div></figure>
+
+<figure class="fig" id="fig-tavsfa"><figcaption>Technical versus fundamental analysis</figcaption>
+<div class="scroll"><table class="cmp">
+<thead><tr><th></th><th>Technical</th><th>Fundamental</th></tr></thead>
+<tbody>
+<tr><th>Focus</th><td>Price action and market behaviour</td><td>Intrinsic value of the asset</td></tr>
+<tr><th>Data</th><td>Historical price and volume</td><td>Financial statements, economic reports, industry publications</td></tr>
+<tr><th>Horizon</th><td>Short and medium term trading</td><td>Long-term investment</td></tr>
+<tr><th>Tools</th><td>Chart patterns; RSI, moving averages, MACD, OBV</td><td>Cash flow statements, DCF, SWOT, ratio analysis</td></tr>
+<tr><th>Assumption</th><td>Price captures all information; trends continue</td><td>Prices can deviate from intrinsic value</td></tr>
+<tr><th>Objective</th><td>Forecast price moves and trading opportunities</td><td>Find undervalued or overvalued assets</td></tr>
+<tr><th>Used by</th><td>Traders, chartists, speculators, short-term investors</td><td>Fund and portfolio managers, value and long-term investors</td></tr>
+</tbody></table></div></figure>
+
+<div class="col">
+<section class="sec" id="s2"><span class="secno">15.2</span><h2>Chart types</h2>
+</div>
+
+<figure class="fig" id="fig-charts"><figcaption>Six chart types</figcaption>
+<div class="grid g3">
+<div class="box"><span class="tag">Line</span><p>Closing prices joined as a line. Quick trend view, long-term perspective. Ignores open, high and low.</p></div>
+<div class="box"><span class="tag">Bar (OHLC)</span><p>Open, high, low, close for each period. Detailed price action and volatility; shows range and direction.</p></div>
+<div class="box"><span class="tag">Candlestick</span><p>Like a bar chart but clearer, with coloured "candles". Best for patterns such as doji, hammer, engulfing.</p></div>
+<div class="box"><span class="tag">Point and figure</span><p>Price moves only; <b>ignores time and volume</b>. Breakouts and support and resistance; filters noise; long-term trends.</p></div>
+<div class="box"><span class="tag">Renko</span><p>Fixed price moves ("bricks"), not time intervals. Trend clarity, momentum; smooths minor moves; suits trailing stops.</p></div>
+<div class="box"><span class="tag">Heikin-Ashi</span><p>Adjusted candles that <b>average</b> price data to cut noise. Trend following; keeps traders in longer by filtering whipsaws.</p></div>
+</div></figure>
+
+<div class="col">
+<section class="sec" id="s3"><span class="secno">15.3</span><h2>Dow Theory</h2>
+<p>Developed by <b>Charles Dow</b> through editorials between <span class="num">1900 and 1902</span>, and organised into a formal theory after his death by <b>William Hamilton</b> and <b>Robert Rhea</b>. Still a foundation of technical analysis.</p>
+</div>
+
+<figure class="fig" id="fig-dow"><figcaption>The six tenets of Dow Theory</figcaption>
+<div class="grid g3">
+<div class="box"><span class="tag">1</span><h4>The market discounts everything</h4><p>Aligns with the Efficient Market Hypothesis.</p></div>
+<div class="box"><span class="tag">2</span><h4>The market has three trends</h4><p>Primary (long term), secondary (weeks to months), tertiary (days to weeks).</p></div>
+<div class="box"><span class="tag">3</span><h4>Primary trends have three phases</h4><p>Accumulation (smart money enters quietly), public participation, distribution (smart money exits). Mirrors Wyckoff's cycle.</p></div>
+<div class="box"><span class="tag">4</span><h4>Indices must confirm each other</h4><p>Major indices should move the same way, for example Nifty and Sensex.</p></div>
+<div class="box"><span class="tag">5</span><h4>Volume confirms the trend</h4><p>Volume should rise in the direction of the primary trend.</p></div>
+<div class="box"><span class="tag">6</span><h4>Trends persist until a clear reversal</h4><p>The basis of trend following, trailing stops and moving average crossovers.</p></div>
+</div></figure>
+
+<div class="col">
+<div class="trap">Dow Theory has <b>three</b> trends, not four, and <b>six</b> tenets. The book's sample question offers "the market has four trends" as the false tenet.</div>
+
+<h3 id="s4">15.4 Understanding market trends</h3>
+</div>
+
+<figure class="fig" id="fig-trends"><figcaption>Primary, secondary, tertiary</figcaption>
+<div class="scroll"><table class="cmp">
+<thead><tr><th></th><th>Primary</th><th>Secondary</th><th>Tertiary</th></tr></thead>
+<tbody>
+<tr><th>What</th><td>Dominant, long-term direction</td><td>Correction or rally against the primary trend</td><td>Short-term moves within the larger trend</td></tr>
+<tr><th>Length</th><td>Typically one year or more</td><td>About 3 weeks to 3 months (can vary)</td><td>Usually under 3 weeks (some say up to 6)</td></tr>
+<tr><th>Types or traits</th><td>Bull (confidence, expansion), bear (fear, contraction), sideways (indecision)</td><td>Bull market <b>correction</b> (often 10% to 20%, a "pullback"); bear market <b>rally</b> ("relief rally"). Retraces <b>1/3 to 2/3</b> of the prior move (Dow Theory). Volume usually lower</td><td>Volatile, news-driven, reverses often; unreliable for long-term forecasts</td></tr>
+<tr><th>Drivers</th><td>Economic cycles, monetary and fiscal policy, geopolitics, investor psychology</td><td>Data releases, central bank shifts, geopolitics, earnings surprises, technical exhaustion</td><td>Sentiment, news, technical triggers</td></tr>
+<tr><th>Tools</th><td>50 or 100-day moving averages, trendlines, MACD, higher highs and lows</td><td>Fibonacci retracement (38.2%, 50%, 61.8%), trendlines, 50 DMA, volume, RSI or stochastic</td><td>5, 10 or 20-day EMAs, RSI, stochastic, candlestick patterns, pivots</td></tr>
+<tr><th>Use</th><td>Asset allocation, avoiding counter-trend trades, riding the trend</td><td>Buying dips in uptrends, selling rallies in downtrends, swing trading</td><td>Fine-tuning entries, exits and tight stops</td></tr>
+</tbody></table></div></figure>
+
+<div class="col">
+<div class="why"><b>The book's example</b>Nifty 50, 2020 to 2021: a bullish primary trend after the COVID crash; a secondary correction of about 7% in September to October 2020 on global risk-off sentiment; then new highs by early 2021.</div>
+<div class="analogy">The primary trend is the tide, the secondary trend is the waves, and the tertiary trend is the ripples. A ripple against the tide does not turn it.</div>
+<p>Tertiary trends carry risks: noise in choppy markets, <b>whipsaws</b> (false breakouts), and <b>overtrading</b>, which raises costs and risk.</p>
+</section>
+
+<section class="sec" id="s5"><span class="secno">15.5</span><h2>Reversal patterns (candlesticks)</h2>
+<p>Each candle shows open, high, low and close. The <b>real body</b> is the gap between open and close; the thin lines above and below are the <b>shadows</b> (wicks). Below, green candles closed higher and red candles closed lower. The highlighted candles form the pattern.</p>
+</div>
+
+<figure class="fig" id="fig-candles1"><figcaption>Single-candle reversals: hanging man and hammer<span>Same shape, opposite meaning: it depends on what came before</span></figcaption>
+<div class="grid g2">
+<div class="box bd"><svg viewBox="0 0 300 170" width="100%" role="img" aria-hidden="true" style="max-width:340px;display:block;margin:0 auto 8px"><rect x="186.0" y="2" width="108.0" height="166" rx="8" style="fill:var(--indigo-soft);stroke:var(--indigo);stroke-dasharray:4 3"/><line x1="30.0" y1="91.6" x2="30.0" y2="158.0" style="fill:var(--teal);stroke:var(--teal);stroke-width:2"/><rect x="15.0" y="104.9" width="30.0" height="39.8" style="fill:var(--teal);stroke:var(--teal)"/><line x1="90.0" y1="51.8" x2="90.0" y2="118.2" style="fill:var(--teal);stroke:var(--teal);stroke-width:2"/><rect x="75.0" y="65.1" width="30.0" height="39.8" style="fill:var(--teal);stroke:var(--teal)"/><line x1="150.0" y1="12.0" x2="150.0" y2="78.4" style="fill:var(--teal);stroke:var(--teal);stroke-width:2"/><rect x="135.0" y="25.3" width="30.0" height="39.8" style="fill:var(--teal);stroke:var(--teal)"/><line x1="210.0" y1="12.0" x2="210.0" y2="104.9" style="fill:var(--brick);stroke:var(--brick);stroke-width:2"/><rect x="195.0" y="18.6" width="30.0" height="6.6" style="fill:var(--brick);stroke:var(--brick)"/><line x1="270.0" y1="25.3" x2="270.0" y2="91.6" style="fill:var(--brick);stroke:var(--brick);stroke-width:2"/><rect x="255.0" y="31.9" width="30.0" height="53.1" style="fill:var(--brick);stroke:var(--brick)"/></svg><span class="tag">Bearish, after an up move</span><h4>Hanging man</h4><ul><li>Small real body; long lower shadow at least <b>twice</b> the body; little or no upper shadow</li><li>Close can be above or below the open, but near it</li><li>The long lower shadow shows sellers took control for part of the session</li><li>Only a warning: the <b>next candle must close lower</b> to confirm. Traders act during or after confirmation</li></ul></div>
+<div class="box gd"><svg viewBox="0 0 300 170" width="100%" role="img" aria-hidden="true" style="max-width:340px;display:block;margin:0 auto 8px"><rect x="186.0" y="2" width="108.0" height="166" rx="8" style="fill:var(--indigo-soft);stroke:var(--indigo);stroke-dasharray:4 3"/><line x1="30.0" y1="12.0" x2="30.0" y2="54.9" style="fill:var(--brick);stroke:var(--brick);stroke-width:2"/><rect x="15.0" y="20.6" width="30.0" height="25.8" style="fill:var(--brick);stroke:var(--brick)"/><line x1="90.0" y1="37.8" x2="90.0" y2="80.7" style="fill:var(--brick);stroke:var(--brick);stroke-width:2"/><rect x="75.0" y="46.4" width="30.0" height="25.8" style="fill:var(--brick);stroke:var(--brick)"/><line x1="150.0" y1="63.5" x2="150.0" y2="106.5" style="fill:var(--brick);stroke:var(--brick);stroke-width:2"/><rect x="135.0" y="72.1" width="30.0" height="25.8" style="fill:var(--brick);stroke:var(--brick)"/><line x1="210.0" y1="97.9" x2="210.0" y2="158.0" style="fill:var(--teal);stroke:var(--teal);stroke-width:2"/><rect x="195.0" y="102.2" width="30.0" height="8.6" style="fill:var(--teal);stroke:var(--teal)"/><line x1="270.0" y1="63.5" x2="270.0" y2="102.2" style="fill:var(--teal);stroke:var(--teal);stroke-width:2"/><rect x="255.0" y="67.8" width="30.0" height="30.1" style="fill:var(--teal);stroke:var(--teal)"/></svg><span class="tag">Bullish, after a decline</span><h4>Hammer</h4><ul><li>Same shape as a hanging man, but after a price fall</li><li>Sellers could not push lower; buyers drove the price back near the open</li><li>Tail at least <b>twice</b> the body</li><li>Confirmation: price must start moving up. Trades are taken after confirmation</li></ul></div>
+</div></figure>
+
+<figure class="fig" id="fig-candles2"><figcaption>Engulfing patterns</figcaption>
+<div class="grid g2">
+<div class="box gd"><svg viewBox="0 0 300 170" width="100%" role="img" aria-hidden="true" style="max-width:340px;display:block;margin:0 auto 8px"><rect x="205.0" y="2" width="90.0" height="166" rx="8" style="fill:var(--indigo-soft);stroke:var(--indigo);stroke-dasharray:4 3"/><line x1="25.0" y1="12.0" x2="25.0" y2="70.4" style="fill:var(--brick);stroke:var(--brick);stroke-width:2"/><rect x="12.5" y="23.7" width="25.0" height="35.0" style="fill:var(--brick);stroke:var(--brick)"/><line x1="75.0" y1="47.0" x2="75.0" y2="93.8" style="fill:var(--brick);stroke:var(--brick);stroke-width:2"/><rect x="62.5" y="58.7" width="25.0" height="23.4" style="fill:var(--brick);stroke:var(--brick)"/><line x1="125.0" y1="70.4" x2="125.0" y2="117.1" style="fill:var(--brick);stroke:var(--brick);stroke-width:2"/><rect x="112.5" y="82.1" width="25.0" height="23.4" style="fill:var(--brick);stroke:var(--brick)"/><line x1="175.0" y1="93.8" x2="175.0" y2="140.5" style="fill:var(--brick);stroke:var(--brick);stroke-width:2"/><rect x="162.5" y="105.4" width="25.0" height="23.4" style="fill:var(--brick);stroke:var(--brick)"/><line x1="225.0" y1="123.0" x2="225.0" y2="152.2" style="fill:var(--brick);stroke:var(--brick);stroke-width:2"/><rect x="212.5" y="128.8" width="25.0" height="17.5" style="fill:var(--brick);stroke:var(--brick)"/><line x1="275.0" y1="93.8" x2="275.0" y2="158.0" style="fill:var(--teal);stroke:var(--teal);stroke-width:2"/><rect x="262.5" y="99.6" width="25.0" height="52.6" style="fill:var(--teal);stroke:var(--teal)"/></svg><span class="tag">Bullish</span><h4>Bullish engulfing</h4><ul><li>A small red candle followed by a large green candle whose body <b>completely engulfs</b> the red body</li><li>More likely a reversal when preceded by <b>four or more</b> red candles</li><li>Look at the preceding candles too</li></ul></div>
+<div class="box bd"><svg viewBox="0 0 300 170" width="100%" role="img" aria-hidden="true" style="max-width:340px;display:block;margin:0 auto 8px"><rect x="186.0" y="2" width="108.0" height="166" rx="8" style="fill:var(--indigo-soft);stroke:var(--indigo);stroke-dasharray:4 3"/><line x1="30.0" y1="85.0" x2="30.0" y2="158.0" style="fill:var(--teal);stroke:var(--teal);stroke-width:2"/><rect x="15.0" y="99.6" width="30.0" height="43.8" style="fill:var(--teal);stroke:var(--teal)"/><line x1="90.0" y1="55.8" x2="90.0" y2="114.2" style="fill:var(--teal);stroke:var(--teal);stroke-width:2"/><rect x="75.0" y="70.4" width="30.0" height="29.2" style="fill:var(--teal);stroke:var(--teal)"/><line x1="150.0" y1="26.6" x2="150.0" y2="85.0" style="fill:var(--teal);stroke:var(--teal);stroke-width:2"/><rect x="135.0" y="41.2" width="30.0" height="29.2" style="fill:var(--teal);stroke:var(--teal)"/><line x1="210.0" y1="19.3" x2="210.0" y2="48.5" style="fill:var(--teal);stroke:var(--teal);stroke-width:2"/><rect x="195.0" y="26.6" width="30.0" height="14.6" style="fill:var(--teal);stroke:var(--teal)"/><line x1="270.0" y1="12.0" x2="270.0" y2="99.6" style="fill:var(--brick);stroke:var(--brick);stroke-width:2"/><rect x="255.0" y="19.3" width="30.0" height="73.0" style="fill:var(--brick);stroke:var(--brick)"/></svg><span class="tag">Bearish</span><h4>Bearish engulfing</h4><ul><li>A red candle's body completely engulfs the previous green body</li><li>More significant after a price advance</li><li>Both candles should be relatively long; two tiny candles matter far less</li><li>Only the <b>real bodies</b> count. Ignore it in choppy markets</li></ul></div>
+</div></figure>
+
+<figure class="fig" id="fig-candles3"><figcaption>Dark cloud cover and piercing pattern<span>Two-candle patterns at the edges of a congestion area</span></figcaption>
+<div class="grid g2">
+<div class="box bd"><svg viewBox="0 0 300 170" width="100%" role="img" aria-hidden="true" style="max-width:340px;display:block;margin:0 auto 8px"><rect x="157.5" y="2" width="135.0" height="166" rx="8" style="fill:var(--indigo-soft);stroke:var(--indigo);stroke-dasharray:4 3"/><line x1="37.5" y1="111.3" x2="37.5" y2="158.0" style="fill:var(--teal);stroke:var(--teal);stroke-width:2"/><rect x="18.8" y="123.0" width="37.5" height="23.4" style="fill:var(--teal);stroke:var(--teal)"/><line x1="112.5" y1="87.9" x2="112.5" y2="134.6" style="fill:var(--teal);stroke:var(--teal);stroke-width:2"/><rect x="93.8" y="99.6" width="37.5" height="23.4" style="fill:var(--teal);stroke:var(--teal)"/><line x1="187.5" y1="29.5" x2="187.5" y2="105.4" style="fill:var(--teal);stroke:var(--teal);stroke-width:2"/><rect x="168.8" y="35.4" width="37.5" height="64.2" style="fill:var(--teal);stroke:var(--teal)"/><line x1="262.5" y1="12.0" x2="262.5" y2="82.1" style="fill:var(--brick);stroke:var(--brick);stroke-width:2"/><rect x="243.8" y="17.8" width="37.5" height="58.4" style="fill:var(--brick);stroke:var(--brick)"/></svg><span class="tag">Bearish, near the top</span><h4>Dark cloud cover</h4><ul><li>Occurs near the <b>top</b> of a congestion area, in an uptrend</li><li>A green candle, then a <b>gap up</b> that turns into a red candle</li><li>The red candle closes <b>below the midpoint</b> of the green candle</li></ul></div>
+<div class="box gd"><svg viewBox="0 0 300 170" width="100%" role="img" aria-hidden="true" style="max-width:340px;display:block;margin:0 auto 8px"><rect x="157.5" y="2" width="135.0" height="166" rx="8" style="fill:var(--indigo-soft);stroke:var(--indigo);stroke-dasharray:4 3"/><line x1="37.5" y1="12.0" x2="37.5" y2="62.3" style="fill:var(--brick);stroke:var(--brick);stroke-width:2"/><rect x="18.8" y="22.1" width="37.5" height="30.2" style="fill:var(--brick);stroke:var(--brick)"/><line x1="112.5" y1="42.2" x2="112.5" y2="82.5" style="fill:var(--brick);stroke:var(--brick);stroke-width:2"/><rect x="93.8" y="52.3" width="37.5" height="20.1" style="fill:var(--brick);stroke:var(--brick)"/><line x1="187.5" y1="67.4" x2="187.5" y2="137.9" style="fill:var(--brick);stroke:var(--brick);stroke-width:2"/><rect x="168.8" y="72.4" width="37.5" height="60.4" style="fill:var(--brick);stroke:var(--brick)"/><line x1="262.5" y1="87.5" x2="262.5" y2="158.0" style="fill:var(--teal);stroke:var(--teal);stroke-width:2"/><rect x="243.8" y="92.6" width="37.5" height="60.4" style="fill:var(--teal);stroke:var(--teal)"/></svg><span class="tag">Bullish, near the bottom</span><h4>Piercing pattern</h4><ul><li>A <b>two-candlestick</b> pattern near the <b>bottom</b> of a congestion area</li><li>A red candle, then a green candle that opens with a significant <b>gap down</b></li><li>The green body covers <b>at least half</b> of the red candle</li></ul></div>
+</div>
+<p class="ptr" style="margin-top:8px">A congestion area is a price range where the market trades repeatedly, often for several weeks, before breaking out up or down.</p>
+</figure>
+
+<figure class="fig" id="fig-candles4"><figcaption>Star patterns<span>Three-candle reversals</span></figcaption>
+<div class="grid g2">
+<div class="box gd"><svg viewBox="0 0 300 170" width="100%" role="img" aria-hidden="true" style="max-width:340px;display:block;margin:0 auto 8px"><rect x="82.5" y="2" width="210.0" height="166" rx="8" style="fill:var(--indigo-soft);stroke:var(--indigo);stroke-dasharray:4 3"/><line x1="37.5" y1="12.0" x2="37.5" y2="64.1" style="fill:var(--brick);stroke:var(--brick);stroke-width:2"/><rect x="18.8" y="22.4" width="37.5" height="31.3" style="fill:var(--brick);stroke:var(--brick)"/><line x1="112.5" y1="48.5" x2="112.5" y2="126.7" style="fill:var(--brick);stroke:var(--brick);stroke-width:2"/><rect x="93.8" y="53.7" width="37.5" height="67.8" style="fill:var(--brick);stroke:var(--brick)"/><line x1="187.5" y1="126.7" x2="187.5" y2="158.0" style="fill:var(--brick);stroke:var(--brick);stroke-width:2"/><rect x="168.8" y="137.1" width="37.5" height="5.2" style="fill:var(--brick);stroke:var(--brick)"/><line x1="262.5" y1="58.9" x2="262.5" y2="137.1" style="fill:var(--teal);stroke:var(--teal);stroke-width:2"/><rect x="243.8" y="64.1" width="37.5" height="67.8" style="fill:var(--teal);stroke:var(--teal)"/></svg><span class="tag">Bullish</span><h4>Morning star</h4><ul><li>A tall red candle; a small red or green candle with a short body and long wicks; a tall green candle</li><li>The middle candle is indecision: bears give way to bulls</li><li>The third candle confirms the reversal and can mark a new uptrend</li></ul></div>
+<div class="box bd"><svg viewBox="0 0 300 170" width="100%" role="img" aria-hidden="true" style="max-width:340px;display:block;margin:0 auto 8px"><rect x="82.5" y="2" width="210.0" height="166" rx="8" style="fill:var(--indigo-soft);stroke:var(--indigo);stroke-dasharray:4 3"/><line x1="37.5" y1="113.1" x2="37.5" y2="158.0" style="fill:var(--teal);stroke:var(--teal);stroke-width:2"/><rect x="18.8" y="118.7" width="37.5" height="28.1" style="fill:var(--teal);stroke:var(--teal)"/><line x1="112.5" y1="34.5" x2="112.5" y2="124.3" style="fill:var(--teal);stroke:var(--teal);stroke-width:2"/><rect x="93.8" y="40.1" width="37.5" height="78.6" style="fill:var(--teal);stroke:var(--teal)"/><line x1="187.5" y1="12.0" x2="187.5" y2="36.7" style="fill:var(--teal);stroke:var(--teal);stroke-width:2"/><rect x="168.8" y="23.2" width="37.5" height="5.6" style="fill:var(--teal);stroke:var(--teal)"/><line x1="262.5" y1="28.8" x2="262.5" y2="85.0" style="fill:var(--brick);stroke:var(--brick);stroke-width:2"/><rect x="243.8" y="34.5" width="37.5" height="44.9" style="fill:var(--brick);stroke:var(--brick)"/></svg><span class="tag">Bearish</span><h4>Evening star</h4><ul><li>A large green candle in an uptrend; a small-bodied candle (red or green) that closes above the first; a large red candle</li><li>The red candle opens below the middle candle and closes near the <b>centre of the first candle's body</b></li></ul></div>
+</div></figure>
+
+<div class="col">
+<div class="trap">Count the candles. <b>One</b>: hanging man, hammer. <b>Two</b>: bullish and bearish engulfing, dark cloud cover, piercing. <b>Three</b>: morning star, evening star. Top or bottom: dark cloud cover forms near the <b>top</b> of a congestion area; piercing near the <b>bottom</b>.</div>
+</section>
+
+<section class="sec" id="s6"><span class="secno">15.6</span><h2>Consolidation patterns</h2>
+<p>Pauses within a trend, usually followed by a breakout. Dashed lines are the trendlines drawn along the highs and lows.</p>
+</div>
+
+<figure class="fig" id="fig-triangles"><figcaption>Three triangles</figcaption>
+<div class="grid g3">
+<div class="box"><svg viewBox="0 0 300 170" width="100%" role="img" aria-hidden="true" style="max-width:340px;display:block;margin:0 auto 8px"><polyline points="20,30 210,80" style="stroke:var(--indigo);stroke-width:2;stroke-dasharray:6 4;fill:none"/><polyline points="20,140 210,95" style="stroke:var(--indigo);stroke-width:2;stroke-dasharray:6 4;fill:none"/><polyline points="20,135 50,40 85,125 120,60 150,110 180,75 205,98 240,40 280,15" style="stroke:var(--ink);stroke-width:2;fill:none"/></svg><span class="tag">Either way</span><h4>Symmetrical triangle</h4><ul><li>Consolidation before a forced breakout or breakdown</li><li>Break above the upper line: new bullish trend. Below the lower line: new bearish trend</li><li>The book says it is also known as a wedge pattern</li></ul></div>
+<div class="box gd"><svg viewBox="0 0 300 170" width="100%" role="img" aria-hidden="true" style="max-width:340px;display:block;margin:0 auto 8px"><polyline points="20,50 220,50" style="stroke:var(--indigo);stroke-width:2;stroke-dasharray:6 4;fill:none"/><polyline points="20,150 220,60" style="stroke:var(--indigo);stroke-width:2;stroke-dasharray:6 4;fill:none"/><polyline points="20,145 60,50 95,125 135,50 165,100 200,50 215,70 250,30 285,10" style="stroke:var(--ink);stroke-width:2;fill:none"/></svg><span class="tag">Bullish continuation</span><h4>Ascending triangle</h4><ul><li><b>Higher lows</b> against the <b>same resistance</b> level; usually in an uptrend</li><li>Trendlines need at least two swing highs and lows</li><li>Long if price breaks above the top; short if it breaks below the lower line</li><li><b>Target:</b> height of the triangle at its thickest point, added to (or subtracted from) the breakout point</li></ul></div>
+<div class="box bd"><svg viewBox="0 0 300 170" width="100%" role="img" aria-hidden="true" style="max-width:340px;display:block;margin:0 auto 8px"><polyline points="20,20 220,115" style="stroke:var(--indigo);stroke-width:2;stroke-dasharray:6 4;fill:none"/><polyline points="20,125 220,125" style="stroke:var(--indigo);stroke-width:2;stroke-dasharray:6 4;fill:none"/><polyline points="20,25 60,125 95,45 135,125 165,80 200,125 215,110 250,145 285,162" style="stroke:var(--ink);stroke-width:2;fill:none"/></svg><span class="tag">Bearish continuation</span><h4>Descending triangle</h4><ul><li><b>Lower highs</b> and lows at the <b>same level</b>; usually in a downtrend</li><li>Bears gain control, pushing to the support line</li><li>A signal to go short to accelerate a breakdown</li></ul></div>
+</div></figure>
+
+<figure class="fig" id="fig-flags"><figcaption>Flags and pennants<span>Continuation patterns, traded the same way</span></figcaption>
+<div class="grid g2">
+<div class="box"><svg viewBox="0 0 300 170" width="100%" role="img" aria-hidden="true" style="max-width:340px;display:block;margin:0 auto 8px"><polyline points="20,160 40,150 90,40" style="stroke:var(--ink);stroke-width:2;fill:none"/><polyline points="90,35 180,60" style="stroke:var(--indigo);stroke-width:2;stroke-dasharray:6 4;fill:none"/><polyline points="95,75 180,100" style="stroke:var(--indigo);stroke-width:2;stroke-dasharray:6 4;fill:none"/><polyline points="90,40 110,70 125,50 145,85 160,60 175,95 200,45 240,15" style="stroke:var(--ink);stroke-width:2;fill:none"/></svg><span class="tag">Rectangle</span><h4>Flag</h4><p>After a sharp rally (the <b>flagpole</b>), price moves sideways or slightly lower in a small rectangle.</p></div>
+<div class="box"><svg viewBox="0 0 300 170" width="100%" role="img" aria-hidden="true" style="max-width:340px;display:block;margin:0 auto 8px"><polyline points="20,160 40,150 90,40" style="stroke:var(--ink);stroke-width:2;fill:none"/><polyline points="90,35 180,65" style="stroke:var(--indigo);stroke-width:2;stroke-dasharray:6 4;fill:none"/><polyline points="95,100 180,75" style="stroke:var(--indigo);stroke-width:2;stroke-dasharray:6 4;fill:none"/><polyline points="90,40 110,95 130,50 150,85 165,62 178,78 210,35 250,10" style="stroke:var(--ink);stroke-width:2;fill:none"/></svg><span class="tag">Small triangle</span><h4>Pennant</h4><p>Same idea, but the pause forms a small triangle. Traders buy when price breaks above the upper trendline.</p></div>
+</div></figure>
+
+<div class="col">
+<section class="sec" id="s7"><span class="secno">15.7</span><h2>Support and resistance</h2>
+</div>
+
+<figure class="fig" id="fig-supres"><figcaption>Floor and ceiling<span>The lower line is support; the upper line is resistance. A break above resistance on volume is a breakout.</span></figcaption>
+<div class="grid g2">
+<div class="box"><svg viewBox="0 0 300 170" width="100%" role="img" aria-hidden="true" style="max-width:340px;display:block;margin:0 auto 8px"><polyline points="10,40 300,40" style="stroke:var(--indigo);stroke-width:2;stroke-dasharray:6 4;fill:none"/><polyline points="10,130 190,130" style="stroke:var(--indigo);stroke-width:2;stroke-dasharray:6 4;fill:none"/><polyline points="10,120 40,45 70,128 100,45 130,128 160,45 190,125 220,30 250,20 270,38 300,12" style="stroke:var(--ink);stroke-width:2;fill:none"/></svg><h4>Definitions</h4><p><b>Support:</b> a level where a downtrend is expected to pause because of concentrated <b>demand</b>: a "floor".</p><p><b>Resistance:</b> a level where an uptrend is expected to pause because of concentrated <b>supply</b>: a "ceiling".</p></div>
+<div class="box"><h4>Why they matter</h4><ul><li>Psychological anchors: traders remember past turning points</li><li>Buy and sell orders cluster near them</li><li>Help set stop-loss and take-profit levels</li><li>Breakouts or bounces confirm trend direction</li></ul><h4>Role reversal</h4><p>Broken support often becomes resistance, and vice versa: trapped traders exit at breakeven, sentiment shifts, institutions reposition.</p></div>
+</div></figure>
+
+<figure class="fig" id="fig-srtypes"><figcaption>Types of support and resistance</figcaption>
+<div class="scroll"><table class="cmp">
+<thead><tr><th>Type</th><th>Description</th><th>Book's example</th></tr></thead>
+<tbody>
+<tr><th>Horizontal</th><td>Flat levels where price repeatedly reverses</td><td>A stock resisting around Rs 1,950</td></tr>
+<tr><th>Trendline</th><td>Diagonal lines through higher lows (support) or lower highs (resistance)</td><td>Upward sloping support in a bull trend</td></tr>
+<tr><th>Moving averages</th><td>Dynamic levels, for example the 50-day MA</td><td>Price bouncing off the 50 DMA</td></tr>
+<tr><th>Fibonacci levels</th><td>From retracement ratios 23.6%, 38.2%, 61.8%</td><td>Stock retracing 23.6% from a swing high</td></tr>
+<tr><th>Pivot points</th><td>From the previous period's high, low and close</td><td>Mostly used intraday</td></tr>
+<tr><th>Psychological</th><td>Round numbers act as barriers</td><td>Nifty 25,000</td></tr>
+</tbody></table></div></figure>
+
+<div class="col">
+<ul>
+<li><b>Breakout:</b> price moves decisively beyond the level <b>with volume</b>. <b>False breakout:</b> a brief breach that quickly reverses, trapping traders. Volume and candlestick confirmation help tell them apart.</li>
+<li><b>Strength of a level:</b> more touches, higher volume at the level, more time spent near it, and more recent levels all make it stronger.</li>
+<li><b>Uses:</b> bounce trades (buy near support, sell near resistance), breakout trades, pullback entries on a retest, and stop-losses just below support or above resistance.</li>
+<li><b>Limits:</b> levels are zones, not exact prices; drawing them is subjective; in strong trends they are respected less; news can override them.</li>
+<li><b>Advanced ideas:</b> order blocks, liquidity pools (where stop orders cluster), VWAP and anchored VWAP.</li>
+</ul>
+<p class="ptr">Book's case notes: Nifty found strong support around 24,350 from May to September 2025; Reliance faced resistance around 1,300 from October 2021 to July 2023 before breaking out in January 2024.</p>
+
+<h3 id="s8">15.8 Trendlines and channels</h3>
+</div>
+
+<figure class="fig" id="fig-channel"><figcaption>Trendlines and an ascending channel</figcaption>
+<div class="grid g2">
+<div class="box"><svg viewBox="0 0 300 170" width="100%" role="img" aria-hidden="true" style="max-width:340px;display:block;margin:0 auto 8px"><polyline points="10,110 290,20" style="stroke:var(--indigo);stroke-width:2;stroke-dasharray:6 4;fill:none"/><polyline points="10,160 290,70" style="stroke:var(--indigo);stroke-width:2;stroke-dasharray:6 4;fill:none"/><polyline points="10,155 50,97 90,133 130,72 170,108 210,46 250,82 290,22" style="stroke:var(--ink);stroke-width:2;fill:none"/></svg><h4>Channel</h4><p>Two <b>parallel</b> trendlines, one through highs and one through lows. Ascending (higher highs and lows) is bullish; descending is bearish; horizontal is range-bound. Its width reflects volatility. Trade within it (buy at support, sell at resistance); a break of either line is a breakout or breakdown, with a target projected from the channel width.</p></div>
+<div class="box"><h4>Trendline rules</h4><ul><li>A straight line through two or more price points, extended forward as support or resistance</li><li>Upward through higher lows: bullish. Downward through lower highs: bearish. Sideways: range-bound</li><li>Needs at least <b>two</b> points; <b>three or more</b> make it more reliable</li><li>Use wicks or closes depending on the strategy; adjust as new data comes</li><li>Used for trend strength, entry and exit timing, and stop-losses</li></ul></div>
+</div></figure>
+
+<div class="col">
+<div class="grid g2">
+<div class="box gd"><h4>Validation</h4><p>Rising volume on breakouts; candlesticks (engulfing, hammer, shooting star) at the lines; RSI divergence or MACD crossovers near boundaries; lines visible on higher timeframes carry more weight.</p></div>
+<div class="box bd"><h4>Common pitfalls</h4><p>Forcing lines to fit a bias; ignoring breakouts and not redrawing after invalidation; relying on lines without other confirmation.</p></div>
+</div>
+</section>
+
+<section class="sec" id="s9"><span class="secno">15.9</span><h2>Technical indicators</h2>
+<h3>15.9.1 Moving averages</h3>
+<p>A smoothed line of average closing prices (daily, weekly or monthly). Rising MA: uptrend; falling: downtrend. MAs are <b>lagging</b> indicators but good for major trends. When monthly, weekly and daily MAs point the same way, the trend is likely to continue. Trading at or near a rising MA can be a good time to buy.</p>
+</div>
+
+<figure class="fig" id="fig-ema"><figcaption>The book's 13, 21 and 34 EMA combination<span>Periods from the Fibonacci series</span></figcaption>
+<div class="grid g2">
+<div class="box gd"><span class="tag">Uptrend</span><h4>Price &gt; 13 EMA &gt; 21 EMA &gt; 34 EMA</h4><p>In a bull market price usually finds support around the <b>34 EMA</b>. All three rising and spreading apart: a strong bull market.</p></div>
+<div class="box bd"><span class="tag">Downtrend</span><h4>Price &lt; 13 EMA &lt; 21 EMA &lt; 34 EMA</h4><p>Price tends to meet resistance around the <b>34 EMA</b>. All three falling and spreading apart: strong selling pressure.</p></div>
+</div></figure>
+
+<div class="col">
+<h3>15.9.2 MACD</h3>
+<div class="formula" style="font-family:var(--head);font-weight:700;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:.55rem .8rem;margin:.7rem 0">Default MACD line = difference between the 26 EMA and the 12 EMA. Slow line = 9 EMA of the default line.</div>
+<ul>
+<li>Shows shifts in <b>momentum</b> and can warn early of a trend change. At times it <b>leads</b> price.</li>
+<li><b>Buy</b> when both lines are rising and the fast line crosses above the slow line; also when the fast line, already above, turns up again after nearly touching the slow line.</li>
+<li><b>Divergence:</b> price makes a higher high but MACD a lower high: losing upward momentum. Price makes a new low but MACD a higher low: losing downward momentum, likely to bottom out.</li>
+<li>The <b>zero line</b> separates confirmed bull and bear markets, but a crossover of zero <b>should not be used for trading</b>.</li>
+<li>Steep MACD: a powerful move; shallow: lack of power. A bulge of the fast line far above the slow line: a buying climax, possibly followed by a sideways market or mild correction.</li>
+<li>MACD can go flat or turn without a trend reversal; it shows momentum, not price, so use it with other indicators and price action.</li>
+<li>A double top or bottom in MACD suggests a likely reversal. Avoid stocks whose weekly or monthly MACD is clearly trending down.</li>
+</ul>
+</div>
+
+<figure class="fig" id="fig-rsi"><figcaption>RSI: a scale from 0 to 100<span>Relative Strength Index</span></figcaption>
+<div class="stack"><div style="flex:30;background:var(--teal)">0 to 30: oversold</div><div style="flex:40;background:var(--muted)">30 to 70</div><div style="flex:30;background:var(--brick)">70 to 100: overbought</div></div>
+<div class="grid g2" style="margin-top:12px">
+<div class="box"><h4>Reading RSI</h4><ul><li>Measures speed and size of recent price changes; can be a <b>lead</b> indicator</li><li>Works well in a <b>trading range</b></li><li>Bull market: rarely falls below <b>44 to 45</b>. Bear market: rarely rises above <b>50 to 55</b></li><li>Can stay overbought (or oversold) for long in a strong trend</li></ul></div>
+<div class="box"><h4>Divergence</h4><ul><li><b>Bullish divergence:</b> in an oversold market the stock makes a new low but RSI does not. An early buy signal</li><li><b>Bearish divergence:</b> in an overbought market the stock makes a new high but RSI does not. An early sell signal</li></ul></div>
+</div></figure>
+
+<div class="col">
+<h3>15.9.4 ADX (Average Directional Index)</h3>
+<ul>
+<li>Measures the <b>strength</b> of a trend, <b>not its direction</b>. Values from 0 to 100; default setting <b>14</b> bars.</li>
+<li>Below <b>25</b>: weak or no trend. A rising ADX, especially above 25: a strong trend.</li>
+<li>Plotted with <b>+DMI</b> and <b>&minus;DMI</b>. Buy when +DMI crosses above &minus;DMI and ADX is rising; sell when +DMI crosses below &minus;DMI and ADX is rising. Ignore crossovers when ADX is weak.</li>
+</ul>
+<h3>15.9.5 RSC (Relative Strength Comparative)</h3>
+<ul>
+<li>Also called the Relative Strength Indicator or Price Relative Indicator. A <b>ratio chart</b> comparing one security with another, such as a stock against the Nifty 50 or its sector.</li>
+<li>Use about a <b>5 to 6 year</b> period. Normalised to <b>100</b>: above 100 means outperforming the benchmark; below 100, underperforming.</li>
+<li>A good buy: RSC below 100 for a long time, then turning up and crossing 100.</li>
+</ul>
+<h3>15.9.6 OBV (On Balance Volume)</h3>
+<ul>
+<li>Add the day's volume to a running total if the close is higher than yesterday's; subtract it if lower.</li>
+<li>OBV should rise with prices and fall with them. In a divergence, volume often <b>leads</b> price, warning of a reversal.</li>
+<li>Read OBV 1 (the line) with OBV 20 (its 20-period average). Buy when OBV 1 crosses above a rising OBV 20; sell when it crosses below a falling OBV 20.</li>
+<li>A pronounced weakening of OBV on long-term charts can mean <b>smart money is quietly exiting</b>. A higher high in price without a higher OBV: buying pressure is fading.</li>
+<li>The book's example: Maharashtra Scooters' weekly OBV turned up from May 2023, and the stock delivered about 4 times from there.</li>
+</ul>
+</div>
+
+<figure class="fig" id="fig-indicators"><figcaption>Six indicators at a glance</figcaption>
+<div class="scroll"><table class="cmp">
+<thead><tr><th>Indicator</th><th>Measures</th><th>Key numbers and signals (book)</th></tr></thead>
+<tbody>
+<tr><th>Moving averages</th><td>Trend (lagging)</td><td>13, 21, 34 EMA; price above all three in an uptrend</td></tr>
+<tr><th>MACD</th><td>Momentum</td><td>26 EMA minus 12 EMA; slow line 9 EMA; do not trade zero-line crossovers</td></tr>
+<tr><th>RSI</th><td>Speed and size of price changes</td><td>0 to 100; above 70 overbought, below 30 oversold; best in a trading range</td></tr>
+<tr><th>ADX</th><td>Trend strength, not direction</td><td>14 bars; below 25 weak; use with +DMI and &minus;DMI</td></tr>
+<tr><th>RSC</th><td>Performance versus a benchmark</td><td>Normalised to 100; above 100 outperforming; 5 to 6 years of data</td></tr>
+<tr><th>OBV</th><td>Volume flow</td><td>Read with its 20-period average; divergence warns of reversal</td></tr>
+</tbody></table></div></figure>
+
+<div class="col">
+<div class="why"><b>The book's closing view</b>Technical analysis is a guide, not a guarantee. It works best with discipline, risk management, an understanding of market context, and combined with macroeconomic and sentiment analysis. Critics call it self-fulfilling, yet its wide use keeps it relevant.</div>
+</section>
+
+<section class="sec" id="traps"><h2>All exam traps in this chapter</h2>
+<ol class="traplist">
+<li>Technical analysis uses price and volume and assumes price discounts everything.</li>
+<li>Point and figure ignores time and volume. Renko uses fixed price bricks. Heikin-Ashi averages prices.</li>
+<li>Line charts use closing prices only; bar charts show OHLC.</li>
+<li>Dow Theory: Charles Dow, editorials 1900 to 1902; formalised by Hamilton and Rhea; six tenets; three trends.</li>
+<li>Primary trend phases: accumulation, public participation, distribution.</li>
+<li>Indices must confirm each other; volume should rise in the primary trend's direction.</li>
+<li>Secondary trends last about 3 weeks to 3 months and retrace 1/3 to 2/3 of the primary move.</li>
+<li>Tertiary trends: usually under 3 weeks.</li>
+<li>Hanging man: bearish, after an up move, needs a lower close next. Hammer: bullish, after a decline. Shadow at least twice the body.</li>
+<li>Bullish engulfing: stronger after four or more red candles. Only real bodies count.</li>
+<li>Dark cloud cover: top of congestion; red closes below the green's midpoint. Piercing: bottom; green covers at least half the red.</li>
+<li>Morning star bullish, evening star bearish: three candles each.</li>
+<li>Ascending triangle: flat top, higher lows, bullish continuation. Descending: flat bottom, lower highs, bearish continuation.</li>
+<li>Triangle target: height at its thickest point, from the breakout point.</li>
+<li>Flag: small rectangle after a flagpole; pennant: small triangle.</li>
+<li>Support is demand (a floor); resistance is supply (a ceiling). Broken support becomes resistance.</li>
+<li>A trendline needs at least two points; three or more make it more reliable.</li>
+<li>Moving averages are lagging. 13, 21, 34 EMA; price supported near the 34 EMA in a bull market.</li>
+<li>MACD line = 26 EMA minus 12 EMA; slow line = 9 EMA of it. Do not trade zero-line crossovers.</li>
+<li>RSI above 70 overbought, below 30 oversold. Stock new low, RSI not: bullish divergence.</li>
+<li>RSI rarely below 44 to 45 in a bull market, rarely above 50 to 55 in a bear market.</li>
+<li>ADX measures strength, not direction; below 25 weak; default 14.</li>
+<li>RSC above 100: outperforming the benchmark.</li>
+<li>OBV adds volume on up days and subtracts on down days; read with its 20-period average.</li>
+</ol>
+</section>
+
+<section class="sec" id="talk"><h2>For the group discussion</h2>
+<ol class="talk">
+<li>Open a candlestick chart of a stock you know. Can you find a hammer or an engulfing pattern? Did the next candle confirm it?</li>
+<li>Is technical analysis self-fulfilling? Does that make it more or less useful?</li>
+<li>Where would you place a stop-loss for a breakout from an ascending triangle? Why?</li>
+<li>RSI says overbought but ADX says a strong trend. Which do you trust, and why?</li>
+<li>How would you combine one fundamental test from Chapter 8 with one technical signal from this chapter?</li>
+</ol>
+</section>
+</div>
+
+<footer>Notes built from the NISM Series XV workbook (February 2026 version). Study aid only.</footer>
+</div>
+</div><div class="view" id="v-cards" hidden><div class="wrap"><div class="fc-wrap">
+<div class="fc-top"><span id="fc-count" class="ptr"></span><label class="ptr"><input type="checkbox" id="fc-missed"> Only cards I missed</label></div>
+<div class="fc-prog"><div id="fc-bar"></div></div>
+<div class="card3d" id="fc-card" tabindex="0" role="button" aria-label="Flip card"><div class="inner">
+<div class="face"><span class="lbl" id="fc-pos"></span><div class="front-txt" id="fc-front"></div></div>
+<div class="face back"><span class="lbl">Answer</span><div class="back-txt" id="fc-back"></div></div></div></div>
+<p class="hint">Tap the card to flip. On a keyboard: space flips, right arrow = got it, left arrow = again.</p>
+<div class="btns"><button class="btn bad" id="fc-bad">Again</button><button class="btn good" id="fc-good">Got it</button></div>
+<div class="btns"><button class="btn sm" id="fc-shuffle">Shuffle</button><button class="btn sm" id="fc-reset">Clear progress</button></div>
+</div></div></div><div class="view" id="v-quiz" hidden><div class="wrap"><div class="qz">
+<div id="qz-setup" class="qz-setup"><h2>Test yourself</h2><p class="ptr" id="qz-counts"></p>
+<p>Scoring works like the real exam: +1 for a right answer, minus 0.25 for a wrong one, 0 for a skip. Skipping is allowed.</p>
+<div class="box"><h4>Which questions?</h4>
+<label><input type="radio" name="qset" value="quick" checked> Quick 10 (random MCQs)</label>
+<label><input type="radio" name="qset" value="mcq"> All MCQs</label>
+<label><input type="radio" name="qset" value="case"> Case sets only (the exam has 5 of these, 4 questions each)</label>
+<label><input type="radio" name="qset" value="all"> Everything</label>
+<label><input type="radio" name="qset" value="missed"> Only questions I got wrong before <span id="qz-missedn" class="ptr"></span></label></div>
+<div class="box"><h4>How?</h4>
+<label><input type="radio" name="qmode" value="practice" checked> Practice: see the answer after each question</label>
+<label><input type="radio" name="qmode" value="exam"> Exam: see everything at the end</label></div>
+<div class="btns" style="justify-content:flex-start"><button class="btn pri" id="qz-start">Start</button></div></div>
+<div id="qz-run" hidden><div class="qz-head"><span id="qz-pos"></span><span id="qz-modelbl"></span></div>
+<div id="qz-q"></div>
+<div class="btns" style="justify-content:space-between"><button class="btn sm" id="qz-prev">Back</button><span><button class="btn sm" id="qz-skip">Skip</button> <button class="btn pri sm" id="qz-check">Check</button> <button class="btn sm" id="qz-next">Next</button></span></div>
+<div class="btns" style="justify-content:flex-start"><button class="btn sm" id="qz-quit">Stop and go back</button></div></div>
+<div id="qz-end" hidden><h2>Your result</h2><div class="score" id="qz-score"></div><p class="verdict" id="qz-verdict"></p><p class="ptr" id="qz-penalty"></p>
+<div class="btns" style="justify-content:flex-start"><button class="btn pri" id="qz-copy">Copy result for the group</button><button class="btn" id="qz-again">Try another set</button></div>
+<h3>Review what you missed</h3><div class="review" id="qz-review"></div></div>
+</div></div></div><div class="toast" id="toast" role="status"></div>
+<script>window.__DATA__={"id": "ch15", "short": "Ch15", "title": "Chapter 15: Technical analysis", "cards": [{"f": "What does technical analysis study?", "b": "Statistics of trading activity, mainly <b>price and volume</b>."}, {"f": "Five core assumptions of technical analysis", "b": "Price discounts everything; price moves in trends; history repeats; predictable to a degree; volume confirms price."}, {"f": "Technical versus fundamental: time horizon", "b": "Technical: short and medium term trading. Fundamental: long-term investment."}, {"f": "Line chart", "b": "Closing prices joined as a line. Ignores open, high and low."}, {"f": "Bar (OHLC) chart", "b": "Shows open, high, low and close; detailed price action and volatility."}, {"f": "Point and figure chart", "b": "Price moves only; <b>ignores time and volume</b>. Breakouts, support and resistance; long-term trends."}, {"f": "Renko chart", "b": "Fixed price moves (<b>bricks</b>), not time intervals. Trend clarity; trailing stops."}, {"f": "Heikin-Ashi chart", "b": "Adjusted candles that <b>average</b> prices to cut noise; filters whipsaws."}, {"f": "Who developed Dow Theory, and when?", "b": "<b>Charles Dow</b>, editorials 1900 to 1902; formalised by William Hamilton and Robert Rhea."}, {"f": "Six tenets of Dow Theory", "b": "Market discounts everything; three trends; primary trends have three phases; indices must confirm; volume confirms; trends persist until a clear reversal."}, {"f": "Three phases of a primary trend", "b": "Accumulation (smart money enters), public participation, distribution (smart money exits)."}, {"f": "Indices must confirm each other: example", "b": "Nifty and Sensex should move in the same direction."}, {"f": "Primary trend length", "b": "Typically <b>one year or more</b>."}, {"f": "Secondary trend: length and retracement", "b": "About 3 weeks to 3 months; retraces <b>1/3 to 2/3</b> of the primary move."}, {"f": "Correction versus rally", "b": "Correction: a temporary fall in a bull market (often 10% to 20%). Rally: a short bounce in a bear market."}, {"f": "Tertiary trend length", "b": "Usually under <b>3 weeks</b> (some say up to 6)."}, {"f": "Fibonacci retracement levels for secondary trends (book)", "b": "<b>38.2%, 50%, 61.8%</b>."}, {"f": "Hanging man", "b": "Bearish; after an up move; small body; lower shadow at least twice the body. Needs a lower close next to confirm."}, {"f": "Hammer", "b": "Bullish; after a decline; same shape as a hanging man. Price must move up next to confirm."}, {"f": "Bullish engulfing", "b": "Small red then a large green whose body engulfs it. Stronger after <b>four or more</b> red candles."}, {"f": "Bearish engulfing", "b": "A red body engulfs the previous green body; more significant after an advance. Only real bodies count."}, {"f": "Dark cloud cover", "b": "Near the <b>top</b> of congestion: green candle, gap up, then red closing <b>below the midpoint</b> of the green."}, {"f": "Piercing pattern", "b": "<b>Two</b> candles near the <b>bottom</b> of congestion: red, then a gap-down green covering <b>at least half</b> the red."}, {"f": "Morning star", "b": "Three candles: tall red, small body, tall green. <b>Bullish</b>."}, {"f": "Evening star", "b": "Three candles: large green, small body above it, large red closing near the centre of the first body. <b>Bearish</b>."}, {"f": "Congestion area", "b": "A price range where the market trades repeatedly, often for several weeks, before breaking out."}, {"f": "Symmetrical triangle", "b": "Consolidation before a breakout either way. The book also calls it a wedge pattern."}, {"f": "Ascending triangle", "b": "<b>Higher lows</b> against flat resistance; bullish continuation in an uptrend."}, {"f": "Descending triangle", "b": "<b>Lower highs</b> against flat support; bearish continuation in a downtrend."}, {"f": "Triangle price target", "b": "Height at the thickest point, added to (or subtracted from) the breakout point."}, {"f": "Flag versus pennant", "b": "Both continuation patterns after a flagpole. Flag: small rectangle. Pennant: small triangle."}, {"f": "Support versus resistance", "b": "Support: demand, a floor. Resistance: supply, a ceiling."}, {"f": "Role reversal", "b": "Broken support often becomes resistance, and vice versa."}, {"f": "What makes a support or resistance level stronger?", "b": "More touches, higher volume, more time spent near it, more recent."}, {"f": "Breakout versus false breakout", "b": "Breakout: decisive move beyond the level with volume. False: brief breach that reverses, trapping traders."}, {"f": "Trendline: minimum points", "b": "At least <b>two</b>; three or more make it more reliable."}, {"f": "Channel", "b": "Two parallel trendlines. Ascending bullish, descending bearish, horizontal range-bound. Width reflects volatility."}, {"f": "Are moving averages leading or lagging?", "b": "<b>Lagging</b>, but useful for major trends."}, {"f": "Book's EMA combination", "b": "<b>13, 21 and 34</b> EMA (Fibonacci). Uptrend: price &gt; 13 &gt; 21 &gt; 34. Support near the 34 EMA in a bull market."}, {"f": "Default MACD line", "b": "Difference between the <b>26 EMA and the 12 EMA</b>. Slow line = <b>9 EMA</b> of the default line."}, {"f": "MACD zero line", "b": "Separates confirmed bull and bear markets, but a zero-line crossover <b>should not be used for trading</b>."}, {"f": "MACD negative divergence", "b": "Price makes a higher high but MACD a lower high: losing upward momentum."}, {"f": "RSI range and levels", "b": "0 to 100. Above <b>70</b> overbought; below <b>30</b> oversold."}, {"f": "RSI in bull and bear markets", "b": "Bull: rarely below 44 to 45. Bear: rarely above 50 to 55."}, {"f": "RSI bullish divergence", "b": "In an oversold market, stock makes a new low but RSI does not: an early buy signal."}, {"f": "Where does RSI work best?", "b": "In a <b>trading range</b>. In strong trends it can stay overbought or oversold for long."}, {"f": "ADX", "b": "Measures trend <b>strength, not direction</b>. 0 to 100; default 14 bars; below 25 weak."}, {"f": "ADX buy signal", "b": "+DMI crosses above &minus;DMI while ADX is rising."}, {"f": "RSC", "b": "Ratio chart versus a benchmark, normalised to 100. Above 100: outperforming. Use 5 to 6 years of data."}, {"f": "OBV", "b": "Running total: add volume on up-close days, subtract on down-close days. Read with its 20-period average."}, {"f": "OBV divergence", "b": "Volume often leads price; a higher price high without a higher OBV means buying pressure is fading."}], "mcqs": [{"id": "15.1", "q": "Which of the following is not a tenet of the Dow Theory?", "o": ["The market discounts everything", "A trend remains in effect until a clear reversal occurs", "The averages must confirm each other", "The market has four trends"], "a": 3, "w": "Book sample question. Dow Theory has three trends: primary, secondary, tertiary."}, {"id": "15.2", "q": "The Hanging Man candlestick pattern is unlikely to have which of the following features?", "o": ["A long lower shadow showing sellers were in control for part of the period", "It is a bullish reversal pattern that occurs after a down move", "It is a bearish reversal pattern that occurs after an up move", "A small real body and a long lower shadow at least twice the size of the real body"], "a": 1, "w": "Book sample question. The bullish version after a decline is the hammer."}, {"id": "15.3", "q": "The piercing pattern is most likely to have which of the following features?", "o": ["A two-candlestick pattern that occurs near the top of the congestion area", "A three-candlestick pattern that occurs near the bottom of the congestion area", "A two-candlestick pattern that occurs near the bottom of the congestion area", "A three-candlestick pattern that occurs near the top of the congestion area"], "a": 2, "w": "Book sample question. Dark cloud cover is the two-candle pattern near the top."}, {"id": "15.4", "q": "The default MACD line is most likely the difference between:", "o": ["The 26-period EMA and the 9-period EMA", "The 26-period EMA and the 21-period EMA", "The 26-period EMA and the 12-period EMA", "The 12-period EMA and the 9-period EMA"], "a": 2, "w": "Book sample question. The 9 EMA of the MACD line is the slow line."}, {"id": "15.5", "q": "Which of the following regarding the RSI is most likely to be true?", "o": ["When the stock makes a new low and RSI does not, it is called bullish divergence", "When the stock makes a new high and RSI does not, it is called bullish divergence", "When the stock makes a new low and RSI does not, it is called bearish divergence", "RSI is a very good indicator in a strongly trending market"], "a": 0, "w": "Book sample question. RSI performs well in a trading range, not in strong trends."}, {"id": "15.6", "q": "Which assumption is central to technical analysis?", "o": ["Price discounts everything", "Volume is irrelevant", "Financial statements drive short-term prices", "Prices always equal intrinsic value"], "a": 0, "w": "All known information is already reflected in the market price."}, {"id": "15.7", "q": "Which chart type ignores time and volume and focuses only on price movements?", "o": ["Candlestick", "Point and figure", "Bar (OHLC)", "Line"], "a": 1, "w": "Renko also uses fixed price bricks rather than time intervals."}, {"id": "15.8", "q": "A Heikin-Ashi chart:", "o": ["Shows only closing prices", "Uses fixed price bricks", "Ignores price and shows only volume", "Uses adjusted candles that average price data to reduce noise"], "a": 3, "w": "It helps traders stay in trends longer by filtering whipsaws. Fixed bricks describe Renko."}, {"id": "15.9", "q": "Dow Theory was organised into a formal theory, after Charles Dow's death, by:", "o": ["Benjamin Graham and David Dodd", "William Hamilton and Robert Rhea", "J. Welles Wilder and Gerald Appel", "Peter Lynch and John Templeton"], "a": 1, "w": "Dow wrote the editorials between 1900 and 1902."}, {"id": "15.10", "q": "In Dow Theory, the phase of a primary trend when smart money enters quietly is the:", "o": ["Correction phase", "Distribution phase", "Accumulation phase", "Public participation phase"], "a": 2, "w": "Smart money exits in the distribution phase."}, {"id": "15.11", "q": "According to Dow Theory, volume should:", "o": ["Stay constant", "Decrease in the direction of the primary trend", "Be ignored", "Increase in the direction of the primary trend"], "a": 3, "w": "Volume confirms the trend."}, {"id": "15.12", "q": "A primary trend typically lasts:", "o": ["One year or more", "A few days", "One to three weeks", "Exactly six months"], "a": 0, "w": "Secondary trends last weeks to months; tertiary trends days to weeks."}, {"id": "15.13", "q": "As per Dow Theory, a secondary trend typically retraces:", "o": ["One-third to two-thirds of the previous primary move", "Less than 5% of the previous move", "Exactly 50% every time", "All of the previous move"], "a": 0, "w": "It usually lasts about 3 weeks to 3 months."}, {"id": "15.14", "q": "A temporary decline within a bull market is called a ______, and a short bounce within a bear market a ______.", "o": ["Correction; rally", "Distribution; accumulation", "Breakout; breakdown", "Rally; correction"], "a": 0, "w": "Also called pullbacks and relief rallies."}, {"id": "15.15", "q": "Which Fibonacci retracement levels does the book list for identifying reversal zones in secondary trends?", "o": ["38.2%, 50% and 61.8%", "25%, 50% and 75%", "10%, 20% and 30%", "33%, 66% and 100%"], "a": 0, "w": "Elsewhere the book also lists 23.6% as a Fibonacci support level."}, {"id": "15.16", "q": "Tertiary trends typically last:", "o": ["More than one year", "Less than three weeks", "Three to six months", "Exactly one month"], "a": 1, "w": "Some definitions extend this to six weeks."}, {"id": "15.17", "q": "A hammer candlestick is:", "o": ["Bullish, appearing after a price decline", "Always followed by a gap down", "Bearish, appearing after an up move", "A three-candle pattern"], "a": 0, "w": "The price must start moving up after it to confirm."}, {"id": "15.18", "q": "In a hammer or hanging man, the lower shadow should be at least ______ the height of the real body.", "o": ["Equal to", "Ten times", "Twice", "Half"], "a": 2, "w": "With little or no upper shadow."}, {"id": "15.19", "q": "A bullish engulfing pattern is more likely to signal a reversal when preceded by:", "o": ["A gap up", "A doji", "Four or more green candles", "Four or more red candles"], "a": 3, "w": "Traders look at the preceding candles too."}, {"id": "15.20", "q": "In a bearish engulfing pattern, what must engulf the previous candle?", "o": ["The upper shadow", "The volume bar", "The real body of the down candle", "The lower shadow"], "a": 2, "w": "Only the real bodies matter."}, {"id": "15.21", "q": "In a dark cloud cover pattern, the bearish candle:", "o": ["Opens with a gap up and closes below the midpoint of the previous bullish candle", "Appears near the bottom of a congestion area", "Is the first of three candles", "Opens with a gap down and closes above the previous high"], "a": 0, "w": "It occurs near the top of the congestion area, in an uptrend."}, {"id": "15.22", "q": "In a piercing pattern, the green candle's body must cover at least ______ of the previous red candle.", "o": ["One quarter", "All", "Half", "Two-thirds"], "a": 2, "w": "After opening with a significant gap down."}, {"id": "15.23", "q": "The morning star is a:", "o": ["Two-candle bullish pattern", "Three-candle bearish pattern", "Three-candle bullish pattern", "One-candle bearish pattern"], "a": 2, "w": "The evening star is its bearish counterpart."}, {"id": "15.24", "q": "In an evening star, the third candle:", "o": ["Is a doji", "Is a large red candle closing near the centre of the first candle's body", "Opens with a gap up", "Is a large green candle"], "a": 1, "w": "It opens below the middle candle."}, {"id": "15.25", "q": "An ascending triangle forms with:", "o": ["Converging lines from both sides", "Higher lows against the same resistance level", "Lower highs against the same support level", "A sharp fall followed by a rectangle"], "a": 1, "w": "It is usually a bullish continuation pattern in an uptrend."}, {"id": "15.26", "q": "A descending triangle is formed when the market makes:", "o": ["Lower highs and lows at the same level", "Higher lows and highs at the same level", "Higher highs and higher lows", "Equal highs and lows"], "a": 0, "w": "It is usually a bearish continuation pattern in a downtrend."}, {"id": "15.27", "q": "An ascending triangle is 40 points high at its thickest point, and price breaks out at 500. The book's method gives a target of:", "o": ["460", "580", "540", "520"], "a": 2, "w": "Add the height at the thickest point to the breakout point: 500 + 40."}, {"id": "15.28", "q": "The sharp price rise before a flag or pennant is called the:", "o": ["Wick", "Handle", "Neckline", "Flagpole"], "a": 3, "w": "Traders enter long when price breaks above the flag or pennant's upper trendline."}, {"id": "15.29", "q": "A flag differs from a pennant in that the flag's consolidation takes the shape of a:", "o": ["Circle", "Head and shoulders", "Small triangle", "Rectangle"], "a": 3, "w": "A pennant is a small triangle; both are traded the same way."}, {"id": "15.30", "q": "Support is a price level where a downtrend is expected to pause because of a concentration of:", "o": ["Supply", "Volatility", "Short sellers", "Demand"], "a": 3, "w": "Resistance is a concentration of supply."}, {"id": "15.31", "q": "Once a support level is broken, it often:", "o": ["Becomes a new resistance level", "Disappears for ever", "Turns into a moving average", "Becomes stronger support"], "a": 0, "w": "Called role reversal."}, {"id": "15.32", "q": "Which of the following makes a support or resistance level stronger?", "o": ["Less time spent near the level", "More touches and higher volume at the level", "An older, more distant level", "Fewer touches"], "a": 1, "w": "Recent levels carry more weight."}, {"id": "15.33", "q": "A trendline needs at least ______ points, and ______ or more increase its reliability.", "o": ["Three; five", "One; two", "Two; three", "Four; six"], "a": 2, "w": "As stated in 15.8."}, {"id": "15.34", "q": "A channel with higher highs and higher lows is:", "o": ["An ascending channel, indicating bullishness", "A descending channel, indicating bearishness", "A symmetrical triangle", "A horizontal channel"], "a": 0, "w": "The channel's width reflects volatility."}, {"id": "15.35", "q": "Moving averages are:", "o": ["Leading indicators that predict tops", "Volume indicators", "Lagging indicators useful for identifying major trends", "Measures of trend strength only"], "a": 2, "w": "A rising MA means an uptrend, and vice versa."}, {"id": "15.36", "q": "In the book's EMA combination, an uptrend shows:", "o": ["Price &lt; 13 EMA &lt; 21 EMA &lt; 34 EMA", "All EMAs flat", "13 EMA &lt; 21 EMA &lt; 34 EMA &lt; price", "Price &gt; 13 EMA &gt; 21 EMA &gt; 34 EMA"], "a": 3, "w": "In a bull market price usually finds support around the 34 EMA."}, {"id": "15.37", "q": "The MACD slow line is generated from the:", "o": ["9 EMA of the default MACD line", "12 EMA of price", "26 EMA of price", "50-day simple average"], "a": 0, "w": "The default line is the 26 EMA minus the 12 EMA."}, {"id": "15.38", "q": "According to the book, a MACD crossover of the zero baseline:", "o": ["Is the same as an RSI divergence", "Always marks a trend reversal", "Should not be used for trading", "Is the strongest buy signal"], "a": 2, "w": "The zero line separates confirmed bull and bear markets."}, {"id": "15.39", "q": "Price makes a higher high but MACD makes a lower high. This suggests:", "o": ["A buying climax has started", "The stock is losing upward momentum", "The uptrend is accelerating", "Nothing; MACD ignores momentum"], "a": 1, "w": "MACD sometimes leads price by showing a shift in momentum."}, {"id": "15.40", "q": "A stock is usually considered overbought when RSI is:", "o": ["Exactly 50", "Below 30", "Above 70", "Above 100"], "a": 2, "w": "RSI ranges from 0 to 100."}, {"id": "15.41", "q": "In a bull market, the RSI rarely falls below:", "o": ["70", "20", "10", "44 to 45"], "a": 3, "w": "In a bear market it rarely rises above 50 to 55."}, {"id": "15.42", "q": "ADX measures:", "o": ["The volume of a stock", "The strength of a trend, not its direction", "The direction of a trend only", "The relative performance against an index"], "a": 1, "w": "It is plotted with +DMI and &minus;DMI, which show direction."}, {"id": "15.43", "q": "An ADX value below ______ is generally considered a weak trend or no trend.", "o": ["50", "25", "70", "10"], "a": 1, "w": "A rising ADX above 25 indicates a strong trend. The default setting is 14 bars."}, {"id": "15.44", "q": "When is an ADX-based buy signal given, as per the book?", "o": ["When ADX falls below 25", "When +DMI crosses above &minus;DMI and ADX is rising", "When &minus;DMI crosses above +DMI", "Whenever ADX is above 100"], "a": 1, "w": "Ignore crossovers when ADX is weak."}, {"id": "15.45", "q": "An RSC value above 100 indicates the stock is:", "o": ["Underperforming the benchmark", "In a downtrend", "Overbought", "Outperforming the benchmark"], "a": 3, "w": "RSC is normalised to 100 against a benchmark such as the Nifty 50."}, {"id": "15.46", "q": "On a day when the stock closes higher than the previous day, OBV:", "o": ["Resets to zero", "Stays unchanged", "Subtracts that day's volume", "Adds that day's volume to the running total"], "a": 3, "w": "On a lower close, the day's volume is subtracted."}, {"id": "15.47", "q": "A stock makes a higher high in price but OBV does not make a higher high. This suggests:", "o": ["Rising buying pressure", "Nothing; OBV ignores price", "Buying pressure is fading", "A strong new uptrend"], "a": 2, "w": "Volume often leads price and can warn of a reversal."}], "cases": [{"id": "C30", "title": "Kabir reads the candles", "text": "Kabir watches Alpha Ltd. After falling for six sessions, Alpha forms a candle with a small body near the day's high and a lower shadow three times the body. Months later, near the top of a long trading range, a strong green candle is followed by a candle that opens with a gap up but closes red, below the midpoint of the green candle.", "qs": [{"q": "The candle after the six-session fall is most likely a:", "o": ["Hammer", "Hanging man", "Dark cloud cover", "Evening star"], "a": 0, "w": "Small body, long lower shadow at least twice the body, after a decline."}, {"q": "What does Kabir need before acting on it?", "o": ["Confirmation: price must start moving up next", "Nothing; act immediately", "A gap down the next day", "RSI above 70"], "a": 0, "w": "The book says trades are typically taken after the confirmation candle."}, {"q": "The gap-up red candle closing below the green candle's midpoint, at the top of a range, is:", "o": ["Piercing pattern", "Bullish engulfing", "Dark cloud cover", "Morning star"], "a": 2, "w": "A bearish two-candle pattern near the top of a congestion area."}, {"q": "If the same shape as the first candle had appeared after a strong rise, it would be a:", "o": ["Hanging man, a bearish warning", "Hammer, bullish", "Bullish engulfing", "Morning star"], "a": 0, "w": "The hanging man needs the next candle to close lower to confirm."}]}, {"id": "C31", "title": "A triangle on Beta Ltd", "text": "Beta Ltd is in an uptrend. For two months it has hit Rs 600 four times and fallen back, while each dip has stopped higher than the last: 540, 560, 575. Today it closed at Rs 612 on volume twice the average. The pattern's height at its thickest point is Rs 60.", "qs": [{"q": "What pattern has Beta formed?", "o": ["Ascending triangle", "Symmetrical triangle", "Flag", "Descending triangle"], "a": 0, "w": "Flat resistance at 600 with higher lows."}, {"q": "What is the book's price target from the breakout at Rs 600?", "o": ["Rs 540", "Rs 660", "Rs 612", "Rs 720"], "a": 1, "w": "Height at the thickest point (60) added to the breakout point (600)."}, {"q": "Why does the high volume matter?", "o": ["High volume always signals a false breakout", "Volume confirms the breakout and adds credibility", "Volume is irrelevant to breakouts", "It means the stock is oversold"], "a": 1, "w": "High volume during breakouts adds credibility to the move."}, {"q": "If price later falls back to Rs 600, the old resistance would be expected to act as:", "o": ["Resistance", "A flagpole", "A pivot for selling only", "Support"], "a": 3, "w": "Role reversal: broken resistance often becomes support."}]}, {"id": "C32", "title": "Indicators on Gamma Ltd", "text": "Gamma Ltd's price made a new high this month, but its RSI peaked lower than last month and its MACD fast line made a lower high. RSI had been above 75 for six weeks. ADX is 18 and falling. Over five years, Gamma's RSC against the Nifty 50 has been below 100, but it just crossed above 100.", "qs": [{"q": "Price makes a new high while RSI does not. This is:", "o": ["A confirmed uptrend", "Irrelevant in an overbought market", "Bearish divergence, an early sell signal", "Bullish divergence"], "a": 2, "w": "In an overbought market, a new price high without a new RSI high is bearish divergence."}, {"q": "What does the ADX reading of 18 and falling tell the analyst?", "o": ["The stock is oversold", "The price will fall", "The trend is strong and rising", "The trend is weak; DMI crossovers should be avoided"], "a": 3, "w": "ADX below 25 is weak or no trend; it says nothing about direction."}, {"q": "The MACD lower high while price makes a higher high means:", "o": ["The zero line has been crossed", "Momentum is accelerating", "The stock is losing upward momentum", "A buy signal"], "a": 2, "w": "A negative divergence between price and MACD."}, {"q": "What does the RSC crossing above 100 after a long time below suggest, as per the book?", "o": ["The stock is overbought", "The stock may now be a good buy relative to the benchmark", "The stock is underperforming", "Nothing; RSC is only for commodities"], "a": 1, "w": "The book: a stock becomes a good buy if RSC stays below 100 for long, then turns up and crosses 100. The signals conflict, so more confirmation is needed."}]}]};</script>
+<script></script><script>
+(function(){
+const DATA = window.__DATA__;
+const KEY = 'nismra:'+DATA.id+':';
+const store = {
+  get(k,d){try{const v=localStorage.getItem(KEY+k);return v?JSON.parse(v):d}catch(e){return d}},
+  set(k,v){try{localStorage.setItem(KEY+k,JSON.stringify(v))}catch(e){}}
+};
+const $=(s,r=document)=>r.querySelector(s);
+const el=(t,a={},h='')=>{const e=document.createElement(t);for(const k in a){if(k==='class')e.className=a[k];else e.setAttribute(k,a[k])}if(h)e.innerHTML=h;return e};
+function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),1600)}
+/* theme */
+const tb=$('#themebtn');
+function applyTheme(t){if(t)document.documentElement.setAttribute('data-theme',t);else document.documentElement.removeAttribute('data-theme');tb.textContent=(t==='dark'||(!t&&matchMedia('(prefers-color-scheme: dark)').matches))?'\u2600':'\u263E'}
+let th=null;try{th=localStorage.getItem('nismra:theme')}catch(e){}
+applyTheme(th);
+tb.addEventListener('click',()=>{const dark=document.documentElement.getAttribute('data-theme')==='dark'||(!document.documentElement.getAttribute('data-theme')&&matchMedia('(prefers-color-scheme: dark)').matches);const n=dark?'light':'dark';applyTheme(n);try{localStorage.setItem('nismra:theme',n)}catch(e){}});
+/* tabs */
+const tabs=[...document.querySelectorAll('.tab')];
+function show(v){tabs.forEach(t=>t.setAttribute('aria-selected',t.dataset.v===v));document.querySelectorAll('.view').forEach(x=>x.hidden=x.id!=='v-'+v);if(v==='cards')renderCard();window.scrollTo(0,0);try{history.replaceState(null,'','#'+v)}catch(e){}}
+tabs.forEach(t=>t.addEventListener('click',()=>show(t.dataset.v)));
+/* ---------- flashcards ---------- */
+const cards=DATA.cards;
+let known=new Set(store.get('known',[]));
+let missed=new Set(store.get('missed',[]));
+let deck=[],pos=0,onlyMissed=false;
+function buildDeck(shuffle){deck=cards.map((c,i)=>i).filter(i=>!onlyMissed||missed.has(i));if(shuffle){for(let i=deck.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[deck[i],deck[j]]=[deck[j],deck[i]]}}pos=0}
+buildDeck(false);
+function renderCard(){
+  const c3=$('#fc-card');c3.classList.remove('flip');
+  const done=known.size;$('#fc-bar').style.width=(100*done/cards.length)+'%';
+  $('#fc-count').textContent=done+' of '+cards.length+' marked known';
+  if(!deck.length){$('#fc-front').innerHTML='No cards here.';$('#fc-back').innerHTML='Switch off "Only cards I missed" to see the full deck.';$('#fc-pos').textContent='';return}
+  if(pos>=deck.length){$('#fc-front').innerHTML='Deck done.';$('#fc-back').innerHTML='Press Shuffle to go again, or study only the cards you missed.';$('#fc-pos').textContent='';return}
+  const c=cards[deck[pos]];$('#fc-front').innerHTML=c.f;$('#fc-back').innerHTML=c.b;$('#fc-pos').textContent='Card '+(pos+1)+' of '+deck.length;
+}
+function flip(){$('#fc-card').classList.toggle('flip')}
+$('#fc-card').addEventListener('click',flip);
+$('#fc-card').addEventListener('keydown',e=>{if(e.key===' '||e.key==='Enter'){e.preventDefault();flip()}});
+function mark(ok){if(pos>=deck.length)return;const i=deck[pos];if(ok){known.add(i);missed.delete(i)}else{missed.add(i);known.delete(i)}store.set('known',[...known]);store.set('missed',[...missed]);pos++;renderCard()}
+$('#fc-good').addEventListener('click',()=>mark(true));
+$('#fc-bad').addEventListener('click',()=>mark(false));
+$('#fc-shuffle').addEventListener('click',()=>{buildDeck(true);renderCard()});
+$('#fc-missed').addEventListener('change',e=>{onlyMissed=e.target.checked;buildDeck(false);renderCard()});
+$('#fc-reset').addEventListener('click',()=>{known.clear();missed.clear();store.set('known',[]);store.set('missed',[]);buildDeck(false);renderCard();toast('Progress cleared')});
+document.addEventListener('keydown',e=>{if($('#v-cards').hidden)return;if(e.key==='ArrowRight')mark(true);if(e.key==='ArrowLeft')mark(false)});
+/* ---------- quiz ---------- */
+const Q=[];DATA.mcqs.forEach(q=>Q.push(Object.assign({kind:'mcq'},q)));
+(DATA.cases||[]).forEach(cs=>cs.qs.forEach((q,k)=>Q.push(Object.assign({kind:'case',caseTitle:cs.title,caseText:cs.text,id:cs.id+'-'+(k+1)},q))));
+let run=null;
+function pick(set){let arr;
+  if(set==='quick'){arr=Q.filter(q=>q.kind==='mcq').slice();for(let i=arr.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[arr[i],arr[j]]=[arr[j],arr[i]]}arr=arr.slice(0,10)}
+  else if(set==='mcq')arr=Q.filter(q=>q.kind==='mcq');
+  else if(set==='case')arr=Q.filter(q=>q.kind==='case');
+  else if(set==='missed'){const m=new Set(store.get('qmissed',[]));arr=Q.filter(q=>m.has(q.id))}
+  else arr=Q.slice();
+  return arr}
+function start(){const set=document.querySelector('input[name=qset]:checked').value;const mode=document.querySelector('input[name=qmode]:checked').value;const qs=pick(set);
+  if(!qs.length){toast('No questions in this set yet');return}
+  run={qs,mode,i:0,ans:qs.map(()=>null),checked:qs.map(()=>false)};$('#qz-setup').hidden=true;$('#qz-end').hidden=true;$('#qz-run').hidden=false;renderQ()}
+function renderQ(){const q=run.qs[run.i];const box=$('#qz-q');box.innerHTML='';
+  $('#qz-pos').textContent='Question '+(run.i+1)+' of '+run.qs.length;
+  $('#qz-modelbl').textContent=run.mode==='exam'?'Exam mode: answers shown at the end':'Practice mode';
+  if(q.kind==='case'){box.appendChild(el('div',{class:'qcase'},'<b>Case: '+q.caseTitle+'</b><br>'+q.caseText))}
+  box.appendChild(el('div',{class:'qtext'},q.q));
+  const L='abcd';
+  q.o.forEach((o,k)=>{const b=el('button',{class:'opt','aria-pressed':String(run.ans[run.i]===k)},'<span class="lt">'+L[k]+'</span><span>'+o+'</span>');
+    b.addEventListener('click',()=>{if(run.checked[run.i])return;run.ans[run.i]=k;renderQ()});box.appendChild(b)});
+  if(run.checked[run.i])paintCheck();
+  $('#qz-check').hidden=run.mode==='exam'||run.checked[run.i];
+  $('#qz-check').disabled=run.ans[run.i]===null;
+  $('#qz-prev').disabled=run.i===0;
+  $('#qz-next').textContent=run.i===run.qs.length-1?'Finish':'Next';
+  $('#qz-skip').hidden=run.checked[run.i];
+}
+function paintCheck(){const q=run.qs[run.i];const opts=[...document.querySelectorAll('#qz-q .opt')];opts.forEach((b,k)=>{b.disabled=true;if(k===q.a)b.classList.add('right');else if(k===run.ans[run.i])b.classList.add('wrong')});
+  const a=run.ans[run.i];const ok=a===q.a;const ex=el('div',{class:'explain '+(a===null?'':(ok?'ok':'no'))},'<b>'+(a===null?'Skipped. ':ok?'Correct. ':'Not quite. ')+'</b>'+q.w);$('#qz-q').appendChild(ex)}
+$('#qz-check').addEventListener('click',()=>{run.checked[run.i]=true;renderQ()});
+$('#qz-skip').addEventListener('click',()=>{run.ans[run.i]=null;if(run.mode==='practice'){run.checked[run.i]=true;renderQ()}else next()});
+$('#qz-prev').addEventListener('click',()=>{if(run.i>0){run.i--;renderQ()}});
+function next(){if(run.i<run.qs.length-1){run.i++;renderQ();window.scrollTo({top:0})}else finish()}
+$('#qz-next').addEventListener('click',next);
+$('#qz-start').addEventListener('click',start);
+$('#qz-quit').addEventListener('click',()=>{$('#qz-run').hidden=true;$('#qz-setup').hidden=false});
+function finish(){let c=0,w=0,s=0;const miss=new Set(store.get('qmissed',[]));const wrongIdx=[];
+  run.qs.forEach((q,i)=>{const a=run.ans[i];if(a===null){s++;miss.add(q.id);wrongIdx.push(i)}else if(a===q.a){c++;miss.delete(q.id)}else{w++;miss.add(q.id);wrongIdx.push(i)}});
+  store.set('qmissed',[...miss]);
+  const net=c-0.25*w;const pct=100*net/run.qs.length;
+  $('#qz-run').hidden=true;$('#qz-end').hidden=false;
+  $('#qz-score').innerHTML='<div><b>'+c+'</b><small>correct</small></div><div><b>'+w+'</b><small>wrong</small></div><div><b>'+s+'</b><small>skipped</small></div><div><b>'+net.toFixed(2)+'</b><small>net score</small></div>';
+  $('#qz-verdict').textContent=pct>=60?('Pass level. Net '+pct.toFixed(0)+'%.'):('Below the 60% pass line. Net '+pct.toFixed(0)+'%.');
+  $('#qz-penalty').textContent=w?('Wrong answers cost you '+(0.25*w).toFixed(2)+' marks.'):'No marks lost to negative marking.';
+  const rv=$('#qz-review');rv.innerHTML='';const L='abcd';
+  if(!wrongIdx.length)rv.innerHTML='<p>Nothing to review. Every answer was right.</p>';
+  wrongIdx.forEach(i=>{const q=run.qs[i];const a=run.ans[i];rv.appendChild(el('div',{class:'item'},'<p><b>'+q.q+'</b></p><p>Your answer: '+(a===null?'skipped':L[a]+') '+q.o[a])+'</p><p>Right answer: <b>'+L[q.a]+') '+q.o[q.a]+'</b></p><p class="ptr">'+q.w+'</p>'))});
+  run.summary=DATA.short+' quiz: '+c+'/'+run.qs.length+' correct, '+w+' wrong, '+s+' skipped. Net '+net.toFixed(2)+' ('+pct.toFixed(0)+'%).'+(wrongIdx.length?' Missed: '+wrongIdx.map(i=>run.qs[i].id).join(', '):'');
+}
+$('#qz-copy').addEventListener('click',()=>{const t=run&&run.summary||'';(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(()=>toast('Copied. Paste it in the group chat.')).catch(()=>{prompt('Copy this:',t)})});
+$('#qz-again').addEventListener('click',()=>{$('#qz-end').hidden=true;$('#qz-setup').hidden=false;updateMissedCount()});
+function updateMissedCount(){const n=store.get('qmissed',[]).length;$('#qz-missedn').textContent=n?('('+n+' saved)'):'(none yet)'}
+updateMissedCount();
+$('#qz-counts').textContent=DATA.mcqs.length+' MCQs and '+(DATA.cases||[]).reduce((s,c)=>s+c.qs.length,0)+' case questions';
+/* interactive widgets hook */
+if(window.__WIDGETS__)window.__WIDGETS__();
+const h=(location.hash||'').replace('#','');if(['learn','cards','quiz'].includes(h))show(h);
+})();
+</script></body></html>
