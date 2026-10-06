@@ -1,7 +1,7 @@
 # Chapter registry: one entry per chapter page. build.py, export.py and boards.py all read it.
 # Keep the order: build.py derives each chapter's answer-shuffle seed from its position,
 # so new chapters go at the END.
-from . import ch00, ch01, ch02_learn, ch02_qs, ch03_learn, ch03_qs, ch04, ch05, ch06_learn, ch06_qs, ch07, ch08_learn, ch08_qs, ch09, ch10_learn, ch10_qs
+from . import ch00, ch01, ch02_learn, ch02_qs, ch03_learn, ch03_qs, ch04, ch05, ch06_learn, ch06_qs, ch07, ch08_learn, ch08_qs, ch09, ch10_learn, ch10_qs, ch11, ch12_learn, ch12_qs
 
 CH = {
  "ch01": {"dir":"Ch01-Research-Analyst-Profession","file":"Ch01-study-page.html","data":ch01.DATA,"learn":ch01.LEARN,"widgets":"","title":"The research analyst profession","n":1},
@@ -18,7 +18,9 @@ CH = {
  "ch08": {"dir":"Ch08-Company-Financial-Analysis","file":"Ch08-study-page.html","data":ch08_qs.DATA,"learn":ch08_learn.LEARN,"widgets":ch08_learn.WIDGETS,"title":"Company analysis: financial analysis","n":8,"extra":"Includes both book case studies, a ratio formula sheet and a DuPont calculator."},
  "ch09": {"dir":"Ch09-Corporate-Actions","file":"Ch09-study-page.html","data":ch09.DATA,"learn":ch09.LEARN,"widgets":ch09.WIDGETS,"title":"Corporate actions","n":9,"extra":"Bonus, split and consolidation calculator."},
  "ch10": {"dir":"Ch10-Valuation-Principles","file":"Ch10-study-page.html","data":ch10_qs.DATA,"learn":ch10_learn.LEARN,"widgets":ch10_learn.WIDGETS,"title":"Valuation principles","n":10,"extra":"Includes the book's case study and a CAPM, WACC and Gordon calculator."},
+ "ch11": {"dir":"Ch11-Commodities","file":"Ch11-study-page.html","data":ch11.DATA,"learn":ch11.LEARN,"widgets":ch11.WIDGETS,"title":"Fundamental analysis of commodities","n":11,"extra":"Hedge ratio calculator."},
+ "ch12": {"dir":"Ch12-Risk-and-Return","file":"Ch12-study-page.html","data":ch12_qs.DATA,"learn":ch12_learn.LEARN,"widgets":ch12_learn.WIDGETS,"title":"Fundamentals of risk and return","n":12,"extra":"Return calculator and Sharpe, Treynor and Jensen calculator."},
 }
 
 # Figures that are interactive tools: skipped by the PNG export and drawn as a pointer on the boards.
-WIDGET_FIGS = ("fig-map", "fig-bondtool", "fig-calc", "fig-bondcalc", "fig-carry", "fig-dupont", "fig-cacalc", "fig-wacc")
+WIDGET_FIGS = ("fig-map", "fig-bondtool", "fig-calc", "fig-bondcalc", "fig-carry", "fig-dupont", "fig-cacalc", "fig-wacc", "fig-hedgecalc", "fig-retcalc", "fig-rcalc")
