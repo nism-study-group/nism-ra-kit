@@ -48,7 +48,7 @@ The organiser runs a study group preparing for the **NISM Series XV: Research An
 | 14 | Legal and Regulatory Environment | 10 | 255 | Done |
 | 15 | Technical Analysis | 15 | 295 | Done |
 
-Annexures 1 to 3 start at page 328 (Annexure 1 is the RA Investor Charter; relevant to Chapter 14).
+Annexures 1 to 3 start at page 328. Annexures 1 (RA Investor Charter) and 2 (complaint data format) are covered in Chapter 14. Annexure 3 (Barings, the 2008 credit event, famous frauds) is covered at the end of Chapter 12, as section A3.
 
 Chapters 8, 10, 14 and 15 carry 49 marks together. These deserve the most depth, the most numericals and the most case sets. Chapters 8, 10 and 12 need worked numerical problems (ratios, DuPont, DCF, P/E, EV/EBITDA, WACC, CAPM, risk measures). Chapter 15 needs chart-pattern visuals.
 
@@ -109,9 +109,9 @@ Content counts:
 - Chapter 9: 49 flashcards, 44 MCQs, 2 case sets (C17, C18). Bonus, split and consolidation calculator. All 3 book sample questions included.
 - Chapter 10: 56 flashcards, 51 MCQs, 2 case sets: C19 is the book's case study (6 questions; its question (iv) says "Rs.36,000 crores" but only the table's unit, lakhs, fits the options), C20 is ours. CAPM, WACC and Gordon calculator.
 - Chapter 11: 36 flashcards, 33 MCQs, 2 case sets (C21, C22). Hedge ratio calculator. The book's copper example says 500 tonnes a month but works the hedge for 100 tonnes; the notes flag it and the quiz uses its own numbers.
-- Chapter 12: 55 flashcards, 46 MCQs, 2 case sets (C23, C24). Return calculator and Sharpe, Treynor and Jensen calculator. Book sample question 2 (which bias prevents benefiting from corrections) is not in the quiz: the chapter text does not settle it.
+- Chapter 12: 65 flashcards, 54 MCQs, 2 case sets (C23, C24). Return calculator and Sharpe, Treynor and Jensen calculator. Book sample question 2 (which bias prevents benefiting from corrections) is not in the quiz: the chapter text does not settle it.
 - Chapter 13: 22 flashcards, 20 MCQs, 2 case sets (C25, C26). All 3 book sample questions included.
-- Chapter 14: 65 flashcards, 50 MCQs, 3 case sets (C27 to C29). Book sample question 4 (bye-laws "same across exchanges") is not in the quiz: the text does not settle it. The IBC Rs 1,00,000 threshold is shown "as per the book" and not tested. The syllabus lists WDRA, but the chapter does not cover it.
+- Chapter 14: 67 flashcards, 50 MCQs, 3 case sets (C27 to C29). Book sample question 4 (bye-laws "same across exchanges") is not in the quiz: the text does not settle it. The IBC Rs 1,00,000 threshold is shown "as per the book" and not tested. The syllabus lists WDRA, but the chapter does not cover it.
 - Chapter 15: 51 flashcards, 47 MCQs, 3 case sets (C30 to C32). All 5 book sample MCQs included. The book's "Nifty case study" (8 questions) is left out: its answers depend on a weekly RSI and MACD chart that is only an image. Candlestick and chart pattern diagrams are drawn in code; boards carry their text, not the drawings.
 
 **The question bank .md files are not extra questions.** They are the same questions as each page's quiz, in a printable text form, for anyone who prefers paper or wants to discuss specific question numbers.
@@ -289,4 +289,3 @@ No file names should print.
 1. Keep the linear pace, one chapter per meeting.
 2. A mixed mock test page drawing from all chapters, weighted by the official marks: 80 MCQs plus 5 case sets, timed at 120 minutes, with the same scoring (+1, minus 0.25).
 3. A one-page formula sheet across Chapters 3, 8, 10, 11 and 12 (yields, ratios, DuPont, DCF, CAPM, WACC, hedge ratio, Sharpe, Treynor, Jensen).
-4. Annexure 3 of the workbook (historical case studies such as Barings) is not covered by any chapter page; consider it for a revision session.

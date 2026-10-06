@@ -61,6 +61,8 @@ CARDS = [
  {"f":"Five things RA ads must not contain","b":"Past performance; superlatives like \"Best\" or \"No. 1\"; SEBI logo; assured or target returns; misleading testimonials."},
  {"f":"How long to keep a copy of each ad","b":"<b>Five years</b>."},
  {"f":"Investor Charter grievance route","b":"RA within 21 days; then SCORES 2.0 or RAASB (review by RAASB, then SEBI); then SMART ODR."},
+ {"f":"Monthly complaint data an RA must display (Annexure 2)","b":"By source (directly, SEBI SCORES, others): pending from last month, received, resolved, total pending, pending over <b>3 months</b>, <b>average resolution time</b>. Impersonation complaints shown separately."},
+ {"f":"What is a model portfolio? (book)","b":"A basket of securities in a research report that recommends <b>weightages</b>. A list of recommended stocks without weightages is <b>not</b> a model portfolio."},
  {"f":"Two investor don'ts in the Investor Charter","b":"Don't give the RA funds to invest; don't share trading or demat login credentials."},
  {"f":"CSCRF's five goals","b":"Anticipate, withstand, contain, recover, evolve."},
  {"f":"CSCRF for standalone RAs","b":"Excluded from CSCRF compliance submission; must give a SaaS declaration."},

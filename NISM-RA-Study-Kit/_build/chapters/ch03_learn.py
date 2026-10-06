@@ -139,7 +139,7 @@ LEARN = r"""
 <ul>
 <li>A P/E on past earnings has limited use. Prices move ahead of earnings, in anticipation of future profits.</li>
 <li>If earnings are expected to grow, the market pays a higher multiple. So analysts look at the <b>forward P/E</b>. Example: a share at 20 times this year's earnings but only 15 times next year's. The same price is divided by bigger future earnings.</li>
-<li>The P/E of the whole index is used to judge if the market is expensive or cheap. It rises when prices run ahead of earnings and falls when markets correct.</li>
+<li>The P/E of the whole index is used to judge if the market is expensive or cheap. It rises when prices run ahead of earnings and falls when markets correct. A value investor may buy when the P/E is low.</li>
 <li>A large, stable company usually has a higher P/E than a small, risky one. But this is not "gospel truth": a small company with high expected growth can have a higher P/E.</li>
 </ul>
 <h3>When P/S and P/BV are useful</h3>
@@ -156,7 +156,7 @@ LEARN = r"""
 
 <section class="sec" id="s2"><span class="secno">3.2</span><h2>Debt words</h2>
 <p>A company that needs Rs 100 crore can take a bank loan, or issue bonds to many investors. If it issues 1 crore bonds of Rs 100 each, an investor putting in Rs 1,000 gets 10 bonds. Each investor's risk is limited to what they put in.</p>
-<p>A bond is a contract. Its features are the <b>principal</b>, the <b>coupon</b>, the <b>maturity</b>, how often coupons are paid, and any <b>collateral</b>. With <b>secured</b> debt, the lender can have assets sold if the company defaults. With <b>unsecured</b> debt, they cannot. Debt sold in a public issue must be listed on a stock exchange. Unlisted debt is held to maturity or traded over the counter.</p>
+<p>A bond is a contract. Its features are the <b>principal</b>, the <b>coupon</b>, the <b>maturity</b>, how often coupons are paid, and any <b>collateral</b>. With <b>secured</b> debt, the lender can have assets sold if the company defaults. With <b>unsecured</b> debt, they cannot. Debt can be <b>privately placed</b> with a few select investors or sold to the public. Debt sold in a public issue must be listed on a stock exchange. Unlisted debt is held to maturity or traded over the counter.</p>
 </div>
 
 <figure class="fig" id="fig-bondwords"><figcaption>The three questions every loan answers</figcaption>

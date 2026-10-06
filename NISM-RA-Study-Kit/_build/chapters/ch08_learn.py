@@ -282,7 +282,7 @@ table.fs td:nth-child(2){font-family:var(--head);font-weight:700}
 
 <div class="col">
 <h3 id="s11">8.11 Commonly used ratios</h3>
-<p>Very high profitability rarely lasts: new entrants and competition pull it back to moderate levels. Ratios that compare a period figure (sales, profit) with a balance sheet figure (equity, assets) should use the <b>average</b> balance, usually the average of opening and closing.</p>
+<p>Margins are thin in a competitive industry with pricing pressure. They are high when a business is unique with big entry barriers, or an early entrant in a sunrise industry. But very high profitability rarely lasts: new entrants and competition pull it back to moderate levels. Ratios that compare a period figure (sales, profit) with a balance sheet figure (equity, assets) should use the <b>average</b> balance, usually the average of opening and closing.</p>
 </div>
 
 <figure class="fig" id="fig-formulas"><figcaption>Ratio formula sheet<span>Formulas exactly as the book defines them, with the book's Bharti Airtel FY 2019 figures</span></figcaption>
@@ -303,10 +303,10 @@ table.fs td:nth-child(2){font-family:var(--head);font-weight:700}
 <tr><th>Current ratio</th><td>Current assets &divide; Current liabilities</td><td>Also called working capital ratio. Bharti: 0.35</td></tr>
 <tr><th>Quick ratio</th><td>(Current assets &minus; Inventories) &divide; Current liabilities</td><td>Stricter: inventory cannot become cash immediately</td></tr>
 <tr><th colspan="3" style="color:var(--indigo)">Efficiency</th></tr>
-<tr><th>Receivable turnover</th><td>Revenue &divide; Average receivables</td><td>Higher is better: faster collection</td></tr>
+<tr><th>Receivable turnover</th><td>Revenue &divide; Average receivables</td><td>Higher is better: faster collection. Low may mean credit is too easy, or money is hard to recover</td></tr>
 <tr><th>Payable turnover</th><td>Purchases &divide; Accounts payable</td><td>Low means long supplier credit: strength, or lack of cash</td></tr>
 <tr><th>Asset turnover</th><td>Net sales &divide; Total assets</td><td>Higher is better: assets put to work. Used in DuPont</td></tr>
-<tr><th>Inventory turnover</th><td>Sales &divide; Inventory</td><td>Higher is better. High for FMCG, low for capital goods</td></tr>
+<tr><th>Inventory turnover</th><td>Sales &divide; Inventory</td><td>Higher is better. Slow stock locks up money, and perishables can spoil. High for FMCG, low for capital goods</td></tr>
 </tbody></table></div></figure>
 
 <div class="col">

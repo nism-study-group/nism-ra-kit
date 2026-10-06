@@ -54,6 +54,16 @@ CARDS = [
  {"f":"Templeton's advice","b":"\"Invest at the point of maximum pessimism.\""},
  {"f":"Stock turnover ratio","b":"Shares traded in a period &divide; <b>free float</b> shares (held by non-promoters)."},
  {"f":"Traded value turnover ratio","b":"Traded value &divide; market capitalisation."},
+ {"f":"Barings: who and where (Annexure 3)","b":"Nick Leeson, head of derivatives at <b>Barings Futures Singapore</b>. He ran both front and back office."},
+ {"f":"Leeson's original trade","b":"Sold <b>straddles</b> (call + put) on Nikkei 225 futures: a bet the market would stay stable. Loses on a big move either way."},
+ {"f":"What went wrong at Barings","b":"Kobe earthquake, Nikkei fell. Instead of cutting the loss he bought huge long futures to prop up the index, and misled London and both exchanges."},
+ {"f":"Five lessons from Barings","b":"One trader can't move the market; clear position limits; monitor them (separate front and back office); exchanges share large-position data; margin everyone, institutions too."},
+ {"f":"Barings: the book's verdict","b":"\"Not the derivatives failure, it was <b>management's failure</b>.\" Root cause: poor operational controls (<b>operational risk</b>)."},
+ {"f":"Why were SGX-DT and OSE unharmed by Barings?","b":"They had collected <b>margins</b>. But they never cross-checked his positions, as they competed for business."},
+ {"f":"2008: what banks did (Annexure 3)","b":"Lent to weaker borrowers, loosened loan to value (80:20 to 85:15), sold the loans on and booked profits up front. <b>Moral hazard</b>."},
+ {"f":"2008: why home buyers saw a call option","b":"Almost 100% financing. Prices up: sell and keep the gain. Prices down: hand the keys to the bank."},
+ {"f":"2008: lessons for investors","b":"Do your own due diligence, not just ratings; ask \"what could go wrong here?\"; don't decide only on historical data."},
+ {"f":"Frauds in Annexure 3","b":"Companies: Enron (2001), WorldCom (2002), Satyam (2009, about Rs 5,000 crore). Fund managers: Madoff ($65 billion Ponzi), Milken (junk bonds, insider trading), Rajaratnam (Galleon, insider trading)."},
 ]
 
 MCQS = [
@@ -103,6 +113,14 @@ MCQS = [
  {"id":"12.44","q":"\"Invest at the point of maximum pessimism\" is attributed in the book to:","o":["John Templeton","Walter Schloss","Charlie Munger","Seth Klarman"],"a":0,"w":"From the book's pearls of wisdom."},
  {"id":"12.45","q":"The stock turnover ratio is calculated by dividing the number of shares traded in a period by:","o":["The number of free float shares outstanding","Total shares including promoters","Market capitalisation","Daily average volume"],"a":0,"w":"Free float means shares held by non-promoter shareholders."},
  {"id":"12.46","q":"Traded value of a stock in a year is Rs 500 crore and its market capitalisation is Rs 2,500 crore. The traded value turnover ratio is:","o":["0.2","5","0.5","2"],"a":0,"w":"500 &divide; 2,500 = 0.2."},
+ {"id":"12.47","q":"As per the book's Annexure 3, the Board of Banking Supervision placed responsibility for the Barings debacle mainly on:","o":["Poor operational controls at Barings","The use of derivatives","Inadequate margins at the exchanges","The Kobe earthquake"],"a":0,"w":"\"Barings' failure was not the derivatives failure, it was management's failure.\""},
+ {"id":"12.48","q":"Nick Leeson's short straddles on Nikkei 225 futures would lose money if:","o":["The market moved sharply in either direction","The market stayed stable","Volatility fell","The options expired worthless"],"a":0,"w":"Selling a call and a put together is a bet on a stable market."},
+ {"id":"12.49","q":"Which Barings lesson does the book say SEBI has acted on in India?","o":["Margins apply to all categories of participants, including institutions","Exchanges must merge their order books","Traders may run both front and back office","Index futures are banned for banks"],"a":0,"w":"Big institutions are as prone to risk as individuals, so everyone is margined."},
+ {"id":"12.50","q":"Leeson's limit breaches went unnoticed mainly because:","o":["He supervised the back office himself","The exchanges hid his positions","He traded only on one exchange","Barings had no position limits"],"a":0,"w":"The fix: different people in charge of front and back office."},
+ {"id":"12.51","q":"In the book's account of 2008, banks selling mortgages on and caring little about borrower quality is an example of:","o":["Moral hazard","Herd immunity","Reinvestment risk","Call risk"],"a":0,"w":"They booked profits up front and passed the risk to investors."},
+ {"id":"12.52","q":"Which lesson for investors does the book draw from the 2008 credit event?","o":["Do independent due diligence besides relying on credit ratings","Buy only AAA-rated mortgage securities","Rely fully on historical default data","Avoid all fixed income"],"a":0,"w":"Keep asking \"what could go wrong here?\""},
+ {"id":"12.53","q":"As per the book, Satyam's promoter confessed in 2009 to inflating cash and bank balances by about:","o":["Rs 5,000 crore","Rs 500 crore","Rs 50,000 crore","Rs 65 billion"],"a":0,"w":"Satyam was later acquired by Tech Mahindra."},
+ {"id":"12.54","q":"The book describes Bernard Madoff's fraud as:","o":["A $65 billion Ponzi scheme","Insider trading in junk bonds","Inflated cash balances","Hiding losses on index futures"],"a":0,"w":"The largest financial fraud in US history, exposed in December 2008."},
 ]
 
 CASES = [

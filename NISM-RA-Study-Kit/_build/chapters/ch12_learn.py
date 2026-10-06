@@ -17,11 +17,11 @@ LEARN = r"""
 <header class="hero">
 <div class="kicker">Chapter 12 of 15</div>
 <h1>Fundamentals of risk and return</h1>
-<div class="meta"><span class="pill">Worth <b>7 marks</b> of 100</span><span class="pill">Book pages 228 to 246</span><span class="pill">About 60 minutes</span></div>
+<div class="meta"><span class="pill">Worth <b>7 marks</b> of 100</span><span class="pill">Book pages 228 to 246, and 334 to 341</span><span class="pill">About 75 minutes</span></div>
 <p class="oneline">Measure the <span class="k">return</span> properly, name the <span class="k">risks</span> you took to earn it, and judge the return <span class="k">per unit of risk</span>. Then watch your own biases.</p>
 </header>
 
-<figure class="fig" id="fig-map"><figcaption>Chapter map<span>Twelve parts. 12.2 and 12.9 carry the numericals. Tap to jump.</span></figcaption>
+<figure class="fig" id="fig-map"><figcaption>Chapter map<span>Twelve parts, plus the book's Annexure 3. 12.2 and 12.9 carry the numericals. Tap to jump.</span></figcaption>
 <div class="map">
 <a href="#s1"><b>12.1 and 12.2</b><span>Measuring return</span><small>ROI, simple, annualised, CAGR</small></a>
 <a href="#s3"><b>12.3</b><span>Types of risk</span><small>Ten risks, systematic or not</small></a>
@@ -29,6 +29,7 @@ LEARN = r"""
 <a href="#s6"><b>12.6 to 12.8</b><span>Judging an investment</span><small>Sensitivity, margin of safety, equity versus bonds</small></a>
 <a href="#s9"><b>12.9</b><span>Risk-adjusted returns</span><small>Jensen, Sharpe, Treynor</small></a>
 <a href="#s10"><b>12.10 to 12.12</b><span>Behaviour and liquidity</span><small>Biases, market wisdom, turnover ratios</small></a>
+<a href="#ax3"><b>Annexure 3</b><span>Lessons from history</span><small>Barings, 2008, famous frauds</small></a>
 </div></figure>
 
 <div class="col">
@@ -224,7 +225,11 @@ LEARN = r"""
 
 <div class="col">
 <h3 id="s11">12.11 Wisdom from investment gurus</h3>
-<p>Markets move in <b>bull</b> cycles (rising optimism, sometimes overdone, ending in a crash) and <b>bear</b> cycles (pessimism, prices below value, until buyers return and central banks cut rates). Great investors teach discipline through both.</p>
+<p>Markets move in <b>bull</b> and <b>bear</b> cycles. Great investors teach discipline through both.</p>
+<ul>
+<li><b>Bull market</b>: buyers pay higher and higher prices. Businesses are growing fast with strong demand, or there is just a change in perception or too much liquidity. It can overdo it: prices go past intrinsic value, firms borrow for expansion on rosy forecasts, and input, labour and interest costs rise near the peak. Unrealistic prices tend to correct with a crash.</li>
+<li><b>Bear market</b>: prices fall. Businesses face lower demand, higher costs and less access to capital; some fail. Sellers quit in despair. When prices fall well below value, buyers return, central banks cut rates, and the next bull cycle slowly begins.</li>
+</ul>
 <div class="why"><b>Graham's Mr. Market</b>You own a business with a partner, Mr. Market, who offers every day to buy your share or sell you his, at prices swayed by his moods. Do not let his emotions drive yours. Use his mispricing as an opportunity.</div>
 </div>
 
@@ -246,6 +251,70 @@ LEARN = r"""
 <div class="box"><h4>Stock turnover ratio</h4><p>Shares traded in a period (usually a year) &divide; <b>free float</b> shares outstanding.</p><p class="ptr">Free float: shares held by non-promoter shareholders.</p></div>
 <div class="box"><h4>Traded value turnover ratio</h4><p>Traded value of shares &divide; market capitalisation.</p></div>
 </div>
+</section>
+
+<section class="sec" id="ax3"><span class="secno">A3</span><h2>Annexure 3: Lessons from history</h2>
+<p>The book ends with real cases from market history. Its point: life is too short to learn only from your own mistakes, so learn from others'. It quotes Mark Twain: "We learn from the past that we don't learn from the past."</p>
+<h3>Case 1: the Barings collapse</h3>
+<p><b>Nick Leeson</b> headed derivatives trading at <b>Barings Futures Singapore</b>, a subsidiary of Barings Plc, London. He was a star trader and a favourite of top management. He ran both the <b>front office</b> (trading) and the <b>back office</b> (checking and reporting).</p>
+</div>
+
+<figure class="fig" id="fig-barings"><figcaption>How Barings fell<span>Annexure 3, Case 1</span></figcaption>
+<div class="flow">
+<div class="step"><h4>The bet</h4><p>Sold many <b>straddles</b> (a call and a put sold together) on Nikkei 225 index futures, on SGX-DT in Singapore and the Osaka Securities Exchange. A straddle loses if the market moves sharply either way. It was a bet that Japan's market would stay stable.</p></div><div class="arrow"></div>
+<div class="step"><h4>The shock</h4><p>A violent earthquake hit <b>Kobe</b>. The Nikkei fell and the put side of his straddles lost money.</p></div><div class="arrow"></div>
+<div class="step"><h4>Doubling down</h4><p>Instead of cutting the loss, he bought huge long Nikkei futures on both exchanges to hold the index up. He told London it was arbitrage between the two exchanges, and told each exchange he had opposite positions on the other.</p></div><div class="arrow"></div>
+<div class="step"><h4>The collapse</h4><p>One trader could not turn the market. It kept falling, and Barings failed on both the futures and the straddles. The exchanges stayed safe because they had collected margins.</p></div>
+</div></figure>
+
+<div class="col">
+<h3>Five lessons from Barings</h3>
+<ol>
+<li><b>One trader cannot move the market.</b> Work with the market and manage the position: here, cut the loss on the short puts.</li>
+<li><b>Set clear position limits</b> for each trader, by product, market or total exposure, and tell every trader.</li>
+<li><b>Monitor the limits closely.</b> Leeson broke his limits and sent false reports, which went unnoticed because he ran the back office himself. Keep front and back office under different people. Systems should block a trader at the limit.</li>
+<li><b>Exchanges should share information</b> on large positions. The two exchanges competed for Nikkei business and never cross-checked. Sharing also deters manipulation across two exchanges.</li>
+<li><b>Big institutions are as prone to risk as individuals.</b> Collect margins from everyone, on time. SEBI applies margins to all categories of participants, including institutions.</li>
+</ol>
+<p>Lessons 1 to 3 are for trading firms, 4 for exchanges, and 5 is the one SEBI has acted on in India.</p>
+<div class="why"><b>The book's verdict</b>"Barings' failure was not the derivatives failure, it was management's failure." The Board of Banking Supervision blamed poor operational controls (<b>operational risk</b>), not derivatives. Afterwards, firms worldwide separated front and back office, exchanges began sharing information, and all positions came to be margined.</div>
+
+<h3>Case 2: the credit event of 2008</h3>
+</div>
+
+<figure class="fig" id="fig-2008"><figcaption>How the 2008 crisis built up<span>Annexure 3, Case 2. The book's account, from 2003 to 2004 onwards</span></figcaption>
+<div class="grid g2">
+<div class="box"><span class="tag">Banks</span><p>Lent to less creditworthy borrowers and loosened <b>loan to value</b> (for example from 80:20 to 85:15) to earn higher margins (NIMs). They assumed ever-rising house prices would cover any default: a view on real estate, which is not a banker's job.</p></div>
+<div class="box"><span class="tag">Selling the loans</span><p>To lend more, banks sold long-dated mortgages to investors at lower yields, booked the profit up front and earned bigger bonuses. They stopped caring about credit quality as long as someone bought: <b>moral hazard</b>. Lending became a fee business.</p></div>
+<div class="box"><span class="tag">Home buyers</span><p>Got almost 100% financing, so they treated a house like a <b>call option</b>: if prices rose, sell and keep the profit; if prices fell, hand the keys to the bank.</p></div>
+<div class="box"><span class="tag">Investors and raters</span><p>Funds bought <b>mortgage-backed securities</b> and passed them on, like passing the pillow. Rating agencies gave them top grades (AAA kind) based on history and the hard assets behind them. Many credit derivatives were written on them too.</p></div>
+</div>
+<p style="margin-top:12px">When prices began to fall, defaults rose and it came down like a pack of cards. The last holders were left with securities worth a couple of cents to the dollar.</p>
+</figure>
+
+<div class="col">
+<h3>Lessons from 2008</h3>
+<ul>
+<li><b>Banks</b> are leveraged, so they must stay disciplined. Their business is lending, not betting on asset prices. Risk management is the heart of banking; never dilute it to win business.</li>
+<li><b>Investors</b> should do their own due diligence, not just rely on rating agencies, and keep asking: "What could go wrong here?"</li>
+<li>History matters, but decisions cannot rest <b>only</b> on historical data. Rating agencies leaned on past mortgage data. The book notes no rating agency ever stood up to take responsibility.</li>
+<li>Respect the limits of what you understand. Nassim Taleb: "Black Swan events pose significant risk in this integrated world." Risk management should come first.</li>
+</ul>
+<h3>Frauds the book lists</h3>
+<p>Warren Buffett: "People with pen do much bigger thefts than the people with guns."</p>
+</div>
+
+<figure class="fig" id="fig-frauds"><figcaption>Disgraced companies and fund managers<span>Facts as stated in the book</span></figcaption>
+<div class="scroll"><table class="cmp">
+<thead><tr><th>Who</th><th>What happened</th><th>Outcome in the book</th></tr></thead>
+<tbody>
+<tr><th>Enron</th><td>Power trading company. Massive accounting fraud wiped out <b>$78 billion</b> of market value</td><td>Bankrupt in <b>2001</b>. Former President Jeff Skilling: 24 years in prison</td></tr>
+<tr><th>WorldCom</th><td>Telecom giant. Top management manipulated the financials; once had over <b>$100 billion</b> in assets</td><td>Fraud-induced bankruptcy in <b>2002</b>. Former CEO Bernard Ebbers: 25 years</td></tr>
+<tr><th>Satyam Computers</th><td>Promoter <b>Ramalinga Raju</b> confessed in <b>2009</b> to inflating cash and bank balances by about <b>Rs 5,000 crore</b>, after a failed bid to buy Maytas, another promoter-owned company</td><td>Jailed on fraud charges. Satyam was later acquired by <b>Tech Mahindra</b></td></tr>
+<tr><th>Bernard Madoff</th><td>New York money manager. <b>$65 billion Ponzi scheme</b>, the largest financial fraud in US history, exposed in December 2008</td><td>Sentenced in June 2009 to <b>150 years</b></td></tr>
+<tr><th>Michael Milken</th><td>Drexel's "<b>Junk Bond King</b>" of the mid-1980s. Brought down by <b>insider trading</b></td><td>10 years in prison; $600 million fine</td></tr>
+<tr><th>Raj Rajaratnam</th><td>Co-founded hedge fund <b>Galleon Group</b> in 1997. Arrested in October 2009 for <b>insider trading</b></td><td>Sentenced in October 2011 to 11 years and a $10 million fine</td></tr>
+</tbody></table></div></figure>
 </section>
 
 <section class="sec" id="traps"><h2>All exam traps in this chapter</h2>
@@ -275,6 +344,9 @@ LEARN = r"""
 <li>Ownership bias is also called the endowment effect. Confirmation bias is also called my-side bias.</li>
 <li>Graham: short run a voting machine, long run a weighing machine.</li>
 <li>Stock turnover ratio uses free float shares; traded value turnover uses market cap.</li>
+<li>Barings: "not the derivatives failure, it was management's failure". The root cause was operational risk: one person ran front and back office.</li>
+<li>A short straddle loses if the market moves sharply either way. Leeson's was a bet on a stable Nikkei.</li>
+<li>2008: banks diluted loan to value, sold loans on (moral hazard), and investors leaned on AAA ratings without their own due diligence.</li>
 </ol>
 </section>
 
@@ -285,6 +357,7 @@ LEARN = r"""
 <li>Klarman says beta is a poor measure of risk. Do you agree? What would you use instead?</li>
 <li>Two funds both returned 18%. What else would you ask before choosing one?</li>
 <li>How wide a margin of safety would you want before buying a share? Why that number?</li>
+<li>Barings and 2008 were both called failures of management, not of the products. Do you agree?</li>
 </ol>
 </section>
 </div>
